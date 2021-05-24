@@ -1,0 +1,17 @@
+
+PCSKB, PCSKB2 (EPSON)
+
+A kind of local bus GA dedicated to PC-486 GF / GR / P. Expansion slot for PC-486 GF / GR
+In the third slot, and in the second slot on the PC-486P
+(Do not insert in other slots).
+PCSKB (VRAM 512KB) is an S3 company 86C911, and PCSKB2 (VRAM 1MB) is an S3 company 86C924
+Each is equipped.PCSKB is 1024 x 768 dots, similar to PCSKB2 by adding PCKBZM.
+It becomes possible to display 256 colors.However, neither board is compatible with Windows 95.
+
+Dip when using 1024 × 768 dots, 256 colors, non-interlaced display in PCS KB 2
+Set the switch from the left to ON-OFF-OFF-ON-ON-ON.
+
+This switch setting information is "Epson PC-486GR / GF rescue" issued by ASCII
+Based on the description of the book.Switch settings for other screen modes so far
+Is unknown.
+

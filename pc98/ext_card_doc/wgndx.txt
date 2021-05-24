@@ -1,0 +1,47 @@
+
+WGN-DX2, WGN-DX4 (メルコ)
+
+C bus graphic accelerator equipped with S3 Trio 64 V 2 / DX (86 C 775).WGN-DX2
+Image memory 2MB, WGN-DX4 image memory 4MB.
+
+Operating environment: 5 to 40 ° (no condensation)
+Supported OS: Windows 3.1 (Enhanced mode), Windows 95/98, Windows NT 3.51 / 4.0
+Memory address: E0000h to E7FFFh or F00000h to F3FFFFh
+I / O address: 5xE0h, 5xE1h (x = 0 to F occupied)
+
+Normal display compatible.In VESA's proposed DPMS method (on / off / suspend mode)
+Correspondence.Windows 3.1 supports DCI (Display Control Interface) by hardware.Also
+Windows 95 compatible with Direct X (DirectDraw).MPEG playback utility attached.
+When using this board, set the GDC clock of the main unit to 5 MHz.
+When using Direct X compatible software, Direct X included with the software
+Do not install the driver (WGN will not work properly).
+
+Do not use SETUP.EXE stored in the setup CD attached to this product under Windows 3.1
+Set when installing the driver with Windows setup of Windows 3.1
+It is necessary to change the OEMSETUP.INF file in the up CD.In this case, first set
+Up the XXXXXXXX.INF file in the \ WGN-DX \ WIN31 directory on the upgrade CD
+Copy to disk.However, the part of XXXXXXXX differs depending on the Windows used:
+-For models that can install memory of 16 MB or more on PC-9801FA or EPSON machines,
+　　NEC version (FD) = OEMNECE
+　　MICROSOFT version (FD) = OEMMSE
+　　EPSON version (FD) = OEMEPSE
+    CD-ROM version = OEMCDE
+・ For other models,
+　　NEC version (FD) = OEM NEC
+　　MICROSOFT version (FD) = OEMMS
+　　EPSON version (FD) = OEMEPS
+    CD-ROM version = OEMCD
+Then driver to floppy drive 1 (example: drive B)
+Set the disk backup disk,
+A: \> B:
+B: \> COPY XXXXXXXX. INF OEMSETUP. INF
+And modify the OEMSETUP.INF file.
+
+When installing the driver on Windows 3.1, you can use
+When using the HFA series or EUF series / When using the PC-9801ES,
+Q: \ WGN-DX \ WIN 31 \ SETUP.EXE / E
+Enter to start the installer.
+
+On Windows 95, when installing the driver, for PC-9801FA or EPSON machines:
+Select [Use E-Bank].
+

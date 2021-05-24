@@ -1,0 +1,11 @@
+
+PCRB41 (A) (EPSON)
+
+PC-486HA / HX / HG dedicated internal memory expansion baseboard.Third party
+There is no equivalent.There are six SIMM sockets, and the expandable SIMMs are Epson specification
+The 2MB, 4MB, and 8MB ones (1MB is not possible), can be expanded in units of one.
+
+There are 3 jumper switches (J1) on the back of the board.
+25 at left and center short at board erect, 33 at center and right short
+Because there is silk printing, it will be the setting with HG and HA / HX in order.
+

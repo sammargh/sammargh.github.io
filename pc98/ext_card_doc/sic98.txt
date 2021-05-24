@@ -1,0 +1,36 @@
+
+SIC-98, SIU-98 (Allied Telesis)
+
+C bus NIC (LAN board).Not compatible with Windows 95.1x dip switch on board,
+There are two 3 jumper switches and one 2 x 5 series jumper switch.
+
+・ 4 stations dip switch S1: Memory address setting
+ON-ON-ON-ON ■ 080000h to 087FFFh
+OFF-ON-ON-ON ■ 088000 h ~ 08 FFFF h
+ON-OFF-ON-ON ■ 090000h to 097FFFh
+OFF-OFF-ON-ON ■ 098000 h to 09 FFFF h
+ON-ON-OFF-ON 0A0000h to 0A7FFFh
+OFF-ON-OFF-ON 0A 8000 h to 0 A FFFF h
+ON-OFF-OFF-ON 0B0000h to 0B7FFFh
+OFF-OFF-OFF-ON 0 B 8000 h to 0 B FFFF h
+ON-ON-ON-OFF 0C0000h to 0C7FFFh
+OFF-ON-ON-OFF 0C8000h to 0CFFFFh
+ON-OFF-ON-OFF 0D0000h to 0D7FFFh
+OFF-OFF-ON-OFF 0D 8000 h to 0 D FFFF h
+ON-ON-OFF-OFF 0E0000h to 0E7FFFh
+OFF-ON-OFF-OFF 0E8000h to 0EFFFFh
+ON-OFF-OFF-OFF 0F0000h to 0F7FFFh
+OFF-OFF-OFF-OFF 0F 8000 h to 0 F FFFF h
+
+・ Three jumper switch J1: I / O port address setting
+1-2 short circuit ■ 00D0h to 20D0h (factory setting)
+2-3 short between 01D0h to 21D0h
+
+・ 3 jumper switch JP2, JP3: normal mode / high res mode switching
+J2 and J3 both short 1-2 ■ Normal mode
+J2 and J3 both short 2-3 high resolution mode
+
+・ 2 x 5 jumper switch JP4: Interrupt level setting
+
+The numbers beside the jumper are INT. For example, shorting a jumper written as 0 results in INT 0.
+

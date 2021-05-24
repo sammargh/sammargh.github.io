@@ -1,0 +1,113 @@
+
+WIN-note 98 (キュービジョン)
+
+PC-9801NS, NS / E, NS / T, NC, NA, NA / C, NS / R, NS / A, NX / C, NS / L, PC-9821Ne, 
+PC-386NOTE AR, AE, PC-486NOTE AS, composite interface mounted on 110-pin expansion bus of AU
+Face BOX (PC-9821 Ns, Np can also use expansion bus conversion connector (PC-9821N-U07)).
+Equipped with graphic accelerator, PCM sound source, FM sound source, SCSI I / F.PC expansion bus
+Mounting is possible without removing the cover of.
+Screens other than Windows are not displayed on the external CRT connected to the CRT connector of WINnote 98.
+Fast battery and CRT adapter for exclusive use to display, or dedicated monitor
+A cable is necessary. (For models prior to NS / A, a CRT pack is attached when the WINnote 98 is attached.
+A special CRT pack is included).
+The resume function is not supported.In addition, FM sound source is installed in the body such as PC-486NOTE
+Do not use the FM sound generator of the main unit with the model.
+Supported OS: MS-DOS 3.3 or higher, MS-Windows 3.1 (Microsoft version, NEC version, Epson version).
+It seems that it can not be used on Windows 95.In addition, the main unit with more than 14.6MB of memory
+It seems that accelerators can not be used.
+※ There is a possibility that a problem may occur when installing WINnote 98 because of insufficient power supply capacity in NS / A.
+　When Qvision still exists, it is free within 3 months after purchasing WINnote 98
+　The main body was being remodeled at.
+
+● Graphic accelerator
+It is equipped with CL-GD5428 (image memory 1MB) manufactured by Cirrus Logic.I / O address = 4xES, 5xES, 
+46E8 (x = 0 to F, S = 0, 2, 4, 6, A, C, E).
+640 x 400, 640 x 480, in combination with an external multi-scan display
+Display at 800 x 600, 1024 x 768, 1280 x 1024 dots resolution possible.
+Even when using play, it is possible to display 16.77 million colors with 640 × 400 dots (all are Windows 3.1
+while using it).
+Display mode:
+Below, Color number ■ Horizontal frequency (kHz) ■ Vertical frequency (kHz) ■ Scanning method in order.
+(I = interlaced, NI = non-interlaced, NIFF = non-interlaced
+　Flicker free)
+・ 640 × 400 dots
+　　256 24.8 56.4 NI
+　　65536 24.8 56.4 NI
+　　16.77 million ■ 24.8 ■ 56.4 ■ NI
+・ 640 x 480 dots
+　　256 31.5 60.0 NI
+　　256 37.9 72.0 NIFF
+　　65536 31.5 60.0 NI
+　　65536 37.9 72.0 NIFF
+　　16.77 million ■ 31.5 ■ 60.0 ■ NI
+800 x 600 dots
+　　256 35.2 56.0 NI
+　　256 37.9 60.0 NI
+　　256 48.1 72.0 NIFF
+　　65536 35.2 56.0 NI
+　　65536 37.9 60.0 NI
+・ 1024 x 768 dots
+　　256 48.3 60.0 NI
+　　256 56.0 70.0 NIFF
+　　256 58.0 72.0 NIFF
+　　256 35.5 87.0 I
+・ 1280 × 1024 dots
+　　16 48.0 87.0 I
+
+Wide screen function allows you to use Windows screen widely even on small displays
+Possible (for example, using a 1280 x 1024 dot screen with a 640 x 400 dot normal display).
+Whether to use this function is specified when installing the driver.
+● FM sound source
+Equipped with YMF264 (completely compatible with PC-9801-26K).3 FM sound sources (monaural), 3 SSG sound sources (monaural).
+Equipped with joystick port.
+● PCM sound source
+Equipped with CS4231.Sampling frequency 5.5-48.0 kHz.Interrupt (INT) level (0 to 3),
+DMA channel (0, 3) is specified when installing the driver.
+● SCSI I / F
+55 compatible, equipped with multi-vendor function.There are two transfer methods: DMA transfer and I / O string transfer.
+DMA channel = CH 0, interrupt level = INT
+
+For hardware settings, hold down [CTRL] + [GRPH] + [S] simultaneously and turn on the power switch
+Use the "Switch setting menu" screen that is displayed by pressing the / reset button.
+<SCSI Related>
+1 Transfer method
+・ I / O transfer ... Corresponds to 80286 CPU or more.This mode is usually faster than DMA transfer
+　Used in.
+DMA transfer: Some devices and software operate only in this mode.
+23.5 inches MO mode
+・ MO mode: Normal MO drive mode.
+-HD mode: A mode that recognizes the MO drive as a hard disk.This mode
+　Will lock the inserted media.
+・ Automatic discrimination ... Check the contents of the format of the MO media inserted when the main unit was started
+　This mode automatically determines whether it is MO mode or HD mode.Normally used in this mode
+　About.
+3 check ID
+　Search for SCSI_ID only up to the specified ID number.Reduced system startup time
+　Valid for
+4 quick format
+　When it is ON, formatting of the hard disk of specified ID can be done at high speed.
+5 connection check time
+　Set connection check time of SCSI device.Because the boot time differs depending on the SCSI device,
+　Specify the time to be recognized normally.Usually specify "normal".
+<Multimedia relationship>
+6 base I / O address
+　I / O address used by WINnote 98. 4xE0, 4xE2, 4xE4, 4xE6, 4xEA, 4xEC, 4xEE
+　Choose from.The factory setting is 4xE0.
+
+Start of automatic parameter analysis program:
+When the display shows "WINnote98 BIOS REV 1.00 ...." after turning on the power of the main unit, [CTRL] + [GRPH] + [P]
+At the same time, "HD parameter automatic analysis program" is started.I want to analyze
+Specify SCSI_ID of hard disk.When analysis is completed normally, press the [ESC] key, and
+Is that okay? "Select "Yes" in response to the message on
+Register format information.When the hard disk to be connected is changed or connected
+You need to do this also if you change the hard disk SCSI_ID.However, they are connected
+You do not need to do this if you remove the hard disk and use it.
+If automatic analysis of parameters fails, use "HDPARA.EXE" in the attached disk.
+To analyze:
+Start the hard disk to be analyzed in the original environment, and from the attached disk HDPARA.EXE
+Start up, and display the “HD parameter display program” parameter (number of cylinders,
+Write the number of headers and the number of sectors).Then connect the hard disk to WINnote 98,
+Start the "HD parameter automatic analysis program", select SCSI_ID and press the [HELP] key.
+Enter the correction mode, enter the previously written parameters, and then press the [f • 1] key.
+Register the meter.
+

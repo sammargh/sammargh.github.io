@@ -1,0 +1,76 @@
+
+EIF-98SW (ELECOM)
+
+C bus bus master SCSI-2 board.Three 8 series dip switches and 3 jumpers on the board
+There are 3 switches.There are a few errors in the manual.
+The final ROM seems to be 1.24. As it is, it does not correspond to HDD more than 1GB, but charge of ROM
+It is possible to correspond by version upgrade.Windows 95 ROM version 1.24 board
+Only compatible.Older ROM version boards need to be upgraded.
+
+・ 8-station dip switch SW1: SCSI-ID of board, interrupt level, setting of DMA channel
+1-2-3: Board SCSI-ID setting
+  OFF-OFF-OFF: ID = 0
+  ON-OFF-OFF: ID = 1
+  OFF-ON-OFF: ID = 2
+  ON-ON-OFF: ID = 3
+  OFF-OFF-ON: ID = 4
+  ON-OFF-ON: ID = 5
+  OFF-ON-ON: ID = 6
+  ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+  OFF-OFF-OFF: INT 0 (factory setting)
+  ON-OFF-OFF: INT 1
+  OFF-ON-OFF: INT 2
+  ON-ON-OFF: INT 3
+  OFF-OFF-ON: INT 5
+  ON-OFF-ON: INT 6
+7-8: DMA channel
+  OFF-OFF: DMA 0
+  OFF-ON: DMA 2 (available only for PC-9801E / F / U / UF / XA)
+  ON-ON: DMA 3 (factory setting)
+
+・ 8 stations dip switch SW2: ROM address, main unit model, setting of valid / invalid of SCSI_BIOS
+1-2-3: Normal mode ROM address setting
+  OFF-OFF-OFF: D0000h to D0FFFh
+  ON-OFF-OFF: D2000h to D2FFFh
+  OFF-ON-OFF: D4000h to D4FFFh
+  ON-ON-OFF: D6000h to D6FFFh
+  OFF-OFF-ON: D 8000 h to D 8 FFF h
+  ON-OFF-ON: DA000h to DAFFFh
+  OFF-ON-ON: DC000h to DCFFFh (factory setting)
+  ON-ON-ON: DE000 to DEFFFh
+  ※ Due to the ROM address, simultaneous use of this board, EMS and sound functions is not possible.
+  　Also, when using with PC-9801 E / F / M, set D4000h to D4FFFh.
+4-5: Setting ROM address in high resolution mode
+  OFF-OFF: XE8000h to XE8FFFh
+  ON-OFF: XEA000h to XEAFFFh
+  OFF-ON: XEC000h to XECFFFh (factory setting)
+  ON-ON: XEE000h to XEEFFFh
+  ※ "X" represents "0H" or "FH"
+6-7: Setting of machine model
+  ON-OFF: CPU is the model of 8086 or V30
+  ON-ON: Model with only 286 CPUs in normal mode only (default setting)
+  OFF-OFF: PC-98XA (high res dedicated model)
+  OFF-ON: Model with both normal mode and high resolution mode, high resolution board
+          Installed model
+8: Enable / Disable of SCSI_BIOS
+  ON: SCSI_BIOS enabled (factory setting)
+  OFF: SCSI_BIOS disabled
+
+・ 8-station dip switch SW3: I / O page address, transfer mode setting
+1-2: I / O page address setting
+  OFF-OFF: CC0H
+  ON-OFF: CD0H
+  OFF-ON: CE0H
+  ON-ON: CF0H (factory setting)
+3-4: ON-ON-ON (System reservation, change prohibited)
+5: Transfer mode setting
+  ON: Automatically switch DMA / bus master transfer depending on CPU type (factory setting)
+  OFF: Forced DMA transfer
+6-7-8: OFF-ON-ON (System reservation, change prohibited)
+※ It is used in advance mode with Epson PC (when it is used in normal mode, DMA
+　Will be transferred).When using OS / 2, bus master mode is canceled automatically.
+
+・ Jumper switch SW4, SW5, SW6: All short circuit between 2 side pin and center pin
+　　　　　　　　　　　　　　　　 (System fixed, change prohibited)
+

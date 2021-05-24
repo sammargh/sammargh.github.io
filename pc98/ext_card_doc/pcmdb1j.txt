@@ -1,0 +1,27 @@
+PCMDB1　（EPSON）
+
+EPSON製98互換機用CバスMPEGデコードボード．ボード上に4連ディップ
+スイッチ1個，8連ディップスイッチ2個，2本ジャンパスイッチ5個あり．
+
+・4連ディップスイッチSW1：変更禁止（つねにON-ON-ON-ON）
+
+・8連ディップスイッチSW2：I/Oポートアドレスの設定
+1-2-3-4：I/Oポートアドレスの設定
+　ON-ON-OFF-ON■0488H
+　OFF-ON-OFF-ON■0568H
+　ON-OFF-OFF-ON■0768H
+　ON-ON-OFF-OFF■0C68H
+　OFF-ON-OFF-OFF■0D68H
+　ON-OFF-OFF-OFF■0E68H
+　OFF-OFF-OFF-OFF■0F68H
+5-6-7-8：変更禁止（つねにON-ON-ON-ON）
+
+・8連ディップスイッチSW3：変更禁止（ON-ON-ON-OFF-ON-OFF-OFF-ON）
+
+・2本ジャンパスイッチJ4，J5，J6，J7：割り込みレベルの設定
+　J4ショート■INT 0
+　J5ショート■INT 1
+　J6ショート■INT 2
+　J7ショート■INT 4
+
+・2本ジャンパスイッチJ8：未設定

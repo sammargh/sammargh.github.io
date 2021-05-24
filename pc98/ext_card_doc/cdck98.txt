@@ -1,0 +1,52 @@
+
+CardDock / 98 (C-Dock / 98) (I ・ O data)
+
+PC card adapter attached to C bus.1 double jumper switch on the board (JP1: not used,
+The factory setting is open) Yes.
+
+Power supply voltage: +5 V +-5% [VPP · VCC]
+Supply voltage: + 12V +-15% [VPP], + 5V +-5% [VPP · VCC] + 3.3V +-5% [VCC]
+Input / output signal level: TTL logic level
+Operating environment: Temperature 0 to 55 ° C, humidity 95% RH or less (no condensation)
+Resources used: IRQ = 6, I / O address = 3E0h to 3E2h, Memory address = D0000h to D7FFFh
+(However, these values change depending on the use environment)
+
+Supported devices are PC-9801VX, UX, US, CS, EX, ES, RX, RS, RA, DX, DS, DA, FX, FS,
+FA, BX, BX2, BX3, BX4, BS2, BA, BA2, BA3, T, PC-9821, Ce, Ce2, Cs2, Cb, Cx,
+Cf, Cb2, Cx2, Be, Bs, Bp, Bf, Ae, As, As2, As3, Ap, Ap2, Ap3, Af, An, Xe,
+Xe10, Xs, Xp, Xf, Xn, Xa, Xa7, Xa10, Xa12, Xa13, Xa13, Xt, Xt13, Ts (Xa10,
+For Xa12 and Xa13, models with PC card drive are excluded), PC-H98model 60, 70, 80, 90,
+100, 105 (only in normal mode with H98), PC-H98S, T, PC-9801NS, NS / E, NC, NS / T,
+NS / L, NA, NS / R, NX / C, NL / R, NS / A, PC-9821Ne (NX / C, NL / R, NS / A, Ne
+When using CardDock / 98, the main PC card slot can not be used), PC-286, X, C, US, UX,
+V, VE, VS, VF, VX, VG, VJ, LS, LST, PC-386, V, VR, M, P, S, G, GE, GS, LS,
+LSC, LSR, LSX, PC-486P, GF, GR, GR +, GR Super, SE, SR, HG, HX, HA, FE, FR,
+FS, MU, MR, MS, MV, ME, RS, PC-586RV, RT, RA, RX, MV, PC-386note AE, AR (1996
+As of February).
+PC-9801NL / A, PC-9821Es, Ne2, Np, Ns, Nd, Ld, Nm, Nf, Lt, Ne3, Nd2, Na7, Nx,
+Not available for Na9, Na12, Nb7, PC-486note AU, AV, AT, PC-586note AT (February 1996)
+Point in time).Also, PC-9801-102, PC-9821XA-E01, PC-9821XV-E01 are already installed
+In this case, CardDock / 98 can not be used.Note that CardDock / 98 can only be used on one PC.
+
+Supported OS is NEC version MS-DOS 3.3D / 5.0 / 6.2, EPSON version MS-DOS 3.3 / 5.0 / 6.2, Windows 3.1,
+Windows 95.However, when using an ATA card with MS-DOS 3.3D, the maximum usable capacity is 32 MB.
+When using PC-BOX162B when using MS-DOS, use INT 2 and INT 4 (IRQ 6, IRQ A)
+Impossible.Set SW7 of PC-BOX 162B to ON (factory setting) (enable the area from D0000h to D7FFFh
+To).When using PCBOX-n3, set 5-6 of SW1 of PCBOX-n3 to ON-ON (factory setting).
+Do (to activate the area from D0000h to D7FFFh).
+
+Two PC cards of TYPE I and TYPE II for PCMCIA 2.1 (JEIDA 4.2) specification, PC of TYPE III
+One card can be used.The upper slot is slot 1, the lower slot is slot 0.PC card
+Removal and insertion is done on the back side of the PC body, but an optional expansion bus connector on this board
+Remove the card on the front of the PC by connecting the external expansion adapter "CardDock / 98-EX"
+(In this case, both CardDock / 98 and CardDock / 98-EX are TYPE I / II or
+One card of TYPE III can be used.With CardDock / 98-EX, CardDock / 98
+Slot 1 can not be used).
+Use Type III PC card in slot 0.In this case, slot 1 can not be used.
+The following combinations can be installed in slot 0-slot 1:
+TYPE I-Vacant ■ TYPE II-Vacant ■ TYPE II-Vacant-Vacant-TYPE I Vacant-TYPE II
+■ TYPE I-TYPE I ■ TYPE II-TYPE I ■ TYPE I-TYPE II ■ TYPE II-TYPE I
+
+When used with MS-DOS, the type of PC card, interrupt level, and memory by the attached software
+Specify and set the address.
+

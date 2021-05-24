@@ -1,0 +1,34 @@
+
+PC-9821A-E02 (NEC)
+
+High res board to plug into the local bus slot of mate-A.Display when using
+1,120 x 750 dots screen · 16 colors · non-interlace display · 24 dots Ming type letter
+It becomes.
+It is compatible with Windows 3.1 but can not be used with Windows 95.The main body for use
+H / N switch in the front switch case or setup menu
+Select H with the H / N switch inside.This is N (meaning normal mode)
+In this case, the high resolution mode will not be set even if this board is attached.
+There is an Amphenol half 36 pin female printer connector on the back of the board.
+When this board is attached, the printer output is this connector even in the normal mode
+It is done from.
+When used with PC-9821A-E01, the main unit -PC-9821A-E01-PC-9821A-E02-display
+Connect the cable so that the signal flows.
+There are two jumper switches on the board.The factory setting is short.Function unknown.
+
+In high resolution mode, it is necessary to specify a boot drive.The specification of boot drive is
+You can do this by pressing a specific key at startup or reset.Specified once
+The boot drive that has been set does not change until the boot drive is changed.
+[CTRL] + power on / reset ■ FDD
+[ESC] + power on / reset ■ Fixed disk boot menu program starts
+[f 1] + power on / reset ■ HDD first partition
+[f · 2] + power ON / reset ■ the second partition of the HDD
+............
+............
+[vf · 4] + power ON / reset ■ the 14th partition of the HDD
+[vf · 5] + power ON / reset ■ the 15th partition of the HDD
+
+※ CPU speed (L disappears), software dip switch in high resolution mode
+　/ Setting by system setup menu, interrupt level, DMA channel,
+　ROM address space and memory change automatically (value different from that in normal mode
+　It may take a while) so be careful.
+

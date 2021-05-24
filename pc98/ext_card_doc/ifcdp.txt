@@ -1,0 +1,11 @@
+
+IFC-DP (メルコ)
+
+PCI SCSI-2 interface board.Red LED (light emitting diode) on board
+Is the access LED, the green LED is the terminator LED. Built-in 50-pin SCSI cable connector
+The four pins aside are SCSI bus LED connectors.The board's SCSI ID is fixed at 7.
+Jumper pins on the board are both external and internal when used on a PC / AT compatible machine
+Turn off the terminator on the board when a SCSI device is connected to the connector of
+Things to do (remove the jumper if you want to turn off).
+As far as the author actually confirmed, the maximum capacity of the HDD that can be recognized seems to be 8 GB.
+

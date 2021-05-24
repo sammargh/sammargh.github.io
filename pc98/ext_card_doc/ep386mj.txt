@@ -1,0 +1,39 @@
+EP-386M-2　（I・Oデータ）
+
+エプソン製デスクトップ機，PC-386M専用内蔵RAMベースボード．それ自身0MB．
+ボード上にSIMMソケット2本と10連ディップスイッチ1個あり．SIMMソケットには
+61互換SIMMを増設可能（エプソン仕様のSIMMでもJEDEC仕様のSIMMでもないので
+注意）．
+
+・8連ディップスイッチSW1：スタートアドレス，RAMボードのメモリサイズの設定
+1-2-3-4：スタートアドレスの設定
+　ON-ON-ON-ON：設定禁止
+　OFF-ON-ON-ON：100000h
+　ON-OFF-ON-ON：200000h
+　OFF-OFF-ON-ON：300000h
+　ON-ON-OFF-ON：400000h
+　OFF-ON-OFF-ON：500000h
+　ON-OFF-OFF-ON：600000h
+　OFF-OFF-OFF-ON：700000h
+　ON-ON-ON-OFF：800000h
+　OFF-ON-ON-OFF：900000h
+　ON-OFF-ON-OFF：A00000h
+　OFF-OFF-ON-OFF：B00000h
+　ON-ON-OFF-OFF：C00000h
+　OFF-ON-OFF-OFF：設定禁止
+　ON-OFF-OFF-OFF：設定禁止
+　OFF-OFF-OFF-OFF：設定禁止
+5-6：RAMボードのメモリサイズ
+　ON-ON：0MB
+　OFF-ON：2MB（SIMM 1枚増設時）
+　ON-OFF：4MB（SIMM 2枚増設時）
+　OFF-OFF：設定禁止
+7：つねにOFF
+8：つねにON
+9：パリティチェックの有無の設定
+　ON：パリティチェックを行わない
+　OFF：パリティチェックを行う
+10：つねにOFF
+
+Oh! EPSON PC 2000 12/30号，「EPSON PCとメモリ」執筆者の方に転載許可を
+いただきました．

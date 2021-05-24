@@ -1,0 +1,28 @@
+PC-286RB2　（EPSON）
+
+エプソン製デスクトップ機，PC-286 model 0/X/V/VE/VF/VS用内部増設RAMボード．
+容量2MBでSIMMによる追加増設不可．ボード上に8連ディップスイッチ1個あり．
+
+・8連ディップスイッチSW1：RAMボード上のメモリの使用／不使用，アドレス空間
+　の設定
+1-2-3-4：ボードの使用するアドレス空間の設定
+　ON-ON-ON-ON：設定禁止
+　OFF-ON-ON-ON：100000H〜2FFFFFH　（出荷時設定）
+　ON-OFF-ON-ON：200000H〜3FFFFFH
+　OFF-OFF-ON-ON：300000H〜4FFFFFH
+　ON-ON-OFF-ON：400000H〜5FFFFFH
+　OFF-ON-OFF-ON：500000H〜6FFFFFH
+　ON-OFF-OFF-ON：600000H〜7FFFFFH
+　OFF-OFF-OFF-ON：700000H〜8FFFFFH
+　ON-ON-ON-OFF：800000H〜9FFFFFH
+　OFF-ON-ON-OFF：900000H〜AFFFFFH
+　ON-OFF-ON-OFF：A00000H〜BFFFFFH
+　OFF-OFF-ON-OFF：B00000H〜CFFFFFH
+　ON-ON-OFF-OFF：C00000H〜DFFFFFH
+　OFF-ON-OFF-OFF：D00000H〜EFFFFFH
+※下位アドレスから順番に設定のこと．またRAMボードを複数枚装着する場合には，
+　それぞれのRAMボードが使用するアドレス空間が連続するように設定すること．
+5：RAMボード上のメモリの使用／不使用の設定
+　ON：使用　（出荷時設定）
+　OFF：不使用
+6-7-8：変更禁止（出荷時設定：OFF-OFF-ON）

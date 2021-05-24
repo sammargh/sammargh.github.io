@@ -1,0 +1,88 @@
+
+Timer board II JP: タイマーボードII（日本アセンブラ (JAC)
+
+C bus board for time measurement and control. User's manual issued in October 1986,
+According to the description of the programmer's manual etc., the push button for reaction loading
+Type switch box, voice key, photo sensor, proximity using ultrasonic wave
+Human / animal behavior measurement with switch, N88-BASIC / machine language program etc.
+It seems to be part of the time control part of the system but the details are unknown.In use
+User's manual and programmer's manual will be essential
+(You will also need the included software).
+Connectors for external connection are 8 mini plug jacks and 1 8-pin female round connector.
+There is one 8 series dip switch and 2 3 jumper switches on the board.
+
+Used element
+(1) Two i8253A (equivalent products)
+　6 input points.An interrupt occurs independently of the external interrupt.Internal interrupt
+　/ External interrupts can be determined by software.Stopwatch Combined Channel
+　Supports 2 channels (4 channels with options included).Countable
+　The maximum time is the basic clock x65535 ^ 2.
+(2) Time standard 8651B (8651A option)
+　Original vibration 100 kHz (60 KHz).Frequency accuracy ± 5 ppm (25 ° C).The clock is
+　Settings can be changed by program (1 to 1000 ms in basic software).
+(3) PPI i8255A-5 (equivalent product)
+　Counter gate opening / closing (output): 6 bits
+　Clock mode setting to timer (output): 6 bits
+　Lead wire for external control (input / output): 4 bits × 2 (independently settable input / output)
+(4) Interruption
+　Assembled by two i8259A on board and input to int 0 of PC-98.
+(5) Back connector
+　One DIN terminal for interrupt switch inputs # 1 to 4 (one for DIN terminals # 5 to 8 is optional).
+　Among them, # 2, # 3 (and optional # 6, # 7) are also used for stopwatch input.
+　Mini plug jack for external input / output: 8 pieces
+(6) I / O port address
+　EEh (output): 8651 B (reference clock) division ratio setting
+　EEh (input): Read out the upper 7 bits of the address decoder (dip switch
+　　　　　　　 Set by)
+　xxD4h to xxD7h: 8259A x 2 (word accessible)
+　xxD8h to xxDFh: 8253 x 2 (word accessible)
+　xXD8h to xXDEh: 8255 (even addresses only.Byte access)
+　However, x is a value set by the dip switch, and X is x + 1.
+
+・ 8 series dip switches: Setting of upper 7 bits among 16 bits of address
+(Factory setting: All OFF)
+Dip 1 is NC. Assuming that ON = 0 and OFF = 1, for example,
+OFF-ON-ON-ON-OFF-ON-ON-OFF
+Is 0-0-0-1-0-0-1, and the upper address of the LSI group on the board is 12h.
+In the case of this example, the interrupt controller 8259A operates in 12D4h to 12D7h,
+12D8h to 12DFh (note) timer 8253, 13D8h to 13DEh input / output port 8255A
+Each is selected.The setting status of this switch is to read port EEh
+You can know it by.
+Note: In the programmer's manual, it is 12D8h to 12D9h.
+* On most expansion boards, decode only the lower 8 bits of the I / O port address
+　Not in.When used with such a board, bus conflict
+　Be careful because it causes
+
+・ Three jumper switches JP1, JP2: Setting of input / output direction of external input terminal
+JP1 is bit 0 to 3 (mini plug jacks 1 to 4), JP2 is bit 4 to 7 (5 to 8)
+Determine the direction.For both jumper switches, set the output with two G-side shorts.
+It becomes the setting of the input in the opposite side 2 short circuit.Do not use external input / output terminals
+In the case, set to G side (output side).
+
+Rear connector
+・ Mini plug jack for input and output
+When viewing the board from the back side (card plastic side, opposite to the edge connector),
+1, 2, 3, ... 7, 8 from the right.The signal is TTL level and positive logic.Input and output lines
+Twisted pair wire.When changing to negative logic, two 74LS243s beside JP1 and JP2
+Replace with 74LS242.
+
+・ 8 pin female round connector
+The connector pin number,
+       7 6
+     3 8 1
+       5 4
+         2
+If you
+　1 = switch 1 signal (negative logic)
+　2 = Switch 2 signal (negative logic): Also used for stopwatch input
+　3 = switch 3 signal (negative logic): same as above
+　4 = switch 4 signal (negative logic)
+　5 = + 5V
+　6 = GND
+　7 = Shield
+　8 = NC
+Parallel back of CUT and silk-printed land by 8-pin female round connector
+The pattern and the through holes on both sides of the pattern are for the mini plug jacks for input and output.
+If you use an opportunity contact for the input signal, the CR integration circuit for chattering elimination is used.
+It is for attaching (pattern cut required).
+

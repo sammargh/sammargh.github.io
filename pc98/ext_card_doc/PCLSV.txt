@@ -1,0 +1,11 @@
+
+PCLSV, PCLSV2 (EPSON)
+
+Graphics accelerator with WD90C24A2 (VRAM 1MB) manufactured by Western Digital and
+PCM sound source L slot composite board.PC-48NAS / NAU / NAV compatible, but PC-48NAS's PCLSV
+The PCM sound source unit can not be used.PCLSV2 is standard on NAVX1JX / Y1JW / D1JW.Use with Windows
+In this case, set the 16MB system space of the main unit to "Use".
+
+Jumper settings are different between PC-48 NAS and NAU / NAV (factory setting is for NAU / NAV).With NAS
+Three jumper switches J1 and J3 are shorted together between 1 and 3 (the jumper plug is in the order of 1 2 3).
+

@@ -1,0 +1,93 @@
+
+IF-2771ET (ICM)
+
+Non-PnP, multi-vendor non-compliant bus master SCSI I / F and 10BASE-T NIC
+Composite C bus board with.10BASE-T on the second bus connector of IF-2771
+It is not an addition of a module, but a completely different one.disk
+The parameters are 55 compatible. It seems that the operation has been confirmed on HDDs up to 4.3 GB.
+Also, it seems that it can be used even on machines with MMX Pentium.
+I examined using e10chk.exe which is free software created by Mr. Marimo
+The maximum recognition capacity of this board with BIOS ROM 1.02 was 2015 MB.
+The setting of the SCSI unit is performed by switches on the board, and the setting of the NIC unit is attached
+It does in SETUP.EXE in \ UTILITY of utility FD of.SETUP.EXE
+Running on MS-DOS.
+Two 8-deep dip switches and one 4-deep dip switch on the board,
+1x3 2x2 Jumper Switch, 1x 3x4 Jumper Switch, 2x Jumper
+There are 2 switches and 3 jumper switches.
+※ Is the description of switch setting in this table after ICM bankruptcy?This board is a PC
+　It is thought that it was attached when it was knocked out as a bulk product in the workshop
+　One piece of blurred copy material (made by cutting and pasting the diagram of the manual
+　Seems to be: additional copies of attachments? )It is based on.Therefore
+　It is unknown about the factory setting of the switch, but it may be the same as IF-2771.
+　unknown.See also the setting table of IF-2771.
+
+・ 8-station dip switch SW1: SCSI-ID, interrupt level, DMA channel setting
+1-2-3: SCSI-ID of SCSI part of IF-2771ET
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7
+4-5-6: SCSI level interrupt level setting
+　OFF-OFF-OFF ■ INT 0
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: Setting of DMA channel of SCSI unit
+　OFF-OFF CH 0
+　OFF-ON CH 2
+　ON-ON CH 3
+
+・ 8-station dip switch SW2: Local memory address of SCSI ROM, body model,
+　SCSI BIOS ROM enable / disable setting
+1-2-3-4-5-6-7: SCSI ROM local memory address and machine type setting
+　PC-98 XA xxx-OFF-ON-OFF-OFF ■ \ EC 000 h ~ \ ECFFF h
+　Normal / high res dual-purpose machine ■ OFF-ON-ON-OFF-ON-OFF-ON
+　　　　　　　　　　　　　■ Normal mode \ DC 000 h ~ \ DCF FF h
+　　　/ During high res mode \ EC 000 h ~ \ ECFFF h
+　Other than the above ■ OFF-ON-ON-xx-ON-ON ■ \ DC 000 h ~ \ DC F FF h
+　※ x can be ON or OFF.Also, \ is 0h or Fh.
+8: SCSI BIOS ROM enable / disable setting
+　ON ■ effective
+　OFF ■ Invalid
+※ 8 is set together with SW3.
+　
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　ON-ON CCxh
+　OFF-ON CDxh
+　ON-OFF CExh
+　OFF-OFF CFxh
+　※ x is 0, 2, 4 in DMA / bus master mode, and in FIFO mode
+　　Represents 0, 2, 4, 6
+3-4: Transfer mode setting
+　OFF-ON ■ Synchronous bus master transfer
+　ON-OFF W-FIFO transfer
+　OFF-OFF DMA transfer
+
+・ 3x2 jumper switch JP7: Enable / Disable setting of SCSI and NIC
+　2-3, 4-5 short ■ SCSI enabled, NIC enabled
+　2-3, 5-6 short ■ SCSI enabled, NIC disabled
+　1-2, 4-5 short ■ SCSI disabled, NIC enabled
+　1-2 5-6 short ■ SCSI invalid, NIC invalid
+　※ Please set according to SW2-8.
+
+・ 3-pin × 4-unit jumper switch JP10: 10-BASE-T signal line forward / reverse inversion setting
+(Crossover switch)
+　Short between 1-2 ■ Cross
+　Short between 2-3 ■ straight
+※ For changing LAN cable straight <-> cross (reverse) connection (one of them
+　It seems to be able to use one kind of cable in two ways).
+※ A jumper plug with one 2x4 jumper plug is inserted.
+
+・ 2 jumper switch JP3: Not described in the document (opened by hand)
+・ 2 jumper switch JP4: Not described in the document (opened by hand)
+・ 3-pin jumper switch JP5: Not described in the document (2-3 shorts with hand-held type)
+・ 3-pin jumper switch JP6: Not described in the document (2-3 shorts with hand-held type)
+* These four jumper switches may be the same as IF-2771.
+

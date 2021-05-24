@@ -1,0 +1,26 @@
+
+SUPER FRAME ^ ^ 2 (Sapience)
+
+C bus full color frame buffer.2x6 jumper switches on board,
+2 x 8 series jumper switches 1 each, 5 sets of jumper switches 2 sets?Yes.
+The following is the card edge on the right.
+
+・ 2 x 6 jumper switch J1: I / O port address setting
+　All short: 00D0h (factory setting)
+　Only the rightmost pair open: 02D0h
+　Only the second from the right: 04D0h
+　Right two pairs open: 06D0h
+　Open only the third from the right: 08D0h
+　Rightmost, only the third from the right is open: 0AD0h
+　Open only the second and third from the right: 0CD0h
+
+・ Five jumper switch J4 (2 sets?): Adjustment of shaking of full color image
+　Upper jumper switch: 2 upper pins, 2 lower pins shorted (factory setting)
+　Lower jumper switch: 2 lower, 2 upper shorted (factory setting)
+
+・ 2 x 8 series jumper switch J5: Adjustment of screen position deviation
+　ASCII Book, "PC-98 Series Peripherals Super Tune-up"
+According to (issued in 1994), it can be adjusted by selecting in eight combinations
+　Say.Probably the same as J5 of "SuperFrame2, ,, RL RL" of 98 JUNK. DOC
+　It seems that there is no.
+

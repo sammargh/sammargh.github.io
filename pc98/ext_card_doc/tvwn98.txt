@@ -1,0 +1,36 @@
+
+TV WATCHER (TVW-N98) (関西電機)
+
+TV tuner board for C bus.There are 3 x 2 jumper switches on the board.This board
+You need the supplied control software to use.
+
+Supported devices: NEC PC-9800 desktop series, EPSON PC-286 / 386/486 desktop
+          series.However, the high res machine is not compatible.
+Supported OS: MS-DOS ver.3.1 or later, Windows 3.1 (as of November 1994)
+Correspondence monitor: The display frequency more than 640x480 dots in horizontal 31.5kHz, vertical 60Hz or more
+            Possible multiscan monitor.Normal display for PC-98, made by EPSON
+            CR-4500 / 4700/7600/7700 can not be used.
+Hard disk space: 1 MB or more of free space is required
+Signal system: NTSC system
+Receiving channels: VHF 1 to 12 CH, UHF 13 to 62 CH, CATV C1 to C63 CH (audio is monaural)
+                ※ Some CATV may not receive screen and voice properly
+                  In that case, the video output or RF of the CATV dedicated tuner unit
+                  Connect the outputs.
+Antenna terminal: F type connector (75Ω) x 1
+External input terminal: Video input pin jack x 1, audio input stereo jack x 1
+Audio output terminal: Mini jack for stereo headphones x 1
+Analog RGB: Input D sub 15 pin convex x 1 Output D sub 15 pin concave x 1
+Power supply: supplied from C bus connector
+
+Some control software for MS-DOS is memory resident (approximately 10 kB in size), and others
+Switching between the application and the television screen can be easily done with the keys and keys.Also Windows 3.1
+You can use the mouse to switch channels and adjust volume.
+
+-Triple x 2 jumper switch JP2: I / O port address setting
+Below, when looking at the card edge of the board on the left (JP2 silk printing is on the right side of the jumper
+As seen), upper jumper ■ lower jumper ■ I / O address in order:
+Center-right short ■ Center-right short ■ X0D0h to X0D2h
+Left-center short ■ center-right short ■ X1 D 0 h ~ X 1 D 2 h
+Center-right short ■ Left-center short ■ X2D0h to X2D2h
+Left-center short ■ Left-center short ■ X3D0h to X3D2h
+

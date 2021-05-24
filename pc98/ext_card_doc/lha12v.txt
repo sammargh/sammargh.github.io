@@ -1,0 +1,47 @@
+
+LHA-12V (Logitec)
+
+C bus SASI attached to external 20MB / 40MB SASI HDD, LHD-32V / LHA-34V
+I / F. Equipped with FIFO memory.
+Used together with FDD I / F (LFA-14, PC-9801-15, LFA-15, PC-9801-09)
+In the case, the ROM access on the FDD I / F side is prohibited.
+Set to short.However, LFA-15 or PC-9801-09 is installed on PC-9801E
+Jumper switch is shorted between A and B).
+Some models have limitations on the expansion slots that can be installed:
+PC-9801E ... # 1 to # 5
+PC-9801F ... # 1 to # 3
+PC-9801U2 ... # 1
+PC-9801 VF2 ... # 1 to # 3
+PC-9801 VM ... # 1 to # 3
+PC-9801UV ・ ・ ・ # 1
+PC-98 XA ... # 4
+
+There are two 8-deep dip switches and one 2x4 jumper switch on the board.
+
+・ 8 stations dip switch SW1: HDD capacity setting
+1-2-3-4-5-6-7-8: HDD capacity setting
+　ON-ON-OFF-ON-ON-OFF-OFF-OFF ■ 20MB 1 unit
+　　　　　　　　　　　　　(Factory setting when attached to LHA-32V)
+　ON-ON-OFF-OFF-ON-OFF-OFF-OFF ■ 40MB 1 unit
+　　　　　　　　　　　　　(Factory setting when attached to LHA-34V)
+　ON-ON-OFF-ON-ON-OFF-ON-ON ■ 20MB + 20MB
+　ON-ON-OFF-ON-ON-OFF-OFF-OFF-ON ■ 20MB + 40MB
+　ON-ON-OFF-OFF-ON-OFF-ON-ON ■ 40MB + 20MB
+　ON-ON-OFF-OFF-ON-OFF-OFF-ON 40MB + 40MB
+
+・ 8 stations dip switch: Setting of main unit CPU mode, BIOS ROM address
+1: Setting of main CPU mode
+　ON ■ PC-9801VX0 / VX2 ... at the time of 80286 mode
+      When setting PC-9801VX01 / VX21 ... 80286 · 8MHz
+      PC-98 XL model 1/2 · · · · Normal mode · 80286 · 8 MHz setting
+　OFF Other than above (default setting)
+2-3-4-5-6-7-8: BIOS ROM address setting (Do not change, Factory setting:
+　　　　　　　　　　　　　　　　　OFF-OFF-ON-OFF-ON-OFF-OFF)　
+
+・ 2 × 4 jumper switch: Setting of main unit model
+　1-8 / 3-6 short PC-9801M2
+　1-8 / 4-5 short PC-9801E / F / U2 / VF2 / VM / UX / VX / UX / CV21 / RA / RX,
+                    PC-98 XL
+　2-7 / 4-5 short PC-9801, PC-98XA
+※ PC-9801 can not start from HDD.
+

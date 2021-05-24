@@ -1,0 +1,92 @@
+
+EP-RB02 (I・Oデータ)
+
+Epson desktop machine, PC-486SE / SR / FE / FR / FS / MU / MR / MS / RS / MV built-in
+RAM base board.This itself is 0 MB. 4 SIMM sockets on board, 8 dips
+There is one switch and two rotary switches.
+There are many operation reports on PC-486P / GR / GF etc. (*).In addition, SE / SR / FE / FR / FS officially
+Is not allowed to be used on Windows 95, but it also works well in practice
+There are many.The symptom of the problem is that you can not move forward when installing Windows 95
+And if you install it, you can use it without any problems
+Although I used this board at the time of installation of Windows 95, the fault was not recognized).
+(*): For these models, turn on the extension switch 2-2 (system reservation: normally off)
+　　　　By doing this, you will recognize memory of 14.6 MB or more.of course
+　　　　RECMEM.SYS when using Windows 95 with at least 16 MB of memory
+        Or write a driver with the equivalent function at the top of CONFIG.SYS
+        It is necessary.
+This board has more weight than Melco's ERF, as far as I have examined with PC-486P / SE / GR.
+It seems that there are many.
+
+・ 8 stations dip switch SW1
+1: Designation of SIMM type to be attached to socket 1
+　Attach ON = EP-SIM 327
+　OFF = Attach SIMM of EPSON specification
+Designation of the type of SIMM to be installed in each of 2, 3, 4: 2-4 sockets
+　Attach ON = EP-SIM 327
+　OFF = Attach EPSON SIMM or nothing
+※ Actually, even if it is not EP-SIM327, SIMM-ID with up to 32MB of JEDEC specification
+　In the case of SIMM, it can be used without parity / ECC, FP / EDO and others (in the case of EDO)
+　Will operate in first page mode instead of hyper page mode
+　Seem.See also Note 1 at the end of this content).However, with SIMM-ID
+　If not, it will not be recognized normally (see Note 2 below).
+　In addition, there is a limit to the total amount of memory that can be recognized by the main unit (PC-486SE / SR / FE / FR / FS
+(And 486 P / GR / GF) 63.6 MB, and PC-486 MU / MR / MS / MV / RS 61.6 MB.
+  The amount of memory beyond this limit is ignored.
+5: Always off (system reservation)
+6: Designation of machine type
+　ON = PC-486SE / FE
+　OFF = other models
+※ ON seems to be a setting for a base clock 25 MHz machine, and this setting also applies to P and GR.
+7: Always on (system reservation)
+※ It seems that WAIT decreases when OFF.
+8: Always off (system reservation)
+※ It seems to be for EP-RB01 compatible setting.If you turn on the socket 1, 2, 3 and 4
+　Do not recognize that they are not SIMMs of the same capacity and number of chips as a pair.
+
+・ Rotary switch SW2, SW3: Designation of start address of EP-RB02
+　Start to which EP-RB02 is assigned according to the memory capacity installed in the PC body
+　Specify an address.
+The following is the order of memory capacity counted at startup: SW2 SW3 Start address:
+　1.6MB ■ 2 ■ 0 ■ 200000H ~
+　3.6MB ■ 4 ■ 0 ■ 400000H ~
+　5.6MB 6 6 0 H
+　7.6MB ■ 8 ■ 0 ■ 800000H ~
+　9.6 MB ■ A ■ 0 ■ A 00000 H ~
+　11.6MB ■ C ■ 0 ■ C 00000 H ~
+　13.6MB ■ E ■ 0 ■ E00000H ~
+　15.6MB ■ 0 ■ 1 ■ 1000000H ~
+※ When using more than 15.6 MB of memory, "use" the 16 MB system space of the main unit
+　If you set it to, due to the specifications of the main unit, when actually counting memory, the memory actually expanded
+　It is displayed 1 MB less than the capacity.In the above table, "15.6 MB" means 16 MB system space
+　Amount of memory displayed when set to "Disconnect".
+
+Note 1: Be careful with the socket when inserting multiple EDO SIMMs.
+(1) When using two 32 MB EDO SIMMs, insert them into the adjacent sockets
+　 If there is an NEC version of DOS6.2 himem.sys "reliable XMS memory 00200004h
+   Display the message "I found it in". 1-3 or 2-4 away
+   There is no error if you use sockets.However, in 2-3, it seems to pass the check.
+　 Also, when 3 cards are inserted in a series of sockets, the "error" address is 0220,000 Ah
+   It becomes.
+(2) Insert a 32 MB EDO into Socket 1 and a 32 MB FP into Socket 2, respectively.
+   A message of 00200004h appears.When inserted into the socket in reverse order, 00200008h
+　 It becomes so.
+(3) In the case of 16 MB EDO, when 2 sheets are inserted in the adjacent socket, 00200004h
+   If two cards are attached to three consecutive sockets, 01200006h,
+   In 2-3-4, 00200004h is displayed. When all is filled, 00200004h
+   You will get an "error" message.
+(4) When two 32 MB EDOs are inserted, SIMMs are also inserted in the two adjacent sockets
+　 If there is, it fails to start.Specifically, "specified in the SYSTEM.INI file
+   The device file is corrupt, and you will see the message:
+   The files "broken" are dynapage, vpd, int13, vkd, enable, VPICD,
+   VDMAD, VTD, etc., but insert the same SIMM into one of the sockets 1-3, 1-4, 2-4
+   Fix it and start it up again. Windows 95 will start up normally.
+　However, when it is inserted into the socket 2-3, it seems to stand up normally.
+From the above, when inserting two 16 MB or 32 MB EDO SIMMs into EP-RB02, sockets 1 and 3
+Or 2 and 4 should be used.
+
+Note 2: There is a report that SIMMs without SIMM-ID recognize only 1⁄4 of the capacity.
+     But that's not the case, if you get 8MB x 2 and get 6MB, or insert multiple SIMMs,
+     Some phenomena such as different capacity recognized at the socket position were also observed.
+     In addition, even if it is SIMM-ID without SIMM-ID, even if it is mixed, it will not be recognized normally absolutely.
+     This is exactly the same for Melco's ERF.
+

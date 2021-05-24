@@ -1,0 +1,22 @@
+
+AIF-1 MFIII (アイネックス)
+
+1 MB for C bus FDD I / F.
+Supported devices are PC-9801BA, BX, BA2, BS2, BX2, BA3, BX3, PC-9821An, Ap2, As2, Ap2, As3, As3,
+Be, Bf, Bp, Bs, Ce2, Cs2, Cf, Cx, Xa, Xe, Xf, Xn, Xp, Xs, Xt.
+The attached cables are as follows:
+26-pin signal cable at both ends and middle (for 3.5 inch FDD model)
+34-pin signal cable for both ends and middle (for 5-inch FDD model)
+34-pin signal cable for both ends (for MULTi)
+8-pin additional signal cable for both ends (for FELLOW / MATE-B / MATE-X)
+12-pin additional signal cable on both ends (for MATE-A, long)
+12-pin additional signal cable on both ends (for MULTi · short)
+
+There are 2x4 jumpers on the board.
+
+・ 2 × 4 jumpers: Designation of body model
+　MATE-A All open
+　FELLOW / MATE-B / MATE-X / MULTi All short circuit (default setting)
+
+This document was given by Nr166er.
+

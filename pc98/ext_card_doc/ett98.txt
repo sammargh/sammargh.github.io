@@ -1,0 +1,33 @@
+
+ET / T-98 (I・Oデータ)
+
+C bus NIC (LAN board) with 10BASE-T connector.Not compatible with PnP,
+It is said to be the most difficult thing in C bus NIC history.Dip switch on board
+There is no kind, settings are done on DOS using the attached software, but manual
+Occupies an address other than the I / O port address described in
+If you want to use the model with PCI slot in default condition,
+Conflict between PCI board (SCSI, GA) and I / O port address
+There is.Occupied port address is also in the PCI setup utility
+It can not be investigated, and it is accurate from the device manager of Windows 95
+I can not grasp.
+
+As a workaround for the I / O port address conflict, this board manual
+Change the start address on the PCI board side from 6000h to 6100h, but
+In this method, a conflict occurs at 61D0h.So PCI setup
+Select the PCI bus slot = Automatic status in the utility and select I / O.
+Set the start address of the port address to 6200h.Setting is "fixed"
+Confirm that it has changed toThis workaround is for the I / O data web page
+It is also described in the Q & A collection.According to the Q & A collection, the start address of ET / T-98
+Are 00D0h, the occupied addresses are x0D0h, x1D0h (x = 0 to F), 02D0h.
+That is,
+00D0h, 01DOh, 10D0h, 11D0h, 20D0h, 21D0h, 30D0h, 31D0h, 40D0h,
+41D0h, 50D0h, 51D0h, 60D0h, 61D0h, 70D0h, 71D0h, 80D0h, 81D0h,
+90D0h, 91D0h, A0D0h, A1D0h, B0D0h, B1D0h, C0D0h, C1D0h, D0D0h,
+D1D0h, E0D0h, E1D0h, F0D0h, F1D0h, 02D0h
+※ When changed to 00D8h, replace 0 at the end with 8
+
+Supports full-duplex communication, but set the half / full duplex settings to the supplied software
+Use DOS to do it.However, because auto negotiation is not supported,
+Manual setting with dip switch is possible for full duplex communication
+Requires switching HUB.
+

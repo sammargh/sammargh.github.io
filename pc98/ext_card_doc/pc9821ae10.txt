@@ -1,0 +1,98 @@
+
+PC-9821A-E10 (NEC)
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot Windows 95 compatible.
+This type of SCSI I / F, including third party products, both MS-DOS and Windows 95
+This board boasts the highest transfer rate.SCSI connector is Amphenol half 50 pin.
+
+The board has new and old, and the character of FIFO FSCSI on the big custom chip written NEC
+If there is an old type (early type), if it is SAGAT 777 and a new type (latter type.White round seal in a box
+But the board of the FIFO FSCSI chip is SAGAT 777
+There is also a report that there is a performance equivalent to the chip board, and the performance of this board
+(Or new and old), when the board is erected, the IC located on this custom chip
+Types (There are two types, NVD 01 00 and NVD 0101, and the latter is assumed to be a newer chip)
+Seems to be related as well.Note that there are two types of substrates, G8NVD and G8NVDA.
+Although the latter is not necessarily the new board, the FIFO FSCSI-NVD 01 00
+There are also combinations of G8 NVDA substrates.
+
+There is a problem that the old board can not start the system from the area exceeding 1GB of HDD.
+Although it has been said that there is an e10chk.exe authored by Marimo
+The problem is considered to actually exist in the new board.The cause of this problem
+Some argue that the problem with the initial MS-DOS 5.0, but actually update MS-DOS 5.0
+Even if you deal with a bug on the DOS side, the above SCSI BIOS problem is PC-9821A-E10
+Because it is on the side.This "1 GB wall" can not be solved.
+
+In addition, the maximum capacity of the PC-9821A-E10 recognizable HDD is 4.3GB on the old board,
+It has been said to be 8.4 G in the new-type board, but this is also a survey using e10chk.exe,
+The capacity of the HDD that the SCSI BIOS can recognize regardless of whether the board is new or old is less than 8.4 GB
+It has been confirmed.If the area is secured by other I / F, the old board can be up to 8.4GB
+There are also reports that recognition is possible, but the results of using e10chk.exe are also negative.
+
+In other words, with PC-9821A-E10, regardless of the board old and new, from the HDD area which exceeds 1024 MB
+The system can not be booted, and the maximum capacity of the HDD recognized by SCSI BIOS is less than 8192 MB
+It will be.In addition, this "1GB wall", e10pat.bin (IPLWARE) created by Mr. Marimo
+It cancels if it applies.
+
+There are 2 8 dip switches and 3 3 jumper switches on the board.
+
+· 8 stations dip switch SW1: SCSI ID number of the board, interrupt level,
+　DMA channel setting
+1-2-3: Set board SCSI ID number
+　ON-ON-ON ID 7 (Factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF ■ INT 0
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3 (default setting)
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF DMA # 0 (factory setting)
+　ON-OFF ■ Setting prohibited
+　OFF-ON DMA # 2
+　ON-ON DMA # 3
+* If the IDE HDD is built in MATE-A, the interrupt level is not INT 3
+　To do.Also, in this case, since the internal HDD uses DMA # 0,
+　Change the internal HDD DMA channel to # 1 with the software dip switch on the main unit
+　By doing this, # 0 can be used.
+
+・ 8 stations dip switch SW2: ROM memory address, body model, Power on
+　ROM accessibility setting at the time of
+1-2-3-4-5-6-7: Setting ROM memory address + main unit model
+(1) MATE-A not equipped with PC-9801FA / FS / FX and high res board
+　OFF-ON-ON-OFF-ON-ON-ON ■ Memory address \ DC 000 h ~ \ DDFFF h
+(2) MATE-A equipped with high res board
+　OFF-ON-ON-OFF-ON-OFF-ON Memory Address:
+　　　　　　　　　　　　　 Normal mode \ DC 000 h ~ \ DDFFF h
+　　　　　　　　　　　　　 In high resolution mode \ EC 000 h ~ \ EDF FF h
+　※ \ means 0h or Fh.
+8: Setting of ROM accessibility at Pow on
+　ON ■ ROM accessible (factory setting)
+　OFF ■ ROM can not be accessed
+
+・ Three jumper switches SW3 and SW4: I / O port address setting
+Below, short pin at SW3 ■ Short pin at SW4 ■ I / O port address
+Order of:
+　01-02 ■ 01 02 ■ CC0h, CC2h, CC4h (factory setting)
+　02-03 ■ 01 02 ■ CD0h, CD2h, CD4h
+　01-02 ■ 02 03 ■ CE0h, CE2h, CE4h
+　02-03 ■ 02 03 ■ CF 0 h, CF 2 h, CF 4 h
+※ This setting table is PC-9821A-E10 SCSI interface board issued in 1993
+　Although based on the description in the user's manual, this board is PC-9801-92
+　Is said to be a dedicated slot version of SCSI, and the actual I / O port address is
+　It may be as follows (I / O port in parentheses is CPU transfer
+　Used in mode):
+　01-02 ■ 01 02 ■ CC0h, CC2h, CC4h
+　　　　　　　　(C84h, C85h, 1C84h, 1C85h, 1C86h, 1C87h)
+　02-03 ■ 01 02 ■ CD0h, CD2h, CD4h
+　　　　　　　　(D84 h, D 85 h, 1 D 84 h, 1 D 85 h, 1 D 86 h, 1 D 87 h)
+　01-02 ■ 02 03 ■ CE0h, CE2h, CE4h
+　　　　　　　　(E84 h, E 85 h, 1 E 84 h, 1 E 85 h, 1 E 86 h, 1 E 87 h)
+　02-03 ■ 02 03 ■ CF 0 h, CF 2 h, CF 4 h
+　　　　　　　　(F84h, F85h, 1F84h, 1F85h, 1F86h, 1F87h)
+・ Three jumper switch SW5: Transfer mode setting
+　01-02 DMA transfer (DMA MODE) (factory setting)
+　02-03 CPU transfer (BUFFER MODE)
+Set to DMA transfer when installing Windows 3.1 newly.In addition,
+Set to DMA transfer also when using in low mode (V30 mode).
+

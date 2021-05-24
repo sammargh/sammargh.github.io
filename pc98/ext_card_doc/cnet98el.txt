@@ -1,0 +1,36 @@
+
+C-NET (98) E-01, C-NET (98) E-11, C-NET (98) E-12,
+C-NET (98) L-03, C-NET (98) L-10 (CONTEC)
+
+C bus 10-BASE 5/2 / T NIC. Board resources are included software
+Set by.Three jumper switches and 2 × 3 series dips on the board
+There is one switch (the latter is C-NET (98) E series only).
+
+I / O port address: 32 bytes occupied
+　n3D0h to n3DFh, n7D0h to n7DFh (n = 0 to F) (set by software)
+　AAEDh, AAEFh or 55EDh, 55EFh (set in JP1)
+Interrupt level
+　INT 0, 1, or 2 (one set by software)
+power consumption
+　10BASE 5 = +5 V, 300 mA
+　10BASE 2 = +5 V, 500 mA
+　10BASE T = +5 V, 300 mA
+Operating temperature range
+　0 to 50 ° C
+Operating humidity range
+　20 to 80% (without condensation)
+
+・ Three jumper switch JP1: Fixed I / O port address setting
+　Two shorts on the AAEDH ■ AAEDh (factory setting)
+　Two 55EDH-side shorts 55EDh
+※ Usually, use with the factory setting.Novell NetWare J server
+　This setting when using two C-NET (98) E / L series at the same time
+　 Do not overlap.
+・ 2 x 3 dip switch JP2: Designation of the type of LAN connector to be used
+　AUI short ■ 10BASE-5
+　BNC short ■ 10BASE-2
+　UTP short 10BASE-T
+Factory setting: C-NET (98) E = BNC short (only BNC and AUI jumpers are equipped)
+　　　　　　C-NET (98) E-11 = BNC
+　　　　　　C-NET (98) E-12 = UTP (with only UTP and AUI jumpers)
+

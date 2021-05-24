@@ -1,0 +1,16 @@
+
+IFC-USLP (BUFFALO)
+
+Bus master transfer method Ultra SCSI I / F. PC / AT compatible, PC-98, Power Mac compatible.
+PC-98 compatible with Windows 95/98/98 SE / NT 4.0 / 2000.Because we do not have a BIOS ROM for PC-98,
+System startup from a SCSI device connected to this I / F is not possible.
+HDD of capacity over 8.4GB can not be used with Windows 95 of PC-98.Also PC-98 Windows 98/98 SE /
+HDDs with capacities exceeding 32 GB can not be used with NT 4.0 / 2000.HDD with Windows 95/98 / 98SE of PC-98
+Please use the attached Formatter (Disk Formatter) when formatting.
+The SCSI ID of this I / F is fixed at 7.Maximum power consumption = 1.45 W (+ 5 V).
+There are 3 jumper switches on the board.
+
+・ 3 jumper switch JP1: PC / AT compatible machine ・ Power BIOS for Power Mac enable / disable setting
+　1-2 short = BIOS Enable (use other than PC-98: factory setting)
+　2-3 short = BIOS Disable (used with PC-98)
+

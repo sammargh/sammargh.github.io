@@ -1,0 +1,67 @@
+EIF-98FB　（ELECOM）
+
+PC-9801FA/FS/FX，MATE-AのSCSI専用スロットに挿すSCSI I/F．PC-98FA-02と
+ハードウェアコンパチブル．サウンドボードの使用時にはEMSボードと本ボード
+との混在使用不可．EMSドライバを使用する場合，EMSのページフレームを本
+ボードのROMアドレスと重ならないように設定すること．
+最終ROMは2.30らしいが，1GB以上のHDDに対応しておらず，ROMのバージョンアップで
+対応させることも不可．またELECOMは本ボードをWindows95非対応としていた．
+ボード上に8連ディップスイッチ2個と3本ジャンパスイッチ3個あり．
+
+・8連ディップスイッチSW1：SCSI ID，割り込みレベル，DMAチャネルの設定
+1-2-3：SCSI IDの設定
+　OFF-OFF-OFF■0
+　ON-OFF-OFF■1
+　OFF-ON-OFF■2
+　ON-ON-OFF■3
+　OFF-OFF-ON■4
+　ON-OFF-ON■5
+　OFF-ON-ON■6
+　ON-ON-ON■7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　OFF-OFF-OFF■INT 0　（出荷時設定）
+　ON-OFF-OFF■INT 1
+　OFF-ON-OFF■INT 2
+　ON-ON-OFF■INT 3
+　OFF-OFF-ON■INT 5
+　ON-OFF-ON■INT 6
+7-8：DMAチャネルの設定
+　OFF-OFF■DMA 0
+　ON-ON■DMA 3　（出荷時設定）
+
+・8連ディップスイッチSW2：ROMアドレスの設定
+1-2-3：ROMアドレスの設定
+　OFF-OFF-OFF■D0000h〜D0FFFh
+　ON-OFF-OFF■D2000h〜D2FFFh
+　OFF-ON-OFF■D4000h〜D4FFFh
+　ON-ON-OFF■D6000h〜D6FFFh
+　OFF-OFF-ON■D8000h〜D8FFFh
+　ON-OFF-ON■DA000h〜DAFFFh
+　OFF-ON-ON■DC000h〜DCFFFh　（出荷時設定）
+　ON-ON-ON■DE000h〜DEFFFh
+4-5-6-7-8：つねにOFF-ON-ON-ON-ON
+
+・3本ジャンパスイッチSW3，SW4：I/Oページアドレスの設定
+　以下，　SW3■SW4■I/Oページアドレス　の順：
+　1-2ショート■1-2ショート■CC0h　（出荷時設定）
+　2-3ショート■1-2ショート■CD0h
+　1-2ショート■2-3ショート■CE0h
+　2-3ショート■2-3ショート■CF0h
+
+・3本ジャンパスイッチSW8：転送モードの設定
+　1-2ショート■DMA転送
+　2-3ショート■DMA/FIFO自動切替（OS/2ではDMA転送，それ以外のOSではFIFO
+                                 転送：出荷時設定）
+
+■クイックブート機能
+クイックブート機能とは，本ボードで設定したID番号より後の番号のチェック
+を省略する機能．これによりシステム起動までの時間を短縮できる．
+接続したSCSI機器のID番号の最大値+1のID番号を設定し，PCの電源を入れると
+クイックブート機能が動作する．この機能が使えるのはMS-DOSのみ（OS/2など
+ではID=7で使用のこと）．
+
+■クイックフォーマット機能
+クイックフォーマット機能とは，MS-DOSによる初期化と領域確保を高速に実行する
+機能．
+MS-DOSのFORMAT/Hコマンドでフォーマット画面が表示されたら[カナ]キーを押し，
+後は初期化 --> 領域確保と進む．

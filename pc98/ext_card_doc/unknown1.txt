@@ -1,0 +1,74 @@
+
+Unknown name (アルトス)
+
+C Series Bus Master SCSI Board included with Areas Series Hard Disk.On board
+Two jumper switches, two 2x2 jumper switches, 2x4 jumpers
+There is one switch and two 8-deep dip switches.
+
+・ 2 jumper switch JB3: Do not change (Factory default setting: short)
+
+・ 2 x 2 series jumper switch JB4, JB5: Do not change (Factory default setting: short)
+
+・ 2 x 4 jumper switch JB6, JB7, JB8, JB9: Hold request channel
+　settings of
+　JB8, JB9 (2 pairs in the center) short, JB6, JB7 (2 pairs on both ends) open:
+　　　　　　　　　　　　　　　　　　　HRQ / HLA channel 2 (factory setting)
+　JB8, JB9 (center 2 pairs) open, JB6, JB7 (both ends 2 pairs) short:
+　　　　　　　　　　　　　　　　　　　HRQ / HLA channel 1
+・ 2 jumper switch JB10: Transfer mode setting
+　Short: DMA transfer
+　Open: Bus master transfer (factory setting)
+
+・ 2 x 2 series jumper switch JB11, JB12: I / O port address setting
+　JB11 (bottom) short, JB12 (top) short: CC0h, CC2h, CC4h, CC6h
+　JB11 (bottom) open, JB12 (top) short: CD0h, CD2h, CD4h, CD6h
+　JB11 (bottom) short, JB12 (top) open: CE0h, CE2h, CE4h, CE6h
+　JB11 (bottom) open, JB12 (top) open: CF0h, CF2h, CF4h, CF6h
+
+・ 8-station dip switch SW1: SCSI-ID, interrupt level, DMA channel setting
+1-2-3: SCSI-ID setting
+　0FF-0FF-0FF: ID = 0
+  ON-OFF-OFF: ID = 1
+  OFF-ON-OFF: ID = 2
+  ON-ON-OFF: ID = 3
+  OFF-OFF-ON: ID = 4
+  ON-OFF-ON: ID = 5
+  OFF-ON-ON: ID = 6
+  ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF: INT 0
+　ON-OFF-OFF: INT 1 (factory setting)
+　OFF-ON-OFF: INT 2
+  ON-ON-OFF: INT 3
+  OFF-OFF-ON: INT 5
+  ON-OFF-ON: INT 6
+7-8: DMA channel setting
+　OFF-OFF: DMA # 0
+  OFF-ON: DMA # 2
+  ON-OFF: Setting prohibited
+  ON-ON: DMA # 3 (factory setting)
+
+・ 8 stations dip switch SW2: Local memory address, setting of main unit model
+1-2-3: Local memory address (normal) setting
+　OFF-OFF-OFF: D0000h to D0FFFh
+　ON-OFF-OFF: D2000h to D2FFFh
+　OFF-ON-OFF: D4000h to D4FFFh
+　ON-ON-OFF: D6000h to D6FFFh
+　OFF-OFF-ON: D 8000 h to D 8 FFF h
+　ON-OFF-ON: DA000h to DAFFFh
+　OFF-ON-ON: DC000h to DCFFFh (factory setting)
+　ON-ON-ON: DE 000 h to DEFFF h
+4-5: Setting of local memory address (high res)
+　OFF-OFF: E8000h to E8FFFh
+　ON-OFF: EA000h to EAFFFh
+　OFF-ON: EC000h to ECFFFh (factory setting)
+　ON-ON: EE000h to EEFFFh
+6-7: Setting of machine model
+　OFF-OFF: PC-98XA
+  ON-OFF: CPU is the model of 8086 / V30
+　OFF-ON: Normal / High res combined machine
+　ON-ON: CPU model 286/386/486 (default setting)
+8: ROM BIOS enable / disable setting
+　ON: Enabled (factory setting)
+　OFF: Disabled
+

@@ -1,0 +1,45 @@
+
+PC98M29C (Caravelle)
+
+Use HDD pack for old 98 notes (NS / E, Ne3 etc.) in C bus slot
+Adapter for (C bus board).Attach not IDE to SCSI conversion board
+The HDD that has been created is recognized as an IDE HDD.There is no character of PC98M29C on the board,
+PC98M29A on the main board, daughter board (connector with HDD pack)
+There is PC98M29B silk print on the top.ROM address is D8000h to D9FFFh, work
+RAM addresses for DA000h to DBFFFh.The I / O port address is 064xh, 074xh, 
+0 CFxh (x = 0, 2, 4, 6, 8, A, C, E).
+
+A case sold as a single board and an HDD pack made by Caravelle are attached
+It seems that there were cases where it was sold in the
+The theory that only HDDs with the capacity installed can be recognized
+(Note 1) Unconfirmed.Although the format upper limit and recognition upper limit are unknown,
+The author has confirmed that it can be used up to 540 MB properly.Also below this
+In terms of capacity, Windows 95 can be used without problems (Notes 2 and 3).
+Note 1: There is a story that the position of the chip resistance on the board is changed to perform capacity limitation.
+　　 There is, but it is hard to think as long as you look at the substrate.
+Note 2: But 540 MB HDD [I • O data, HDN-540M: Fujitsu MK1924FCV,
+　　In the case of 543 MB (Cyl 1053, H 16, S 63)], the HDB 98 (ver .1.20, on MS-DOS)
+　　The capacity is misrecognized in Marimo's work) (Model: PC-9821As2 / U2 + DX2 ODP):
+IDE connection disk Built-in 1 80h Total capacity 203 (MB) 3059/8/17
+Grain size: 32768 16384 8192 4096 2048 1024 512 (B)
+-------------------------------------------------------- -------------------------
+Speed (top): 1080 1050 1000 913 771 585 398 (KB / sec)
+Speed (end): 1080 1060 1000 914 771 585 398 (KB / sec)
+Seek time: 3211 points.
+Note 3: READ / WRITE for HDBENCH (ver. 2.610 / 3.30, EP82 revised / created by Windows) on Windows 95
+　 　The value may show an abnormal value.
+
+There are 8 series dip switches and 2 jumper switches on the board.
+
+・ 8 stations dip switch SW1: Setting of main unit model
+1-2-3-4-5-6: Always OFF-ON-ON-ON-ON-ON
+7: Setting of machine type
+　Models with ON = 80286 or more
+　Model of OFF = V30
+8: Always on
+
+・ 2 jumper switch JP1: Setting of main unit clock
+　Other than short = 12 MHz
+　Open = 12 MHz
+　※ But it seems to work open even in VX21 (10 MHz).
+

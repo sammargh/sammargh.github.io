@@ -1,0 +1,61 @@
+
+EIF-98FW (ELECOM)
+
+C bus bus master SCSI-2 board.8 stations dip on the board
+There are 2 switches and 3 continuous jumper switches.
+
+The final ROM seems to be 2.30, but it is not compatible with HDDs of 1 GB or more (ROM version upgrade is also impossible).
+In addition, ELECOM made this board non-compliant with Windows 95.
+
+· 8 stations dip switch SW1: SCSI-ID of the board, interrupt
+　Level, DMA channel setting
+1-2-3: Board SCSI-ID setting
+OFF-OFF-OFF: ID = 0
+ON-OFF-OFF: ID = 1
+OFF-ON-OFF: ID = 2
+ON-ON-OFF: ID = 3
+OFF-OFF-ON: ID = 4
+ON-OFF-ON: ID = 5
+OFF-ON-ON: ID = 6
+ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+OFF-OFF-OFF: INT 0 (factory setting)
+ON-OFF-OFF: INT 1
+OFF-ON-OFF: INT 2
+ON-ON-OFF: INT 3
+OFF-OFF-ON: INT 5
+ON-OFF-ON: INT 6
+* INT 4 can not be used with PC-9801FX / FS / FA.INT 5 is the main unit
+　　Off the sound function of the
+　　Available.INT 6 is a mouse interface connector
+　　Available if you do not connect a mouse.
+7-8: DMA channel
+OFF-OFF: DMA 0
+ON-ON: DMA 3 (factory setting)
+
+・ 8 stations dip switch SW2: ROM address setting
+1-2-3: Normal mode ROM address setting
+OFF-OFF-OFF: D0000h to D0FFFh
+ON-OFF-OFF: D2000h to D2FFFh
+OFF-ON-OFF: D4000h to D4FFFh
+ON-ON-OFF: D6000h to D6FFFh
+OFF-OFF-ON: D 8000 h to D 8 FFF h
+ON-OFF-ON: DA000h to DAFFFh
+OFF-ON-ON: DC000h to DCFFFh (factory setting)
+ON-ON-ON: DE000 to DEFFFh
+※ Due to the ROM address, this board · EMS · sound function
+　　Three simultaneous use is impossible.
+4-5-6-7-8: No change (default setting OFF-ON-ON-ON-ON)
+
+-Triple jumper switch SW3 and SW4: I / O page address setting
+　Below, the order of SW3 SW4 I / O page address
+1-2 short ■ 1-2 short ■ CC0H (factory setting)
+2-3 short ■ 1-2 short ■ CD0H
+1-2 short ■ 2-3 short ■ CE0H
+2-3 short ■ 2-3 short ■ CF0H
+
+-Triple jumper switch 8: Transfer mode setting
+1-2 short: Forced DMA transfer
+2-3 short: Used in DMA / Super FIFO mode automatic switching
+　* Super FIFO mode is canceled automatically when using OS / 2.
+

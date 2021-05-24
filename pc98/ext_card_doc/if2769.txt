@@ -1,0 +1,68 @@
+
+IF-2769 (ICM)
+
+PnP and multi-vendor compatible C bus bus master SCSI I / F. More than 16MB of memory
+Bus master transfer is possible even on the main unit.Last C bus SCSI I / F (product after the release of Windows 95) before ICM bankruptcy
+The final revision of the BIOS ROM is 1.03.Revision 1.02 or earlier from 1GB or more
+It is said that startup is not possible, but I use e10chk.exe which is free software created by Mr. Marimo
+When the upper limit of recognition capacity of this board was checked, BIOS ROM is not compatible with 8GB at 1.01
+(There is a wall of 1GB?), 1.02 and 1.03 result that 8GB correspondence was obtained.
+It is famous for being the fastest SCSI board with C bus as well as green electronic MDC-926Rs.Even as a serious runaway horse
+It is known that it works stably if it is known, but even if it is an officially compatible model,
+Operation is not stable / does not work properly / causes FAT or file corruption
+There are a lot of things.Although these are often reported in bus master transfer mode, FIFO transfer mode
+There is also a report on (There are many trouble reports of this I / F in the past log etc.).
+When installing the miniport driver of this I / F in Windows 95 which is not OSR2, this I / F is once PC-9801-55
+It is necessary to change the driver to that of IF-2769 after updating as a driver update.
+There is one quadruple dip switch on the board.
+
+Interrupt level, DMA channel, transfer mode, reset wait time, SCSI-ID, quick
+Format and disk parameter settings are [CTRL] + [S] at startup / reset.
+Set on the setting menu screen that is displayed when the key is held down.
+Quick format and disk parameters can be set for each connected HDD.
+While writing the value set in the setting menu screen to the non-volatile memory on the I / F,
+The message "Recording settings" is displayed, but while this is displayed, it is absolutely
+Do not turn off the main unit or reset the main unit.
+
+If the disk parameter is set to "ANL", the HDD parameter
+Automatic analysis is performed.To manually start the HDD parameter analysis program:
+Hold down the [CTRL] + [A] key while starting / resetting the main unit.
+
+・ 4 stations dip switch SW1: PnP, BIOS ROM, setting of normal / default mode
+1: Setting of PnP
+　ON: PnP disabled
+　OFF: PnP enabled (factory setting)
+2: BIOS ROM setting
+　ON: BIOS ROM used (default setting)
+　OFF: BIOS ROM not used
+3: Switching between fixed mode and normal mode
+　ON: Default mode (*)
+　OFF: Normal mode (factory setting)
+4: Not used (Factory setting: OFF)
+* Memory base address = DC000h, I / O base address = CC0h,
+Interrupt level = INT 0 (IRQ 3), DMA channel = 3, transfer method = DMA transfer
+Works with settings.This setting is for emergency use, and this I / F is used for reasons such as BIOS ROM data corruption.
+It is for checking whether it works by turning it on when it does not work.
+
+-------------------------------------------------------- -------------------------------
+【The following is common to IF-2767 / 2768/2769】
+Valuestar for PC-9821V7 or later, mate-X for PC-9821Xa7e / Xb10 or later, PC-9821Cb3
+Since the specification of C bus has been changed in CanBe later, IF-2767 / 2768/2769
+C bus memory refresh of PC when using in bus master mode
+It is necessary to output a signal.The C bus memory refresh signal is
+Send when holding down [ESC] + [HELP] + [5] at startup of the machine,
+Stop by holding down [ESC] + [HELP] + [6] while starting up the machine
+It is done.Problems when C bus memory refresh signal is sent (turned on)
+And the measures are as follows:
+(1) EMM 386.It does not operate normally when EXE is not incorporated
+　→ EMM 386 in CONFIG.SYS.Incorporate the EXE.However, EMM 386 attached to MS-DOS made by NEC.EXE
+　　Other third-party EMS memory managers are not certified.
+(2) It does not operate normally in the safe mode of Windows 95
+　→ Stop the C bus memory refresh signal when starting up in the safe mode,
+　　Set the data transfer method of this board to FIFO or DMA.
+(3) When using DPMI (used by MS-DOS version Ichitaro ver.5 etc.) with MS-DOS ver.5.0 / 5.0A
+　 Hang-up
+　→ Use MS-DOS ver. 6.2 or higher.DPMI drivers from manufacturers other than NEC
+　　Operation is not guaranteed.
+* These problems occur regardless of whether or not IF-2767 / 2768/2769 is used.
+

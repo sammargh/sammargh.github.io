@@ -1,0 +1,55 @@
+
+PCRB01, PCRB8 (Epson)
+
+Internal RAM for Epson desktop machine, PC-386P, PC-486P / SE / SR / FE / FR / FS
+Baseboard.Two SIMM sockets (PCRB8) or four (PCRB01) on the board,
+There is one 6-dip dip switch and 2 rotary switches.To SIMM socket
+Can add Epson-spec SIMMs as a pair with the same capacity (1MB, 2MB, 4MB SIMMs
+Is available).PCRB8 is itself 2 MB, PCRB01 is itself 0 MB.
+When installing PCRB8 on PC-486SR / FR / FS, expansion slot of computer main unit
+Three jumpers on the bottom (or below if an expansion video board is installed)
+It is necessary to change the titch (J11, J12, J13).Below, each jumper switch
+Before change of->-> after change setting ("1 side" is written as the central pin and "1"
+Short between the two pins and the side labeled "2" means the central pin and "2"
+Of the pin and the meaning of short):
+J11: 2 side-> 1 side
+J12: 1 side-> 2 side
+J13: 1 side-> 2 side
+※ With the default jumper settings, short the two pins opposite to these.
+
+・ 6 stations dip switch SW1
+1: Specify parity check
+　ON = Do not check parity
+　OFF = Perform parity check
+2: Specify the model
+　ON = Used with PC-486P / SE / SR / FE / FR / FS
+　OFF = Used with PC-386P
+3, 4, 5, 6: System reservation (always OFF)
+
+· Rotary switches SW2 and SW3: Memos to which memory on the RAM board is allocated
+　Specify start address of address space
+　PCRB01 / PCRB8 are assigned according to the memory capacity mounted on the PC main unit.
+　Specify the start address to be sent.
+The following is the order of the SW2 SW3 Start Address:
+0 ■ 0 ■ does not work 1 ■ 0 ■ 1000000H ~ 2 ■ 0 ■ 2000000 H ~ 3 ■ 0 ■ 3000000 H ~
+0 1 1 100 000 H 1 1 1 11 000 H 2 1 1 21 000 H 2 3 1 1 31 000 H
+0 ■ 2 ■ 200000H ~ 1 ■ 2 ■ 1200000 H ~ 2 ■ 2 ■ 2200000 H ~ 3 ■ 2 ■ 3200000 H ~
+0 ■ 3 ■ 300000H ~ 1 ■ 3 ■ 1300000 H ~ 2 ■ 3 ■ 2300000 H ~ 3 ■ 3 ■ 3300000 H ~
+0 ■ 4 ■ 400000H ~ 1 ■ 4 ■ 1400000 H ~ 2 ■ 4 ■ 2400000 H ~ 3 ■ 4 ■ 3400000 H ~
+0 ■ 5 ■ 500000H ~ 1 ■ 5 ■ 1.500000 H ~ 2 ■ 5 ■ 2500000 H ~ 3 ■ 5 ■ 3500000 H ~
+0 ■ 6 ■ 600000H ~ 1 ■ 6 ■ 1600000 H ~ 2 ■ 6 ■ 2600000 H ~ 3 ■ 6 ■ 3600000 H ~
+0 ■ 7 ■ 700000H ~ 1 ■ 7 ■ 1700000 H ~ 2 ■ 7 ■ 2700000 H ~ 3 ■ 7 ■ 3700000 H ~
+0 ■ 8 ■ 800000H ~ 1 ■ 8 ■ 1800000 H ~ 2 ■ 8 ■ 2800000 H ~ 3 ■ 8 ■ 3800000 H ~
+0 ■ 9 ■ 9 00000 H ~ 1 ■ 9 ■ 19 00000 H ~ 2 ■ 9 ■ 29 00000 H ~ 3 ■ 9 ■ 39 00000 H ~
+0 ■ A ■ A 00000 H ~ 1 ■ A ■ 1 A 00000 H ~ 2 ■ A ■ 2 A 00000 H ~ 3 ■ A ■ 3 A 00000 H ~
+0 ■ B ■ B 00000 H ~ 1 ■ B ■ 1 B 00000 H ~ 2 ■ B ■ 2 B 00000 H ~ 3 ■ B ■ 3 B 00000 H ~
+0 ■ C ■ C 00000 H ~ 1 ■ C ■ 1 C 00000 H ~ 2 ■ C ■ 2 C 00000 H ~ 3 ■ C ■ 3 C 00000 H ~
+0 ■ D ■ D 00000 H ~ 1 ■ D ■ 1 D 00000 H ~ 2 ■ D ■ 2 D 00000 H ~ 3 ■ D ■ 3 D 00000 H ~
+0 ■ E ■ E 00000 H ~ 1 ■ E ■ 1 E 00000 H ~ 2 ■ E ■ 2 E 00000 H ~ 3 ■ E ■ 3 E 00000 H ~
+0 ■ F ■ not possible 1 ■ F ■ 1 F 00000 H ~ 2 ■ F ■ 2 F 00000 H ~ 3 ■ F ■ 3 F 00000 H ~
+
+※ In fact, the memory obtained by subtracting the conventional memory from the main unit mounted memory
+　You will set the value plus one.For example, the main unit mounted memory is 5.6MB
+　Then set SW2 to 0 and SW3 to 6.This is additional RAM such as EPRB01
+　Common to baseboards.
+

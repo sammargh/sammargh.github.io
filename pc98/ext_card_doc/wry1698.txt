@@ -1,0 +1,70 @@
+
+WRY-16 (98), RRY-16 (98) (CONTEC)
+
+Mercury / reed relay contact output module.WRY-16 (98) is a mercury relay,
+RRY-16 (98) mounts regular reed relays respectively.16 output signals in total
+Contact, positive logic.The next instruction is executed for the signal output to the output port
+Keep that state until.All outputs are OFF (break) at power on
+It becomes a state.WRY-16 (98) has conditions in the mounting direction, so it is made of CONTEC
+Use within the I / O expansion unit "FA-PAC (98)".
+There are two 8-deep dip switches on the board.
+
+■ WRY-16 (98) specifications
+Contact rating (MAX): switching capacity = 50 W, switching voltage = 500 V DC, switching current = 1 A
+Contact resistance = 100mΩ or less
+Operating time = 3 ms or less
+Recovery time = 2 ms or less
+Power supply capacity = +5 V, 1.5 mA
+Operating condition = 0 to 50 °, 20 to 90% (no condensation)
+Response time = Within 3 ms after instruction execution
+Used relay = NEC UMD1A-05
+■ RRY-16 (98) specifications
+Contact rating (MAX): switching capacity = 5 W, switching voltage = DC 50 V, switching current = 100 mA,
+                 Energized current = 200mA
+Contact resistance = 150mΩ or less
+Operating time = 0.1 to 0.3 ms
+Recovery time = 0.1 ms or less
+Power supply capacity = +5 V, 500 mA
+Operating condition = 0 to 50 °, 20 to 90% (no condensation)
+Response time = within 0.5 ms after instruction execution
+Used relay = NEC PG1A-05
+
+・ 8-station dip switches SW1 and SW2: I / O port address setting
+Each dip of each switch corresponds to ON and OFF to 0 respectively.Therefore
+For example, when setting to F0D0h, 1-2-3-4-5-6-7-8 of each switch is
+SW1: 1-1-1-0-0-0-0
+SW2: 1-0-1-0-0-0-0
+Set toAs a rule, specify the lower 2 digit port numbers D0 to DFh.
+Note: 8 of SW2 is invalid (divided into 2 pairs of ports in this I / F board)
+
+The correspondence between output port address and data is as follows:
+-Configured port address + 0
+  For D7-D6-D5-D4-D3-D2-D1-D0, O7-O6-O5-O4-O3-O2-O1-O0
+-Configured port address + 1
+  O15-O14-O13-O12-O11-O10-O9-O8 against D7-D6-D5-D4-D3-D2-D1-D0
+The LEDs on the board are O0, O1, O2 ... from the bottom when the card edge is seen to the right.
+Corresponds to.
+
+Interface connector (Amphenol 36 pin female) terminal and signal
+The correspondence is as follows:
+
+　Terminal number Signal name Description Terminal number Signal name
+      1 O0 0 19 O0 common
+      2 O1 | 20 O1 common
+      3 O2 | 21 O2 common
+      4 O3 | 0 port 22 O3 common
+      5 O4 | Output 23 O4 common
+      6 O5 | 24 O5 common
+      7 O6 | 25 O6 common
+      8 O7 ┘ 26 O7 common
+      9 27
+     10 O8 ┐ 28 O8 common
+     11 O9 | 29 O9 common
+     12 O10 | 30 O10 common
+     13 O11 | common of 1 port 31 O11
+     14 O12 | Output 32 O12 common
+     15 O13 | 33 O13 common
+     16 O14 | 34 O14 Common
+     17 O15 ┘ 35 O15 common
+     18 36
+

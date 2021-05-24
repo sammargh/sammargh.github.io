@@ -1,0 +1,21 @@
+
+LIF-1 MF3 (ランドコンピュータ)
+
+1 MB for C bus FDD I / F.
+Supported devices are PC-9801BA, BX, BA2, BS2, BX2, BA3, BX3, which have built-in 3.5 inch FDD. 
+PC-9821 An, Ap2, As2, Ap3, As3, Be, Bf, Bp, Bs, Xa, Xe, Xf, Xn, Xp, Xs.
+The attached cables are as follows:
+　26 pin flat cable
+　12-pin to 8-pin additional signal cable (20 cm, for FELLOW / MATE-B / MATE-X)
+　12 pin-12 pin additional signal cable (20 cm, for MATE-A)
+　※ 12pin-8pin additional signal cable connects 12pin connector to I / F.
+
+There are 4 series dip switches and 3x6 series jumper switches on the board.
+
+・ 4 stations dip switch: Function unknown (no change required)
+　OFF-OFF-OFF-OFF (Factory setting)
+・ 2 × 4 Jumper (JP1-JP6): Designation of body model
+　FELLOW / MATE-B / MATE-X / MULTi ■ All 2-C short (default setting)
+　MATE-A ■ All 1-C short between
+　※ C is the center pin
+

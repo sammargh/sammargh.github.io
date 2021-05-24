@@ -1,0 +1,15 @@
+
+Super Cube (Sapience)
+
+C bus GA. There is one 8-station dip switch on the board.
+
+・ 8 series dip switches: bi-directional parallel interface (for scanner connection),
+I / O port address setting
+
+DIS / ENB: Two-way parallel interface function
+　ON: Invalid
+　OFF: Enabled (factory setting)
+A1-A2-A3-A4-A5-A6-A7: I / O port address
+　A1 to A7 correspond to bit 1 to bit 7 of the I / O port address (bit 0 is fixed to 1).
+　Factory setting: OFF-ON-ON-OFF-ON-ON-ON
+

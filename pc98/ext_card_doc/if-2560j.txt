@@ -1,0 +1,59 @@
+IF-2560　（ICM）
+
+PC-9801FA/FS/FX，およびMATE-AのSCSI専用スロット用SCSI I/F．新旧2つのタイプがあり，
+MATE対応版と呼ばれる新型は，ブラケット（ボード背面の金具）に灰字でM対応と書かれた
+丸型の白い紙シールが貼られている．また基板は両者ともREV.Bだが，U6の位置のICが，
+旧版ではAMI 9232LAI 18CV8SC-25なのに対して，MATE対応版では，AMDのPALCE16V8H-15SC/4 234KMLV
+のパッケージに761（または7 1） 2560Vの文字列が追加印字されたもの（あるいは
+PALCE16V8H-15SC/4 243MRMRに2761Vの文字列が追加印字されたもの）に変更されている．
+さらにMATE対応版では基板上に多数のジャンパ線が追加されている．ICMはこのMATE対応版
+をWindows95正式対応としていた．
+
+筆者がまりも氏作成のフリーソフトであるe10chk.exeを用いて本ボードの認識容量の上限
+について調べたところ，MATE対応版・非対応版ともに2015MBの壁ありという結果が得られた．
+
+ボード上に8連ディップスイッチ2個と4連ディップスイッチ1個あり．
+
+・8連ディップスイッチSW1：SCSI ID，割り込みレベル，DMAチャネルの設定
+1-2-3：SCSI IDの設定
+　OFF-OFF-OFF■0
+　ON-OFF-OFF■1
+　OFF-ON-OFF■2
+　ON-ON-OFF■3
+　OFF-OFF-ON■4
+　ON-OFF-ON■5
+　OFF-ON-ON■6
+　ON-ON-ON■7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　OFF-OFF-OFF■INT 0　（出荷時設定）
+　ON-OFF-OFF■INT 1
+　OFF-ON-OFF■INT 2
+　ON-ON-OFF■INT 3
+　ON-OFF-ON■INT 5
+　OFF-ON-ON■INT 6
+7-8：DMAチャネルの設定
+　OFF-OFF■Ch 0
+　ON-ON■Ch 3　（出荷時設定）
+　※FIFOモードではデータ転送時にはDMAを使用しないがステータス等のコマンド
+    実行時にはDMAを使用する．
+　※DMAチャネルをCh0に設定してある場合，本体のシステムセットアップメニュー
+    で本I/FのチャネルにCh0，Ch1のいずれかを割り当てることができる．
+
+・8連ディップスイッチSW2：本体機種，ROM有効／切り離しの設定
+1-2-3-4-5-6-7：本体機種の設定
+　OFF-ON-ON-x-x-ON-ON■PC-9801FA／FS／FX，ハイレゾボードを装着していないmate-A
+　OFF-ON-ON-OFF-ON-OFF-ON■ハイレゾボードを装着したmate-A
+8：ROM有効／切り離しの設定
+　ON■有効（出荷時設定）
+　OFF■切り離し
+
+・4連ディップスイッチSW3：I/Oポートアドレス，転送モードの設定
+1-2：I/Oポートアドレスの設定
+　ON-ON■CCxh　（出荷時設定）
+　OFF-ON■CDxh
+　ON-OFF■CExh
+　OFF-OFF■CFxh
+3：転送モードの設定
+　ON■W-FIFO転送　（出荷時設定）
+　OFF■DMA転送
+4：未使用（出荷時設定：ON）

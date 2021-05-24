@@ -1,0 +1,87 @@
+
+PC-9801N-08 (NEC)
+
+I / O expansion unit mounted on 110-pin expansion bus of old 98 note / Epson note.
+I / O expansion box (main board mounted) and I / O expansion box interface
+It consists of a face adapter and cables.
+
+* Interface adapter for I / O expansion box *
+
+CN1: Amphenol half 110 pin female (connected with the main body of 98 notes)
+CN2: Amphenol half 100 pin female (connected with I / O expansion box)
+CN3: Amphenol full 50 pin female (externally attached FDD I / F)
+SW1: 4 stations DIP-SW
+SW2: 10 stations DIP-SW
+have.
+
+Device type selection switch setting (SW1)
+1 2 3 4
+OF ON OF OF PC-9801N (not marked) (factory setting)
+ON OF ON ON 32bit CPU model (Refer to the guidebook of each machine)
+
+Memory Addressing Switch Setting (SW2)
+Since the timing of memory access differs between the main unit and the expansion box,
+It is necessary to set the memory address of the expansion board.
+It is also a switch for determining the direction of the data bus.
+OFF: 1, ON: 0
+1-7: Address upper limit bits 19-13 set, 12-0 bits are 1.
+8-10: Address lower limit bits 19-17 set, 16-0 bits 0.
+(Example)
+1 2 3 4 5 6 7 8 9 10
+OF OF ON OF OF OF OF ON (Factory setting)
+That is
+Upper limit 1101111-1111111111111b = DFFFFh
+Lower limit 110-0000000000000000b = C0000h
+
+* I / O Expansion Box *
+
+It has four C bus slots (CN1, 1, 2, 3), of which CN1 is called the main board
+As it is dedicated to the interface board, virtually 3 slots can be used.
+C bus backboard is called strap switch corresponding to each slot
+Jumper pins (SW4 to SW6) are present.
+
+Strap switch settings (common to SW4 to SW6)
+2-5 short: For normal option board (factory setting)
+3-4 short: When the board has ROM, there is no switch bar
+
+* Main board *
+
+The main board has an anphenol half 100 pin female connector outside
+There are 2 places (SW1 / SW2) of 8 series DIP-SW and 2 places of jumper pin (SW3 / SW4) on the board.
+
+Interrupt enable switch setting (SW1)
+Number: Function
+1: Enable INT0 interrupt (ON: enable interrupt, OFF: disable interrupt)
+| |
+7: Enable INT6 interrupt (same as above)
+8: Always on (always on)
+All factory settings are ON
+
+Device mode switch setting (SW2)
+1 2 3 4 5 6 7 8
+ON OF OF ON ON ON ON ON PC-9801N (not marked) (default setting)
+ON ON OF ON ON ON ON OF 32bit CPU model (Refer to the guidebook of each machine)
+
+Setting of SW3
+2-5 short fixed
+
+Setting of SW4
+2-3 short fixed
+
+* About data line filter *
+
+Noise filter included with PC-9801N-08 connects FDD cable to interface adapter
+When attaching it to the FDD cable, the FDD cable should
+The attached connector is to be attached to the interface adapter.
+
+Also, a filter is attached to the two connection cables attached to the PC-9801N-08,
+Especially the 100-pin cable connecting the main board to the interface adapter is a filter
+There is a bias in the position of.This is the connector with the filter on the main board side,
+The other connector is to be attached to the interface adapter side.
+
+This setting table was posted by KAZZEZ.
+-------------------------------------------------------- --------
+98 Station (http://www.geocities.co.jp/SiliconValley-PaloAlto/9855/)
+-> Switch setting material is also released with peripheral equipment NEC-> IO expansion box PC-9801N-08
+It was done.Please refer to it.
+

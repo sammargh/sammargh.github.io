@@ -1,0 +1,41 @@
+
+REX-PCI32 (RATOC SYSTEMS)
+
+PCI bus master SCSI I / F. equipped with initio INIC-950P PC-9821, PC / AT
+Compatible machine compatible.Physical format support.Rewritable for SCSI-BIOS
+Adopt flash memory.
+Does not support OD-502 compatible mode of PC-9821.PC-9821 MS-DOS and Windows 3.1
+In the above, multi vendor is realized by attached REXDISK.SYS.Non-multi on Windows
+Vendor.
+I / O port address = xx00h to xxFFh (assigned from PCI BIOS).
+BIOS memory = 32K memory space (assigned from PCI BIOS).
+Power consumption = Usually 1000mW (+ 5V).
+In Windows Device Manager Disk Drive Properties Display
+Since "synchronous data transfer" is not enabled, the SCSI-BIOS setting menu
+Set transfer method by.
+The CD-ROM drive connected to the secondary master may be
+Sometimes it can not be used.In that case the secondary slave or
+Connection to primary slave.
+From MS-DOS, Windows 3.1 using CD-ROM connected to REX-PCI32 with PC-9821
+When installing Windows 98, create a startup menu
+Installation stops at the point.
+　In order to avoid this, during the installation of Windows 98 (the second
+　　CONFIG.SYS on the drive on which Windows 98 is installed)
+　Delete the lines describing ASP950N.SYS and REXCD.SYS from.
+PCI bus clock in asynchronous mode for models with a base clock of 66 MHz or more
+Use at (fixed at 33 MHz).In addition, PC100 standard (base clock 100 MHz)
+For the model, set the PCI bus clock to be 33 MHz.
+If it hangs up when connecting MO drive, FUJITSU M2512A / M2513A,
+Set the maximum synchronous transfer rate to 10MB / s in the setting screen of SCSI-BIOS.
+When connecting an image scanner, NEC PC-IN 700 / 3S (MultiReader 300)
+It does not operate normally unless it is set to asynchronous transfer on the setting screen of SCSI-BIOS.
+
+50 and 68 pins for internal flat cable connector, D-sub connector for external connector
+Half 50 pin.The simultaneous connection of devices is only possible with 2 connectors.Two on the board
+There is 1 jumper and 4 signal pins.
+
+・ 2 jumpers JP1: for maintenance.Factory setting = open, no short.
+・ 4 signal pins JP3: Signal connector for lighting SCSI bus (3 and 4 in case of 2 ports)
+　1,4 = power supply
+　2, 3 = signal (active low)
+

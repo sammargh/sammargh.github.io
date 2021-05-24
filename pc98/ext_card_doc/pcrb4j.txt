@@ -1,0 +1,42 @@
+PCRB4　（EPSON）
+
+エプソン製デスクトップ機，PC-386／V／G／GS／S，486GF／GR／GR+／GR Super
+用内蔵RAMベースボード．それ自身2MB．ボード上にSIMMソケット4本，8連ディップ
+スイッチ1個，4連ディップスイッチ1個あり．SIMMソケットにはエプソン仕様の
+1MBのSIMMを同容量2本一組で増設可能．
+
+・8連ディップスイッチSW1：スタートアドレス，RAMボードのメモリサイズの設定
+1-2-3-4：スタートアドレスの設定
+　ON-ON-ON-ON：設定禁止
+　OFF-ON-ON-ON：100000h
+　ON-OFF-ON-ON：200000h　（出荷時設定）
+　OFF-OFF-ON-ON：300000h
+　ON-ON-OFF-ON：400000h
+　OFF-ON-OFF-ON：500000h
+　ON-OFF-OFF-ON：600000h
+　OFF-OFF-OFF-ON：700000h
+　ON-ON-ON-OFF：800000h
+　OFF-ON-ON-OFF：900000h
+　ON-OFF-ON-OFF：A00000h
+　OFF-OFF-ON-OFF：B00000h
+　ON-ON-OFF-OFF：C00000h
+　OFF-ON-OFF-OFF：D00000h
+　ON-OFF-OFF-OFF：E00000h
+　OFF-OFF-OFF-OFF：設定禁止
+5：未使用，つねにON
+6-7：RAMボードのメモリサイズ
+　ON-ON：0MB
+　OFF-ON：オンボード2MB　（出荷時設定）
+　ON-OFF：オンボード2MB＋SIMM 2本
+　OFF-OFF：オンボード2MB＋SIMM 4本
+8：未使用，つねにON
+
+・4連ディップスイッチSW2：本体機種，パリティチェックの有無の設定
+1：本体機種の設定
+　ON：PC-386S，486GR／GR+／GR Super
+　OFF：PC-386／V／G／GS，486GF
+2：未使用，つねにOFF
+3：パリティチェックの有無の設定
+　ON：パリティチェックを行わない
+　OFF：パリティチェックを行う　（出荷時設定）
+4：未使用，つねにOFF

@@ -1,0 +1,35 @@
+
+GA-98NBI / C, GA-98NBII, GA-98NBIV (I・Oデータ) 
+
+C bus graphic accelerator board equipped with Cirrus Logic's CL-GD5434. 
+GA-98NBI / C (image memory 1MB) dips 1 rotary switch and 2 stations on the board 
+One switch, also GA-98NBII (image memory 2MB) and GA-98NBIV (image memory 4MB) 
+There is one rotary switch on the board. 
+
+・ Rotary switch: I / O address setting 
+0 = xxE0H, xxE1H (factory setting) 
+2 = xxE2H, xxE3H 
+4 = xxE4H, xxE5H 
+6 = xxE6H, xxE7H 
+A = xxEAH, xxEBH 
+C = xxECH, xxEDH 
+E = xxEEH, xxEFH 
+
+※ xx is fixed at 40H to 5FH. 
+
+-Dual dip switch: Add for GA-98 NBI / C dedicated CD-ROM drive interface 
+　Setting of less 
+OFF-OFF = xxD2H 
+ON-OFF = xxD4H (factory setting) 
+OFF-ON = xxD6H 
+ON-ON = xxD8H 
+
+※ xx is fixed at 30H to 32H. 
+※ When using GA-98NB / C and Sound Blaster 16 series together, CD-ROM version of GA-98NBI / C 
+　The lower 4 bits of the I / O address for the live interface are Sound Blaster 16 series. 
+　Set so that it does not overlap with the lower 4 bits of the base address ofAlso CD-ROM 
+　The drive connection should be the Sound Blaster 16 series. 
+
+Graphics driver set for use with Windows 3.1 with PC-9801ES, FA, NA 
+Start up the program "GASETUP.EXE" with the "/ E" option switch. 
+

@@ -1,0 +1,20 @@
+
+CentreCOM RE1000 (Allied Telesis)
+
+C bus NIC (LAN board) with 10BASE-T connector.Rotary on the back of the board
+There is one switch.
+
+・ Rotary switch: I / O base address setting
+0 = 00D0h (factory setting) 8 = 00D8h
+1 = 01 D0h 9 = 01 D8 h
+2 = 00D2h A = 00DAh
+3 = 01 D 2 h B = 01 DA h
+4 = 00D4h C = 00DCh
+5 = 01 D4 h D = 01 DCh
+6 = 00D6h E = 00DEh
+7 = 01 D6 h F = 01 DE h
+
+After setting the I / O base address, the hardware diagnostic program (ETHDIAG.EXE)
+Specify the set I / O base address and IRQ as arguments, and check the operation
+I do.
+

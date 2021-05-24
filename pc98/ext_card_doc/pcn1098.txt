@@ -1,0 +1,132 @@
+
+PCN-1098 (Neologue Electronics (now PC technology))
+
+Digital I / O board for C bus. Two μPD8255AC-5 mounted, byte unit (8 bits)
+6-bit 8-bit parallel port for word input / output (16 bits)
+Power can use 3 16-bit ports.Supply current is +5 V, 160 mA (TYP), but
+Without the optional buffer (SN74LS245).Operating temperature 0 to 35 °.The connector is
+Two 34-pin males, CN1 (corresponds to "AL") and CN2 (corresponds to "AH") on the board.Fit
+Connectors are Yamaichi FAS-34-03B or equivalent.4 stations dip switch on the board
+There is one and one 8-link jumper switch.
+
+The address configuration is as follows:
+(MBS) (LBS)
+　A7-A6-A5-A4-A3-A2-A1-A0
+　A7: System code (always 1)
+　A6 to A3: Device number (set by dip switch)
+　A2 to A0: Order code
+
+Order code:
+Below, A2-A1-A0 ■ Port and register name ■ Designation of μPD8255 AC-5 ■ Order of connector
+0-0- 0 ■ A port ■ AL ■ CN1
+0-0-1 A port AH CN2
+0-1-0 B port AL CN 1
+0-1-1 B port AH CN2
+1-0-0 ■ C port AL AL CN CN1
+1-0-1 C port AH CN2
+1-1-0 ■ Control register ■ AL ■ CN1
+1-1-1 ■ Control register ■ AH ■ CN2
+
+I / O operation
+1. 8-bit input / output
+　 Set the control word of the μPD8255 AC-5 separately on the AL and AH sides.
+2. 16-bit input / output
+   16-bit data is high-order (D15 to D8) and μ-side on μPD8255AC-5 on the AH side.
+　 It is divided and output to the μPD8255AC-5 in the lower order (D7 to D0).Therefore, μPD8255AC-5
+　 Set the same control word on AL and AH side.
+   The following is the order of the 16-bit port name ■ upper (CN 2) ■ lower (CN 1)
+　 A 16-bit port AH A port AL A port
+　 B 16-bit port AH B port AL B port
+　 C 16-bit port AH C port AL C port
+   Other combinations are not allowed for 16-bit ports.
+
+・ 4 stations dip switch SW: I / O address setting
+　OFF-OFF-OFF-OFF: 80H ~ 87H
+　OFF-OFF-OFF-ON: 88H-8FH
+　OFF-OFF-ON-OFF: 90H to 97H
+　OFF-OFF-ON-ON: 98H to 9FH
+　OFF-ON-OFF-OFF: A0H to A7H
+　OFF-ON-OFF-ON: A8H to AFH
+　OFF-ON-ON-OFF: B0H to B7H
+　OFF-ON-ON-ON: B8H to BFH
+　ON-OFF-OFF-OFF: C0H to C7H
+　ON-OFF-OFF-ON: C8H to CFH
+　ON-OFF-ON-OFF: D0H to D7H
+　ON-OFF-ON-ON: D8H to DFH
+Normally set to any of D0H to D7H and D8H to DFH.
+
+・ 8 series jumper switch J1: setting of interrupt level
+
+                _________
+                | |
+INT 4 ----- --------- · ------ + ------ INTR A (CN 1, 33 pins)
+INT 5 ---- + --------------------             
+INT 6-+-| --------------------
+　　　 | | | | ・ ・ | |　　
+　　　 | | | | ・ ・ | |
+       | |----------+--------INTR B (CN2, 33 pins)
+       --------------+
+　　　 ------------------
+　　　　　　　　| |
+　　　　　　    ~~~~~~~~
+
+Buffer area (optional)
+A buffer area is provided between each port and connector of the μPD8255AC-5.
+If you need a buffer, implement the SN74LS245.The SN74LS245 is bi-directional
+It can not be either input or output.
+The following is the specification of μPD8255 AC-5 ■ Port name ■ Buffer area name ■ Pull-up module
+Resistance ■ Cut pattern name (solder side) ■ Order of ceramic capacitor mounting position
+AL A RA 1 JV 4, JG 4 RM 1 RA 1 C 7
+AL B 1 RB 1 JV 5, JG 5 RM 2 RB 1 C 8
+AL C RC 1 JV 6 JG 6 RM 3 RC 1 C 9
+AH, A, RA2, JV1, JG1, RM4, RA2, C10
+AH B B RB 2 JV 2, JG 2 RM 5 RB 2 C 11
+AH C C RC 2 JV 3, JG 3 RM 6 RC 2 C 12
+Implementation method of SN74LS245:
+(1) Remove the pull-up module resistance of the port requiring the buffer.Nipper
+　 Use a solder wicker or cut off the leg with a hand.
+(2) Cut the pattern on the solder side of the buffer area where the buffer is to be mounted.
+   The pattern cut is the eight patterns inside the square marked CUT on the solder surface.
+(3) Implement the SN74LS245.After confirming the direction of the IC, soldering.
+(4) Determine the SN74LS245 input / output direction.JV corresponding to each buffer area or
+　 Jump on JG.
+　 Jumper JV: Output only
+　 Jumper JG: input only
+(5) A 0.01 μF or 0.1 μF ceramic capacitor is mounted where the buffer is mounted.
+
+ID
+1 GND
+2 GND
+3 port A0
+4 port A1
+5 port A2
+6 port A3
+7 port A4
+8 port A5
+9 port A6
+10 port A7
+11 GND
+12 GND
+13 port B0
+14 port B1
+15 port B2
+16 port B3
+17 port B4
+18 port B5
+19 port B6
+20 port B7
+21 GND
+22 GND
+23 port C0
+24 port C1
+25 port C2
+26 port C3
+27 port C4
+28 port C5
+29 port C6
+30 port C7
+31 GND
+32 GND
+33 INTR A (CN1) / INTR B (CN2)
+34 NC
+

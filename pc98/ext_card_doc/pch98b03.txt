@@ -1,0 +1,7 @@
+
+PC-H98-B03 (NEC)
+
+NESA bus SCSI board.NEC check with 55 compatible, DMA transfer with PC-9801-55U / L NESA bus version
+Yes.There are 3 jumper switches JP1 and JP2 on the board.All of these factory settings are
+3-4 short (no change).Board resources are set in the reference disk.
+

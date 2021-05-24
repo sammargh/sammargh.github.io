@@ -1,0 +1,111 @@
+
+CARD240, CARD350 (R & D)
+
+C bus on board HDD. The CARD 240 has a capacity of 251.9 MB, and the CARD 350 has a 362.8 MB.
+The mounted HDD is a special product, so replacement with a general drive is not possible.
+There is no external terminal.High res mode not supported.
+SASI / SCSI / IDE in PC to emulate SASI or SCSI
+Can coexist even if any HDD is connected (SCSI HDD connected to the main unit
+SASI compatible mode, SASI / IDE HDD is connected if it is
+In case of use in SCSI compatible mode).Also with the SCSI-PLUS function
+Additional connection is possible even if both SCSI and SASI HDDs are connected.
+　Average seek time: 17 ms
+　Data buffer size: 128 kB
+　Current consumption: 1.5 A at startup, 0.8 A at operating average
+　Temperature condition: 10 to 35 °
+　Humidity condition: 20 to 80% (without condensation)
+　Supported OS: MS-DOS ver. 3.3C / C, 5.0 / A / AH, MS-Windows 3.0 / 3.1
+　Supported devices: PC-98 series and Epson made with CPU of V30 or more
+　　　　　　98 compatible machine
+There are two 8-deep dip switches on the board.
+
+・ 8 stations dip switch SW1: interrupt level, operation mode, I / O port
+　Address, SCSI ID setting
+1-2: interrupt level setting
+　ON-ON: INT 0
+　OFF-ON: INT 1
+　ON-OFF: INT 2
+　OFF-OFF: INT 3 (default setting)
+3: Setting of operation mode (SASI / SCSI compatible)
+　ON: SCSI compatible
+　OFF: SASI compatible (factory setting)
+4-5-6-7-8: I / O port address setting (8 also serves as SCSI ID setting)
+(1) When SCSI ID = 0
+　OFF-OFF-OFF-OFF-OFF: CED0h to CFDFh (factory setting)
+　ON-OFF-OFF-OFF-OFF: CCD 0h to CDDF h
+　OFF-ON-OFF-OFF-OFF: CAD0h to CBDFh
+　ON-ON-OFF-OFF-OFF: C8D0h to C9DFh
+　OFF-OFF-ON-OFF-OFF: C6D0h to C7DFh
+　ON-OFF-ON-OFF-OFF: C4D0h to C5DFh
+　OFF-ON-ON-OFF-OFF: C2D0h to C3DFh (Note 1)
+　ON-ON-ON-OFF-OFF: C0D0h to C1DFh
+　OFF-OFF-OFF-ON-OFF: 8ED0h-8FDFh
+　ON-OFF-OFF-ON-OFF: 8CD0h-8DDFh
+　OFF-ON-OFF-ON-OFF: 8 AD 0 h to 8 BDF h
+　ON-ON-OFF-ON-OFF: 88D0h to 89DFh
+　OFF-OFF-ON-ON-OFF: 86D0h to 87DFh
+　ON-OFF-ON-ON-OFF: 84D0h to 85DFh
+　OFF-ON-ON-ON-OFF: 82D0h to 83DFh
+　ON-ON-ON-ON-OFF: 80D0h to 81DFh
+(2) In the case of SCSI ID = 4
+　OFF-OFF-OFF-OFF-ON: 4ED0h to 4FDFh
+　ON-OFF-OFF-OFF-ON: 4CD0h to 4DDFh
+　OFF-ON-OFF-OFF-ON: 4AD0h to 4BDFh
+　ON-ON-OFF-OFF-ON: 48D0h to 49DFh
+　OFF-OFF-ON-OFF-ON: 46D0h to 47DFh
+　ON-OFF-ON-OFF-ON: 44D0h to 45DFh
+　OFF-ON-ON-OFF-ON: 42D0h to 43DFh (Note 2)
+　ON-ON-ON-OFF-ON: 40D0h to 41DFh
+　OFF-OFF-OFF-ON-ON: 0ED0h to 0FDFh
+　ON-OFF-OFF-ON-ON: 0CD0h to 0DDFh
+　OFF-ON-OFF-ON-ON: 0 AD 0 h to 0 BDF h
+　ON-ON-OFF-ON-ON: 08D0h to 09DFh
+　OFF-OFF-ON-ON-ON: 06D0h to 07DFh
+　ON-OFF-ON-ON-ON: 04D0h to 05DFh
+　OFF-ON-ON-ON-ON: 02D0h to 03DFh
+　ON-ON-ON-ON-ON: Setting prohibited
+Note 1: The instruction says C2D0h to C2DFh and 42D0h to 42DFh,
+C2D0h to C3DFh and 42D0h to 43DFh, respectively
+Seem.
+
+· 8 stations dip switch SW2: access display, transfer mode, ROM
+　Address setting
+1: Access display setting
+　When accessing the HDD with MS-DOS, access in red in the lower right of the screen
+　Display.This display does not appear on Windows (Access on Windows
+　Prohibit display).
+　ON: Access lamp lights (factory setting)
+　OFF: Access lamp released
+2: Transfer mode setting
+　Set it to OFF when using it with NEC PC-98 mounted with 80286.
+　ON: Block transfer mode (factory setting)
+　OFF: Program transfer mode
+3-4-5-6-7-8: ROM address setting
+　ON-ON-ON-ON-OFF-ON: D0000h
+　OFF-ON-ON-ON-OFF-ON: D1000h
+　ON-OFF-ON-ON-OFF-ON: D2000h
+　OFF-OFF-ON-ON-OFF-ON: D3000h
+　ON-ON-OFF-ON-OFF-ON: D4000h *
+　OFF-ON-OFF-ON-OFF-ON: D5000h *
+　ON-OFF-OFF-ON-OFF-ON: D6000h *
+　OFF-OFF-OFF-ON-OFF-ON: D7000h *
+　ON-ON-ON-OFF-OFF-ON: D8000h * (default setting)
+　OFF-ON-ON-OFF-OFF-ON: D 9000h *
+　ON-OFF-ON-OFF-OFF-ON: DA000h
+　OFF-OFF-ON-OFF-OFF-ON: DB 000 h
+　ON-ON-OFF-OFF-OFF-ON: DC 000 h
+　OFF-ON-OFF-OFF-OFF-ON: DD 000 h
+　ON-OFF-OFF-OFF-OFF-ON: DE 000 h
+　OFF-OFF-OFF-OFF-OFF-ON: DF000h
+The default setting is D8000h to D8FFF.Also, * in SASI mode
+Only setting is possible.Normally, it can be used with the factory settings.
+
+※ About SCSI-PLUS function
+By using the SCSI-PLUS function, this machine in SCSI compatible mode can be used with other SCSI HDDs.
+Can coexist withHowever, this function is PC-9801-55 and complete
+Only when using a compatible SCSI board.
+→ In the normal mode, the ROM address in the SCSI mode is from DE000h to DEFFFh
+/ DF000h to DEFFFh, and in high resolution mode, ROM address in SCSI mode
+Setting to between EF000h and EFFFFh automatically enables the SCSI-PLUS function.
+Note: As mentioned above, the beginning of the manual says that the high res mode is not supported.
+

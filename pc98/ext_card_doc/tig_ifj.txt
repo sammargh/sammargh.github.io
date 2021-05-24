@@ -1,0 +1,30 @@
+TIG IF BOARD　（EPSON）
+
+20MB，40MB外付けSASIハードディスク，"HDD-20R"，"HDD-40R"付属のCバスI/F．
+
+・8連ディップスイッチSW1：I/Oアドレスの設定
+ON-ON-ON-ON-ON-OFF-ON-ON = XX80H, XX82H（1台目のHDDとして使用する場合）
+OFF-OFF-OFF-ON-OFF-OFF-OFF-OFF = XXDCH, XXDEH（2台目のHDDとして使用する場合）
+
+・8連ディップスイッチSW2：接続するHDDの設定
+SW2の設定は1台目のHDDのI/Fでのみ必要（2台目のHDDのI/FではSW2はどの設定でもよい）．
+
+ON-ON-OFF-ON-ON-OFF-OFF-OFF = 20MBのHDDを1台接続
+ON-ON-OFF-OFF-ON-OFF-OFF-OFF = 40MBのHDDを1台接続
+ON-ON-OFF-ON-ON-OFF-ON-ON = 20MBのHDDを2台接続
+ON-ON-OFF-ON-ON-OFF-OFF-ON = 1台目に20MB，2台目に40MBのHDDを接続
+ON-ON-OFF-OFF-ON-OFF-ON-ON = 1台目に40MB，2台目に20MBのHDDを接続
+ON-ON-OFF-OFF-ON-OFF-OFF-ON = 40MBのHDDを2台接続
+
+・5連ジャンパスイッチJ1：変更禁止
+常に1，3ショート，2，4，5オープン．
+
+・4連ジャンパスイッチJ2：本体機種の選択，1台目のHDD／2台目のHDDの選択
+以下，本体機種■1台目の設定■2台目の設定　の順
+
+PC-9801, PC-98XA■2，4ショート，1，3オープン■なし
+PC-9801M2■1，3ショート，2，4オープン■2，4ショート，1，3オープン
+それ以外の機種■1，4ショート，2，3オープン■2，4ショート，1，3オープン
+
+・3本ジャンパスイッチJ3：変更禁止
+常に1-2間ショート

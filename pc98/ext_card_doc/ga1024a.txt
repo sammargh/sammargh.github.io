@@ -1,0 +1,62 @@
+
+GA-1024A (L), GA-1280A (L) (I・Oデータ)
+
+C bus graphic accelerator board.Graphic chip
+I / O data device made ZF-16.The VRAM capacity is 1MB for GA-1024A (L), GA-1280A (L)
+Then 2 MB. Maximum power consumption 1A.
+Optional driver software, "GA high resolution library" (GA-JUST, GA-123,
+By using GA-CAD), Ichitaro ver.5, Lotus 1-2-3, AutoCAD etc.
+Use DOS application in high resolution display (Windows 3.1 to GA-CAD
+Each application of can not run).
+GA-JUST can display up to 1280 x 1024 dots (in the case of GA-1280A).Also
+Display two Ichitaro simultaneously.
+The corresponding applications of GA-CAD are AutoCAD GX-III, AutoCAD GX-5,
+AutoCAD Release 12J, AutoShade, 3D Studio, MicroStation PC.
+256 colors for AutoCAD Release 12J, AutoShade, 3D Studio, MicroStation PC
+Realize realistic presentation by display.In addition, high res such as H98
+Also supports mode.
+There is one 6 series dip switch and one 2x8 series jumper switch on the board.
+The latter setting is not described in the manual (only No. 8 is the default setting)
+It seems to be, but there is also a case where it is shorted only with the first in the second-hand goods.This jumper
+The switch is also said to include interrupt level setting pins, but the details are unknown).
+
+・ 6 stations dip switch SW1: I / O port address setting
+1-2-3: Setting of lower 8 bits of I / O address (upper 8 bits occupy from 01h to 1Fh)
+　ON-ON-ON ■ xx D 0 h to xx D 3 h
+　OFF-ON-ON ■ xx D 4 h to xx D 7 h
+　ON-OFF-ON x xx D 8 h ~ xx DB h (factory setting)
+　OF-OFF-ON ■ xx DCh ~ xx DF h
+　ON-ON-OF xxE0h to xxE3h
+　OFF-ON-OFF ■ xx E 4 h to xx E 7 h
+　ON-OFF-OFF ■ xx E 8 h ~ xx EB h
+　OFF-OFF-OFF ■ xxECh ~ xxEFh
+※ xx is 01h to 1Fh
+4-5-6: Do not change (default setting: ON-ON-ON)
+
+※ About Big Screen
+In Windows 3.1, vertical and horizontal scrolling of the screen by mouse operation even in low resolution display
+Can realize a wide display area.Up to 1024 × 960 for GA-1024A regardless of resolution
+A maximum of 1,600 × 1,024 dots can be displayed with dots and GA-1280A.All resolutions
+・ Big screen is enabled by the number of colors, but the maximum in the 65,536 color display mode
+The display area becomes smaller (up to 960 × 480 dots for GA-1024A, for GA-1280A
+Up to 1024 x 960 dots displayed).
+
+※ About zoom function of GA-1024A
+GA-1024A hardware zoom function and the display screen of Windows 3.1 instantly
+Ability to zoom in and scroll quickly in horizontal / vertical direction by mouse operation.
+When you want to magnify only a part during graphic drawing and correct it in dot units,
+It is effective when you want to emphasize the part especially in the presentation etc.
+(1) Move the mouse cursor to the upper left corner of the screen while holding down the [SHIFT] key.
+(2) The screen is instantly doubled.Scrolling is possible with the mouse.
+(3) If the operation in (1) is repeated, the screen will zoom 4 times and 8 times.To restore
+Perform the operation (1) again at 8x zoom.
+
+※ About expansion mode of GA-1280A
+GA-1280A supports extended mode with limited function.This is Windows 3.1
+Display resolution of 800 x 600 dots or more on 640 x 480 dots and operate the mouse
+A function to scroll the original display area horizontally / vertically at high speed.
+(1) Move the mouse cursor to the upper left corner of the screen while holding down the [SHIFT] key.
+(2) The screen instantly displays 640 × 480 dots.Scrolling is possible with the mouse.
+(3) If the operation in (1) is repeated, the screen will zoom 4 times and 8 times.To restore
+Perform the operation of (1) again.
+

@@ -1,0 +1,20 @@
+
+MPG-98 (I･Oデータ)
+
+C bus full color full motion MPEG-1 playback board for second bus.
+Output display to TV with video terminal and S terminal is possible.
+
+デ フ ォ ル ト MPG-98 default settings
+・ Short pin (interruption: JP1)
+　Second from the mark: INT1 (IRQ5)
+・ I / O port setting (arrow is ON direction is up)
+SW1: ↓ ↑ ↑ ↑ ↑
+　　　　1 2 3 4 5 6 7 8 (D0H)
+SW2: ↑ ↓ ↓ ↑ ↑
+　　　　1 2 3 4 5 6 7 8 (75 H)
+And it becomes 75D0H.
+
+It is postscript, but it worked on Win98, but because it does not have the overlay function
+Not very useful. (I can do it via GV-98, but consume one C bus)
+
+This setting table was posted by FX-R.

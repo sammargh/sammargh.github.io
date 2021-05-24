@@ -1,0 +1,41 @@
+SIC-98NOTE-T　（Allied Telesis）
+
+98ノートの110ピン拡張バスコネクタに取り付けるLANアダプタ．
+Windows95非対応．4連ディップスイッチ2個あり．
+
+・4連ディップスイッチSW1：メモリアドレスの設定
+(1)32KBバンクの時のメモリアドレス（xはON，OFFいずれでも可）
+　ON-ON-x-ON■0C0000h〜0C7FFFh
+　ON-OFF-x-ON■0C8000h〜0CFFFFh
+　OFF-ON-x-ON■0D0000h〜0D7FFFh　（出荷時設定）
+　OFF-OFF-x-ON■0D8000h〜0DFFFFh
+(2)16KBバンクの時のメモリアドレス
+　ON-ON-ON-ON■0C0000h〜0C3FFFh
+　ON-ON-OFF-OFF■0C4000h〜0C7FFFh
+　ON-OFF-ON-OFF■0C8000h〜0CBFFFh
+　ON-OFF-OFF-OFF■0CC000h〜0CFFFFh
+　OFF-ON-ON-OFF■0D0000h〜0D3FFFh
+　OFF-ON-OFF-OFF■0D4000h〜0D7FFFh
+　OFF-OFF-ON-OFF■0D8000h〜0DBFFFh
+　OFF-OFF-OFF-OFF■0DC000h〜0DFFFFh
+
+・4連ジャンパスイッチSW2：割り込みレベル，CPUタイプ，I/Oポート
+　アドレスの設定
+(1)Rev. A，ABの場合
+1-2-3：割り込みレベルの設定
+　ON-OFF-OFF■INT 0
+　ON-ON-OFF■INT 1
+　OFF-OFF-ON■INT 5　（出荷時設定）
+4：I/Oポートアドレスの設定
+　ON■00D0h〜20D0h　（出荷時設定）
+　OFF■01D0h〜21D0h
+(2)Rev. B以降
+1-2：割り込みレベルの設定
+　ON-OFF■INT 0
+　OFF-ON■INT 5　（出荷時設定）
+3：CPUタイプの設定
+　ON■80386(SX)　（出荷時設定）
+　OFF■V30
+4：I/Oポートアドレスの設定
+　ON■00D0h〜20D0h　（出荷時設定）
+　OFF■01D0h〜21D0h

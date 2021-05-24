@@ -1,0 +1,261 @@
+
+AD12-16A (98) (CONTEC)
+
+12-bit A / D conversion with 16 single-ended input channels or 8 differential input channels
+module.
+Input specification: Non-isolated input bipolar 10V to + 10V or -5V to + 5V
+　　　　　Non-Isolated Input Unipolar 0 to +10 V
+Number of inputs: Single-ended input 16 CH
+　　　　　Differential input 8CH
+Resolution: 12 bits
+Conversion accuracy: linearity error within ± 2 LSB (at ambient temperature 25 ° C: ambient temperature 0 ° C,
+An error of about 0.1% occurs at 50 ° C)
+Conversion method: Sequential comparison (equivalent to HI-674AK)
+Conversion rate: 12 μsec (Typ.)
+Slew rate: 17 μsec (Typ.)
+Input impedance: 2 MΩ
+Timer: Set within 20 μsec to 40 min (58 steps)
+Occupied port: 8 bits 2 ports
+Power consumption: DC5V, 850mA
+Operating conditions: 0 to 50 ° C, 20 to 90% non-condensing
+
+Direct connection with a cable if the signal source is close to the interface, if the distance is long
+Use shielded wire.
+
+・ Single-ended input / differential input (5 jumpers JP5, 3 jumpers JP6)
+Single-ended input
+　JP5: Short between 2-3 and 4-5
+　JP6: 1-2 short circuit
+Differential input
+　JP5: 1-2 and 3-4 short
+　JP6: 2-3 short circuit
+
+・ Bipolar / Unipolar (3 jumpers JP2, JP4)
+bipolar
+　Short between JP2 and JP4 1-2
+Unipolar
+　Short between 2-3 for both JP2 and JP4
+
+・ Input range (three jumpers JP3)
+Bipolar (-10 to +10 V)
+　1-2 short
+Bipolar (-5V to + 5V)
+　2-3 short circuit
+Unipolar (0 to +10 V)
+　2-3 short circuit
+
+・ External trigger use / not use (3-pin jumper JP9)
+use
+　2-3 short circuit
+Not used
+　1-2 short
+
+・ Interrupt (2x4 column jumper JP1)
+1 short: INT 0
+2 short: INT 4
+3 short: INT 5
+4 short: INT 6
+An interrupt occurs at the rising edge of the A / D conversion end signal from OFF to ON.
+
+・ I / O port address (8 stations dip switches SW1, SW2)
+Each dip corresponds to the bit of the port in the order of SW2 and SW1 (ON = 1, OFF = 0).
+Example) F0D0h
+SW2 SW1: ON-ON-ON-ON-OFF-OFF-OFF-OFF-ON-ON-OFF-ON-OFF-OFF-OFF-OFF-OFF-OFF
+※ 27 pieces of 8-bit address D0h to DFh, EDh to F7h can be used in BASIC (In this case, SW2 is
+  All off).
+　Machine language programs can use all 16-bit addresses, but the lower 8 bits
+  Must be D0h to DFh and EDh to F7h.
+
+※ The following two points are different in substrate numbers 9516A and 9516B.
+1. JP6 Settings: In these lots JP6 is a 3x2 jumper switch.
+Single-ended
+　Short between 2-3 and 5-6
+Differential input
+　1-2 short, 4-5 short
+2. There is no external trigger terminal and JP9, so external trigger mode can not be used.
+
+・ I / O port address and data
+■ OUT port
+Address set + 0: D7 = Timer gate (D0-D1-D2-D3 channels
+Perform A / D conversion at time intervals set by timer)
+　　　　　　　　　　 D6 = 0
+　　　　　           D4 = conversion start (stop outputs 0)
+　　　　　　　　　   D0-D1-D2-D3 = Channel selection
+(a) Channel selection and LED (hereinafter, D3-D2-D1-D0 channel no.■ LT3-LT2-LT1-LT0 (LED) in order)
+0-0-0-0 0 0 OFF-OFF-OFF-OFF
+0-0-0-1 1 OFF-OFF-OFF-ON
+0-0-1-0 2 OFF-OFF-ON-OFF
+0-0-1-1 ■ 3 ■ OFF-OFF-ON-ON
+0-1-0-0 ■ 4 ■ OFF-ON-OFF-OFF
+0-1-0-1 ■ 5 ■ OFF-ON-OFF-ON
+0-1-1-0 ■ 6 ■ OFF-ON-ON-OFF
+0-1-1-1 ■ 7 ■ OFF-ON-ON-ON
+1-0-0-O 8 ON-OFF-OFF-OFF
+1-0-0-1 9 ON-OFF-OFF-ON
+1-0-1-0 ■ 10 ■ ON-OFF-ON-OFF
+1-0-1-1 11 ON-OFF-ON-ON
+1-1-0-0 ■ 12 ■ ON-ON-OFF-OFF
+1-1-0-1 ■ 13 ■ ON-ON-OFF-ON
+1-1-1-0 n 14 ON-ON-ON-OFF
+1-1-1-1 ■ 15 ■ ON-ON-ON-ON
+
+(b) Timer set: Set the timer value to the programmable timer circuit (50 kHz source oscillation)
+      D0 | 0 0 0 0 1 1 1 1
+      D1 | 0 0 1 1 0 0 1 1
+      D2 | 0 1 0 1 0 1 0 1
+------------------------------------------------------ -----------------------------------------
+D5 D4 D3 | 1/1 1/10 ^ 1 1/2 1/3 1/4 1/5 1/6 1/12
+0 0 0 | 1/1 1/1 1/10 ^ 1 1/2 1/3 1/4 1/5 1/6 1/12
+1 0 0 | 1/10 ^ 1 1/10 ^ 1 1/10 ^ 2 1/20 1/30 1/40 1/50 1/60 1/120
+1/10 ^ 2 1/10 ^ 2 1/10 ^ 3 1 / 2x10 ^ 2 1 / 3x10 ^ 2 1 / 4x10 ^ 2 1 / 5x10 ^ 2 1 / 6x1 ^ 2 1 / 12x10 ^ 2
+1 1 0 | 1/10 | 3 1/10 ^ 3 1/10 ^ 4 1 / 2x10 ^ 3 1 / 3x10 ^ 3 1 / 4x10 ^ 3 1 / 5x10 ^ 3 1 / 6x1 ^ 3 1 / 12x10 ^ 3
+0 0 1 | 1/10 ^ 4 1/10 ^ 4 1/10 ^ 5 1 / 2x10 ^ 4 1 / 3x10 ^ 4 1 / 4x10 ^ 4 1 / 5x10 ^ 4 1 / 6x1 ^ 4 1 / 12x10 ^ 4
+1 0 1 | 1/10 ^ 5 1/10 ^ 5 1/10 ^ 6 1 / 2x10 ^ 5 1 / 3x10 ^ 5 1 / 4x10 ^ 5 1 / 5x10 ^ 5 1 / 6x1 ^ 5 1 / 12x10 ^ 5
+1/10 ^ 6 1/10 ^ 6 1/10 ^ 7 1 / 2x10 ^ 6 1 / 3x10 ^ 6 1 / 4x10 ^ 6 1 / 5x10 ^ 6 1 / 6x1 ^ 6 1 / 12x10 ^ 6
+1 1 1 | 1/10 ^ 7 1/10 ^ 7 1/10 ^ 8 1 / 2x10 ^ 7 1 / 3x10 ^ 7 1 / 4x10 ^ 7 1 / 5x10 ^ 7 1 / 6x1 ^ 7 1 / 12x10 ^ 7
+
+(Example) When set to 10 Hz (100 msec interval), 50 kHz 50 10 Hz = 1/5000 (1/5 x 1/10 ^ 3).
+      In this case, D5-D4-D3-D2-D1-D0 is 1-1-0-1-0-1.
+
+Set address +1: D0-D1-D2-D3-D4-D5: timer data
+
+■ IN port
+Set address + 0: D0-D1-D2-D3-D4-D5-D6-D7: A / D conversion data lower 8 bits
+　It corresponds to 2 ^ 0, 2 ^ 1, 2 ^ 2, 2 ^ 3, 2 ^ 4, 2 ^ 5, 2 ^ 6, 2 ^ 7 in order.
+
+Set address +1
+　D0-D1-D2-D3: Upper 4 bits of A / D converted data, corresponding to 2 ^ 8, 2 ^ 9, 2 ^ 10, 2 ^ 11 in order.
+　D5: Periodic operation timer status
+　　　When 1 is in operation by the timer.
+　D6: Conversion end status
+　　　A value of 1 indicates that there are unread data after conversion.+ 0 port data
+     The bit is reset by reading. Always 0 when reading 16 bits at a time
+     Therefore, check the conversion in progress / end by the D7 (conversion in progress status) bit.
+　D7: Status during conversion
+　　　Converting when 1.Make sure that it is 0 when reading data.
+
+・ Input data and voltage
+(a) Bipolar -10 to +10 V (1 LSB: 4.88 mV)
+The following is the order of the voltage D11 D10 D9 D8 D7 D6 D5 D4 D3 D2 D1 D0 Hexadecimal
++ 9.99 512V 0 1 1 1 1 1 1 1 1 1 1 1 7FFh
+　　　　　■ 0 1 1 1 1 1 1 1 1 1 0 ■ 7 FEh
+　　　　　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+        0V 0 0 0 0 0 0 0 0 0 0 0 0 000h
+        　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+          ■ 1 0 0 0 0 0 0 0 0 0 0 0 1 ■ 801 h
+     -10V 1 0 0 0 0 0 0 0 0 0 0 0 0 800h
+
+(b) Bipolar -5V to + 5V (1 LSB: 2.44mV)
++ 4.99756V 0 1 1 1 1 1 1 1 1 1 1 1 7FFh
+　　　　　■ 0 1 1 1 1 1 1 1 1 1 0 ■ 7 FEh
+　　　　　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+        0V 0 0 0 0 0 0 0 0 0 0 0 0 000h
+        　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+          ■ 1 0 0 0 0 0 0 0 0 0 0 0 1 ■ 801 h
+      -5V 1 0 0 0 0 0 0 0 0 0 0 0 0 800h
+
+(c) Unipolar 0 to +10 V (1 LSB: 2.44 mV)
++ 9.99756V ■ 1 1 1 1 1 1 1 1 1 1 1 1 ■ FFFh
+　　　　　■ 1 1 1 1 1 1 1 1 1 1 1 0 ■ FFEh
+　　　　　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+        5V 1 0 0 0 0 0 0 0 0 0 0 0 0 800h
+        　　・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+            ・ ・ ・ ・ ・ ・ ・ ・ ・ ・
+          ■ 0 0 0 0 0 0 0 0 0 0 0 0 1 ■ 001 h
+        0V 0 0 0 0 0 0 0 0 0 0 0 0 000h
+
+※ Although the input protection by the diode is done, the excessive input more than ± 10 V causes the module damage
+  Note that it will be.
+
+・ Interface connector
+Connector type: Amphenol full 36 pin female (Daiichi Electronics Industries 57LE-40360-77C0)
+
+Terminal No.■ Single-ended input name ■ Differential input name
+1 ■ External trigger ■ External trigger
+2 ■ IN 7 ■ IN 7 A
+3 ■ IN 15 ■ IN 7 B
+4 ■ IN 6 ■ IN 6 A
+5 ■ IN 14 ■ IN 6 B
+6 ■ IN 5 ■ IN 5 A
+7 ■ IN 13 ■ IN 5 B
+8 ■ IN 4 ■ IN 4 A
+9 ■ IN 12 ■ IN 4 B
+10 ■ COMMON ■ COMMON
+11 ■ IN 3 ■ IN 3 A
+12 IN 11 IN 3 B
+13 ■ IN 2 ■ IN 2 A
+14 ■ IN 10 ■ IN 2 B
+15 IN 1 IN 1A
+16 IN 9 IN 1 B
+17 ■ IN 0 ■ IN 0 A
+18 IN 8 IN 0 B
+Terminal Nos. 19-36 are COMMON.
+
+・ Hardware interrupt
+(1) In the PC-9801 series, two interrupt controllers μPD8259 are cascade-connected
+　 doing.To use an interrupt, mask reset the μPD8259 and
+   The table address must be registered.
+
+a) Correspondence between interrupt levels and mask bits in the μPD8259:
+　INT 0: Master 8259 (02H port) D3 bit
+　INT 5: slave 8259 (0AH port) D4 bit
+　INT 6: slave 8259 (0AH port) D5 bit
+　By resetting the port bit shown above, interrupts are enabled,
+　Interrupts are disabled by setting a bit.
+
+　Example) Allow INT 0, INT 5
+　　IN AL, 02 H; Acquisition of current mask state
+　　AND AL, 0F7H; Clear bit corresponding to INT 0
+    OUT 02H, AL; set new mask state
+
+　　IN AL, 0AH; Acquisition of current mask state
+　　AND AL, 0EFH; Clear the bit corresponding to INT 5
+    OUT 0AH, AL; Set a new mask state
+
+b) Interrupt level and interrupt processing destination registration address
+　INT 0: From segment 0H / offset 2CH
+　INT 5: From segment 0H / offset 50H
+　INT 6: From segment 0H / offset 54H
+　Offset the start address of the interrupt processing program from the address shown above,
+　Register in the order of segments.
+
+　Example: The interrupt processing destination address of INT 0 is segment 1E00H, offset 100H,
+　　　Also, the interrupt processing destination address of INT 5 is segment 1E00H, offset
+　　　In the case of 200H
+
+　　　MOV AX, 0; Segment 0 set
+      MOV DS, AX; INT 0
+      MOV WORD PTR [2CH], 100H; Offset registration
+      MOV WORD PTR [2EH], 1E00H; Segment registration
+                                ; INT 5
+      MOV WORD PTR [50H], 200H; Offset registration
+      MOV WORD PTR [52H], 1E00H; Segment registration
+
+(2) Interrupt processing program
+　
+a) Saving of registers used for interrupt processing
+b) Interrupt processing
+c) Reset of interrupt controller μPD8259
+　MOV AL, 20H; EOI command set
+  OUT 0, AL: Reset of master μPD 8259
+  OUT 8, AL; reset of slave μPD 8259
+　However, in the case of INT 0, it is not necessary to reset the slave μPD8259.
+d) Register return + IRET
+
+・ How to adjust
+This interface is factory adjusted at the factory with bipolar -10 V to +10 V input specifications.
+If you do not get the desired result or change the input specification, adjust it in the following way:
+
+a) Set to the input specification (single-ended input or differential input) to be used.
+b) Run the program and start data entry.
+c) Apply a voltage of +1/2 LSB so that the display will be "001" (both unipolar and bipolar),
+  Adjust VR1 in unipolar specification and VR3 in bipolar specification together with VR5 and VR6.
+d) + + full scale-3/2 LSB voltage is applied, and in unipolar specification, the display is "FFF", and
+  In the bipolar specification, the gain is adjusted by VR2 so that the display becomes "7FF".
+e) Return to c) and repeat until everything matches, even without adjusting VR.
+

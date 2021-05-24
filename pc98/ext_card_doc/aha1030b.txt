@@ -1,0 +1,20 @@
+
+AHA-1030B (Adaptec)
+
+PnP compatible C bus SCSI-2 I / F. The connector is D sub half 50 pin.In Windows 98
+Adaptec has officially recognized that it will not work.PnP setting, in non-PnP mode
+Set the interrupt level using the attached software.Five dips on the board
+Setting by switch is valid only in non-PnP mode.Setting of dip switch
+Same as PC-9801-100.
+
+・ 5 series dip switches: Set SCSI BIOS address and I / O port address
+1-2-3-4: SCSI BIOS address setting
+　OFF-OFF-OFF-OFF ■ DC 000 h to D FFFF h (factory setting)
+　ON-OFF-OFF-OFF ■ D 8000 h ~ DBFFF h
+　OFF-ON-OFF-OFF ■ D4000h to D7FFFh
+　ON-ON-OFF-OFF ■ D0000h to D3FFFh
+　ON-ON-ON-OFF ■ BIOS separation
+5: I / O port address setting
+　ON ■ 3840h ~ 387Eh (even), 386 Dh
+　OFF 1840 h to 187 E h (even), 186 D h (factory setting)
+

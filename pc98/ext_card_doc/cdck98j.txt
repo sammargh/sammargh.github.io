@@ -1,0 +1,50 @@
+CardDock/98 (C-Dock/98)　（I・Oデータ）
+
+Cバスに装着するPCカードアダプタ．ボード上に2連ジャンパスイッチ1個(JP1：未使用，
+出荷時設定ではオープン)あり．
+
+電源電圧：+5V+-5%[VPP・VCC]
+供給電圧：+12V+-15%[VPP], +5V+-5%[VPP・VCC] +3.3V+-5%[VCC]
+入出力信号レベル：TTL論理レベル
+動作環境：温度 0〜55゜C， 湿度 95%RH以下(結露なきこと)
+使用リソース：IRQ=6, I/Oアドレス=3E0h〜3E2h, メモリアドレス=D0000h〜D7FFFh
+(ただし使用環境によりこれらの値は変化)
+
+対応機種は，PC-9801VX, UX, US, CS, EX,ES,RX, RS, RA, DX, DS, DA, FX, FS,
+FA, BX, BX2, BX3, BX4, BS2, BA, BA2, BA3, T, PC-9821, Ce, Ce2, Cs2, Cb, Cx,
+Cf, Cb2, Cx2, Be, Bs, Bp, Bf, Ae, As, As2, As3, Ap, Ap2, Ap3, Af, An, Xe,
+Xe10, Xs, Xp, Xf, Xn, Xa, Xa7, Xa9, Xa10, Xa12, Xa13, Xt, Xt13, Ts (Xa10,
+Xa12, Xa13ではPCカードドライブ搭載モデルは除く), PC-H98model 60, 70, 80, 90,
+100, 105 (H98ではノーマルモードのみ), PC-H98S, T, PC-9801NS, NS/E, NC, NS/T,
+NS/L, NA, NS/R, NX/C, NL/R, NS/A, PC-9821Ne (NX/C, NL/R, NS/A, Neでは，
+CardDock/98使用時は本体のPCカードスロットは使用不可), PC-286, X, C, US, UX,
+V, VE, VS, VF, VX, VG, VJ, LS, LST, PC-386, V, VR, M, P, S, G, GE, GS, LS,
+LSC, LSR, LSX, PC-486P, GF, GR, GR+, GR Super, SE, SR, HG, HX, HA, FE, FR,
+FS, MU, MR, MS, MV, ME, RS, PC-586RV, RT, RA, RX, MV, PC-386note AE, AR (1996年
+2月の時点)．
+PC-9801NL/A, PC-9821Es, Ne2, Np, Ns, Nd, Ld, Nm, Nf, Lt, Ne3, Nd2, Na7, Nx,
+Na9, Na12, Nb7, PC-486note AU, AV, AT, PC-586note ATでは使用不可 (1996年2月
+の時点)．また既にPC-9801-102, PC-9821XA-E01, PC-9821XV-E01が装着されている
+場合には，CardDock/98は使用不可．なおCardDock/98は1台のPCで1枚のみ使用可能．
+
+対応OSは，NEC版MS-DOS 3.3D/5.0/6.2，EPSON版MS-DOS 3.3/5.0/6.2，Windows3.1，
+Windows95．ただしMS-DOS3.3DでATAカードを使用する場合，最大使用可能容量は32MB．
+MS-DOSで使用する場合，PC-BOX162B使用時にはINT 2，INT 4(IRQ 6, IRQ A)は使用
+不可．PC-BOX162BのSW7はON(出荷時設定)とすること(D0000h〜D7FFFhの領域を有効に
+するため)．またPCBOX-n3使用時には，PCBOX-n3のSW1の5-6はON-ON(出荷時設定)と
+すること(D0000h〜D7FFFhの領域を有効にするため)．
+
+PCMCIA 2.1(JEIDA 4.2)仕様のTYPE I, TYPE IIのPCカードなら2枚，TYPE IIIのPC
+カードなら1枚使用可能．スロットは上段がスロット1，下段がスロット0．PCカード
+の抜き差しはPC本体背面側で行うが，本ボードの拡張バスコネクタにオプションの
+外部拡張アダプタ"CardDock/98-EX"を接続することにより，PC前面でのカードの抜き
+差しが可能となる（この場合，CardDock/98，CardDock/98-EXともTYPE I/IIまたは
+TYPE IIIのカードを1枚ずつ使用可能．CardDock/98-EX接続時，CardDock/98では
+スロット1は使用できなくなる）．
+TYPE IIIのPCカードはスロット0で使用．この場合スロット1は使用不可．
+以下，スロット0−スロット1に装着可能な組み合わせ：
+TYPE I−空き■TYPE II−空き■TYPE II−空き■空き−TYPE I■空き−TYPE II
+■TYPE I−TYPE I■TYPE II−TYPE I■TYPE I−TYPE II■TYPE II−TYPE I
+
+MS-DOSで使用する場合は，付属ソフトによりPCカードの種別，割り込みレベル，メモリ
+アドレスを指定・設定する．

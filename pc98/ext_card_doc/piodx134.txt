@@ -1,0 +1,33 @@
+
+PIO-DX134-4M (I・Oデータ)
+
+Built-in expansion RAM base board (4 MB) exclusively for PC-9801DX.PIO-EX134 series
+Additional expansion is possible by a proprietary daughter board.
+LIM EMS, port numbers 00E8H to 00EBH, maximum number of windows 8, windows
+Size 16 kB, window address 00000H to FFFFFH.
+Setting port numbers 10E0H to 10E2H, Memory access method is interleaved,
+CPU 1/0 wait.There is a parity bit.Current consumption up to 600 mA.
+
+When additional PIO-EX134 is added, the supplied software (DX134.EXE, IBSET.EXE,
+Set by TMDX.EXE (specify allocation of protected mode memory and EMS)
+Is not recognized as a protected mode memory (EMS
+Recognized only as) (Note 1).
+When setting, remove the C bus memory and insert it again after setting.
+It is necessary to set the board again.The main unit direct mounting 54/61 SIMM is
+There is no need to remove it even when setting PIO-DX134 (it is automatically protected
+Recognize).
+There are 2MB and 4MB in PIO-EX134, and they are used as slots on PIO-DX134.
+(Slot B) and the lower slot (slot A)
+But there are restrictions on combinations (Note 2):
+
+Memory capacity: 4MB 6MB 8MB 10MB 12MB
+Slot A: X 2MB 4MB 4MB 4MB
+Slot B: X X X 2 MB 4 MB
+
+Also, if this board is installed, use the B0000H-BFFFFH back RAM
+Program not available.
+
+Note 1: Protect memory for PIO-RA134 (for RA21 / 51) and PIO-DA134 (for DA)
+　　 As it is recognized as, setting by software is unnecessary.
+Note 2: This combination restriction is common to PIO-RA134 and PIO-DA134.
+

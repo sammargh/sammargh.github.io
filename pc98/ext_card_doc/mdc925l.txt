@@ -1,0 +1,33 @@
+
+MDC-925L (緑電子)
+
+92 compatible C bus bus master (MD bus master) SCSI board for multi-vendor support.
+High res mode compatible.I / O strings automatically on PC-H98 series and 98NOTE
+Switch to forwarding.Revision of BIOS ROM is 1.41 or later and compatible with Windows 95.
+BIOS ROM 1.43 using e10chk.exe which is a free software written by Mr. Marimo
+We checked about the upper limit of recognition capacity of this board (for Windows 95), 8 GB support
+The result was obtained.But BIOS ROM 1.36? , Windows 95 not supported)
+In the I / O data IDE-to-SCSI conversion board HDX-SC-3 IOD1A067 (built-in to 40GB external HDD
+Had been added) + Seagate ST3642A (6.4GB, not split with FAT32) but at startup
+It is misrecognized as capacity 2154 by TVAC automatic analysis,
+"Ignore the disk" is displayed, and the HDD has been completely ignored thereafter.Windows 95
+Parts on the board are partially different between the supported version and the non-supported version.
+Make settings on the board using a "easy 2" floppy disk,
+Immediately after the main unit's startup "pip pop" (or memory check)
+Start by pressing and holding the [CTRL] + [SHIFT] keys simultaneously
+(The latter has a hard disk or terminator on the board.
+It will not start if it is not connected).
+"6. Good" 2 can be set in "6. Memory Access "for SCSI ROM BIOS
+This item is for setting read / write enable / disable.
+
+The "Gudaku Raku 2" comes with a high-performance and well-known SCSI utility.
+1. "Regeneration of magnetic alignment
+　Erase HDD data.Also recognized by power off / reset during formatting
+Forced initialization of HDDs that are no longer possible.
+2. "Doctor of Magnetologist
+　Determine the reliability of the specified SCSI ID HDD.Logical examination at SCSI command level
+And, conduct magnetic defect determination etc.
+3. "Rejuvenating delight zombie "
+　Forcibly restore the HDD area that was released by mistake.If formatted
+Can not be resurrected.
+

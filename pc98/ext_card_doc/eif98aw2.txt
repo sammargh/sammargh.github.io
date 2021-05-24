@@ -1,0 +1,14 @@
+
+EIF-98AWII (ELECOM)
+
+C bus master SCSI-2 board.The setting method is the same as EIF-98AW and EIF-98AWIII (listed in 98 JUNK. DOC).
+When using with Windows 95, DMA transfer is used as the transfer method, as with EIF-98AW and EIF-98AWIII.
+Set it and make it recognized by 55 drivers.This recognition method was officially recognized by ELECOM itself.
+However, according to the company's separate document, it is not compatible with Windows 95, and it is up to EIF-98AW3 to operate
+I needed a grade.
+
+The final ROM is 2.01 for EIF-98AW and 2.11 for EIF-98AWII and EIF-98AWIII.ELECOM
+These boards are compatible with HDDs of 1GB or more because the expression on the old web page is vague
+It is unclear whether or not (other boards do not support, ROM version up
+Although "None" is written in the remarks column of the correspondence table in which the propriety is described, it is as it is
+Does that mean it corresponds?).

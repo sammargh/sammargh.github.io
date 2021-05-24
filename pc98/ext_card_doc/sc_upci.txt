@@ -1,0 +1,86 @@
+
+SC-U2PCI (I･Oデータ)
+
+PCI ver. 2.0 / 2.1 compliant SCSI-3 compliant bus master transfer SCSI H / A. PnP compatible.
+Compatible with PC-9821 / PC-98NX / PC / AT compatible machines.Only multi-vendor compatible with PC-98.
+Interrupt level, I / O port address, BIOS address are automatically set.
+Operating temperature range 5 to 55 °.Maximum power consumption +5 V = 400 mA, +12 V = 40 mA.
+In PC-98NX, support software programs that run on DOS can not be used.
+Also, it may not work depending on the installed PCI slot.
+Up to two connectors can simultaneously load SCSI devices in a three-connector lot
+Connection available.
+There are 6 types of substrates by lot.
+
+[SC-UPCI, SC-UPCIB]
+(1) Board name: SC-UPCI-5, SC-UPCI-5A, SC-UPCI-5AS
+・ 2 × 2 jumper switch JP1
+　Short between 1-3, 2-4 ■ BIOS enabled (factory setting)
+　1-3, open between 2-4 ■ BIOS disabled
+・ 2 × 4 jumper switch JP2
+　5-6, 7-8 short ■ Built-in terminator automatic (software) control (factory setting)
+　1-2, 7-8 short ■ Built-in terminator · narrow part forced separation
+　1-2, 3-4 short circuit built-in terminator forced disconnection
+(2) Board name: SC-UPCI, SC-UPCI-1
+・ 2 jumper switch JP1
+　Short ■ BIOS enabled (factory setting)
+　Open ■ BIOS disabled
+・ 2 × 4 jumper switch JP2
+　1, 2 short ■ Built-in terminator automatic (software) control (factory setting)
+　1, 4 short ■ Built-in terminator · narrow partial forced separation
+　3, 4 short ■ Built-in terminator forced separation
+(3) Board name: SC-UPCI-3
+・ 2 × 2 jumper switch JP1
+　Short between 1-3, 2-4 ■ BIOS enabled (factory setting)
+　1-3, open between 2-4 ■ BIOS disabled
+・ 2 × 4 jumper switch SW1
+　Short between 3-6, 4-5 ■ Built-in terminator automatic (software) control (factory setting)
+　Short between 1-8, 4-5 ■ Built-in terminator, narrow part forced separation
+　Short between 1-8 and 2-7 ■ Forced disconnection of built-in terminator
+
+[SC-UPCIN, SC-UPCINB] (without connector for internal 68-pin flat cable)
+Board name: SC-UPCIN-1
+・ 2 × 2 jumper switch JP1
+　Short between 1-3, 2-4 ■ BIOS enabled (factory setting)
+　1-3, open between 2-4 ■ BIOS disabled
+・ 3 jumper switch JP2
+　1-2 short circuit Built-in terminator automatic (software) control (factory setting)
+　2-3 short circuit Built-in terminator forced disconnection
+
+[SC-UWPCI, SC-UWPCIB]
+(1) Board name: SC-UWPCI-2
+・ 2 × 2 jumper switch JP1
+　Short between 1-3, 2-4 ■ BIOS enabled (factory setting)
+　1-3, open between 2-4 ■ BIOS disabled
+・ 2 × 4 jumper switch JP2
+　5-6, 7-8 short ■ Built-in terminator automatic (software) control (factory setting)
+　1-2, 7-8 short ■ Built-in terminator · narrow part forced separation
+　1-2, 3-4 short circuit built-in terminator forced disconnection
+(2) Board name: SC-UWPCI-1
+・ 2 jumper switch JP1
+　Short ■ BIOS enabled (factory setting)
+　Open ■ BIOS disabled
+・ 2 × 4 jumper switch JP2
+　1, 2 short ■ Built-in terminator automatic (software) control (factory setting)
+　1, 4 short ■ Built-in terminator · narrow partial forced separation
+　Short between 3, 4 ■ Built-in terminator forced separation
+
+This board is attached because it does not support the ACPI standard of Windows 98.
+Do not use the standby function of your PC.
+32-bit when using memory manager with MS-DOS or Windows 3.1
+I / O accessible version is required (for MS-DOS ver. 5.0, for PC-9821)
+EMM 386 attached to Windows 3.1.EXE / WinKit-H attachment VMM 386.EXE ver.3.10 or later).
+I / O data removable HDD "RM-SQ270" can not be used.Also I / O data made MO
+When using the disk "RM-MO640F", with PC-98NX and PC / AT compatible machines
+The Max sync transfer rate of the corresponding SCSI ID is 10.0 (MT / S) or less, and
+On the PC-9821, set the synchronous transfer upper limit of the corresponding SCSI ID to 10.0 (MT / s) or less
+About.
+CD-R drive, part of scanner and CD data ROM drive made by IO data
+When using "CDG series", with PC-98NX and PC / AT compatible machines
+The corresponding SCSI ID Max sync transfer rate to Async and Enable
+Set disconnection to No, and the corresponding SCSI ID on PC-9821.
+Set synchronous transfer upper limit asynchronously and disconnect permission to-respectively.
+The SCAM function in the BIOS setup menu remains "not used" in the factory settings
+Use.
+In PC-9821Xa / Xt, this board is installed with PCI setup disk
+Do not set the resource allocation of the slot in question "fixed".
+

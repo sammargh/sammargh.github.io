@@ -1,0 +1,13 @@
+EtherLink III　（3Com）
+
+Cバス用の10BASE-TのLANボード(NIC)．ボード上に3Com EtherLink III (C) 1994
+3C569B-J-TPO の記載あり("TPO"は手書きなので，別な表記もあり得る)．
+付属のFDによりリソースの設定を行う．出荷時設定では，I/Oベースアドレス=40D0h，
+割り込みレベル=IRQ3．
+付属のFD内のドライバはWindows3.1(DOS NDIS)／Lan Manager，WindowsNT 3.5，
+Netware 3.x(Server／Client)に対応しているが，Windows95／98／98SEにも標準
+でドライバが含まれている．
+OEMのような形で出荷されたボードのようで，限られた範囲でしかサポートが行われ
+なかったらしい(3Comにも資料が残されていないとのこと)．
+
+山猫飼いさんに投稿いただいた資料に若干の追加を行いました．

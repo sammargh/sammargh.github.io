@@ -1,0 +1,108 @@
+
+IF-2767 (ICM)
+
+Multi-vendor non-compliant C bus bus master SCSI I / F. Corresponding body is
+Equipped with 286 or more CPUs.Windows 95 compatible.SCSI connector is
+Amphenol half 50 pin.PC-9821Xa7e / Xb10 / V7 / Cb3 or later
+When using the model in the bus master mode, memory on the C bus
+Need to output refresh signal (Windows in safe mode
+Stop the memory refresh signal and start the transfer mode.
+Change to DMA transfer or W-FIFO transfer).
+2 8 dip switches and 1 4 dip switch on the board,
+2x2 2x jumper switch 1x 2x 2 jumper switch x 2x 5x
+There is one jumper switch.
+
+· 8 stations dip switch SW1: SCSI ID number of this board, interrupt level,
+　DMA channel setting
+1-2-3: SCSI ID number setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT 0 (factory setting)
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF # 0
+　ON-ON # 3 (default setting)
+※ In FIFO mode, DMA is not used at data transfer but status
+　Use DMA when executing commands such as.
+
+・ 8 stations dip switch SW2: local memory address (1-2-3-4-5),
+　Main unit model setting (6-7)
+(8 is always ON. Default setting: OFF-ON-ON-OFF-ON-ON-OFF-ON)
+The following shows the main unit model ■ DIP switch settings ■ Memory address order:
+Model only in normal mode ■ OFF-ON-ON-OFF-ON-ON-ON-ON
+　　　　　　　　　　　　 ■ \ DC 000 h ~ \ DC F FF h (factory setting)
+　Normal / Hi-Res dual-purpose machine ■ OFF-ON-ON-OFF-ON-OFF-OFF-ON-ON
+　　　　　　　　　　　　　■ Normal mode \ DC 000 h ~ \ DCF FF h
+　　　　　　　　　　　　　/ During high res mode \ EC 000 h ~ \ ECFFF h
+　※ \ is 0h or Fh.
+　※ We have high res mode when using with B4670II (PC-9864L)
+　　Be sure to turn on SW2 4-5 on the main unit.In this case local
+　　The memory address is set to \ EE000h to \ EEFFFh.
+
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　Only ON-ON (default setting) can be set.It will not work if you change it.
+　Bus master / DMA transfer CC0h, CC2h, CC4h, FIFO transfer
+　CC0h, CC2h, CC4h, CC6h, CC7h.
+3-4: Transfer mode setting
+　OFF-ON ■ Synchronous bus master transfer
+　ON-ON Asynchronous bus master transfer (factory setting)
+　ON-OFF W-FIFO transfer
+　OFF-OFF DMA transfer
+　※ FIFO transfer is not possible on machines with the 8086.Also H98, PC-386S, PRO-486
+　　In this case, bus master transfer is not possible.
+　※ FIFO transfer can not be used when using with GP-IB board.
+
+The jumper switch is not described in the manual.
+・ 2 x 2 series jumper switch JP1
+　Factory setting: 1 (L)-4, 2 (H)-3 short circuit
+
+・ 2 jumper switch JP2
+　Factory setting: Open (2 pins have one hole of jumper plug
+　　　　　　　　　　　  Plug in)
+　※ CPU speed is Middle or Low at bus master transfer with Ap / As / Ae
+　　There seems to be a case where setting change is required in case of, but details are unknown.
+
+・ 2 x 5 series jumper switch JP3
+　Factory setting: 1-10, 3-8 short, 2-9, 4-7, 5-6 open
+
+・ 2 jumper switch JP4 (exactly 6 through holes of JP4 (solder
+　Jumper pins are planted only in 2 and 3)
+　Factory setting: 2-3 shorts
+
+※ About the factory setting of the jumper switch: I have so far several dozens
+　I have seen this board, but all were the settings above, so this was shipped
+　Think of it as a time setting.
+
+-------------------------------------------------------- -------------------------------
+【The following is common to IF-2767 / 2768/2769】
+Valuestar for PC-9821V7 or later, mate-X for PC-9821Xa7e / Xb10 or later, PC-9821Cb3
+Since the specification of C bus has been changed in CanBe later, IF-2767 / 2768/2769
+C bus memory refresh of PC when using in bus master mode
+It is necessary to output a signal.The C bus memory refresh signal is
+Send when holding down [ESC] + [HELP] + [5] at startup of the machine,
+Stop by holding down [ESC] + [HELP] + [6] while starting up the machine
+It is done.Problems when C bus memory refresh signal is sent (turned on)
+And the measures are as follows:
+(1) EMM 386.It does not operate normally when EXE is not incorporated
+　→ EMM 386 in CONFIG.SYS.Incorporate the EXE.However, EMM 386 attached to MS-DOS made by NEC.EXE
+　　Other third-party EMS memory managers are not certified.
+(2) It does not operate normally in the safe mode of Windows 95
+　→ Stop the C bus memory refresh signal when starting up in the safe mode,
+　　Set the data transfer method of this board to FIFO or DMA.
+(3) When using DPMI (used by MS-DOS version Ichitaro ver.5 etc.) with MS-DOS ver.5.0 / 5.0A
+　 Hang-up
+　→ Use MS-DOS ver. 6.2 or higher.DPMI drivers from manufacturers other than NEC
+　　Operation is not guaranteed.
+* These problems occur regardless of whether or not IF-2767 / 2768/2769 is used.

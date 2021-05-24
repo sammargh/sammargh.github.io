@@ -1,0 +1,10 @@
+
+NMB-S (メルコ)
+
+CD-ROM and graphic attached to 110-pin expansion bus connector of 98NOTE / EPSON NOTE
+Accelerator complex unit.Sound source is not installed (NMB-G and NMB-S4F of the same series
+PCM / 26K compatible FM sound source compatible) Windows 95 compatible.AC adapter is +15 V (center plus).
+
+CD-ROM is SONY MODEL No. CDU33A-01 (2x speed).Graphic chip is CL-GD5428
+(VRAM 1MB).There is no switch etc.
+

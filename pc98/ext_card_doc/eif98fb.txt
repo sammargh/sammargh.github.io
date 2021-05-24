@@ -1,0 +1,69 @@
+
+EIF-98FB (ELECOM)
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot With PC-98FA-02
+Hardware compatible.EMS board and this board when using the sound board
+Do not mix with.When using the EMS driver, book the page frame of EMS
+Set so as not to overlap with the board's ROM address.
+The final ROM seems to be 2.30, but it does not support HDD of 1GB or more, and the version of ROM is upgraded
+It is also impossible to make it correspond.In addition, ELECOM made this board non-compliant with Windows 95.
+There are 2 8 dip switches and 3 3 jumper switches on the board.
+
+・ 8-station dip switch SW1: SCSI ID, interrupt level, DMA channel setting
+1-2-3: SCSI ID setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT 0 (factory setting)
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF DMA 0
+　ON-ON DMA 3 (default setting)
+
+・ 8 stations dip switch SW2: ROM address setting
+1-2-3: ROM address setting
+　OFF-OFF-OFF ■ D0000h to D0FFFh
+　ON-OFF-OFF D2000h to D2FFFh
+　OFF-ON-OFF D4000h to D4FFFh
+　ON-ON-OFF D6000h to D6FFFh
+　OFF-OFF-ON D8000h to D8FFFh
+　ON-OFF-ON DA000 h to DAFFF h
+　OFF-ON-ON DC000h to DCFFFh (factory setting)
+　ON-ON-ON ■ DE000h to DEFFFh
+4-5-6-7-8: Always OFF-ON-ON-ON-ON
+
+・ Three jumper switches SW3 and SW4: I / O page address setting
+　In the following, the order of SW3 SW4 I / O page address:
+　1-2 short ■ 1-2 short ■ CC0h (factory setting)
+　2-3 short ■ 1-2 short ■ CD0h
+　1-2 short ■ 2-3 short ■ CE0h
+　2-3 short ■ 2-3 short ■ CF0h
+
+・ Three jumper switch SW8: Transfer mode setting
+　1-2 short ■ DMA transfer
+　2-3 short ■ DMA / FIFO automatic switching (DMA transfer in OS / 2, FIFO in other OS)
+                                 Transfer: Factory setting)
+
+■ Quick boot function
+The quick boot function is the check of the number after the ID number set on this board
+Function that omits.This can reduce the time until system startup.
+When setting the ID number of the maximum value + 1 of the ID number of the connected SCSI device and turning on the PC,
+The quick boot function works.This function is only available on MS-DOS (OS / 2 etc.
+Let's use it with ID = 7).
+
+■ Quick format function
+The quick formatting function executes MS-DOS initialization and area allocation at high speed.
+function.
+When the format screen is displayed by the FORMAT / H command of MS-DOS, press the [Kana] key,
+After that, proceed with initialization-> area reservation.
+

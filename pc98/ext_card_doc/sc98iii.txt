@@ -1,0 +1,44 @@
+
+SC-98III, SC-98IIIP, SC-98IIISB, SC-98IIIPSB (I・Oデータ)
+
+Multi-vendor PnP-compatible C-bus SMIT SCSI board (in high resolution mode
+PnP mode can not be used).The shape of the SCSI connector is SC-98III and SC-98IIISB
+In the case of anphenol half pitch 50 pin, in the SC-98IIIP and SC-98IIIPSB
+D sub half 50 pin.SC-98III and SC-98IIIP are based on second bus TYPE II
+Board, also SC-98IIISB and SC-98IIIPSB are second bus type II daughter boards.
+Power consumption +12 V = 100 mA, +5 V = 500 mA. The BIOS ROM revision is 1.04 or later
+It supports MMX Pentium, but the transfer speed drops on machines with MMP Pentium.
+Not compatible with I / O data extension BOX.Also, combined use with GA-968V is not possible.Also SDB
+SDB series support software is ver. 1.80 or later
+It does not work normally in SMIT transfer (from a CD-ROM connected to SC-98III (P)
+It becomes impossible to read out.There is no problem with removable media etc.Also I / O transfer
+And no problem with DMA transfer).
+There is one double dip switch and one double jumper switch on the board.
+
+Interrupt level, DMA channel, ROM address, machine type (high resolution
+Mode) and transfer method, press [CTRL] + [GRAPH] + [S] immediately after the main unit starts.
+Set in the setup menu to start.Setup menu is displayed
+If not, set the support software disk to FDD.
+I will ask "Do you want to update the BIOS after rebooting", so "N"
+Choice).
+The interrupt levels are INT 0 (IRQ 3), INT 1 (IRQ 5), INT 2 (IRQ 6), INT 3 (IRQ 9) 
+And DMA channel is selected from CH 0 or CH 3 (automatically set in PnP mode).
+Also, I / O port address in non-PnP mode is fixed at CC0h to CC7h.When the resource ships
+The setting is INT 0 (IRQ 3), DMA CH 3, ROM address DC000h (in normal mode)
+Or EC 000 h (in high resolution mode).
+The parameter analysis of the HDD is displayed on the screen after the memory count is finished
+When [ID] and [Device] are displayed, press [CTRL] + [GRAPH] + [P] to activate.
+Use an automatic analysis utility.Parameter display of automatic analysis is actual
+It may appear much smaller than the capacity, but there is no problem in use.
+Manually input the parameter if automatic analysis fails (
+Ask or use the multi-vendor function auxiliary program HDDP.HDDP
+Unavailable on Windows 95).
+
+-Dual dip switch: switching between PnP and non-PnP modes
+　OFF-OFF = PnP mode
+　OFF-ON = non-PnP mode
+
+・ 2 jumper switches: No description of functions in manual.Factory setting: Short
+In 98JUNK.DOC, it is said that PC-98XA is open, but I confirm the actual operation
+Not done.
+

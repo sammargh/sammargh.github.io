@@ -1,0 +1,7 @@
+
+CentreCOM LA-98-T (CONTEC)
+
+C bus NIC (LAN board) with 10BASE-2 / 5 / T connector.AUTO / LEGACY on board
+There is a changeover switch.PnP on the AUTO side, non-PnP. On the LEGACY side. Interrupt level and I / O
+The port address is CFG98.Set using EXE.
+

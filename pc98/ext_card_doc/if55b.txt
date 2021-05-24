@@ -1,0 +1,78 @@
+
+IF-55B (TEAC)
+
+C bus bus master SCSI board.Two x 3 jumper switches and 2 x 4 stations on the board
+There is also a jumper switch, two 8-deep dip switches and one 5-deep dip switch.
+
+・ 2 x 3 jumper switch JP1: Supply of terminator power (Factory setting: 3-5,
+　4-6 shorts)
+
+・ 2x4 jumper switch JB1: DMA control signal priority (factory setting: 3-6,
+　4-5 shorts)
+　※ ASCII book section edition, PC-98 series peripheral equipment super tune up (1994
+　　In the figure on page 193 of the year issue, it is a short between 4-6, but an error between 4-5
+　　Will.
+
+・ 8-station dip switch SW1: SCSI-ID, interrupt level, DMA channel setting
+1-2-3: SCSI-ID setting
+　0FF-0FF-0FF: ID = 0
+  OFF-OFF-ON: ID = 1
+  OFF-ON-OFF: ID = 2
+  OFF-ON-ON: ID = 3
+  ON-OFF-OFF: ID = 4
+  ON-OFF-ON: ID = 5
+  ON-ON-OFF: ID = 6
+  ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF: INT 0
+　ON-OFF-OFF: INT 1 (factory setting)
+　OFF-ON-OFF: INT 2
+  ON-ON-OFF: INT 3
+  OFF-OFF-ON: INT 5
+  ON-OFF-ON: INT 6
+7-8: DMA channel setting
+　OFF-OFF: DMA # 0
+  OFF-ON: DMA # 2
+  ON-OFF: Setting prohibited
+  ON-ON: DMA # 3 (factory setting)
+
+・ 8 stations dip switch SW2: Local memory address, setting of main unit model
+1-2-3: Local memory address (normal) setting
+　OFF-OFF-OFF: D0000h to D0FFFh
+　ON-OFF-OFF: D2000h to D2FFFh
+　OFF-ON-OFF: D4000h to D4FFFh
+　ON-ON-OFF: D6000h to D6FFFh
+　OFF-OFF-ON: D 8000 h to D 8 FFF h
+　ON-OFF-ON: DA000h to DAFFFh
+　OFF-ON-ON: DC000h to DCFFFh (factory setting)
+　ON-ON-ON: DE 000 h to DEFFF h
+4-5: Setting of local memory address (high res)
+　OFF-OFF: E8000h to E8FFFh
+　ON-OFF: EA000h to EAFFFh
+　OFF-ON: EC000h to ECFFFh (factory setting)
+　ON-ON: EE000h to EEFFFh
+6-7: Setting of machine model
+　OFF-OFF: PC-98XA
+  ON-OFF: CPU is the model of 8086 / V30
+　OFF-ON: Normal / High res combined machine
+　ON-ON: CPU model 286/386/486 (default setting)
+8: Do not change (factory setting ON)
+
+・ 5 stations dip switch SW3: I / O port address, transfer mode, at boot
+　ID display ON / OFF, boot mode setting
+1-2: I / O port address setting
+　OFF-OFF: CCxh (factory setting)
+　ON-OFF: CDxh
+　OFF-ON: CExh
+　ON-ON: CFxh
+  (x represents 0, 2, 4)
+3: Transfer mode setting
+　ON: Bus master transfer (factory setting)
+　OFF: DMA transfer
+4: Set ID display ON / OFF at H boot
+　ON: ON (factory setting)
+　OFF: OFF
+5: Boot mode setting
+　ON: Fast boot mode (factory setting)
+　OFF: Standard boot mode
+

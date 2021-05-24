@@ -1,0 +1,31 @@
+
+SOUND THEATER Speak board (アイドルジャパン）)
+
+C bus sound board using YAMAHA YM2608 (OPNA) for FM sound source LSI.
+The officially supported model is PC-9801UV / CV / VM / VX / RX / EX / DX / RA / DA. Joy of MSX specification
+Card / Joystick can be connected.Joy connector on the back of the board
+The jack on the right side of the EMS jack is the one with the included audio cable.
+Insert and use.Insert the short plug here to disconnect the EMS.
+Line I / O terminal is for ADPCM sampling, from stereo or radio cassette
+It is possible to sample by connecting voice (line output) of.
+512 KB = about 32 seconds (at 16 KHz)
+512 KB = about 64 seconds (at 8 KHz)
+
+
+・ 2 x 5 series jumper switch JP1: ROM address setting
+　Short between 2 and 9 only ■ Use 0CC000h to 0CFFFFh for YM2608 control (factory setting)
+　Shorted only between 5-6 ■ 0 CC 000 h to 0 C FFFF h are cut off
+Instruction can not be executed
+
+・ 2x2 jumper switch JP2: I / O port address setting
+　Short between 2 and 3 ■ 0188 h, 018 Ah (For PC-9801 UV / CV / VM / VX / RX / EX / RA: Factory setting)
+　Short between 1 and 4 ■ 0088 h, 008 Ah (for PC-9801 DX / DA)
+
+・ 2 stations jumper switch JP3: There is no explanation in the manual
+
+・ 3 x 2 series dip switch P4: Interrupt level setting
+　Short between SW3 side 2-3 / short between opposite side 2-3 ■ INT 0
+　SW3 side 1-2 short / opposite side 2-3 short ■ INT 4
+　Short between SW3 side 1-2 / short between opposite side 1-2 ■ INT 5 (factory setting)
+　SW3 side 2-3 short / opposite side 1-2 short ■ INT 6
+

@@ -1,0 +1,194 @@
+HA55BS3 (日本テクサ)
+
+非マルチベンダCバスバスマスタSCSIボード．
+Win95には非対応である（日本テクサはWin95発売前にPC-98周辺機器市場より撤退）が，
+使用する場合は，転送モードをDMA転送に設定し，55ボード用ドライバで認識させる．
+参考　http://web.archive.org/web/20010430164823/http://www.texa.co.jp:80/TEXA/
+　　　oshiete/answer/Windows.html
+※TEXAではバスマスタ転送を同期転送（同期モード）と表現し，
+I/O転送（CPU転送，PIO転送）をGTモードと表記する場合がある．
+転送方式はCPU及びHDD判別により自動的に選択される．
+V30搭載機とPC-H98シリーズでは同期モードは不可（自動的にGTモードとなる）．
+またPC本体に16MB以上のメモリが搭載されている場合も同期モード不可
+（GTモードないしDMAモードにて使用のこと）．
+以下の機種では下記の拡張スロットにて使用のこと：
+PC-9801VX0, 2, 4……#2, #3, #4
+PC-98XA……#3, #5
+PC-286V……#2, #3, #4
+PC-286LS(T), PC-386LS(C/X)/LSR……#2（背面より見て左側）
+また以下の機種では下記の拡張スロットを使用する場合，DMAチャンネルを0または1に設
+定のこと：
+PC-9801E……#6
+PC-9801F1, 2/VF/VM0. 2, 4……#4
+PC-9801F3/U/UV/CV……#2
+PC-286U……#2
+また以下の機種ではカードエッジコネクタ脇のスイッチピンを逆に取り付けること：
+PC-9801U/UV/CV/UR/UF
+※PC-9801UV2で拡張スロットの信号の乱れにより動作しない場合がある．
+またPC-9801DSでは同期モードでは初期化できないなど正常に動作しない場合がある．
+
+スイッチの設定
+出荷時設定
+JP1：3-6, 4-5ショート，1-8, 2-7オープン
+JP3：1-8, 2-7ショート，3-6, 4-5オープン
+SW1：ON-OFF-OFF-ON-ON
+SW2：OFF-ON-ON-OFF-ON-ON-ON-ON
+SW3：OF側ショート
+SW4：OFF側ショート
+SW5：OFF-OFF-OFF-ON-ON-ON-ON-ON
+
+標準設定
+PC本体の機種により8種類に分かれる．以下，他のDMAチャネル，割り込みレベル，
+メモリアドレスを使用するボードと併用しない場合の本ボードの設定について：
+Type区分■SW1■SW2　SW3, 4はともにOFF側ショート
+Type 1■PC-9801/E/F/M■ON-OFF-OFF-OFF-OFF■OFF-ON-OFF-OFF-ON-ON-OFF-ON
+Type 2■PC-9801VF■ON-OFF-OFF-ON-ON■OFF-ON-ON-OFF-ON-ON-OFF-ON
+Type 3■PC-9801VM/U/UV/CV/UF/UR，PC-286U■ON-OFF-OFF-ON-ON
+        ■OFF-ON-ON-OFF-ON-ON-OFF-ON
+Type 4■PC-9801UX/VX/RX/RA/EX/ES/RS/DX/DS/DA/CS/US/FS/FX/FA, PC-H98S model 8
+        ■ON-OFF-OFF-ON-ON■OFF-ON-ON-OFF-ON-ON-ON-ON
+Type 5■PC-98XA■ON-OFF-OFF-ON-ON■OFF-ON-ON-OFF-ON-OFF-OFF-ON
+Type 6■PC-98XL/XL^2/RL, PC-H98 model 60/70/80/90/100■ON-OFF-OFF-ON-ON
+        ■OFF-ON-ON-OFF-ON-OFF-ON-ON
+Type 7■PC-286/386シリーズ(L/LF/LE/Uは除く)■ON-ON-OFF-ON-ON
+        ■OFF-ON-ON-OFF-ON-ON-ON-ON
+Type 8■PC-386G/GS/GE，486GF/GR■ON-ON-OFF-ON-ON■OFF-ON-ON-OFF-ON-OFF-ON-ON
+
+標準設定以外の設定
+・SW1：割り込みレベルとDMAチャネル
+1-2-3……割り込みレベル
+OFF-OFF-OFF……INT0(IRQ3)
+ON-OFF-OFF……INT1(IRQ5)(出荷時設定)
+OF-ON-OFF……INT2(IRQ6)
+ON-ON-OFF……INT3(IRQ9)
+OFF-OFF-ON……INT5(IRQ12)
+ON-OFF-ON……INT6(IRQ13)
+4-5：DMAチャネル
+OFF-OFF……DMA0
+ON-OFF……設定禁止
+OFF-ON……DMA2
+ON-ON……DMA3(出荷時設定)
+・SW2：メモリアドレス，本体機種，ROMアクセス
+8……ROMアクセス（ONでアクセス可，OFFで不可）
+以下でxはON, OFFいずれでも可．また"\"はアドレスバス上位4ビット(AB231-AB201)
+の値を示し，"0"または"F"である．本ボードを他のボードと併用する場合はメモリア
+ドレスが重複しないように設定すること．
+●本体がType2, 2, 3の場合
+OFF-OFF-OFF-x-x-ON-OFF-ON……D0000-D0FFF
+ON-OFF-OFF-x-x-ON-OFF-ON……D2000-D2FFF
+OFF-ON-OFF-x-x-ON-OFF-ON……D4000-D4FFF（Type1の標準設定）
+ON-ON-OFF-x-x-ON-OFF-ON……D6000-D6FFF
+OFF-OFF-ON-x-x-ON-OFF-ON……D8000-D8FFF
+ON-OFF-ON-x-x-ON-OFF-ON……DA000-DAFFF
+OFF-ON-ON-x-x-ON-OFF-ON……DC000-DCFFF（Type2, 3標準設定）
+ON-ON-ON-x-x-ON-OFF-ON……DE000-DEFFF
+PC-9801/E/F/MではGP-IBボードとの併用不可（メモリの割付が競合）
+●本体がType 4, 7の場合
+OFF-OFF-OFF-x-x-ON-ON-ON……D0000-D0FFF
+ON-OFF-OFF-x-x-ON-ON-ON……D2000-D2FFF
+OFF-ON-OFF-x-x-ON-ON-ON……D4000-D4FFF
+ON-ON-OFF-x-x-ON-ON-ON……D6000-D6FFF
+OFF-OFF-ON-x-x-ON-ON-ON……D8000-D8FFF
+ON-OFF-ON-x-x-ON-ON-ON……DA000-DAFFF
+OFF-ON-ON-x-x-ON-ON-ON……DC000-DCFFF（出荷時設定）
+ON-ON-ON-x-x-ON-ON-ON……DE000-DEFFF
+●本体がType 5の場合
+x-x-x-OFF-OFF-OFF-OFF-ON……\E8000-\E8FFF
+x-x-x-ON-OFF-OFF-OFF-ON……\EA000-\EAFFF
+x-x-x-OFF-ON-OFF-OFF-ON……\EC000-\ECFFF（標準設定）
+x-x-x-ON-ON-OFF-OFF-ON……\EE000-\EEFFF
+●本体がType6, 8の場合
+本体の電源投入時にノーマル／ハイレゾリューションモードの判別を行い，
+メモリアドレスを自動的に切り替える
+○ノーマルモード時
+OFF-OFF-OFF-x-x-OFF-ON-ON……\D0000-D0FFF
+ON-OFF-OFF-x-x-OFF-ON-ON……\D2000-D2FFF
+OFF-ON-OFF-x-x-OFF-ON-ON……\D4000-D4FFF
+ON-ON-OFF-x-x-OFF-ON-ON……\D6000-D6FFF
+OFF-OFF-ON-x-x-OFF-ON-ON……\D8000-D8FFF
+ON-OFF-ON-x-x-OFF-ON-ON……\DA000-DAFFF
+OFF-ON-ON-x-x-OFF-ON-ON……\DC000-DCFFF（標準設定）
+ON-ON-ON-x-x-OFF-ON-ON……\DE000-DEFFF
+○ハイレゾリューションモード時
+x-x-x-OFF-OFF-OFF-ON-ON……\E8000-\E8FFF
+x-x-x-ON-OFF-OFF-ON-ON……\EA000-\EAFFF
+x-x-x-OFF-ON-OFF-ON-ON……\EC000-\ECFFF（標準設定）
+x-x-x-ON-ON-OFF-ON-ON……\EE000-\EEFFF
+・SW3, 4：I/Oポートアドレスの設定
+ON-OFF……0CC0, 0CC2, 0CC4（出荷時設定）
+ON-OFF……0CD0, 0CD2, 0CD4
+OFF-ON……0CE0, 0CE2, 0CE4
+ON-ON……0CF0, 0CF2, 0CF4
+PC-98B55（カセット磁気テープユニット）接続時はSW3, 4を出荷時設定以外の設定に
+変更し，SW2の8をOFFにする必要
+・SW5：MO種別設定，MO動作イメージ切替，強制DMAモード設定，ボードのID番号の設定
+1……未使用
+2……OFFでLUSTERシリーズ（TEXA製3.5インチMOドライブ）で3イメージの切り替え
+が可能（それ以外のMOドライブではNECイメージ固定），
+ONでLUSTERシリーズ以外で3イメージの切り替えが可能
+（3イメージの切り替えはSW5の3-4の組み合わせで設定）
+3-4……MO動作イメージ切り替え
+ON-OFF……NECイメージ（NECのPC-OD301互換モードとなり，3.5インチMOとして認識）
+OFF-OFF……TEXAイメージ
+OFF-ON……HD(Large)イメージ（3.5インチMOを約127MBのHDDとして認識）
+ON-ON……HD(Small)イメージ（3.5インチMOを約121MBのHDDとして認識）
+5……強制DMAモード設定：OFFでDMA転送モード，ONで転送モード自動切り替え
+6-7-8……本ボードのID番号の設定
+OFF-OFF-OFF……設定禁止（ID0）
+ON-OFF-OFF……ID1
+OFF-ON-OFF……ID2
+ON-ON-OFF……ID3
+OFF-OFF-ON……ID4
+ON-OFF-ON……ID5
+OFF-ON-ON……ID6
+ON-ON-ON……ID7（出荷時設定）
+・SW6……出荷時設定のまま使用（1-4全てOFF）
+・JP1, 3……出荷時設定のまま使用
+（JP1：3-6, 4-5ショート，1-8, 2-7オープン／JP3：1-8, 2-7ショート，3-6, 4-5オープン）
+
+・オプション機能の"B-Quick"（高速再起動）について
+起動時にSCSI機器を記憶することにより，リセット後の高速再起動が可能．
+この機能は標準で装備されており，解除不可能
+・"PL-Quick"（高速フォーマット）について
+MS-DOS上でのHDDの初期化・領域確保を簡略化するモード．
+このモードでフォーマットを行うと，初期化は約5秒，領域確保は約10秒で終了．
+（※HA-55BS4と同様，初期化を簡略化するのが"P-Quick機能"で，
+領域確保を簡略化するのが"L-Quick機能"らしい）
+format.exe起動前にカナキーOFFでP-Quick有効，ONで無効．
+CAPSキーOFFでL-Quick有効，ONで無効．セクタ長を変更する場合や，
+初期化・領域確保中にリセット／電源OFFにしたHDDを再初期化する場合にはPL-Quickを
+解除して初期化を行うこと．
+
+起動画面について：
+システム起動時，カナキーをONにしておくとIDサーチ画面が表示されない
+（IDサーチ自体は行われるので，サーチ画面の表示／非表示にかかわらずシステム起動
+時間は変わらない）
+
+・"Device="：認識したSCSI機器の種別
+[上の行]
+HD5……512バイト／セクタのセクタ長のHDD
+HD2……256バイト／セクタのセクタ長のHDD
+HD……セクタ長が不明なHDD
+MO3……3.5インチMOディスクのNEC PC-OD301互換モード
+MO5……NEC PC-OD101
+mhd……リムーバブル装置のハードディスクイメージモード
+CD……CD-ROMドライブ
+STR……上記以外で認識されたSCSI装置（テープストリーマなど）
+un……認識したが動作不可なので接続を切ったSCSI装置
+（mhd待ち時間内にメディアが挿入されない場合など）
+空白……指定したID番号より応答がない（未接続）
+認識確認メッセージ
+?……認識確認中
+[下の行]
+Syn……同期モードで動作する機器
+Media……LUSTERにメディアが挿入されていない
+Wait……SCSI装置が"busy"ステータスなのでwait中
+Non Device……どのIDの機器からも応答がない
+Error SW1(45)……禁止されているDMAチャネルが設定されている
+Error SW1(123)……禁止されているINTレベルが設定されている
+
+"DMA/INT="：DMAチャネル/割り込み(INT)レベル
+"Loc="：ROMアドレスロケーション
+"Port="：I/Oポートアドレス
+"Transfer="：データ転送方式
+"Luster="：LUSTERの動作イメージ（NEC mode, TEXA mode, HDD Large mode, HDD Small mode）

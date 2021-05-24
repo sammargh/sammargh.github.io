@@ -1,0 +1,136 @@
+
+HA-55BS4, HA-55BSW (Nippon Teksa)
+
+Multi-vendor compatible C bus bus master SCSI board by parameter setting.
+Although not compatible with Windows 95 (Japan Teksa has withdrawn from the PC-98 peripheral market before Windows 95 is released),
+When using it, set the transfer mode to W-GT mode or DMA transfer and let the 55 board driver recognize it.
+Reference http://web.archive.org/web/20010430164823/http://www.texa.co.jp:80/TEXA/
+　　　oshiete / answer / Windows.html
+* In TEXA, bus master transfer is expressed as bus steal transfer (HS-BS mode), and I / O transfer (CPU transfer, PIO transfer)
+Is sometimes referred to as W-GT mode.
+The transfer method is automatically selected by CPU and HDD discrimination.
+HS-BS mode is not available on V30 machines and PC-H98 series (automatically becomes W-GT mode).
+In addition, HS-BS mode is not possible even when the memory of 16 MB or more is installed in the PC body (W-GT mode or DMA mode)
+Use in).
+Please use the following expansion slots for the following models:
+PC-9801VX0, 2, 4 ...... # 2, # 3, # 4
+PC-98 XA ...... # 3, # 5
+PC-286LS (T), PC-386LS (C / X) / LSR ...... # 2 (left side seen from the back)
+Also, set the DMA channel to 0 when using the following expansion slots with the following models:
+PC-9801 / VM0. 2, 4 ...... # 4
+PC-9801UF / CV ...... # 2
+PC-286U ...... # 2
+Also, on the following models, attach the switch pin beside the card edge connector in reverse:
+PC-9801UV / CV / UR / UF
+* There is a case that the PC-9801UV2 does not operate due to the signal disturbance of the expansion slot.
+Also, with PC-9801DS, there may be cases where it does not operate normally, such as initialization can not be performed in HS-BS mode.
+Board settings are based on the "Switch Setting Utility".There are BIOS version and FD version in this,
+The former is activated by pressing and holding [T] + [S] simultaneously when the main unit starts.
+【note】
+・ Since there is a system selector in high resolution mode, when using the FD version switch setting utility,
+Start while holding down the CTRL key, check the beeper of the selector and then release the key.
+-If the settings are incorrect and the BIOS version or FD version switch setting utility can not be started,
+By activating the main unit while pressing the red “setting reset switch” on the back of the board
+You can start the FD version switch setting utility.
+• If the I / O port address is set to other than the initial setting [CC0H-CC4H (CC6H, CC7H)],
+The BIOS_ROM is automatically set to disabled.
+In this case, the BIOS version switch setting utility can not be started
+("CC6H, CC7H" in parentheses are used additionally in W-GT mode (I / O transfer)).
+・ When W-GT mode (I / O transfer) is selected or when used with PC-H98 series, with PC-9801-29 (GP-IP) etc.
+In such a case, set the transfer mode to DMA because there are conflicting I / O addresses.
+・ “Hold request channel” is a bus used during bus steal (bus master) operation
+Hold channel.
+・ About "D-Quick" function of "Optional Settings":
+Search SCSI_ID of connected SCSI devices and automatically store them on the board.
+As a result, since the SCSI_ID search of the connected SCSI device is performed, the boot time can be shortened.
+Once the SCSI_ID is stored, the storage of the SCSI_ID is retained even if the power of the main unit is turned off.
+When adding or removing a SCSI device while the D-Quick function is enabled,
+When activated while simultaneously pressing [T] + [D] (not [T] + [S]),
+A search for SCSI_ID is performed and the board is stored again.
+・ About "WAIT timer":
+It is possible to delay the start of ID search for SCSI devices with slow start-up.
+You can cancel WAIT by pressing the ESC key during WAIT.It is valid only when the power is turned on and invalid when it is reset.
+・ About "Reset WAIT":
+SCSI reset can be delayed from the time of main unit startup.Valid only when the power is on.
+・ About "Device recognition":
+The ID of the connected SCSI device can be registered in advance and stored.
+By this, it is possible to omit the check of the ID that is not connected at the time of main unit startup, and to shorten the startup time.
+When adding a SCSI device, be sure to specify the ID of the additional device.
+・ About "Initialization Protect":
+Do not accidentally initialize the HDD.If this function is enabled, it will be against the execution of format.exe of MS-DOS,
+Display the message "initialization failed" and exit without initialization.
+・ About "Read Protect":
+If an HDD that can not be accessed due to destruction of the system area or unauthorized access is connected,
+In some cases, FDD boot for initialization can not be performed.
+In such a case, FDD activation is enabled by prohibiting the HDD from being booted.
+After startup, press the STOP key to release the boot prohibition and then execute the format command.
+・ About "Device transfer method":
+Data transfer method can be set for each SCSI_ID.Valid only when using MS-DOS.
+・ About "Device parameter":
+Various parameter modes can be set for each SCSI_ID.When using TEXA HDD, use only TEXA parameters.
+※ MO HD image (Large) ...... Recognizes 3.5 inch MO as about 127 MB HDD
+　MO HD image (Small) ...... Recognizes 3.5-inch MO as an approximately 121 MB HDD
+　Other mode ...... It becomes PC-OD301 compatible mode of NEC and recognizes as 3.5 inches MO
+
+・ About "P-Quick Function" of "Other functions":
+It simplifies MS-DOS initialization and reduces initialization time.
+P-Quick enabled with kana key OFF and disabled with ON when format.exe is launched.Valid only when using MS-DOS.
+When changing the sector length,
+When re-initializing an HDD that has been reset / power off during initialization, release P-Quick and perform initialization.
+・ About "L-Quick Function":
+Simplify the area reservation of MS-DOS and shorten the area reservation time.
+L-Quick enabled with CAPS key OFF when format.exe is launched, disabled with ON.Valid only when using MS-DOS.
+・ About "SCSI_ID search stop function":
+The search for SCSI_ID can be stopped while pressing the GRAPH key when the search screen is displayed.
+・ About "SCSI_ID search stop function":
+You can cancel the SCSI_ID search by pressing the CTRL key when the search screen is displayed.
+
+[About the startup screen]
+-"Device =": Type of recognized SCSI device
+HD5: HDD with a sector length of 512 bytes / sector
+HD2: HDD with a sector length of 256 bytes / sector
+HD ...... HDD with unknown sector length
+MO3: NEC PC-OD 301 compatible mode for 3.5 inch MO disk
+MO5 ...... NEC PC-OD101
+mhd ...... Hard disk image mode of removable device
+CD ...... CD-ROM drive
+otr ... SCSI device recognized other than above
+un ...... A SCSI device that has been recognized but disconnected because it can not operate
+(Eg if media is not inserted within mhd wait time)
+Blank ... No response from the specified ID number (not connected)
+[Recognition confirmation message]
+?...... Checking recognition
+wait ... waiting because the SCSI device is in "busy" status
+media ... request media when no media is inserted at hmd
+-"Hd pmt": SCSI_HDD parameter mode
+txa ... TEXA parameter
+nec ... NEC parameter (92 parameters)
+ntl ... NATURAL parameter (parameter that SCSI_HDD originally has)
+mnl ... Manual parameter (Manual setting of HDD head number / sector number / cylinder number manually)
+-"Id trs": Transfer method
+bs ...... HS-BS method
+gt ...... W-GT method
+dma ...... DMA method
+・ Message area:
+syc: SCSI synchronous transfer of target ID is possible
+waiting .... xx ...... Displayed during WAIT when the WAIT timer function is enabled, xx is the count number until the end
+Non Device ... When no SCSI device is recognized
+-"DMA / INT =": DMA channel / interrupt (INT) level
+・ "Loc =": ROM address location
+・ "Port =": I / O port address
+-"Transfer =": data transfer method
+・ Others: The following message is displayed at the time of abnormality by self-diagnosis at startup
+Error ROM sum ...... The content of SCSI BIOS is abnormal
+Error DMA or INT setting ...... Incorrect setting of DMA channel and INT level
+
+※ About automatic loading of parameters:
+It does not operate with anything other than PC-9801-55 fully compatible SCSI_I / F.
+Connect the I / F used so far and the target HDD and start the switch setting utility,
+Select target HDD and record parameters in setting utility.
+Next, replace the I / F with this product, connect the target HDD, and start the switch setting utility,
+Select the target HDD ID and register the parameters to this product.
+If there are multiple target HDDs, repeat these operations.
+
+※ When HA55BSW transfers a large amount of data, 1 byte of data drop occurs every 64 KB
+The following bug has been reported.This is not only the bus steal transfer mode but also W-GT mode
+But it is said to happen.On the other hand, there are also reports that this phenomenon could not be confirmed.

@@ -1,0 +1,109 @@
+
+Power Window 801, 801+, 928 (Canopus)
+
+C bus graphic accelerator board.Graphics chip is Power Window 801
+The S3 company 86C801 and the Power Window 928 are equipped with the S3 company 86C928.VRAM 1MB
+(With Power Window 928 VRAM expansion kit 928-1M (Model No. CIM-1137-01) 2MB VRAM
+Can be added toMaximum current consumption is +5 V, 810 mA for Power Window 801/801 +
+/ +12 V, 40 mA, 928 for VRAM 1 MB + 5 V, 930 mA / + 12 V, 40 mA, VRAM 2 MB + 5 V, 940 mA
+/ +12 V, 40 mA.
+In PowerWindow801 / 801 +, 2 rotary switches and 8 series dip switches on the board
+There are one and two jumper switches. In 928, one further six dip switches, three
+One jumper switch and two jumper switches are added.
+Operation is not guaranteed on machines with CPU accelerator (Operation of machines with ODP is guaranteed). 
+The main unit's GCD clock should be used at 5 MHz.In PC-9801FA, 61 on internal expansion RAM board
+Compatible SIMMs should be used with 5 or less (mounted memory 13.6 MB or less).
+
+・ Rotary switch R-DPSW1: I / O port address setting
+Standard (shipment) I / O port address: 
+06D0-06DF, 16D0-16DF, 26D-26DF, 36D0-36DF 
+46D0-46DF, 56D0-56DF, 66D-66DF, 76D0-76DF 
+86D0-86DF, 96D0-96DF, A6D-A6DF, B6D0-B6DF 
+C6D0-C6DF, D6D0-D6DF, E6D-E6DF, F6D0-F6DF
+The second digit from the left of each I / O port address “6” on the rotary switch R-DPSW1
+It can be changed between 1-7 by setting. 
+Software called "PWIO.EXE" is included to check how to set R-DPSW1.
+This is done before setting the board to the PC. 
+On LAN boards where the I / O port address to be used overlaps with the Power Window, use PWIO.EXE
+Execution may cause a malfunction.In such a case, unplug the LAN cable
+Run PWIO.EXE in state. 
+
+・ Rotary switch VR1: Quick saver time setting
+Set the time for the quick saver that realizes the screen saver function in hardware.
+Quick saver function ON / OFF is setup program and control software
+Set this VR1 to darken the screen if there is no access for a while
+Do with.Turning clockwise will increase this time (about 4 to 5 minutes at maximum).
+
+・ 2 jumper switch JP2: compared to when not using Power Window
+If the display seems too bright, remove the jumper plug (short plug). 
+
+・ 8 stations dip switch S1: Memory space specification
+Basically, no change is required (Factory setting: ON-ON-ON-ON-OFF-OFF-OFF-OFF-OFF).
+The memory space uses 128KB from F00000H by default (within the system reserved area).
+However, with PC-486GF / GR / GR + / GR Super / P, the memory space of this F00000H ~ is as it is
+As it can not be used, execute attached F.EXE to access the area from F00000H.
+There is a need to.Also, when using Power Window via I / O expansion unit, many
+If this memory space can not be used.In this case, if you use auto setup,
+Examine the space and configure it if it is available.When performing manual setup,
+If the memory space can not be used when using the I / O expansion unit, etc.
+Select "Use".However, the display of 16.77 million colors is not possible, and the drawing speed is slightly reduced.
+When changing the memory space, PW801928.INI editing and S1 in PowerWindow801 / 801 +
+Need to change (the latter is not necessary with PowerWindow 928).However, the main unit mounted memory exceeds 13.6 MB
+You can not change it.
+Example: Setting to use E00000H to 128KB
+1. PW 801 928.Change WinAddr = 240 in INI to WinAddr = 224.
+2. Change S1 to ON-ON-ON-ON-ON-OFF-OFF-OFF.
+※ When used in the compatible mode, this switch is for setting in the NEC compatible mode.
+
+・ 3 jumper switch JP1: setting of compatibility mode of PowerWindow 928
+PowerWindow 928 is NEC's PC-9801-85 (Window accelerator board B) and EPSON
+There is a mode that uses a driver for PCHKB2.Two pins short on the N side of JP1
+In the NEC compatible mode, if you short the two pins on the E side, the EPSON compatible mode is established.
+
+-6 stations dip switch S2: setting of compatible mode of PowerWindow 928
+NEC compatible with EPSON compatible mode setting and NEC / EPSON compatible mode together with S1 for NEC compatible mode setting
+Make settings in.
+1. NEC compatible mode
+Set all S2 to ON.
+The meaning of each dip of S1 is as follows
+1: Display to use
+　ON = non-interlaced
+　OFF = interlace
+2-3-4: Always ON-ON-ON
+5-6: Memory space
+　ON-ON = F 00000 H to F 0 FFFF H, F 8 000 to F 80 FFFH
+　ON-OFF = F20000H to F2FFFFH, F88000 to F88FFFH
+　OFF-ON = F40000H to F4FFFFH, F90000 to F90FFFH
+　OFF-OFF = F60000H to F6FFFFH, F98000 to F98FFFH
+7-8: Always ON-ON
+
+2. EPSON compatible mode
+S2 should be adjusted to the higher horizontal sync frequency within the frequency range supported by the display used
+Configuration.Below, 1-2-3-4-5-6 ■ Horizontal synchronization frequency ■ Vertical synchronization frequency
+ON-ON-ON-ON-ON-ON 31.5 KHz 60.0 Hz
+ON-ON-ON-ON-OFF-ON 32.8 KHz 80.0 Hz
+OFF-ON-OFF-ON-ON-ON 35.5 KHz 86.8 Hz
+ON-OFF-OFF-ON-ON-ON 48.4 KHz 60.0 Hz
+
+To use in compatibility mode you need 3 files: PWS.EXE, PWS.DEF, and WINP.BAT.
+When the display driver for PC-9801-85 and PCHKB2 is set for each board
+If it is not recognized, it can not be installed.Therefore recognize PowerWindow 928 as these boards
+First run PWS.EXE to make it run:
+A: \> CD WINDOWS
+A: \ WINDOWS> PWS
+Run it,
+..No display driver definition found
+......
+......
+Please specify the screen resolution from this =?
+The message will be displayed, so specify the resolution you want to use.Now the display
+Driver installation is possible.
+Compatibility mode is
+A: \> CD WINDOWS
+A: \ WINDOWS> WINP
+Start with.
+
+・ Two jumpers JP3: VRAM capacity specification
+Short when adding VRAM expansion kit to Power Window 928.
+
+※ The above description is 

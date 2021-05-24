@@ -1,0 +1,70 @@
+
+PIO-9134, PIO-9134E (I・Oデータ)
+
+C-bus 512KB additional RAM board for PC-9801 / E / F / M.Equivalent to PC-9801-02N / L2 sheet.
+Consumption voltage current = +5 V, 800 mA.
+When using the same as PC-9801-02N / L (256KB) (standard additional mode)
+Only one board can be added. Bank switching mode (additional BANK mode) in 128 KB units
+Up to 4 cards can be added for use (+1 cards can be used to fully add conventional memory).
+However, half (256KB) of this board at the time of combined use with one PC-9801-02N / L (256KB)
+When using bank switching in 128 KB units (NEC combined BANK mode) only one
+Expansion possible.When the power is turned on, the standard expansion mode is set.
+There are one 8-run dip switch and one 6-run dip switch on the substrate.
+
+・ 8 stations dip switch SW1: I / O port address setting
+Make the same setting for all PIO-9134 (E) used.
+　Dip 1 = unused, always off
+　Dip 2 = 2 ^ 1
+　Dip 3 = 2 ^ 2
+　Dip 4 = 2 ^ 3
+　Dip 5 = 2 ^ 4
+　Dip 6 = 2 ^ 5
+　Dip 7 = 2 ^ 6
+　Dip 8 = 2 ^ 7
+ON = 0, OFF = 1
+Factory setting: OFF-ON-OFF-OFF-ON-OFF-OFF-OFF = x-0-1-1-0-1-1 = 0 ECh
+
+· 6 stations dip switch SW2: setting of board number, operation mode (factory setting: all OFF)
+1-2-3-4: Board number setting in expansion BANK mode (all other modes set to OFF)
+　ON-OFF-OFF-OFF Board 0
+　OFF-ON-OFF-OFF Board 1
+　OFF-OFF-ON-OFF Board 2
+　OFF-OFF-OFF-ON Board 3
+5-6: Setting of operation mode
+　OFF-OFF standard expansion mode
+　ON-OFF ■ NEC combination BANK mode
+　OFF-ON ■ Expansion BANK mode
+　ON-ON ■ Setting prohibited
+
+In the expansion BANK mode, assign board numbers 0 to 3 to this expansion board,
+Furthermore, 0 to 3 bank numbers are assigned to each board in 128 KB units,
+Board number and bank by the output instruction for the set I / O port address
+Enable the target board by specifying the number and operation mode.
+Below, the relationship between board number-bank number-data to be sent by output instruction:
+
+                 Board number
+      ---- + ---- + ---- + ---- + ----
+          | 0 | 1 | 2 | 3
+      -+-+ ---- + ---- + ---- + ----
+      0 | 80 | 90 | A0 | B0
+      1 | 81 | 91 | A1 | B1
+      2 | 82 | 92 | A2 | B2
+      Number | 3 | 83 | 93 | A3 | B3
+      Issue | |
+
+Only one PC-9801-02N / L (256KB) has already been added, resulting in a 384KB capacity.
+(Note) The first board to be added is the BANK mode with NEC and standard
+We use properly in two modes of expansion mode.
+Note: The memory configuration is as follows:
+　(1) 00000 h-1 FFFF h = standard implementation (128 KB)
+　(2) 20000h to 5FFFFh = PC-9801-02N / L + PC-9805 / K (256KB)
+　(3) From 60000h to 7FFFFh = 256 KB of PIO-9134
+　(4) 80000h to 9FFFFh = The remaining 128KB x 2 minutes of PIO-9134 (2
+When the power is turned on, it will be ready to operate in the standard expansion mode.
+Area is available.
+40h (bank 0) for the set I / O port address when using the area of (4)
+Or output 41h (bank 1).Output 0 when returning to standard expansion mode.
+※ In the illustration on page 6 of the instruction manual, it is written that this space board can be expanded up to 4 sheets
+　The PIO-9134 used in the BANK mode with the
+　Is it inconsistent with the description of only one set in advance?
+

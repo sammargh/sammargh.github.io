@@ -1,0 +1,79 @@
+
+PC-9801-92 (NEC)
+
+C bus SCSI I / F. SCSI connector is Amphenol half 50 pin.
+This board can not be used on Epson machines due to the Epson check of ROM.
+When connecting a cassette tape unit with other SCSI devices
+Separate I / F (2 boards required).
+There are 2 8 dip switches and 3 3 jumper switches on the board.
+
+· 8 stations dip switch SW1: SCSI ID number of the board, interrupt level,
+　DMA channel setting
+1-2-3: Set board SCSI ID number
+　ON-ON-ON ID 7 (Factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF ■ INT 0
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3 (default setting)
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF DMA # 0 (factory setting)
+　ON-OFF ■ Setting prohibited
+　OFF-ON DMA # 2
+　ON-ON DMA # 3
+※ DMA channel is not used in CPU transfer mode.
+
+・ 8 stations dip switch SW2: ROM memory address, body model, Power on
+　ROM accessibility setting at the time of
+1-2-3-4-5-6-7: Setting ROM memory address + main unit model
+　　　　　　　　　　　　(Factory setting: OFF-ON-ON-OFF-ON-ON-OFF)
+(1) PC-98XA (high res dedicated machine)
+　xxx-OFF-ON-OFF-OFF ■ Memory address \ EC 000 h ~ \ EDFFF h
+(2) 8086 loading machine
+　OFF-ON-OFF-xx-ON-OFF ■ Memory address D4000h to D5FFFh
+(3) V30 loading machine
+　OFF-ON-ON-xx-ON-OFF ■ Memory address DC000h to DDFFFh
+(4) Normal / high res combined use machine
+　OFF-ON-ON-OFF-ON-OFF-ON
+(5) The machine with an 80286/386/486 (only for normal mode)
+　OFF-ON-ON-OFF-x-ON-ON ■ Memory address \ DC 000 h ~ \ DDFFF h
+※ x can be set to ON or OFF, and \ means 0h or Fh.
+※ When used with B4670 II (PC-9864L / PC-9864U) in high resolution mode,
+　OFF-ON-ON-ON-ON-OFF-OFF (PC-98XA) or OFF-ON-ON-ON-ON-ON-OFF-ON
+(Normal / high res combined use machine)
+※ The combination with GP-IB interface board is not possible with the 8086 installed machine.
+8: Setting of ROM accessibility at Pow on
+　ON ■ ROM accessible (factory setting)
+　OFF ■ ROM can not be accessed
+※ When using two or more boards, use the first I / O port address.
+　After setting CCxh, set SW2-8 to ON and set SW-8 for the second and subsequent sheets to OFF.
+※ When using this board with PC-9801FA-02 or PC-9821A-E10, this board
+　Set SW2-8 to OFF.
+
+・ Three jumper switches SW3 and SW4: I / O port address setting
+Below, short pin at SW3 ■ Short pin at SW4 ■ I / O port address
+(The I / O port in parentheses is used in CPU transfer mode):
+　01-02 ■ 01 02 ■ CC0h, CC2h, CC4h
+　　　　　　　　(C84h, C85h, 1C84h, 1C85h, 1C86h, 1C87h) (Factory setting)
+　02-03 ■ 01 02 ■ CD0h, CD2h, CD4h
+　　　　　　　　(D84 h, D 85 h, 1 D 84 h, 1 D 85 h, 1 D 86 h, 1 D 87 h)
+　01-02 ■ 02 03 ■ CE0h, CE2h, CE4h
+　　　　　　　　(E84 h, E 85 h, 1 E 84 h, 1 E 85 h, 1 E 86 h, 1 E 87 h)
+　02-03 ■ 02 03 ■ CF 0 h, CF 2 h, CF 4 h
+　　　　　　　　(F84h, F85h, 1F84h, 1F85h, 1F86h, 1F87h)
+※ Except when the cassette magnetic tape unit is connected, use with the factory setting.
+　Also, when changing to settings other than the factory settings, turn off SW2-8.
+
+・ Three jumper switch SW5: Data transfer mode setting
+　01-02 short ■ DMA transfer (factory setting)
+　02-03 short ■ CPU transfer
+※ CPU transfer can not be used in the case of 8086 / V30 installed machine and V30 mode.
+　Use for DMA transfer (CPU transfer can be used with 80286 or more).
+※ When SW2-8 is set to OFF when the cassette magnetic tape unit is connected
+　Use in DMA transfer mode for.
+
+When used on an 8086 / V30 machine, the switch beside the card edge connector
+Make the pin lever point up.
+

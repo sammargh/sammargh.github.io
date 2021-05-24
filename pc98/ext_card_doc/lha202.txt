@@ -1,0 +1,13 @@
+
+LHA-202 (Logitec)
+
+Multi-vendor compatible C bus bus master SCSI-2 board.Various settings after turning on the main unit power
+Continue to hold down the [CLRL] key and [L] key until you hear a beep.
+Perform on the setup screen.The setup screen is not displayed by this operation
+If it is a 3-short jumper switch JP2 1-2 on the board from 2-3 short circuit
+Change to, perform the above operation, and execute "Initialize settings" in the menu.
+The contents of the upgrade can be returned to the factory default.After correcting the setup content
+Be sure to "save save" the setup and restore JP2 to the 1-2 short status.
+PC-9801RX, PC-H98 series, PC-H98S, PC-286 model 0 transfer mode to I / O transfer
+Setting.
+

@@ -1,0 +1,33 @@
+GA-98NBI/C， GA-98NBII， GA-98NBIV　（I・Oデータ） 
+
+Cirrus Logic社CL-GD5434を搭載したCバスグラフィックアクセラレータボード． 
+GA-98NBI/C（画像メモリ1MB）ではボード上にロータリースイッチ1つと2連ディップ 
+スイッチ1つ，また GA-98NBII（画像メモリ2MB）とGA-98NBIV（画像メモリ4MB）で 
+はボード上にロータリースイッチ1つあり． 
+
+・ロータリースイッチ：I/Oアドレスの設定 
+0=xxE0H， xxE1H（出荷時設定） 
+2=xxE2H， xxE3H 
+4=xxE4H， xxE5H 
+6=xxE6H， xxE7H 
+A=xxEAH， xxEBH 
+C=xxECH， xxEDH 
+E=xxEEH， xxEFH 
+
+※xxは40H〜5FHで固定． 
+
+・2連ディップスイッチ：GA-98NBI/C専用CD-ROMドライブインターフェース用アド 
+　レスの設定 
+OFF-OFF=xxD2H 
+ON-OFF=xxD4H（出荷時設定） 
+OFF-ON=xxD6H 
+ON-ON=xxD8H 
+
+※xxは30H〜32Hで固定． 
+※GA-98NB/CとSound Blaster16シリーズを併用する場合，GA-98NBI/CのCD-ROMド 
+　ライブインターフェース用I/Oアドレス下位4ビットが，Sound Blaster16シリ 
+　ーズのベースアドレス下位4ビットと重ならないように設定のこと．またCD-ROM 
+　ドライブの接続はSound Blaster16シリーズにすること． 
+
+PC-9801ES， FA， NAでWindows3.1で使用する場合は，グラフィックドライバセット 
+アッププログラム，"GASETUP.EXE"は" /E"オプションスイッチをつけて起動する． 

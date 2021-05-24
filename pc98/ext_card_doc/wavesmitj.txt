@@ -1,0 +1,84 @@
+WaveSmit（キュービジョン）
+
+サウンドとSCSI-2（SMIT転送）の複合ボード．Windows95対応（Plug & Play対応）．
+ROM BIOS ver. 1.06以上でMMX対応らしい．またROM BIOSのアップデートにより
+WindowsNT4.0にも対応．Windows2000での動作事例あり．
+SCSI部の認識容量限界はキュービジョンは4.3GBまでと述べていたが，実際には
+8.4GBまでの認識報告あり．パラメータ解析は本体起動時に[CTRL]＋[GRPH]＋[P]
+を同時に押すことにより行う．
+サウンド部は86互換でありながら118ボード同等のPCM音源（WSS対応）も搭載．
+旧製品に比し，Windows95対応ソフトでの音飛びを改善．
+PCM音源：新設計86互換PCM音源，録音・再生機能，ステレオ，8／16ビット，
+　　　　 サンプリングレート11.025kHz，22.05kHz，44.1kHz
+FM音源：新設計86互換FM音源，再生機能，FM6音（ステレオ），リズム6音（スレテオ），
+　　　　SSG3音（モノラル）
+WaveBlaster互換MIDI音源増設コネクタには，キュービジョン製MidiStar/GS
+（GS音源），NEC製PC-9821CS-B02（XG音源），YAMAHA製DB50XG（XG音源），
+クリエイティブメディア製WaveBlaster2（GM音源）等のMIDI音源サブボードが
+増設可能．またWindows95対応IBM/AT GamePort互換のジョイスティックポート
+（SoundBlaster互換）を装備し，PC/AT互換機用ジョイスティックを接続可能．
+またI・Oデータ製MIDI機器接続ケーブル"SB-MA"を接続し，外部MIDI音源装置や
+MIDIキーボードを接続可能．
+
+以下，　メーカー■製品名■Windows95標準の音を鳴らす■Windows95ゲームソフト
+の音を鳴らす■Windows3.1標準の音を鳴らす■Windows3.1ゲームの音を鳴らす■
+MS-DOSで98DOSゲームの音を鳴らす■Windows95のDOSプロンプトで98DOSゲームの音
+を鳴らす　の順：
+
+NEC■PC内蔵サウンド機能（PCM音源のことらしい）■○■○■○■○■×■×
+Qvision■WaveSMIT■○■○■○■○■○■○
+Creative■SoundBlaster■○■○■○■○■△■△
+NEC■PC-9801-118■○■○■▲■▲■×■×
+NEC■PC-9801-86■○■×■○■○■○■×
+Qvision■WaveMaster■○■×■○■○■○■×
+Qvision■WinDuo■○■×■○■○■○■×
+Qvision■SecondBus86■○■×■○■○■○■×
+　○＝OK，▲＝PCMが鳴らない，△＝対応しているゲームが少ない，
+　×＝まともに音が鳴らない
+
+8連ディップスイッチ
+SW1：PnPパソコンの設定
+ON：PnP機能有効（この場合，SW2,3も必ずONにする）
+OFF：PnP機能無効（この場合，SW4-8が有効になる）
+
+SW2：MIDI(MPU)の設定
+ON：MPU機能有効
+OFF：MPU機能無効
+
+SW3：86互換サウンドの設定
+ON：86互換サウンド機能有効
+OFF：86互換サウンド機能無効
+
+SW4：WSSモード時におけるPC本体のDMAチャネルの設定
+ON：Ch3
+OFF：Ch0
+
+SW5：FM音源のI/Oアドレスの設定
+ON：0288
+OFF：0188
+
+SW6：FM・PCM音源の割り込みレベル（INT）の設定
+ON：INT6(IRQ13)
+OFF：INT5(IRQ12)
+
+SW7：MIDI(MPU)のI/Oアドレス設定
+ON：E4D0
+OFF：E0D0
+
+SW8：MIDI(MPU)の割り込みレベル（INT）の設定
+ON：INT4(IRQ10)
+OFF：INT2(IRQ6)
+
+2連ディップスイッチ
+SW1：設定禁止（OFF固定）
+
+SW2：SCSI機能の設定
+ON：SCSI機能有効
+OFF：SCSI機能無効（切り離し）
+
+-----------
+NT4.0で「I/Oポートが見つかりません」の表示が出た場合，Windows95や
+Windows3.1またはMS-DOSのPnP機能によって設定されたIRQやI/Oポートが
+本体に保存されたままになっているので，Windows95でPnP機能を作動させ
+てこれらの値を変更するか，Windows3.1のPnPサポートソフトウェアから
+変更して再度セットアップのこと．

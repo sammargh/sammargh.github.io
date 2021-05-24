@@ -1,0 +1,109 @@
+CARD240，CARD350　（R&D）
+
+CバスオンボードHDD．CARD240は容量251.9MB，CARD350は362.8MB．
+搭載されているHDDは特殊品のため一般的なドライブとの換装は不可．
+また外部端子なし．ハイレゾモード非対応．
+SASIまたはSCSIをエミュレートするため，PC本体にSASI／SCSI／IDE
+いずれかのHDDが接続されていても共存可能（本体にSCSI HDDが接続
+されている場合にはSASI互換モード，SASI／IDE HDDが接続されている
+場合にはSCSI互換モードで使用）．またSCSI-PLUS機能により本体に
+SCSIとSASI両方のHDDが接続されていても追加接続可能．
+　平均シーク時間：17ms
+　データバッファサイズ：128kB
+　消費電流：起動時1.5A，動作時平均0.8A
+　温度条件：10〜35゜
+　湿度条件：20〜80%（結露なきこと）
+　対応OS：MS-DOS ver. 3.3C／C，5.0／A／AH，MS-Windows3.0／3.1
+　対応機種：V30以上のCPUを搭載したPC-98シリーズおよびエプソン製
+　　　　　　98互換機
+ボード上に8連ディップスイッチ2個あり．
+
+・8連ディップスイッチSW1：割り込みレベル，動作モード，I/Oポート
+　アドレス，SCSI IDの設定
+1-2：割り込みレベルの設定
+　ON-ON：INT 0
+　OFF-ON：INT 1
+　ON-OFF：INT 2
+　OFF-OFF：INT 3（出荷時設定）
+3：動作モード（SASI/SCSI互換）の設定
+　ON：SCSI互換
+　OFF：SASI互換　（出荷時設定）
+4-5-6-7-8：I/Oポートアドレスの設定（8はSCSI IDの設定を兼ねる）
+(1)SCSI ID=0の場合
+　OFF-OFF-OFF-OFF-OFF：CED0h〜CFDFh　（出荷時設定）
+　ON-OFF-OFF-OFF-OFF：CCD0h〜CDDFh
+　OFF-ON-OFF-OFF-OFF：CAD0h〜CBDFh
+　ON-ON-OFF-OFF-OFF：C8D0h〜C9DFh
+　OFF-OFF-ON-OFF-OFF：C6D0h〜C7DFh
+　ON-OFF-ON-OFF-OFF：C4D0h〜C5DFh
+　OFF-ON-ON-OFF-OFF：C2D0h〜C3DFh（注1）
+　ON-ON-ON-OFF-OFF：C0D0h〜C1DFh
+　OFF-OFF-OFF-ON-OFF：8ED0h〜8FDFh
+　ON-OFF-OFF-ON-OFF：8CD0h〜8DDFh
+　OFF-ON-OFF-ON-OFF：8AD0h〜8BDFh
+　ON-ON-OFF-ON-OFF：88D0h〜89DFh
+　OFF-OFF-ON-ON-OFF：86D0h〜87DFh
+　ON-OFF-ON-ON-OFF：84D0h〜85DFh
+　OFF-ON-ON-ON-OFF：82D0h〜83DFh
+　ON-ON-ON-ON-OFF：80D0h〜81DFh
+(2)SCSI ID=4の場合
+　OFF-OFF-OFF-OFF-ON：4ED0h〜4FDFh
+　ON-OFF-OFF-OFF-ON：4CD0h〜4DDFh
+　OFF-ON-OFF-OFF-ON：4AD0h〜4BDFh
+　ON-ON-OFF-OFF-ON：48D0h〜49DFh
+　OFF-OFF-ON-OFF-ON：46D0h〜47DFh
+　ON-OFF-ON-OFF-ON：44D0h〜45DFh
+　OFF-ON-ON-OFF-ON：42D0h〜43DFh（注2）
+　ON-ON-ON-OFF-ON：40D0h〜41DFh
+　OFF-OFF-OFF-ON-ON：0ED0h〜0FDFh
+　ON-OFF-OFF-ON-ON：0CD0h〜0DDFh
+　OFF-ON-OFF-ON-ON：0AD0h〜0BDFh
+　ON-ON-OFF-ON-ON：08D0h〜09DFh
+　OFF-OFF-ON-ON-ON：06D0h〜07DFh
+　ON-OFF-ON-ON-ON：04D0h〜05DFh
+　OFF-ON-ON-ON-ON：02D0h〜03DFh
+　ON-ON-ON-ON-ON：設定禁止
+注1，2：取説にはC2D0h〜C2DFh，また42D0h〜42DFhとあるが，
+それぞれC2D0h〜C3DFh，42D0h〜43DFhの間違いではないかと
+思われる．
+
+・8連ディップスイッチSW2：アクセス表示，転送モード，ROM
+　アドレスの設定
+1：アクセス表示の設定
+　MS-DOSでHDDにアクセスする場合に，画面右下に赤色でアクセス
+　表示を行う．Windowsではこの表示は出ない（Windowsではアクセス
+　表示を禁止すること）．
+　ON：アクセスランプ点灯　（出荷時設定）
+　OFF：アクセスランプ解除
+2：転送モードの設定
+　80286搭載のNEC PC-98で使用する場合にはOFFとすること．
+　ON：ブロック転送モード　（出荷時設定）
+　OFF：プログラム転送モード
+3-4-5-6-7-8：ROMアドレスの設定
+　ON-ON-ON-ON-OFF-ON：D0000h
+　OFF-ON-ON-ON-OFF-ON：D1000h
+　ON-OFF-ON-ON-OFF-ON：D2000h
+　OFF-OFF-ON-ON-OFF-ON：D3000h
+　ON-ON-OFF-ON-OFF-ON：D4000h　*
+　OFF-ON-OFF-ON-OFF-ON：D5000h　*
+　ON-OFF-OFF-ON-OFF-ON：D6000h　*
+　OFF-OFF-OFF-ON-OFF-ON：D7000h　*
+　ON-ON-ON-OFF-OFF-ON：D8000h　*　（出荷時設定）
+　OFF-ON-ON-OFF-OFF-ON：D9000h　*
+　ON-OFF-ON-OFF-OFF-ON：DA000h
+　OFF-OFF-ON-OFF-OFF-ON：DB000h
+　ON-ON-OFF-OFF-OFF-ON：DC000h
+　OFF-ON-OFF-OFF-OFF-ON：DD000h
+　ON-OFF-OFF-OFF-OFF-ON：DE000h
+　OFF-OFF-OFF-OFF-OFF-ON：DF000h
+出荷時設定ではD8000h〜D8FFFとなっている．またSASIモードでは*の
+設定のみ可能．通常は出荷時設定のままで使用できる．
+
+※SCSI-PLUS機能について
+SCSI-PLUS機能を用いることで，SCSI互換モードの本機を他のSCSI HDD
+と共存させることができる．ただしこの機能はPC-9801-55および完全
+互換のSCSIボード使用時に限る．
+→ノーマルモードではSCSIモードでROMアドレスをDE000h〜DEFFFh
+／DF000h〜DEFFFhに，またハイレゾモードではSCSIモードでROMアドレス
+をEF000h〜EFFFFhに設定すると自動的にSCSI-PLUS機能が有効になる．
+注：上に書いたように，取説の最初にはハイレゾモード非対応とある．

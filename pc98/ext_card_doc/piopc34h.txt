@@ -1,0 +1,91 @@
+
+PIO-PC34H-2M, PIO-PC34H-3M, PIO-PC34H-4M,
+PIO-PC34H-6M, PIO-PC34H-8M (I • O data)
+
+C bus RAM board.The model number printed on the substrate is PIO-PC34X-2 / 4 / 8M
+It isYou need a memory driver called IOS-10 to use it.
+Two 6-station dip switches or 8-station dip switches on a board
+There is one 6-dip dip switch each.
+
+・ 8 stations or 6 stations dip switch SW1: Mode setting, expansion option
+　switch
+　8 stations or 6 stations for PIO-PC34H-2M, 8 stations for PIO-PC34H-3M,
+　6 stations for PIO-PC34H-4M / 6M / 8M.
+1-2-3: Mode setting
+　ON-OFF-OFF I · O bank mode
+　OFF-OFF-ON Protect Mode
+　OFF-ON-OFF EMS mode (factory setting)
+　ON-OFF-ON I · O bank + protect mode
+　OFF-ON-ON EMS + Protect Mode
+　※ Protect mode is IOS-10 ver. Available in 2.3 or later.With IOS-10 PX
+　　Also usable with IOS-10 EMS.
+4: Setting of machine model
+　ON ■ Model 80286 or later (default setting)
+　OFF ■ 8086, V30, V50 installation machine
+5: 80286 switch (double-speed access mechanism: memory of the main unit on models with 80286 or later
+　　　　　　　　　Cancel the weight)
+　ON PC-9801VX / UX / RA / ES, PC-98XA / XL / XL ^ 2 / RL, PC-286US / X / LS / VF / VS,
+　　　PC-386 / LS / V (Used with PC-386LS (10 MHz) OFF) (Factory setting)
+　　　PC-9801VX0VX2 / VX4, PC-286 / V / VE (Use in expansion slots 2, 3 and 4)
+　OFF ■ 8086, V30, V50 installation machine
+　※ Always be sure to use the expansion I / O unit PC-BOX16, PC-9811 / K / N
+　　Set to OFF.
+　※ When using a commercial CPU board (CPU accelerator or not)
+　　Set to OFF.
+6: Mounting switch
+　ON Attached to the expansion I / O unit
+　OFF Attached directly to main unit (factory setting)
+7: Always off
+8: Expansion option switch
+　ON ■ PIO-PC34H-3M
+　OFF PIO-PC34H-2M (factory setting)
+
+· 6 stations dip switch SW2: I · O bank number, EMS page number, protection
+　Memory address setting (Factory setting: All OFF)
+(1) I • O bank mode, EMS mode
+When using it in EMS mode for the first time, use it with the factory setting.
+Switch setting ■ Protect memory address ■ EMS page number
+　　　　■ In order of I · O bank number
+　OFF-OFF-OFF-OFF-OFF-OFF ■ ----------- 000 h ~ ■ 00 h ~
+　OFF-OFF-OFF-OFF-OFF-ON ■ ----------- ■ 020 h ~ ■ 04 h ~
+　OFF-OFF-OFF-OFF-ON-OFF ■ 100000 h ~ ■ 040 h ~ ■ 08 h ~
+　OFF-OFF-OFF-OFF-ON-ON ■ 180000 h ~ ■ 060 h ~ ■ 0 Ch ~
+　OFF-OFF-OFF-ON-OFF-OFF ■ 200000 h ~ ■ 080 h ~ ■ 10 h ~
+　OFF-OFF-OFF-ON-OFF-ON ■ 280000 h ~ ■ 0A 0 h ~ ■ 14 h ~
+　OFF-OFF-OFF-ON-ON-OFF ■ 300000 h ~ ■ 0C 0 h ~ ■ 18 h ~
+　OFF-OFF-OFF-ON-ON-ON ■ 380000h ~ ■ 0E0h ~ ■ 1Ch ~
+　OFF-OFF-ON-OFF-OFF-OFF ■ 400000h ~ ■ 100h ~ ■ 20h ~
+　OFF-OFF-ON-OFF-OFF-ON ■ 480000 h ~ ■ 120 h ~ ■ 24 h ~
+　OFF-OFF-ON-OFF-ON-OFF ■ 500000h ~ ■ 140h ~ ■ 28h ~
+　OFF-OFF-ON-OFF-ON-ON ■ 580000 h ~ ■ 160 h ~ ■ 2 Ch ~
+　OFF-OFF-ON-ON-OFF-OFF ■ 600000 h ~ ■ 180 h ~ ■ 30 h ~
+　OFF-OFF-ON-ON-OFF-ON ■ 680000 h ~ ■ 1A0 h ~ ■ 34 h ~
+　OFF-OFF-ON-ON-ON-OFF 700000h ~ 1C0h ~ 38h ~
+　OFF-OFF-ON-ON-ON-ON ■ 780000h ~ ■ 1E0h ~ ■ 3Ch ~
+
+(2) protected mode, EMS + protected mode,
+　　I · O bank + EMS mode
+　Below, Switch setting ■ Expansion displayed on the upper left of the screen when the main unit starts
+　　　　　RAM capacity (normal mode) ■ order of protect memory address
+　OFF-OFF-OFF-OFF-ON-OFF ■ 640KB ■ 100000 h ~
+　OFF-OFF-OFF-OFF-ON-ON ■ 640KB + 512KB ■ 180000h ~
+　OFF-OFF-OFF-ON-OFF-OFF ■ 640KB + 1024KB ■ 200000h ~
+　OFF-OFF-OFF-ON-OFF-ON ■ 640KB + 1536KB ■ 280000h ~
+　OFF-OFF-OFF-ON-ON-OFF ■ 640KB + 2048KB ■ 300000h ~
+　OFF-OFF-OFF-ON-ON-ON ■ 640KB + 2560KB ■ 380000h ~
+　OFF-OFF-ON-OFF-OFF-OFF ■ 640KB + 3072KB ■ 400000h ~
+　OFF-OFF-ON-OFF-OFF-ON ■ 640KB + 3584KB ■ 480000h ~
+　OFF-OFF-ON-OFF-ON-OFF ■ 640KB + 4096KB ■ 500000h
+　OFF-OFF-ON-OFF-ON-ON ■ 640KB + 4608KB ■ 580000h ~
+　OFF-OFF-ON-ON-OFF-OFF ■ 640KB + 5120KB ■ 600000h ~
+　OFF-OFF-ON-ON-OFF-ON ■ 640KB + 5632KB ■ 680000h ~
+　OFF-OFF-ON-ON-ON-OFF ■ 640KB + 6144KB ■ 700000h ~
+　OFF-OFF-ON-ON-ON-ON ■ 640KB + 6656KB ■ 780000h ~
+　OFF-ON-OFF-OFF-OFF-OFF ■ 640KB + 7168KB ■ 800000h ~
+　OFF-ON-OFF-OFF-OFF-ON ■ 640KB + 7680KB ■ 880000h ~
+　OFF-ON-OFF-OFF-ON-OFF ■ 640KB + 8192KB ■ 900000h ~
+　OFF-ON-OFF-OFF-ON-ON ■ 640KB + 8704KB ■ 980000h ~
+　OFF-ON-OFF-ON-OFF-OFF ■ 640KB + 9216KB ■ A00000h ~
+　OFF-ON-OFF-ON-OFF-ON ■ 640KB + 9728KB ■ A 80000h ~
+　OFF-ON-OFF-ON-ON-OFF ■ 640KB + 10240KB ■ B 00000 h
+

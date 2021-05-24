@@ -1,0 +1,45 @@
+
+IF-2768 (ICM)
+
+Multi-vendor compatible C bus bus master SCSI I / F. More than 16MB of memory
+Bus master transfer is possible even on the main unit.The revision of BIOS ROM is 2.00 or later and compatible with Windows 95.
+On Windows 95 compatible version, the letter M is printed on an amber ground outside the external SCSI connector
+The round seal is attached.
+There is one 8 series dip switch and one 10 jumper switch on the board.
+
+Settings such as interrupt level, DMA channel, transfer mode, etc., at startup / reset of main unit
+Set on the setting menu screen that is displayed by holding down the [CTRL] + [S] keys at.
+Quick format and disk parameters can be set for each connected HDD.
+If the disk parameter is set to "ANL", the HDD parameter
+Automatic analysis is performed.To start the HDD parameter analysis program manually, start the main unit
+/ Hold down the [CTRL] + [A] key at the time of reset.
+
+・ 8 stations dip switch SW1: Setting of main unit model
+　OFF-ON-ON-OFF-ON-ON-ON-ON ■ Model only in normal mode (default setting)
+　OFF-ON-ON-OFF-ON-OFF-ON-ON
+　※ Memory address is DC000h to DCFFFh in normal mode, EC000h to ECFFFh in high res mode.
+
+・ 10 jumper switch: Function unknown
+　Always use at factory setting (short between 4-5, 9-10)
+-------------------------------------------------------- -------------------------------
+【The following is common to IF-2767 / 2768/2769】
+Valuestar for PC-9821V7 or later, MATE-X for PC-9821Xa7e / Xb10 or later, PC-9821Cb3
+Since the specification of C bus has been changed in CanBe later, IF-2767 / 2768/2769
+C bus memory refresh of PC when using in bus master mode
+It is necessary to output a signal.The C bus memory refresh signal is
+Send when holding down [ESC] + [HELP] + [5] at startup of the machine,
+Stop by holding down [ESC] + [HELP] + [6] while starting up the machine
+It is done.Problems when C bus memory refresh signal is sent (turned on)
+And the measures are as follows:
+(1) EMM 386.It does not operate normally when EXE is not incorporated
+　→ EMM 386 in CONFIG.SYS.Incorporate the EXE.However, EMM 386 attached to MS-DOS made by NEC.EXE
+　　Other third-party EMS memory managers are not certified.
+(2) It does not operate normally in the safe mode of Windows 95
+　→ Stop the C bus memory refresh signal when starting up in the safe mode,
+　　Set the data transfer method of this board to FIFO or DMA.
+(3) When using DPMI (used by MS-DOS version Ichitaro ver.5 etc.) with MS-DOS ver.5.0 / 5.0A
+　 Hang-up
+　→ Use MS-DOS ver. 6.2 or higher.DPMI drivers from manufacturers other than NEC
+　　Operation is not guaranteed.
+* These problems occur regardless of whether or not IF-2767 / 2768/2769 is used.
+

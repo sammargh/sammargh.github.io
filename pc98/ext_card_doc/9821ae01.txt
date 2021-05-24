@@ -1,0 +1,24 @@
+
+PC-9821A-E01 (NEC)
+
+mate-A Local bus graphic accelerator board.Graphic chip
+Is an S3 86C 928.Image memory is 1 MB. There is one 8-station dip switch on the board.
+
+· 8 stations dip switch: scan method, CPU address space setting
+1: Scanning method of CRT display
+　ON = non-interlaced (factory setting)
+　OFF = interlace 
+2-3-4: Not used, always ON
+5-6: Setting CPU address space in 16MB mode
+　ON-ON = F00000h-F0FFFFh, F80000h-F80FFFh (factory setting)
+　ON-OFF = F20000h-F2FFFFh, F88000h-F88FFFh
+　OFF-ON = F40000h-F4FFFFh, F90000h-F90FFFh
+　OFF-OFF = F60000h-F6FFFFh, F98000h-F98FFFh
+CPU address space setting in 7-8: 1MB mode
+　ON-ON = DF000h-DFFFFh (factory setting)
+　ON-OFF = DB000h-DBFFFh
+　OFF-ON = D7000h-D7FFFh
+　OFF-OFF = D3000h-D3FFFh
+
+This data was given by Mr. 29L-3MA.
+

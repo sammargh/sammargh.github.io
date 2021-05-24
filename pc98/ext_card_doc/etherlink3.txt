@@ -1,0 +1,15 @@
+
+EtherLink III (3Com)
+
+10BASE-T LAN board (NIC) for C bus.3Com EtherLink III (C) 1994 on the board
+3C569B-J-TPO described (Because "TPO" is handwritten, there may be another notation).
+Set up resources using the attached FD.At the factory setting, I / O base address = 40D0h,
+Interrupt level = IRQ3.
+The driver in the included FD is Windows 3.1 (DOS NDIS) / Lan Manager, Windows NT 3.5,
+Supports Netware 3.x (Server / Client) but is standard on Windows 95/98 / 98SE
+The driver is included in.
+Like a board shipped in an OEM-like fashion, support is provided to a limited extent
+It seems that it did not exist (it means that there is no material left in 3Com).
+
+Some additions have been made to the data posted by Wildcat Farmer.
+

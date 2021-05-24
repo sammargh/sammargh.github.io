@@ -1,0 +1,101 @@
+
+IND-M288S (メルコ)
+
+C bus composite board with modem + PCM sound function, "Internet
+Starter kit ".Windows 95 compatible.PnP non-compliant.8 stations on the board
+There is one dip switch and three jumper switches.
+
+Product Specifications
+　Certified device name: IND-M288S
+　Accreditation number: S95-2251-0
+(1) Modem section
+Interface unit
+　Used line: Telephone line, PBX extension (NTT method)
+　Telephone line interface: 2-wire interface
+　PC side interface: RS-232C (emulation)
+NCU department
+　NCU: AA, MA, AM, MM NCU
+　Dial type: pulse dial (10PPS / 20PPS)
+　　　　　　　　Tone dial (DTMF)
+Data modem unit
+　Communication method: Full duplex (300/1200/2400/4800/7200/9600/12000/14400
+　　　　　　/ 16800/19200/21600/24000/26400/28800 bps)
+　　　　　　ITU-T V.21, V.22, V.22bis, V.32, V.32bis,
+　　　　　　V.34, V.FC compliant, BELL 103, 212A compliant
+　Modulation method: FSK (300 bps), QAM (2400, 4800, 7200, 9600, 12000, 
+　　　　　　14400, 16800, 19200, 21600, 24000, 26400, 28800 bps)
+　Communication speed: 300/1200/2400/4800/7200/9600/12000/14400/16800/19200
+　　　　　　/ 21600/24000/26400/28800 bps
+　Transmission level: -1 dBm to -15 dBm
+　Reception level: 0 dBm to -43 dBm
+FAX modem section
+　Communication method: Half-duplex synchronous communication method V.17 / V.21ch2 / V.27ter / V.29 compliant
+　Modulation method: PSK (2400, 4800), QAM (4800, 7200, 9600, 12000,
+　　　　　　14400 bps)
+　Communication speed: 2400/4800/7200/9600/12000/14400 bps
+　Transmission level: -15 dBm
+　Reception level: 0 dBm to -43 dBm
+(2) Sound section
+　Sound: Recording and playback by PCM sound source (Chip: CRYSTAL CS4231A-KL
+　　　　　　CKANTP 9540)
+　　　　　　mate-X PCM compatible (compatible means I / O port address A460h
+　　　　　　　　　Indicates the implemented sound function identification ID)
+　Sampling frequency: 5.5kHz, 11kHz, 22kHz, 44kHz, 48kHz
+　Sound channel: mono, stereo
+　Sample data width: 8 bits, 16 bits
+　Source selection: Microphone input, modem sound input, WAVE file
+　Microphone amplifier: AGC switchable　
+
+・ 8 stations dip switch SW1: I / O port address and interrupt of modem section
+　Level setting
+1-2-3-4: I / O port address setting of modem section
+　OFF-OFF-OFF-OFF 3xD6h
+　ON-OFF-OFF-OFF 3xD4h
+　OFF-ON-OFF-OFF 3x D 2 h
+　ON-ON-OFF-OFF 3xD0h
+　OFF-OFF-ON-OFF 2xD6h
+　ON-OFF-ON-OFF 2xD4h
+　OFF-ON-ON-OFF 2x D 2 h
+　ON-ON-ON-OFF 2xD0h
+　OFF-OFF-OFF-ON 1xD6h
+　ON-OFF-OFF-ON 1xD4h
+　OFF-ON-OFF-ON 1xD2h
+　ON-ON-OFF-ON 1xD0h
+　OFF-OFF-ON-ON 0xD6h
+　ON-OFF-ON-ON 0xD4h
+　OFF-ON-ON-ON 0xD2h (default setting)
+　ON-ON-ON-ON 0xD0h
+When used with LGY-98, if the LGY-98 I / O port address is set at shipment,
+Change the I / O port address of this board to 1xD2h etc.
+
+5-6-7-8: Modem level interrupt level setting
+　OFF-OFF-OFF-ON INT 0
+　OFF-OFF-ON-OFF INT 1 (factory setting)
+　OFF-ON-OFF-OFF ■ INT 2
+　ON-OFF-OFF-OFF INT 5 (only when the sound function is disabled)
+Sound section I / O port address: 56Exh, 57Exh, 5BExh, A460h,
+　　　　　　　　　　　　　　　 F40h, F44h, F45h, F46h, F47h, F48h
+The DMA channel of the sound unit is 0 or 3, the interrupt level is INT 0, INT 1,
+Select from INT5.
+
+・ 3 jumper switch JP5: Enable / Disable setting of sound function
+　CRYSTAL CS4231A-KL CKANTP9540 side two short ■ sound function effective
+　Two card edge side short ■ sound function invalid
+
+If you use sound, the hardware will use INT5
+Specify INT5 in (If you set PCM to INT2, INT2 and INT5
+I can not use it).If you use INT5 as a modem, be sure to use the sound function of IND.
+Set not to use.
+There are parts that sound utility is shared with Melco WSN,
+There may be a display such as a WSN recorder but there is no problem.
+When the HDD or FDD is accessed during recording / playback, skipping or noise mixing occurs.
+Settings for using sound on MS-DOS: WSN 98.Use COM.
+　WSN 98.COM option switch
+　　None: Disable the sound function identification ID on the IND sound board
+　　/ P: Select PC-9821-X series equivalent
+　　/ F: Select PC-9801-86 board equivalent
+PCM 16bit stereo 48K or 44K sampling when used with PC-586RA
+Avoid recording of.It may not be recorded with normal sound quality.
+Do not pause during ADPCM playback.Normal volume can be obtained by restarting
+May not exist (ADPCM specification).
+

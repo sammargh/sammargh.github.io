@@ -1,0 +1,31 @@
+
+PLUS-1 (コンピュータテクニカ)
+
+Expansion I / O box for the old 98 Note / Epson Note 110-pin extension bus.
+Equipped with one C bus slot.
+Power supply capacity: + 5V, 2A / ± 12V, 120mA
+Power consumption: Up to 30VA at 5VA board operation
+The model number of the AC adapter is CTI-0512 ACDC (weight: 996 g), 8-pin round connector
+For pin assignment, the pin assignment
+     6 7 8
+     3 4 5
+       1 2
+If you
+　1,2 = + 5V
+　3 = + 12V
+　4 = -12V
+　5,6,7,8 = GND
+Connect the AC adapter after installing on the expansion bus.
+
+※ 110-pin expansion bus limitation
+・ Boards with external CPU / DMA function can not be used.Bus master transfer board
+Also not available.
+・ In case of built-in HDD, SASI HDD can not be connected.And SCSI HDD is INT 0,
+Connectable via DMA channel 3.
+・ The interrupt level can be used INT 0, 1, 2, 3, 5 (In the case of a machine with built-in HDD)
+INT 3 not available).
+-The DMA channel can use 0 or 3 (CH3 can not be used on machines with built-in HDD).
+・ Additional RAM board should be used by a method other than EMS.
+・ Resume function can not be used when the expansion unit is connected.
+-Disable the power saving setting in the note menu.
+

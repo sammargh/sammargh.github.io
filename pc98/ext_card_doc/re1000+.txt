@@ -1,0 +1,24 @@
+
+CentreCOM RE1000Plus (Allied Telesis)
+
+C bus NIC (LAN board).The board is Rev.Two revisions A and B
+exist.Rev.A (The end of the S / N on your board is RevAA)
+Three types of connectors of 10BASE-2 / 5 / T are also Rev.In B (the same RevBA)
+10BASE-T connector only.
+Rev.In A, push button type between 10BASE-2 connector and 10BASE-5 connector
+There is a changeover switch.10BASE-5 with the switch popped up,
+When pressed down, 10BASE-2 is selected.
+Connect a cable to the 10BASE-T connector to switch to the 10BASE-2 / 5 switch
+Regardless of the state of, 10BASE-T is automatically selected.
+
+There is no switch on the board, and I / O base address and INT settings are
+Hardware configuration program (CFG1000.Do it using EXE).
+The factory setting is I / O base address = 00D0h, INT = 0.Operation of this board
+In order to do this, jump 200 h starting with one of the following I / O port addresses:
+The 32-byte I / O space needs to be free:
+　　00D0h, 00D2h, 00D4h, 00D8h, 01A4h, 01A6h, 01A8h, 01DAh
+INT is selected from 0, 1, 2, and 5.
+For the PC-386M, the I / O port address of the image scanner is set at the factory
+In this case, 00D0h and 00D2h, so when using this board
+Shift the I / O port address on the main unit side.
+

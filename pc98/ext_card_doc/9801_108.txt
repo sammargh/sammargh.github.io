@@ -1,0 +1,7 @@
+
+PC-9801-108 (NEC)
+
+PnP non-compliant C bus NIC (LAN board) with 10BASE-T connector.
+There is no connector on the board, and the supplied software (4689CFG.EXE)
+Set up resources with.The factory setting of the interrupt level is IRQ3.
+

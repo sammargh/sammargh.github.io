@@ -1,0 +1,8 @@
+
+LGY-98 (メルコ)
+
+C bus NIC (LAN board) with 10BASE-T connector.There is no switch on the board.
+Configure the I / O Base Address and IRQ in one of two ways:
+・ Setup using LGYSETUP.EXE on DOS
+-Set in LGY-98 driver properties in the Windows 95 device manager
+

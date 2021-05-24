@@ -1,0 +1,83 @@
+
+LHA-201, LHA-20B (Logitec)
+
+Multi-vendor non-compliant C bus bus master SCSI-2 board.Even the main body of memory more than 16MB
+Bus master transfer is possible.By using e10chk.exe which is a free software created by Mr. Marimo
+I / O data IDE-to-SCSI conversion board HDX-SC-3 IOD1A067 (built in external HDD with 40GB
+BIOS ROM 1.33 connected to the one) + Seagate ST3642A (6.4GB, without division by FAT32)
+When the upper limit of recognition capacity of LHA-20B was examined, 63 BIOS sectors, 15 heads, and cylinders
+Calculated as the number 13329 sector length 512 bytes, the result of no wall wall product of number of cylinders × number of heads
+was gotten.
+There are 4 8 dip switches and 2 3 jumper switches on the board (jumper switch
+One of them is unused).
+
+・ 8 series jumper switch SW1: SCSI_ID, interrupt level, DMA channel setting
+1-2-3: SCSI_ID setting
+　OFF-OFF-OFF: ID = 0
+　ON-OFF-OFF: ID = 1
+　OFF-ON-OFF: ID = 2
+　ON-ON-OFF: ID = 3
+　OFF-OFF-ON: ID = 4
+　ON-OFF-ON: ID = 5
+　OFF-ON-ON: ID = 6
+　ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Interrupt channel setting
+　OFF-OFF-OFF: INT0 (factory setting)
+　ON-OFF-OFF: INT1
+　OFF-ON-OFF: INT2
+　ON-ON-OFF: INT3
+　OFF-OFF-ON: INT5
+　ON-OFF-ON: INT6
+7-8: DMA channel setting
+　OFF-OFF: DMA0
+　ON-ON: DMA3 (factory setting)
+
+・ 8-station dip switch SW2: Local memory address, setting of main unit model, presence of SCSI_BIOS access
+1-2-3: Setting of local memory address in normal mode
+　OFF-OFF-OFF: xD0000-xD0FFFh
+　ON-OFF-OFF: xD2000-xD2FFFh
+　OFF-ON-OFF: xD4000-xD4FFFh
+　ON-ON-OFF: xD6000-xD6FFFh
+　OFF-OFF-ON: xD8000-xD8FFFh
+　ON-OFF-ON: xDA000-xDAFFFh
+　OFF-ON-ON: xDC000-xDCFFFh (Factory default setting: Change prohibited)
+　ON-ON-ON: xDE000-xDEFFFh
+　※ "x" is "none", "0h", "0Fh"
+4-5: Local memory address setting in high resolution mode
+　OFF-OFF: xE8000-E8FFFh
+　ON-OFF: xEA000-EAFFFh
+　OFF-ON: xEC000-ECFFFh (Factory setting: Change prohibited)
+　ON-ON: xEE000-EEFFFh
+　※ "x" is "none", "0h", "0Fh"
+6-7: Setting of machine model
+　ON-ON: CPU is a V30 model
+　OFF-ON: High-resolution mode compatible models (including those with high-resolution board mounted)
+　ON-ON: Model in normal mode only
+8: Access to SCSI_BIOS
+　ON: accessible (factory setting)
+　OFF: Not accessible (BIOS disconnected)
+
+・ 8-station dip switch SW3: I / O base address, transfer mode setting
+1-2: I / O base address setting
+　ON-ON: 00C0 (Factory setting: Change prohibited)
+　OFF-ON: 0CD0h
+　ON-OFF: 0CE0h
+　OFF-OFF: 0CF0h
+3: Transfer mode setting
+　ON: Mode automatic selection (bus master transfer) (Factory setting)
+　OFF: I / O transfer fixed
+　※ When used with PC-9821An, PC-9801RX, PC-H98 series, PC-H98S, PC-286 model 0
+　　Only set it to OFF.
+4-5-6-7-8: System use (Do not change.Factory setting: ON-ON-OFF-ON-OFF)
+
+・ Three jumper switch SW5: Transfer mode setting
+　1-2 short: DMA transfer fixed
+　2-3 short: Mode automatic selection (Bus master transfer) (Factory setting: Change prohibited)
+
+・ 8 stations dip switch SW6: Setting of main unit model
+　ON-OFF-OFF-OFF-ON-OFF-ON-OFF: PC-9821Ae
+　ON-OFF-ON-OFF-OFF-OFF-ON-OFF: PC-9821Bf, PC-9821Xa / Xn
+　ON-OFF-OFF-ON-OFF-OFF-ON-OFF: PC-9801BX2, PC-9821Ce2
+　ON-OFF-OFF-OFF-OFF-OFF-ON-OFF: Models other than the above (default settings)
+* This switch is only for the pattern of LHA-20B owned by the author.
+

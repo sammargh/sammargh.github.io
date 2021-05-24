@@ -1,0 +1,46 @@
+
+PC-9801-86 (NEC)
+
+C bus FM sound source board.Up-to-back compatible with PC-9801-26K, 9-quad chords
+(FM sound source = 6 stereo sounds, SSG sound source = 3 monaural sounds)
+Music performance is possible.Also, apart from the FM sound source etc., the rhythm sound source 6 sounds
+(Bass drum, snare drum, cymbal, high hat, tom,
+Rim shot is available.At the N88-BASIC (86) language level
+Music performance is possible.Microphone input, LINE input, FM sound source
+Digital sampling possible (special application required)
+soft).The sampling frequency is eight steps from 4.13 to 44.1 kHz.
+MSX joystick using input / output port of FM sound source LSI
+Equipped with a connector. It corresponds to the main body equipped with CPU of 80286-10 MHz or more.
+Do not use in combination with PC-9801-73.
+There is one 8-station dip switch on the board.Card edge connector
+The 4 pin connector on the side is the connector for manufacturer test (no connection
+Do not do).On the back center pin round DC connector, 12V of C bus
+Connect the dedicated AC adapter PC-9801-73-AC when the power supply capacity is insufficient.
+
+・ 8 stations dip switch DISSW: I / O port address, sound
+ROM enable / disable, sound interrupt setting
+1, 6: Setting of I / O port address of FM sound source LSI (YM 2608)
+　ON ON 0188h, 018Ah, 018Ch, 018Eh (factory setting)
+  OFF OFF 0288h, 028Ah, 028Ch, 028Eh
+※ When installing on PC-9801UX / EX, set it to OFF.Excluding that
+　Set to ON / ON for models (PC-9801CS / DX / DS / DA / FA / FS / FX
+　In / US, it is necessary to separate the sound function of the PC itself).
+※ In the case of OFF · OFF, FM sound source of this board with the conventional FM sound source compatible software
+　You can not operate.Also in this case, the joystick
+　Joystick port software is also changed, so
+　You can not use the joystick with.
+2: Sound ROM enable / disable setting
+　ON Sound ROM enabled (default setting)
+　OFF Sound ROM disabled
+3: Sound interrupt setting
+　OFF-OFF INT 0
+　ON-OFF INT 4
+　OFF-ON INT 6
+　ON-ON INT 5 (default setting)
+5, 7 and 8: Prohibition of change (Factory setting: 5 = ON, 7 = ON, 8 = OFF)
+※ It does not operate normally except the factory setting.
+
+※ Dustman Project Web Page (http://www.hi-ho.ne.jp/~y-exp/dustman/index.htm)
+-> You can freely change the sound ID of this board to PC-9801-86 unreleased information,
+There is information of unpublished setting that enables 2 sheets insertion.
+

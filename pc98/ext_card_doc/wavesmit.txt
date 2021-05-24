@@ -1,0 +1,86 @@
+
+WaveSmit (キュービジョン)
+
+Composite board of sound and SCSI-2 (SMIT transfer).Windows 95 compatible (Plug & Play compatible).
+ROM BIOS ver. It seems to support MMX at 1.06 or more.Also by updating the ROM BIOS
+Supports Windows NT 4.0.There is an operation example on Windows 2000.
+Although the recognition capacity limit of the SCSI unit stated that the cue vision is up to 4.3 GB, in fact
+There are recognition reports up to 8.4 GB.Parameter analysis is [CTRL] + [GRPH] + [P] when the main unit is started
+Do this by simultaneously pressing.
+The sound unit is also compatible with the PCM board (WSS compatible) equivalent to 118 boards while being 86 compatible.
+Improved sound skipping with Windows 95 compatible software compared to old products.
+PCM sound source: newly designed 86 compatible PCM sound source, recording and playback function, stereo, 8/16 bit,
+　　　　 Sampling rate 11.025 kHz, 22.05 kHz, 44.1 kHz
+FM sound source: newly designed 86 compatible FM sound source, playback function, FM 6 sound (stereo), rhythm 6 sound (Sureteo),
+　　　　SSG 3 sound (monaural)
+WaveBlaster compatible MIDI sound source expansion connector, Qvision made MidiStar / GS
+(GS sound source), NEC PC-9821CS-B02 (XG sound source), YAMAHA DB 50 X G (XG sound source),
+MIDI sound source sub boards such as Creative Media WaveBlaster 2 (GM sound source)
+Expansion possible.In addition, Windows 95 compatible IBM / AT GamePort compatible joystick port
+(SoundBlaster compatible) is equipped and a joystick for PC / AT compatible machines can be connected.
+In addition, I / O data MIDI device connection cable "SB-MA" is connected, external MIDI sound source device or
+MIDI keyboard can be connected.
+
+Below, Manufacturer ■ Product Name ■ Sounds Windows 95 Standard ■ Windows 95 Game Software
+Sounds of Windows ■ Sounds of Windows 3.1 Standard Sounds ■ Sounds of Windows 3.1 Games ■
+Sounding 98 DOS game sounds on MS-DOS ■ 98 DOS game sounds on Windows 95 DOS prompt
+In order of ringing:
+
+NEC ■ PC built-in sound function (it seems to be about PCM sound source) ■ ○ ■ ○ ■ ○ ○ ○ ○ × ■ ×
+Qvision ■ Wave SMIT ■ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○
+Creative ■ SoundBlaster ■ ○ ○ ○ ○ ○ ○ ○ ○ △ ■ △
+NEC PC-9801-118 ■ ○ ○ ○ ■ ■ ■ ■ ■ ■ ×
+NEC PC-9801-86----------------
+Qvision-WaveMaster-------------
+Qvision ■ WinDuo ■ ○ ■ × ■ ○ ○ ○ ○ ○ ×
+Qvision SecondBus 86 x x x x x x x x x
+　○ = OK, ▲ = PCM does not sound, == There are few supported games,
+　× = no sound
+
+8 stations dip switch
+SW1: Setting of PnP PC
+ON: PnP function enabled (In this case, SW2 and 3 must also be ON)
+OFF: PnP function disabled (in this case, SW4-8 is enabled)
+
+SW2: MIDI (MPU) settings
+ON: MPU function enabled
+OFF: MPU function disabled
+
+SW3: 86 compatible sound settings
+ON: 86 compatible sound function enabled
+OFF: 86 compatible sound function disabled
+
+SW4: DMA channel setting of PC in WSS mode
+ON: Ch3
+OFF: Ch0
+
+SW5: FM sound source I / O address setting
+ON: 0288
+OFF: 0188
+
+SW6: Setting the interrupt level (INT) of FM / PCM sound source
+ON: INT6 (IRQ13)
+OFF: INT5 (IRQ12)
+
+SW7: MIDI (MPU) I / O Address Setting
+ON: E4D0
+OFF: E0D0
+
+SW8: MIDI (MPU) interrupt level (INT) setting
+ON: INT4 (IRQ10)
+OFF: INT2 (IRQ6)
+
+2 stations dip switch
+SW1: Setting prohibited (fixed to OFF)
+
+SW2: SCSI function setting
+ON: SCSI function enabled
+OFF: SCSI function disabled (disconnected)
+
+------------
+When "I / O port not found" is displayed in NT 4.0, Windows 95 or
+The IRQ or I / O port set by PnP function of Windows 3.1 or MS-DOS
+As it is stored on the main unit, activate the PnP function in Windows 95.
+Change these values, or from PnP support software in Windows 3.1
+Change and setup again.
+

@@ -1,0 +1,19 @@
+
+Initio INI-9100J (ICM)
+
+SCSI-2 compatible PCI_SCSI_I / F. The internal SCSI connector is a narrow 50-pin external SCSI
+The connector has a high density of 50 pins.Two jumper switches on the board (JP1: Multi
+Active terminator jumper for initiator, factory setting: open.
+Compatible with both PC-98 and PC / AT compatible machines.Supported operating systems are MS-DOS 5.0A, 6.2, Windows 3.1, and so on PC-98.
+95, NT 3.5, NT 3.51, PC / AT compatible machines, PC-DOS J5.0 / V, 6.1 / V, 6.3 / V, 7.0 / V,
+Windows 3.1, 95, NT 3.5, 3.51.
+P & P compatible, settings at startup,
+!!! Press <Ctrl> <I> for SmartSCSI Setup Utility !!!
+!!! Press <ESC> to continue !!!
+While pressing the [Ctrl] key and [I] key simultaneously while the message is displayed
+Do this with the SmartSCSI setup utility started.
+
+The first version of the user's manual is issued on February 1, 1996.
+It may be one of the products of.
+
+

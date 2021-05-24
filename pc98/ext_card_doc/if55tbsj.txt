@@ -1,0 +1,64 @@
+IF-55TBS　（TEAC）
+
+CバスSCSIボード．ボード上に8連ディップスイッチ2個と4連ディップスイッチ
+1個あり．
+
+・8連ディップスイッチSW1：SCSI-ID，割り込みレベル，DMAチャネルの設定
+1-2-3：SCSI-IDの設定
+　0FF-0FF-0FF：ID=0
+  OFF-OFF-ON：ID=1
+  OFF-ON-OFF：ID=2
+  OFF-ON-ON：ID=3
+  ON-OFF-OFF：ID=4
+  ON-OFF-ON：ID=5
+  ON-ON-OFF：ID=6
+  ON-ON-ON：ID=7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　OFF-OFF-OFF：INT 0
+　ON-OFF-OFF：INT 1　（出荷時設定）
+　OFF-ON-OFF：INT 2
+  ON-ON-OFF：INT 3
+  OFF-OFF-ON：INT 5
+  ON-OFF-ON：INT 6
+7-8：DMAチャネルの設定
+　OFF-OFF：DMA #0
+  OFF-ON：DMA #2
+  ON-OFF：DMA OFF　（出荷時設定）
+  ON-ON：DMA #3
+
+・8連ディップスイッチSW2：ローカルメモリアドレス，本体機種の設定
+1-2-3：ローカルメモリアドレス（ノーマル）の設定
+　OFF-OFF-OFF：D0000h〜D0FFFh
+　ON-OFF-OFF：D2000h〜D2FFFh
+　OFF-ON-OFF：D4000h〜D4FFFh
+　ON-ON-OFF：D6000h〜D6FFFh
+　OFF-OFF-ON：D8000h〜D8FFFh
+　ON-OFF-ON：DA000h〜DAFFFh
+　OFF-ON-ON：DC000h〜DCFFFh　（出荷時設定）
+　ON-ON-ON：DE000h〜DEFFFh
+4-5：ローカルメモリアドレス（ハイレゾ）の設定
+　OFF-OFF：E8000h〜E8FFFh
+　ON-OFF：EA000h〜EAFFFh
+　OFF-ON：EC000h〜ECFFFh (出荷時設定)
+　ON-ON：EE000h〜EEFFFh
+6-7：本体機種の設定
+　OFF-OFF：PC-98XA
+  ON-OFF：CPUが8086/V30の機種
+　OFF-ON：ノーマル/ハイレゾ兼用機
+　ON-ON：CPUが286/386/486の機種　（出荷時設定）
+8：変更禁止（出荷時設定ON）
+
+・4連ディップスイッチSW3：I/Oポートアドレス，転送モード，HDDアクセス
+　表示モードの設定
+1-2：I/Oポートアドレスの設定
+　OFF-OFF：CCxh　（出荷時設定）
+　ON-OFF：CDxh
+　OFF-ON：CExh
+　ON-ON：CFxh
+  (xは0, 2, 4を表す)
+3：転送モードの設定
+　ON：I/O転送　（出荷時設定）
+　OFF：DMA転送
+4：HDDアクセス表示モードの設定
+　ON：ON　（出荷時設定）
+　OFF：OFF

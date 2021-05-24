@@ -1,0 +1,86 @@
+
+AV-100HC, AV-120HC, AV-200HC, AV-340HC (Caravelle)
+
+Non-multi-vendor C bus bus master SCSI I / F. With HDD mounted on board
+External SCSI connector is Amphenol half 50 pin.AV-100HC, AV-120HC,
+The idle power consumption of the four AV-200HC and AV-340HC models is 0.8W and 1.6W, respectively.
+The read / write power consumption is 3.5W / 2.2W, in order of 0.8W and 1.3W.
+2.0W / 2.2W, 3.5W / 2.2W, 2.7W / 3.5W, standby power consumption is in order
+0.15 W, 1.6 W, 0.15 W, 0.4 W. PC-9801 / E / F / M / U, PC-286C, SCSI I / F
+It is not compatible with the standard built-in model or the built-in SCSI HDD built-in model compatible with Epson 98 compatible machine.
+Fixed 512 KB sector.
+Supported OS is MS-DOS ver.3.3B / 3.3C / 3.3D / 5.00 / 5.0A,
+OS / 2 ver. 1.0A / 1.1A / 1.21 / 1.21B, PC-UX rel. 3.0A / 3.0B / 3.2.
+Using this board, EMS compatible RAM board and FM sound board simultaneously
+Impossible.In the EMS compatible RAM board, set the start address of EMS to C0000h.
+Note that some models have restrictions on the C bus slot that can be installed.
+Also, when using with external FDD I / F, change switch setting on FDD I / F
+Sometimes you need
+Remove the switch pin on the side of the card edge when using it on a V30 machine
+about.
+Two 8-deep dip switches and one 4-deep dip switch on the board,
+1 x 2 x 4 series jumper switch, 1 x 3 jumper switch, 2 x 3 series
+There is one jumper switch and one 2x2 series jumper switch.
+
+・ 8-station dip switch SW1: SCSI ID of I / F section, interrupt level,
+　DMA channel setting
+1-2-3: Setting SCSI ID in I / F section
+　ON-ON-ON-ON 7 (default setting)
+　Usually, use with the factory settings.
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT0 (IRQ 3)
+　ON-OFF-OFF INT1 (IRQ 5)
+　OFF-ON-OFF INT2 (IRQ 6)
+　ON-ON-OFF INT3 (IRQ 9) (Factory setting)
+　OFF-OFF-ON INT5 (IRQ 12)
+　ON-OFF-ON INT 6 (IRQ 13)
+7-8: DMA channel setting
+　ON-ON # 3
+　OFF-OFF # 0 (default setting)
+
+・ 8 stations dip switch SW2: Setting of local memory address and main unit model
+1-2-3: Normal mode local memory address
+　OFF-ON-ON DC000h to DCFFFh (factory setting)
+4-5: Local memory address in high resolution mode
+　OFF-ON EC000h to ECFFFh (factory setting)
+6-7: Setting of machine model
+　OFF-OFF PC-98XA
+　ON-OFF V30 machine (protected mode non-support model)
+　Models with OFF-ON Normal / Hi-Res Both modes
+　ON-ON ■ Only normal mode that supports protected mode
+　　　　 Model (default setting)
+8: Always on
+
+-4 stations dip switch SW3: SCSI ID setting of HDD section
+　OFF-OFF-OFF-OFF 0 (default setting)
+　ON-OFF-OFF-OFF 1
+　OFF-ON-OFF-OFF 2
+　ON-ON-OFF-OFF 3
+　OFF-OFF-ON-OFF 4
+　ON-OFF-ON-OFF 5
+　OFF-ON-ON-OFF 6
+
+・ 2 x 4 jumper switch JP1: Setting of hold request channel
+With the hold request channel, separate the bus use right from the CPU
+Request channel for exclusive use.
+　1-8 short, 2-7 short ■ Hold request channel 1 (factory setting)
+　3-6 short, 4-5 short ■ Hold request channel 2
+In addition to this board, there is an I / F that uses the hold request channel
+In case of hold request channel 2 set.
+
+・ Three jumper switch JP2: Always short between center pin-1 pin (modification prohibited)
+
+・ 2 x 3 jumper switch JP3: I / O port address, transfer mode setting
+(1) I / O port setting
+　2-5, 3-4 short ■ CC0h, CC2h, CC4h, CC6h (factory setting)
+　2-5 short, 3-4 open ■ CD0h, CD2h, CD4h, CD6h
+　2-5 open, 3-4 short ■ CE0h, CE2h, CE4h, CE6h
+　2-5 open, 3-4 open ■ CF0h, CF2h, CF4h, CF6h
+(2) Setting of transfer mode
+　1-6 open ■ Bus master transfer
+　1-6 short ■ Forced DMA transfer
+Valid on 80386/80486 machines only.Regardless of the transfer mode setting on V30 machines
+This is I / O string transfer, and DMA transfer for 80286 machines.Also, DMA transfer is performed on OS / 2 and PC-UX.
+
+・ 2x2 jumper switch JP4: Always short between 1 and 4 (change prohibited)
+

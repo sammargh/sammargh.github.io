@@ -1,0 +1,5 @@
+CentreCOM LA-98-T　（CONTEC）
+
+10BASE-2/5/Tコネクタを持つCバスNIC（LANボード）．ボード上にAUTO／LEGACY
+切替スイッチあり．AUTO側ではPnP，LEGACY側では非PnP．割り込みレベルとI/O
+ポートアドレスはDOS上でCFG98.EXEを使用して設定．

@@ -1,0 +1,84 @@
+
+PC98 M44 (Caravelle)
+
+C bus composite board with non-multi-vendor bus master SCSI-2 function and sound function.
+Not compatible with Win95.Four 8 series dip switches on the board and 4 series june passes
+Switch, Dual Jumper Switch, Three Jumper Switch, Two Jumper Switch
+There is one each.
+The sound function unit is controlled by the attached AUDIOPAC.COM.The audio file is Kano
+In addition to audio files in the form of pause, WAVE is also supported.Sound function unit
+Can not be practically used.
+
+・ 8-station dip switch SW1: SCSI_ID, interrupt level, DMA channel setting
+1-2-3: SCSI_ID
+　ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Interrupt level
+　OFF-OFF-OFF: INT0 (IRQ3)
+　ON-OFF-OFF: INT1 (IRQ5)
+　OFF-ON-OFF: INT2 (IRQ6)
+　ON-ON-OFF: INT3 (IRQ9)
+　OFF-OFF-ON: INT5 (IRQ12)
+　ON-OFF-ON: INT6 (IRQ13)
+7-8: DMA channel
+　OFF-OFF: DMA0
+　ON-ON: DMA3
+
+・ 8-station dip switch SW2: Local memory address, specification of main unit model
+1-2-3: Local memory address in normal mode
+　OFF-ON-ON: \ DC000- \ DCFFF
+4-5: Local memory address in high resolution mode
+　OFF-ON: \ EC000- \ ECFFF
+※ In model supporting both normal mode, high res mode
+　1-2-3-4-5 All settings.
+※ OFF-ON-OFF-OFF-ON for PC-286L, LE, LF (use of extended I / O box), LP
+　Set to.
+6-7: Main unit model
+　ON-ON: Model in normal mode that supports protected mode
+　ON-OFF: PC-9801VF, VM, UF, UR, UV, CV, N, NV (N, NV are expanded I / O boxes
+　　　　　, PC-286U (does not support protected mode)
+　　　　　Model)
+　OFF-ON: PC-98XL, XL ^ 2, RL, PC-H98 (Normal mode and high res
+　　　　　Models that support both modes)
+　OFF-OFF: PC-98XA (model only in high res mode)　
+8: Always on
+
+・ 8-station dip switch SW3: I / O address, setting of forced DMA mode
+1-2: I / O address
+　ON-ON: CC0, CC2, CC4
+　OFF-ON: CD0, CD2, CD4
+　ON-OFF: CE0, CE2, CE4
+　OFF-OFF: CF0, CF2, CF4
+3-4: Always on
+5: Forced DMA mode
+　ON: Bus master transfer mode (factory setting, usually do not change)
+　OFF: Forced DMA mode
+※ We set bus master transfer mode in model equipped with CPU before 80286
+　Even if you do, it will be DMA transfer.
+6-7-8: Always OFF-ON-OFF
+
+・ 4 series jumper switch SW4: Setting of hold request channel
+　1, 3 short, 2, 4 open: hold request channel 1
+                             (Factory setting)
+　1, 3 open, 2, 4 short: hold request channel 2
+
+・ Double jumper switch SW5: Do not change
+　1 short, 2 open
+
+・ 8 stations dip switch DS1: I / O port start of sound function part
+　Address setting
+Each dip (ON = 0, OFF = 1) of the switch is the upper address of the port.
+Correspond to each bit (lower 2 digits of port address fixed to 18h).
+The factory default setting is OFF-OFF-OFF-ON-ON-ON-OFF-ON (1-2-3 always
+OFF-OFF-OFF): 4718 h (in this case, 4718 h-471 Fh is used)
+If the I / O port address has been changed from the factory setting, AUDIOPAQ.COM
+You need to enter the value at runtime.
+※ The interrupt level (factory setting = INT1) is an option at driver startup
+　Set by switch.
+
+・ Setting method of 2 jumper switch (J1) and 3 jumper switch (J2)
+　Is unknown (it seems to be all open by default)
+
+※ This board and EMS additional RAM board, FM sound board
+　Simultaneous use is not possible.In addition, the start address of the expanded RAM board EMS
+　Is set to \ C0000.
+

@@ -1,0 +1,16 @@
+
+LD-98P, LD-98PT (ELECOM)
+
+PnP compatible C bus NIC (LAN board).LD-98P has 10BASE-T connector,
+LD-98PT is a 10BASE-T / 2/5 connector.There is no switch on the board,
+Setting of resources (IRQ and I / O port) in Windows 95/98 is attached
+Performed by SETUP.EXE.In this case, on the "Setup environment" screen
+Set "Extended Memory" to "Invalid".IRQ or I / O port address
+In non-PnP mode if it does not operate properly in PnP mode due to
+Use the attached SETUP.EXE to switch between PnP mode and non-PnP mode
+use).
+If you install the driver in PnP mode of Windows 95, the same chip
+D-Link DE-298 using may be installed.this
+If you delete "Other devices" and set it up again
+about.
+

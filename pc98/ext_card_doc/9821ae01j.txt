@@ -1,0 +1,22 @@
+PC-9821A-E01　（NEC）
+
+mate-Aローカルバス用グラフィックアクセラレータボード．グラフィックチップ
+はS3社製86C928．画像メモリは1MB．ボード上に8連ディップスイッチ1個あり．
+
+・8連ディップスイッチ：走査方式，CPUアドレス空間の設定
+1：CRTディスプレイの走査方式
+　ON = ノンインタレース（出荷時設定）
+　OFF = インタレース 
+2-3-4：未使用，つねにON
+5-6：16MBモードでのCPUアドレス空間の設定
+　ON-ON = F00000h-F0FFFFh, F80000h-F80FFFh　（出荷時設定）
+　ON-OFF = F20000h-F2FFFFh, F88000h-F88FFFh
+　OFF-ON = F40000h-F4FFFFh, F90000h-F90FFFh
+　OFF-OFF = F60000h-F6FFFFh, F98000h-F98FFFh
+7-8：1MBモードでのCPUアドレス空間の設定
+　ON-ON = DF000h-DFFFFh　（出荷時設定）
+　ON-OFF = DB000h-DBFFFh
+　OFF-ON = D7000h-D7FFFh
+　OFF-OFF = D3000h-D3FFFh
+
+このデータは29L-3MAさんよりいただきました．

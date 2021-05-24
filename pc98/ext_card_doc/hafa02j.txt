@@ -1,0 +1,56 @@
+HA-FA02　（日本TEXA）
+
+PC-9801FA/FS/FX，MATE-AのSCSI専用スロットに挿すSCSI I/F．
+Windows95非対応だが，転送モードをDMA転送に設定し，
+55ボード用ドライバで認識させればWindows95で使用可能．
+基板上のシルク印刷はEZPHA-FA02-1．
+筆者がまりも氏作成のフリーソフトであるe10chk.exeを用いて
+調べた本ボードの認識容量の上限は2015MBだった．
+ボード上に5連ディップスイッチ1個，8連ディップスイッチ
+2個，3本ジャンパスイッチ4個あり．
+
+・5連ディップスイッチSW1：割り込みレベル，DMAチャネルの設定
+1-2-3：割り込みレベルの設定
+　OFF-OFF-OFF■INT0(IRQ3)
+　ON-OFF-OFF■INT1(IRQ5)　（出荷時設定）
+　OFF-ON-OFF■INT2(IRQ6)
+　ON-ON-OFF■INT3(IRQ9)
+　OFF-OFF-ON■INT5(IRQ12)
+　ON-OFF-ON■INT6(IRQ13)
+4-5：DMAチャネルの設定
+　OFF-OFF■CH0
+　ON-OFF■設定禁止
+　OFF-ON■CH2
+　ON-ON■CH3　（出荷時設定）
+
+・8連ディップスイッチSW2：出荷時設定のまま使用のこと
+（出荷時設定：OFF-ON-ON-OFF-ON-ON-ON-ON）
+
+・8連ディップスイッチSW5：データ転送モード，本I/FのSCSI-IDの設定
+1-2-3-4：未使用（出荷時設定：OFF-OFF-OFF-OFF）
+5：転送モードの設定
+　ON■GTモード　（出荷時設定）
+　OFF■DMAモード
+6-7-8：本I/FのSCSI-IDの設定
+　OFF-OFF-OFF■0
+　ON-OFF-OFF■1
+　OFF-ON-OFF■2
+　ON-ON-OFF■3
+　OFF-OFF-ON■4
+　ON-OFF-ON■5
+　OFF-ON-ON■6
+　ON-ON-ON■7　（出荷時設定）
+　※BIOS ver.1.50以降では，接続してあるSCSI機器のIDを0から順に
+　　割り当て，本I/FのIDをSCSI機器の最後のIDに1を加えた値に設定
+　　しておくと，起動時のIDサーチが本I/FのIDの1つ前の値のIDまで
+　　しか行われないため，起動時間を短縮できる．
+
+・3本ジャンパスイッチSW3，SW4：I/Oポートアドレスの設定
+以下，SW3■SW4■I/Oポートアドレス　の順：
+　OFF■OFF■0CC0h，0CC2h，0CC4h　（出荷時設定）
+　ON■OFF■0CD0h，0CD2h，0CD4h
+　OFF■ON■0CE0h，0CE2h，0CE4h
+　ON■ON■0CF0h，0CF2h，0CF4h
+
+・3本ジャンパスイッチSW6，SW7：出荷時設定のまま使用のこと
+（出荷時設定：SW6=OFF，SW7=OFF）

@@ -1,0 +1,50 @@
+NE2098E, NE2098T, NE2098TP　（ジャパンマクニクス（現マクニカ））
+
+CバスLANボード．Windows98，WindowsNT3.51/4.0にはOSに標準でドライバ
+が含まれている．
+ボード添付のマニュアルには誤記多し要注意．以下の記述はNE2098E/T
+インストレーションガイド（1990年8月10日発行，初版）とマクニカ
+のサイトのPDFファイルの記述に基づく．
+
+■全モデル／全リビジョン共通
+・4連ディップスイッチSW3：I/Oポートアドレスの設定
+　OFF-OFF-OFF-OFF             OFF-ON-OFF-OFF         
+  　       00D0h〜00DFh                40D0h〜40DFh  
+    　     01D0h〜01DFh                41D0h〜41DFh  
+      　   02D0h〜02DFh                42D0h〜42DFh  
+        　 03D0h〜03DFh                43D0h〜43DFh  
+　OFF-OFF-OFF-ON              OFF-ON-OFF-ON          
+  　       10D0h〜10DFh                50D0h〜50DFh  
+    　     11D0h〜11DFh                51D0h〜51DFh  
+      　   12D0h〜12DFh                52D0h〜52DFh  
+        　 13D0h〜13DFh                53D0h〜53DFh  
+　OFF-OFF-ON-OFF              OFF-ON-ON-OFF          
+  　　     20D0h〜20DFh                60D0h〜60DFh  
+      　   21D0h〜21DFh                61D0h〜61DFh  
+        　 22D0h〜22DFh                62D0h〜62DFh  
+         　23D0h〜23DFh                63D0h〜63DFh  
+　OFF-OFF-ON-ON               OFF-ON-ON-ON          
+    　     30D0h〜30DFh                70D0h〜70DFh  
+  　       31D0h〜31DFh                71D0h〜71DFh  
+      　   32D0h〜32DFh                72D0h〜72DFh  
+        　 33D0h〜33DFh                73D0h〜73DFh  
+・3本x7連ジャンパスイッチ(W1,2,3,4,5,6,8)：コネクタタイプの選択
+　すべて1-2間ショート：10BASE-5(AUI)，10BASE-T(RJ-45)※
+　すべて2-3間ショート：10BASE-2(BNC)
+　※NE2098E，NE2098T(Rev.A)では10BASE-Tコネクタなし．
+・2本x4連ジャンパスイッチ(W9,10,11,12)：割り込みレベルの設定
+　W9：INT 5(IRQ 12)
+　W10：INT 2(IRQ 6)
+  W11：INT 1(IRQ 5)
+  W12：INT 0(IRQ 3)
+・3本ジャンパスイッチW13：CPUの選択
+　1-2間ショート：8086，V30(70116)
+　2-3間ショート：80286以降
+
+■NE2098T, TP(Rev.C,D,F)
+・3本x3連ジャンパスイッチ(W19,20,21)：AUI供給電源の選択
+　すべて1-2ショート：外部電源
+　すべて2-3ショート：PC本体より供給
+
+■NE2098TP全リビジョン共通
+　SW4すべてOFF(内容：Reversed)

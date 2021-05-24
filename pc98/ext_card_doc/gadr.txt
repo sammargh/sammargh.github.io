@@ -1,0 +1,19 @@
+
+GA-DR 2/98, GA-DR 4/98 (I・Oデータ) 
+
+C bus graphics accelerator board with Trident TGUI9660.GA-DR 2/98 is 
+Image memory 2 MB, GA-DR 4/98 is image memory 4 MB. 4 stations dip switch SW1 on the board 
+And with 3 jumper switches JP1.These setting methods are not described in the manual. 
+
+Factory setting: 
+　SW1 = OFF-ON-ON-OFF 
+　JP1 = 1-2 short 
+
+I / O port fixed: 52E8, 52E9, 56E8, 56E9, 5AE8,, 5AE9, 5EE8, 5EE9 
+Memory address fixed 
+　When using Windows, JW2: F00000H to 384KB 
+　When using Lotus 1-2-3: E0000H to 32KB 
+
+Graphics driver set for use with Windows 3.1 with PC-9801ES, FA, NA 
+Start up the program "GASETUP.EXE" with the "/ F" option switch. 
+

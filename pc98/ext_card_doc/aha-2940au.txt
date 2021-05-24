@@ -1,0 +1,12 @@
+
+AHA-2940AU (Adaptec)
+
+The world's first PC-98, PC / AT compatible machine compatible PCI Ultra SCSI H / A. PC-98 and PC / AT compatible machines
+Automatic discrimination.The SCSI connector for internal connection is 50 pins. 32-bit bus master transfer is possible.
+Windows 95 includes a driver as standard.Consumption voltage / current = + 5 V / maximum 1.5 A.
+SCSISelect 98 Configuration Utility Included in Included FD
+SCSI ID (factory setting 7), parity check (valid), terminator
+(Same automatic), synchronous transfer (same Yes), enable / disable of Ultra SCSI (same No), maximum
+Synchronous transfer rate (at 10 MB / sec), Disconnect (at Yes), Start unit
+Set sending / non-sending (same no) of command.
+

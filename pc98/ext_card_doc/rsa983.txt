@@ -1,0 +1,58 @@
+
+RSA-98III, RSA-98III / S, RSA-98IIISB (I･Oデータ)
+
+PnP compatible C bus high-speed RS-232C expansion board (start-stop synchronization).RSA-98 III (2 channels
+On the board, there are two 4 series dip switches (SW1 for Ch1 and SW2 for Ch2).
+Corresponding to).In addition, RSA-98III / S, RSA-98IIISB (with 1 channel) has 4 stations
+There is one dip switch.
+The TL16C550C is adopted for the serial control LSI, and the CPU is about Pentium 133 MHz.
+In the case of Windows 95, it is possible to communicate at a transfer rate of up to 921.6 Kbps (in Windows NT 3.5
+Up to 230.4 Kbps).The factory setting is RSA mode, but MS-DOS application
+Support 16550 compatible mode (equivalent to 2nd CCU of PC-9821 series)
+(Maximum 115.2 Kbps).Maximum power consumption +5 V, 200 mA.
+The use of multiple pieces of RSA-98III series is not possible in Windows 95 / NT 3.5.Also the old RSA Siri
+In addition, it can not be used in combination with (eg, RSA-98, RSA-98II / S).Available in RSA mode
+MS-DOS application is BIOS function attached to RSA-98III series
+It is only one developed, and in this case it can not be used together with the old RSA series.
+
+・ 4 series dip switches: PnP mode, EEPROM address (INT and I / O port add
+　Setting the I / O port address to access the EEPROM that saves the
+1: Setting of PnP mode / non-PnP mode
+  ON = PnP mode (factory setting)
+  OFF = non-PnP mode
+  If the computer does not support PnP, multiple RSA-98III series
+　When used in 16550 compatibility mode, Windows NT 3.5 with RSA-98III
+　Non-PnP mode when using PnP board other than
+  Set the same settings for both SW1 and SW2 in RSA-98III.
+2: EEPROM address (set by SW3 and SW4) valid / invalid
+  ON = Enabled (factory setting)
+  OFF = invalid
+3-4: EEPROM address value
+  ON-ON: 1st port (EEPROM address 0859H: RSA-98III SW1, RSA-98III / S,
+　　　　 RSA-98IIISB factory setting)
+  ON-OFF: 2nd port (same 0959H: RSA-98III SW2 default setting)
+  OFF-ON: 3rd port (same 0A59H)
+  OFF-OFF: 4th port (same 0B59H)
+  Setting is required when installing multiple RSA-98III series.
+　Set SW1 and SW2 of RSA-98III to different EEPROM addresses.
+
+When using in non-PnP mode, the board resource value uses the attached "RSASETUP.EXE"
+To set. When used in 16550 compatible mode, INT = 1, I / O port address = 0230H
+Set to (Interrupt type = Level).After setting, the setting will not turn off once
+It does not become effective.
+※ The upper 12 bits of I / O port address can be set between 00DH and FFFH (factory setting 50EH,
+51 EH in SW2 of RSA-98III).The lower 4 bits are xx8H ~ for UART control port
+xxFH (x is the same for both RSA mode and 16550 mode), xxx0H to xxx7H for various setting ports
+(For details, refer to the manual register specifications).
+In addition, Windows 3.1, high-speed applications that do not support high-speed serial port
+Use the attached software JetCOM to transfer data.
+
+When using RSA-98III in Windows 95 and PnP mode, two INT (IRQ) are used,
+The RSA-98III itself works with only one INT.If you want to free INT, the device
+After manually shifting the I / O port addresses of the two ports on the manager (for
+Change the address of the smaller channel), set INT to the same value (larger COM number
+Set the INT of the other channel to the INT of the smaller channel).COM number large
+In the channel of the other!A mark is attached but the operation is normal.When set to non-PnP mode,
+Since Ch1 and Ch2's INT has the same value, change it to Ch2!Mark is attached, but the board with other boards
+There is no problem in operation as long as there is no source conflict or I / O port address conflict with Ch1 and Ch2.
+

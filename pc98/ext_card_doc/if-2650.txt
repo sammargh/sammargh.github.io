@@ -1,0 +1,12 @@
+
+IF-2650 (ICM)
+
+SCSI I / F mounted on 110-pin expansion bus Attach to the entire back of the body like a port bar
+It looks like this.It can not be installed on any of PC-9801NS / E, NS / R, NS / T, PC-9821Ne.
+(It is necessary to take out the board to mount).It seems that it is exclusively for PC-9801NS, but it has not been confirmed.
+
+With 2 dip switches (setting content unknown).If the one at hand is ON-ON).
+Disassemble and take out the board, small 8 series dip switch on the right side of the dip switch
+There are 3-1 and 6-8 ON, 4 and 5 OFF.The substrate is silk called IF2650A REV. B
+There is printing.ID search does not appear at startup.
+

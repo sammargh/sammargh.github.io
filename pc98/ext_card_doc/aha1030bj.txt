@@ -1,0 +1,18 @@
+AHA-1030B　（Adaptec）
+
+PnP対応のCバスSCSI-2 I/F．コネクタはDサブハーフ50ピン．Windows98では
+動作しないことをAdaptecが公式に認めている．PnPの設定，非PnPモードでの
+割り込みレベルの設定は付属のソフトを用いて行う．ボード上の5連ディップ
+スイッチによる設定は非PnPモード時のみ有効．ディップスイッチの設定は
+PC-9801-100と同じ．
+
+・5連ディップスイッチ：SCSI BIOSアドレスとI/Oポートアドレスの設定
+1-2-3-4：SCSI BIOSアドレスの設定
+　OFF-OFF-OFF-OFF■DC000h〜DFFFFh　（出荷時設定）
+　ON-OFF-OFF-OFF■D8000h〜DBFFFh
+　OFF-ON-OFF-OFF■D4000h〜D7FFFh
+　ON-ON-OFF-OFF■D0000h〜D3FFFh
+　ON-ON-ON-OFF■BIOS切り離し
+5：I/Oポートアドレスの設定
+　ON■3840h〜387Eh（偶数），386Dh
+　OFF■1840h〜187Eh（偶数），186Dh　（出荷時設定）

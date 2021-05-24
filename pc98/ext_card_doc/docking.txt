@@ -1,0 +1,56 @@
+
+PC-9821N-U04, PC-9821N-U05 (NEC)
+
+Docking station connected to 198 pin expansion bus of PC-9821 notebook
+(PC-982N-U05 is a "docking station CD"). 8 stations dip
+There are two switches and one quadruple dip switch.Expansion slot x1, built-in
+Equipped with speaker x2, PC-9821N-U04 has file slot,
+PC-9821N-U05 is also equipped with a CD-ROM drive (SCSI connection).Outside on the back
+Display connector (D-sub 15-pin), SCSI connector (amphenol)
+Half pitch 50-pin), additional 1MB_FDD connector available.
+
+· 8 stations dip switch SW1: SCSI_ID, interrupt level, DMA channel
+　settings of
+1-2-3: SCSI_ID
+　ON-ON-ON: ID = 7 (factory setting)
+　　　　　　　　 Use with factory settings: PC-9821N-U05
+　　　　　　　　 The CD-ROM drive has a fixed ID of 6
+4-5-6: Interrupt level
+  OFF-OFF-OFF: INT0 (IRQ3: factory setting)
+  ON-OFF-OFF: INT1 (IRQ5)
+  OFF-ON-OFF: INT2 (IRQ6)
+  ON-ON-OFF: INT3 (IRQ9)
+  ON-OFF-ON: INT5 (IRQ12)
+  OFF-ON-ON: INT6 (IRQ13)
+7-8: DMA channel setting
+  OFF-OFF: DMA0
+  ON-OFF: Setting prohibited
+  OFF-ON: DMA2
+  ON-ON: DMA3 (factory setting)
+
+・ 8 stations dip switch SW2: Memory address, ROM access when Pow ON
+　Access permission settings
+1-2-3-4-5-6-7: Memory address
+  OFF-ON-ON-OFF-ON-ON-ON: Memory address \ DC000- \ DCFFF (factory setting)
+　　　　　　　　　　　　　Use as factory set
+8: Possibility of ROM access at Pow ON (factory setting 8 = ON)
+  ON: Access ROM when Pow ON
+  OFF: Do not access ROM when Pow is ON
+
+· 4-station dip switch SW3: I / O port address, data transfer mode,
+　Memory size setting
+1-2: I / O port address
+　ON-ON: CCX (factory setting) "X" represents 0, 2, or 4.
+  OFF-ON: CDX
+  ON-OFF: CEX
+  OFF-OFF: CFX
+3: Data transfer mode
+  ON: DMA transfer
+  OFF: CPU transfer (factory setting)
+　　　　　　　　Factory default settings except when connecting PC-98B55 and PC-MT600B
+　　　　　　　　It is used as it is.When using other than factory setting
+　　　　　　　　Make sure to turn SW2 8 OFF.
+4: Memory size
+  ON: When the 98NOTE internal RAM is set to 512KB 
+  OFF: When 98NOTE internal RAM is set to 640KB (factory setting)
+

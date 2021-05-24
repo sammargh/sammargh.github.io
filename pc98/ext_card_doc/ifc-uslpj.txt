@@ -1,0 +1,14 @@
+IFC-USLP　（BUFFALO）
+
+バスマスタ転送方式Ultra SCSI I/F．PC/AT互換機，PC-98，Power Mac対応．
+PC-98ではWindows95/98/98SE/NT4.0/2000対応．PC-98用のBIOS ROMを持たないため，
+本I/Fに接続されたSCSI機器からのシステム起動は不可．
+PC-98のWindows95では8.4GBを超える容量のHDDは使用不可．またPC-98のWindows98/98SE/
+NT4.0/2000では32GBを超える容量のHDDは使用不可．PC-98のWindows95/98/98SEでHDDを
+フォーマットする場合には付属のフォーマッタ（Disk Formatter）を使用のこと．
+本I/FのSCSI IDは7固定．最大消費電力 = 1.45W（+5V）．
+基板上に3本ジャンパスイッチ1個あり．
+
+・3本ジャンパスイッチJP1：PC/AT互換機・Power Mac用SCSI BIOS有効／無効の設定
+　1-2間ショート = BIOS Enable（PC-98以外で使用：出荷時設定）
+　2-3間ショート = BIOS Disable（PC-98で使用）

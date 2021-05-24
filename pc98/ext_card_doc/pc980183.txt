@@ -1,0 +1,71 @@
+
+PC-9801-83, PC-9801-84 (NEC)
+
+C bus B4680 interface board EC with 10BASE-2 / 5 connector
+(= NIC / LAN board).Signal transmission method is baseband transmission method.
+Two 8-deep dip switches and one 3-deep dip switch on the board,
+There is one dip-shaped changeover switch.
+
+・ 8 stations dip switch SW1: System I / O address and main unit model
+　settings of
+1-2: System I / O address setting 
+　ON-ON 0888h, 0889h, 088Bh, 088Ch, 088Dh (factory setting)
+　ON-OFF 1888h, 1889h, 188Bh, 188Ch, 188Dh
+　OFF-ON 2888h, 2889h, 288Bh, 288Ch, 288Dh
+　OFF-OFF 3888h, 3889h, 388Bh, 388Ch, 388Dh
+3-4: Not used (Factory setting: ON-OFF)
+5-6: Setting of machine model
+　ON-ON 286/386/486 machines (default setting) 
+　ON-OFF ■ 8086 / V30 loading machine
+　OFF-ON PC-98 XA 
+　OFF-OFF ■ Setting prohibited
+　Some notebooks / laptops need an I / O expansion unit
+7-8: Not used (always ON-ON)
+
+・ 8 stations dip switch SW2: Switch fixed (always ON-ON-ON-OFF-ON-OFF-OFF-ON-ON)
+
+· Triple dip switch SW3: 10BASE-2 / 5 switching 
+　ON (C side) 10BASE-2 (default setting) 
+　OFF (E side) 10BASE-5
+　※ This is described in the description of the user's manual.
+　　The figure of the state of ON-ON-ON is published as setting.
+
+・ Dip-shaped changeover switch SW4: 10BASE-2 / 5 whichever interface
+　Set whether to supply +12 V power
+　C side 10BASE-2 (default setting)
+　E side ■ 10BASE-5
+
+An empty PLCC socket on the board will be used for future functional expansion.
+socket".In addition, when future functions are expanded as reserved areas,
+D0000h to DFFFh in normal mode, E6000h to EFFFFh in high resolution mode
+8KB or 16KB is used in the memory address area of.
+
+Card edge connector side when mounting on PC-9801U2 / UV2 / UV21
+Turn the SW lever upward.
+
+With PC-9801 / E / F1 / F2 / F3 / M2 / M3 / U2 / VF2 / VM0 / VM2 / VM4 / UV2
+Need to supply +12 V by dedicated power supply PC-9801-77-01U in 10BASE-2 configuration
+Yes.In PC-98 other than this, multiple mounting of this board using 10BASE-2
+And dedicated boards are needed if other boards are using +12 V
+It becomes.The PC-H98 and SV-H98 do not require a dedicated power supply in the 10BASE-2 configuration.Also
+When using 10BASE-5, dedicated power is supplied to any of the PC-98, PC-H98 and SV-H98.
+necessary.
+Dedicated power supply pin assignment
+     8 7 6
+    5 4 3
+      twenty one
+1: GND
+2: + 5V
+3: GND
+4: PCON
+5: + 5V
+6: GND
+7: + 12V
+8: + 5V
+
+LED function beside 10BASE-5 connector
+　Seeing from the back side, when +12 V is supplied to the LED ■ 10BASE-5 on the right side
+　　　　　　　　　　　　 Lights up, dedicated power supply not connected, fuses off when blown
+　When the LED on the left side 10BASE-2 seen from the back side is supplied with +12 V
+　　　　　　　　　　　　 On, off when fuse is disconnected
+

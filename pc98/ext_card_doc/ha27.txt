@@ -1,0 +1,30 @@
+
+HA-27 (ウィンテク)
+
+C bus SASI I / F. In 98JUNK.DOC, it is also described as "EZPCASH27-1SC"
+It is done.Two 8x dip switches and 2x4x on board
+There is one jumper switch.
+
+・ 8 series dip switch SW1 specification of the first and second HDD capacity
+1-2-3-4-5: Specify the capacity of the first HDD
+　ON-ON-ON-ON-ON 5MB (default setting)
+　ON-ON-ON-ON-OFF 10MB
+　ON-ON-OFF-ON-ON 20MB
+　ON-ON-OFF-OFF-ON 40MB
+6-7-8: Specifying the capacity of the second HDD
+　OFF-OFF-OFF 2nd no connection (default setting)
+　ON-ON-ON 5MB
+　ON-ON-OFF 10MB
+　OFF-ON-ON 20MB
+　OFF-OFF-ON 40MB
+
+・ 8 stations dip switch SW2: BIOS ROM address setting ・ Fixation
+　　　　　　(Factory setting: OFF-OFF-OFF-ON-OFF-ON-OFF-OFF)
+
+・ 2 × 4 jumper switch SW3: Setting of main unit type (BIOS ROM
+　　　　　　　　　　　　　　　 Address setting)
+　Short between 1-8 and 3-6, open between 2-7 and 4-5 ■ PC-9801M2
+　Short between 1-8 and 4-5, open between 2-7 and 3-6 ■ PC-9801E / F / F2 / U2 / VF / VM / VX
+　Short between 2-7 and 4-5, open between 1-8 and 3-6 ■ PC-9801, PC-98XA
+※ Please use expansion slot # 4 with PC-98XA.
+

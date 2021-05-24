@@ -1,0 +1,31 @@
+
+PC-9801-90, PC-9821A-E08 (NEC)
+
+Video capture board.PC-9801-90 equipped with i386SX or higher CPU
+PC-9821A-E08 for C bus of the model (only H-98 supports PC-H98S model 8)
+Is for mate-A's local bus.Capture video screen signal, and PC-98
+You can reduce or enlarge the video screen to any size on the screen.Also video
+Stop the captured video at any position by the capture function
+Can (freeze function).This function takes frame memory
+The embedded content can be read and written from the PC-98 main unit.Also with video screen
+The screen of the PC-98 can be composited.
+There is one 2x6 jumper switch on the board.
+
+・ 2 x 6 jumper switch JCN1: Interrupt level setting
+　Silk printing beside jumper pins shorts the jumper pins
+　Indicates the INT to be selected with (Factory setting: INT 1).This jumper
+　Pins and jumper plugs are larger in size than ordinary ones.
+
+Scan an NTSC video signal into the following modes:
+(1) Horizontal frequency 24 KHz non-interlaced 640 x 400 dots normal mode
+(2) Horizontal frequency 31 KHz non-interlaced 640 x 400 dots normal mode
+(3) Horizontal frequency 31 KHz non-interlaced 640 × 480 dots normal mode
+All are synchronized with the PC-98 main unit analog signal.Also analog from the body
+Only RGB signals can be displayed through.High res mode
+When the video signal can not be displayed, the analog RGB signal from the main unit
+Display through.
+
+When used for the first time, included VIDEOTUN.EXE (for Windows 3.1)
+Tuning work is required (if you do not do
+Characters on the screen may not be displayed clearly).
+

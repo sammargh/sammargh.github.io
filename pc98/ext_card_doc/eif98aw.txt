@@ -1,0 +1,16 @@
+
+EIF-98AW (ELECOM)
+
+Multi-vendor compatible C bus bus master SCSI-2 board.
+The setting method basically conforms to EIF-98AW III (see 98 JUNK. DOC).
+There is no Win95 driver. Inf file seems to exist, but eventually 55 drivers
+As it will be used, it may be used for DMA transfer.However, ELECOM is official
+The board is not compatible with Windows 95, and the upgrade to EIF-98AW III is required for operation.
+I needed it.
+
+The final ROM is 2.01 for EIF-98AW and 2.11 for EIF-98AWII and EIF-98AWIII.ELECOM
+These boards are compatible with HDDs of 1GB or more because the expression on the old web page is vague
+It is unclear whether or not (other boards do not support, ROM version up
+Although "None" is written in the remarks column of the correspondence table in which the propriety is described, it is as it is
+Does that mean it corresponds?).
+

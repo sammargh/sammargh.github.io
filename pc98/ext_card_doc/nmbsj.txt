@@ -1,0 +1,8 @@
+NMB-S　（メルコ）
+
+98NOTE／EPSON NOTEの110ピン拡張バスコネクタに装着するCD-ROMとグラフィック
+アクセラレータの複合ユニット．音源は非搭載（同じシリーズのNMB-GとNMB-S4Fは
+PCM／26K互換FM音源を搭載）Windows95対応．ACアダプタは+15V（センタープラス）．
+
+CD-ROMはSONY MODEL No. CDU33A-01（2倍速）．グラフィックチップはCL-GD5428
+（VRAM 1MB）．スイッチ等はなし．

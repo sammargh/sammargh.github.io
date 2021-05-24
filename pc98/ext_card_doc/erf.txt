@@ -1,0 +1,109 @@
+
+ERF (メルコ)
+
+Epson desktop machine, PC-486SE / SR / FE / FR / FS / MU / MR / MS / RS / MV built-in
+RAM base board.Three SIMM sockets and one 8-dip dip switch on the board,
+There is one 2 jumper switch.
+There is an operation report on PC-486GR etc. (Note 1).For MU / MR / MS / MV / RS, specifications of the main unit
+As a result, if you add 61.6 MB or more of memory, you can not use the extended video function.
+Note 1: For the PC-486P / GR / GF, etc., turn on the extension switch 2-2 (system reservation: normally OFF)
+　　 By doing this, you will recognize memory of 14.6 MB or more.PC-386GS
+　　 But the same, but driver software to recognize memory more than 16MB
+　　(Eg 16giga.sys which is free software created by every black temporary section.Note
+　　　In this case, even if you replace the CPU with Cx486DRx2 and add a coprocessor,
+　　　The operation of Windows 95 was not very practical.CPU riser board
+　　　If it has been replaced with PCCPU B11 (A) (and ODP has been additionally installed on it)
+　　　It seems that the operation of Windows 95 will also be at a satisfactory level.
+
+Merco EMF-P and EFB are to be added to the SIMM slot on the ERF.
+In fact, even though these SIMMs, JEDEC up to 32MB with SIMM-ID
+With SIMM in the specification, it can be used without parity / ECC, FP / EDO.
+However, unless SIMM-ID is attached, it does not recognize normally.
+Note 2: There is a report that SIMMs without SIMM-ID recognize only 1⁄4 of the capacity.
+     But that's not the case, if you get 8MB x 2 and get 6MB, or insert multiple SIMMs,
+     Some phenomena such as different capacity recognized at the socket position were also observed.
+     In addition, it is not recognized normally if SIMM without one SIMM-ID is mixed.
+Note 3: The first appearance of the SIMM-ID is posted on July 15-16, 1998 in the "knock room" bulletin board.
+　　　・ MAL's Favorite (provisional) http://www.mal-o.com/index.html-> EPSON PC
+　　　　　　　　　　　　　　　　　　　　　　　-> knock BBS LOG-> Part 11
+　　　・ Direct link to file in Internet Archive is
+　　　　http://web.archive.org/web/20080922155732/http://www.mal-o.com/epson%20pc/9807.htm
+
+In addition, there is a limit to the total amount of memory that can be recognized by the main unit (PC-486SE / SR / FE / FR / FS
+63.6 MB for (and 486 P) and 61.6 MB for PC-486 MU / MR / MS / RS / MV).This limit
+The amount of memory exceeding is ignored.
+
+・ 8-station dip switch SW1: Setting of SIMM start address mounted on ERF
+1-2: System reservation.Always OFF-OFF
+3-4-5-6-7-8: ERF start address
+The following is the order of the amount of memory counted at startup: Start address: SW1 (3 to 8):
+640KB ■ 100000h ■ ON-ON-ON-ON-ON-OFF
+640 + 1024KB ■ 200000h ■ ON-ON-ON-ON-OFF-ON
+640 + 2048KB ■ 300000h ■ ON-ON-ON-ON-OFF-OFF
+640 + 3072KB ■ 400000h ■ ON-ON-ON-OFF-ON-ON
+640 + 4096 KB ■ 500000 h ■ ON-ON-ON-OFF-ON-OFF
+640 + 5120KB ■ 600000h ■ ON-ON-ON-OFF-OFF-OFF (default setting)
+640 + 6144KB ■ 700000h ■ ON-ON-ON-OFF-OFF-OFF
+640 + 7168KB ■ 800000h ■ ON-ON-OFF-ON-ON-ON
+640 + 8192KB ■ 900000h ■ ON-ON-OFF-ON-ON-OFF
+640 + 9216KB ■ A 00000 h ■ ON-ON-OFF-ON-OFF-ON
+640 + 10 240KB ■ B 00000 h ■ ON-ON-OFF-ON-OFF-OFF
+640 + 1264 KB ■ C 00000 h ■ ON-ON-OFF-OFF-OFF-ON-ON
+640 + 12288KB ■ D 00000 h ■ ON-ON-OFF-OFF-OFF-ON-OFF
+640 + 13312 KB ■ E 00000 h ■ ON-ON-OFF-OFF-OFF-OFF-ON
+640 + 14336KB ■ F 00000 h ■ ON-ON-OFF-OFF-OFF-OFF
+640 + 15360KB ■ 1000000h ■ ON-OFF-ON-ON-ON-ON
+640 + 16384KB ■ 1100000h ■ ON-OFF-ON-ON-ON-OFF
+640 + 17408KB ■ 1200000h ■ ON-OFF-ON-ON-OFF-ON
+640 + 18432KB ■ 1300000h ■ ON-OFF-ON-ON-OFF-OFF
+640 + 19456KB ■ 1400000h ■ ON-OFF-ON-OFF-ON-ON
+640 + 20480KB ■ 1500000h ■ ON-OFF-ON-OFF-OFF-ON-OFF
+640 + 21 504KB ■ 1600000h ■ ON-OFF-ON-OFF-OFF-OFF-ON
+640 + 22528KB ■ 1700000h ■ ON-OFF-ON-OFF-OFF-OFF
+640 + 23552KB ■ 1800000h ■ ON-OFF-OFF-ON-ON-ON
+640 + 24 576 KB ■ 1900000 h ■ ON-OFF-OFF-ON-ON-OFF
+640 + 25600KB ■ 1A 00000 h ■ ON-OFF-OFF-ON-OFF-ON
+640 + 26624KB ■ 1 B 00000 h ■ ON-OFF-OFF-ON-OFF-OFF
+640 + 27648KB ■ 1C00000h ■ ON-OFF-OFF-OFF-OFF-ON-ON
+640 + 28672KB ■ 1D 00000 h ■ ON-OFF-OFF-OFF-OFF-ON-OFF
+640 + 29 696 KB ■ 1 E 00000 h ■ ON-OFF-OFF-OFF-OFF-OFF
+640 + 30720KB ■ 1F 00000 h ■ ON-OFF-OFF-OFF-OFF-OFF
+640 + 31 744KB ■ 2000000h ■ OFF-ON-ON-ON-ON-ON
+640 + 32768KB ■ 2100000h ■ OFF-ON-ON-ON-ON-OFF
+640 + 33 792KB ■ 2200000h ■ OFF-ON-ON-ON-OFF-ON
+640 + 34816KB ■ 2300000h ■ OFF-ON-ON-ON-ON-OFF-OFF
+640 + 35840KB ■ 2400000h ■ OFF-ON-ON-OFF-ON-ON
+640 + 36864KB ■ 2500000h ■ OFF-ON-ON-OFF-ON-OFF
+640 + 37888KB ■ 2600000h ■ OFF-ON-ON-OFF-OFF-ON
+640 + 38912KB ■ 2700000h ■ OFF-ON-ON-OFF-OFF-OFF
+640 + 39936KB ■ 2800000h ■ OFF-ON-OFF-ON-ON-ON
+640 + 40960KB ■ 2900000h ■ OFF-ON-OFF-ON-ON-OFF
+640 + 41984KB ■ 2A 00000 h ■ OFF-ON-OFF-ON-OFF-ON
+640 + 43008KB ■ 2B 00000 h ■ OFF-ON-OFF-ON-OFF-OFF
+640 + 44032KB ■ 2C00000h ■ OFF-ON-OFF-OFF-OFF-ON-ON
+640 + 45056KB ■ 2D 00000 h ■ OFF-ON-OFF-OFF-OFF-ON-OFF
+640 + 46 080 KB ■ 2E 00000 h ■ OFF-ON-OFF-OFF-OFF-OFF-ON
+640 + 47104KB ■ 2F 00000 h ■ OFF-ON-OFF-OFF-OFF-OFF-OFF
+640 + 48128KB ■ 3000000h ■ OFF-OFF-ON-ON-ON-ON
+640 + 49152KB ■ 3100000h ■ OFF-OFF-ON-ON-ON-OFF
+640 + 50176KB ■ 3200000h ■ OFF-OFF-ON-ON-OFF-ON
+640 + 51 200KB ■ 3300000h ■ OFF-OFF-ON-ON-OFF-OFF
+640 + 52224KB ■ 3400000h ■ OFF-OFF-ON-OFF-ON-ON
+640 + 53248KB ■ 3500000h ■ OFF-OFF-ON-OFF-ON-OFF
+640 + 54272KB ■ 3600000h ■ OFF-OFF-ON-OFF-OFF-OFF
+640 + 55 296KB ■ 3700000h ■ OFF-OFF-ON-OFF-OFF-OFF
+640 + 56,320KB ■ 3800000h ■ OFF-OFF-OFF-ON-ON-ON
+640 + 57344KB ■ 3900000h ■ OFF-OFF-OFF-ON-ON-OFF
+640 + 58368KB ■ 3A00000h ■ OFF-OFF-OFF-ON-OFF-ON
+640 + 593 932 B ■ 3 B 00000 h ■ OFF-OFF-OFF-ON-OFF-OFF
+640 + 60416KB ■ 3C00000h ■ OFF-OFF-OFF-OFF-OFF-ON-ON
+640 + 61440KB ■ 3D 00000 h ■ OFF-OFF-OFF-OFF-OFF-ON-OFF
+640 + 62464KB ■ 3E00000h ■ OFF-OFF-OFF-OFF-OFF-OFF-ON
+640 + 63448 KB ■ 3F 00000 h ■ OFF-OFF-OFF-OFF-OFF-OFF-OFF
+
+・ 2 jumper switch JP1: Used in combination with WAP-EP:
+　Melco local bus window accelerator when equipped with 55.6 MB or more of memory
+When used with WAP-EP (Video memory 3.800000h to 8MB), open JP1 of ERF
+Do.In this case, the memory of 55.6 MB or more is invalid (when the memory is 55.6 MB or less)
+Is a JP1 short).
+

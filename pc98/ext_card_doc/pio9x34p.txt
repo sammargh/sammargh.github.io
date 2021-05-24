@@ -1,0 +1,129 @@
+
+PIO-9X34P-2ME, PIO-9X34P-4ME (I ・ O data)
+
+C bus RAM board.Consumption current is 390mA for PIO-9X34P-2ME, PIO-9X34P-4ME
+Here, 410 mA. 2MB expansion option for PIO-9X34P-2ME For expansion of PIO-EX34-2M
+There is a connector.For board operation check, add mode with address 100000h or more
+(Protect mode) TM9 X 34 P of IOS-10, and I · O bank method
+Use TM9234 in IOS-10.
+1 double dip switch, 2 6 dip switches, 3 on board
+There is one jumper switch.
+
+· Dual DIP switch SW1: Extension mode, parity check setting
+1: Setting of expansion mode
+　Extension mode (protected mode) of ON 100000h or more (default setting)
+　OFF I · O bank method
+2: Set parity check on / off
+　ON Active (default setting)
+　OFF ■ Invalid
+　* Always be ON in expansion mode over 100,000 h. In the I · O bank method, OFF.
+・ Six stations dip switch SW2: 100000h or more
+　Setting of upper 5 bits, body model
+1-2-3-4-5: Setting of upper 5 bits of address
+Below, 1-2-3-4-5 ■ Memory displayed at startup of the main unit in normal mode
+　　　　Capacity ■ Memory capacity displayed when the main unit is started in high resolution mode
+　　　　Order of
+　OFF-ON-OFF-OFF-OFF ■ 640KB ■ 512KB (default setting)
+　ON-ON-OFF-OFF-OFF ■ 640KB + 512KB ■ 1024KB
+　OFF-OFF-ON-OFF-OFF ■ 640KB + 1024KB ■ 1536KB
+　ON-OFF-ON-OFF-OFF ■ 640KB + 1536KB ■ 2048KB
+　OFF-ON-ON-OFF-OFF ■ 640KB + 2048KB ■ 2560KB
+　ON-ON-ON-OFF-OFF ■ 640KB + 2560KB ■ 3072KB
+　OFF-OFF-OFF-ON-OFF ■ 640KB + 3072KB ■ 3584KB
+　ON-OFF-OFF-ON-OFF ■ 640KB + 3584KB ■ 4096KB
+　OFF-ON-O-ON-OFF ■ 640KB + 4096KB ■ 4608KB
+　ON-ON-OFF-ON-OFF ■ 640KB + 4608KB ■ 5120KB
+　OFF-OFF-ON-ON-OFF ■ 640KB + 5120KB ■ 5632KB
+　ON-OFF-ON-ON-OFF ■ 640KB + 5632KB ■ 6144KB
+　OFF-ON-ON-ON-OFF ■ 640KB + 6144KB ■ 6656KB
+　ON-ON-ON-ON-OFF ■ 640KB + 6656KB ■ 7168KB
+　OFF-OFF-OFF-OFF-ON ■ 640KB + 7168KB ■ 7680KB
+　ON-OFF-OFF-OFF-ON ■ 640KB + 7680KB ■ 8192KB
+　OFF-ON-OFF-OFF-ON ■ 640KB + 8192KB ■ 8704KB
+　ON-ON-OFF-OFF-ON ■ 640KB + 8704KB ■ 9216KB
+　OFF-OFF-ON-OFF-ON ■ 640KB + 9216KB ■ 9728KB
+　※ When using with PC-98XA-01 (256KB / 512KB / 768KB) with PC-98XA,
+　　Because it is necessary to make the address continuous, remove it once (note), this board
+　　Set to the address after adding.
+  (Note) The description of this part is as the manual.
+6: Setting of machine type
+　ON PC-9801VX / UX (Factory setting)
+　OFF ■ PC-9801 / E / F / M / U / VF / VM / UV
+
+・ 6 stations dip switch SW3: Bank number setting
+1: Not used (always OFF)
+2-3-4-5: Setting of upper 4 bits of bank number
+(1) In the case of PIO-9X34P-2M
+　OFF-OFF-OFF-OFF 00-0Fh (Factory setting)
+　ON-OFF-OFF-OFF ■ 10-1 Fh
+　OFF-ON-OFF-OFF 20-2Fh
+　ON-ON-OFF-OFF 30-3Fh
+　OFF-OFF-ON-OFF 40-4Fh
+　ON-OFF-ON-OFF 50-5Fh
+　OFF-ON-ON-OFF 60-6Fh
+　ON-ON-ON-OFF 70-7Fh
+　OFF-OFF-OFF-ON 80-8Fh
+　ON-OFF-OFF-ON 90-9 Fh
+　OFF-ON-OFF-ON A0-AFh
+　ON-ON-OFF-ON B0-BFh
+　OFF-OFF-ON-ON C0-CFh
+　ON-OFF-ON-ON D0-DFh
+　OFF-ON-ON-ON E0-EFh
+　ON-ON-ON-ON F0-FFh
+(2) In the case of PIO-9X34P-4M
+　OFF-OFF-OFF-OFF 00-1Fh (Factory setting)
+　ON-OFF-OFF-OFF 20-3Fh
+　OFF-ON-OFF-OFF 40-5Fh
+　ON-ON-OFF-OFF 60-7Fh
+　OFF-OFF-ON-OFF 80-9Fh
+　ON-OFF-ON-OFF A0-BFh
+　OFF-ON-ON-OFF C0-DFh
+　ON-ON-ON-OFF E0-FFh
+　※ The bank number of the RAM already expanded is the operation check of IOS-10
+　　Displayed by executing program TM9234.
+　※ If PIO-9234-1.5M / 3M has already been added, it has been added
+　　Do not use the 4/8 bank following the bank number.
+6: Always off
+
+・ 3 jumper switch JP: Setting of the main unit model (Factory setting: Unknown
+　　　　　　　　　　　　　　　　　　　(Not described in the manual)
+　ON ■ 80286 loading machine
+　OFF ■ Normal mode machine equipped with 8086 / V30, PC-98XA / XL / XL ^ 2
+　※ When you look at the board with card edge side to the right, pin shorts on top and center
+　　Is ON, and the pin short at the bottom and center is OFF.
+　※ In the case of PC-9801VX0 / 2/4, set it to ON, and in slots other than slot 1.
+　　Wear.In the case of PC-9801VX01 / 21/41, UX21 / 41, PC-286V, it is in the setting of JP
+　　It can be attached to any slot regardless of it.
+　※ Always set to OFF when using the expansion I / O unit.
+　※ When JP is set to ON, when accessing memory in 80286 CPU mode
+　　The double speed access function works.When OFF, memory access takes 700ns,
+　　When ON, 300 ns.However, this function is an I · O bank method of 080000 to 09FFFFh
+　　Valid only for additional RAM.
+
+Expand PC-9801 / E / F / M / U / VF / VM / UV to 512KB / 640KB with NEC's expansion RAM board
+If you use this board in I / O bank extension mode,
+Setting change is required.This makes all bank numbers 00 to FFh available:
+・ PC-9801UV2 + PC-9801-21 + PC-9801-21
+　→ Remove one 128KB RAM module in the main unit and set the memory capacity to 512KB.
+・ 384 KB system + PC-9801-02 / N / L (+ PC-9805)
+　→ Open 4 to 10 of 2x6 series jumper switch of PC-9801-02 / N / L.
+　(3-9, 5-11, 6-12 shorted).
+・ 384KB system + PC-9801-31 / 41,384KB system + PC-9801-31 + PC-9801-21
+　→ PC-9801-31 / 41 2x2 series jumper switch SW2 512-640K pins
+　　Make it open.
+
+Add PC-9801 / E / F / M / U / VF / VM / UV to 640KB with I / O bank type RAM board
+Can be extended when using this board in I / O bank extension mode
+Bank numbers have the following limitations:
+· 384 KB system + PIO 9034-2, 256 KB system + PIO 9034-3,
+　128KB system + PIO-9134
+　→ Prohibited bank number = 01h to 7Fh, Available bank number = 80h to FFh
+・ 384KB system + PIO-9234-0.25M
+　→ Prohibited bank number = 01 h, Available bank number = 02 h to FF h
+・ 128KB system + PIO-9234-0.5M
+　→ Prohibited bank number = 01h, 02h, 03h, Available bank number = 04h to FFh
+※ When bank memory is expanded by PIO-9234 (G) series expansion RAM board
+　The bank number is displayed on the screen when TM9234 is executed.Also
+　In the case of PIO-9234-1.5M / 3M, the 4/8 bank following the added bank is
+　It becomes a prohibition bank.
+

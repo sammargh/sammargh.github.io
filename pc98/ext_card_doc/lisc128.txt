@@ -1,0 +1,42 @@
+
+LISC-128 (ランドコンピュータ)
+
+C bus built-in flash disk drive with IDE interface.Capacity 128 MB.
+Supported devices are PC-9801E, F, M, U, VF, VM, UV, VX, UX, LV, CV, RX, RS, RA, LS, ES,
+EX, LX, T, DX, DS, DA, UF, UR, US, FA, FS, FX, BA, BX, BA2, BS2, BX3, BA3, BX4,
+PC-9821Ap, As, Ae, Af, Ap2, As2, Ap3, As3, Bp, Bs, Be, Bf, Ts, Cx, Cs2, Ce2, Cf,
+Xa7, Xa9, Xa10, Xa12, Xe10, Xt13, PC-98DO, DO +, XL, XL ^ 2, RS, GS (NEC DOS 3.3
+Or more), PC-H98 all models (high resolution mode not possible), EPSON 98 compatible machine with C bus slot
+All models.
+　* Make the clock number 10 MHz in PC-9801 RX.
+　※ ※ Can not be used in high resolution mode.In the manual, compatible models include PC-98XA
+　　　It would be a mistake.
+
+There are 8 series dip switches on the board.
+
+1-2-3-4: Interrupt number setting
+　ON-OFF-OFF-OFF INT 0 When the ROM address and I / O base address settings are 2
+　OFF-OFF-OFF-ON INT 3 (Factory setting) Setting of ROM address and I / O base address
+　　　　　　　　　　　　　　　　　　　　 In the case of 1, 3
+　* When using with SCSI I / F, set the interrupt number to INT 3 and set the SCSI I / F interrupt number
+　　Set to something other than INT 3.
+5-6: ROM address and I / O base address setting
+　1 OFF-OFF D 0000 h D 0 h
+　2 ON-OFF D 0000 h 840 h
+　3 ON-OFF D 8000 h 640 h (factory setting)
+　　Possible settings for the main unit model are
+　　　PC-9801E, F, M 1
+　　　PC-9801Cf, Cx, Cs2, Ce2 2
+　　　PC-9801UR, US, BA, BX, BA2, BS2, BX3, PC-9821Ap, As, Ae, Af, Ap2, As2, As
+　　　　　　 Bp, Bs, Be, Bf, Ts 1 (recommended setting), 2
+　　　Models other than the above ■ 1, 2, 3 (recommended setting)
+　　　* Set to 2 when using it with the built-in IDE BIOS.In this case SCSI HDD
+　　　　It can not be used with SCSI I / F to emulate.
+7: Not used (Factory setting: OFF)
+8: ROM enable / disable setting
+　OFF ■ ROM enabled (factory setting)
+　ON ■ setting not possible (If this is ON, this product will not operate)
+
+There is a 40-pin male connector on the board, to which IDE devices with slave settings can be connected
+it can.
+

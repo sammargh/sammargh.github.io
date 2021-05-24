@@ -1,0 +1,25 @@
+
+Card 86-R (キュービジョン)
+
+PCM · FM sound source PC card.Both PCM sound source and FM sound source compatible with PC-9801-86.QV-PC86R,
+There is also a notation with Card 98 Returns.WMCard (WaveMasterCard) on this card
+The function of SCSI I / F is added.Connect and use the attached I / F box.
+Simultaneous use of PCM sound source on the card and built-in PCM sound source of 98 notes (full-duplex sound)
+Possible.However, with 98 notes equipped with PCM / FM sound source, the built-in FM sound source and this card
+Full-duplex sound is not possible because the FM sound source resource is batting.
+Always use an external speaker when using this card.
+
+Supported devices: PC-9821Nr166, Nr150, Nr15, Nr13, Nr12, Na15, Na13, Na12, Na9,
+Na7, Nb10, Nb7, Nx, Ne3, Nd2, Ne2, Nd, Nm, Nf, Np, Ns, Ls150, Ls12, La10,
+La7, Lt2, Ld, PC-9801NL / A
+Models capable of full-duplex sound: PC-9821Nr13, Nr12, Nb10, Nb7, Ls150, Ls12, La10,
+La7 (model equipped with only PCM sound source as built-in sound source)
+
+I / O port: 0188h or 0288h
+Interrupt channel: IRQ12 (INT5) or IRQ13 (INT6)
+PCM sound source: PC-9801-86 compatible, 16-bit recording / playback, Max 44, 1 kHz sampling
+FM sound source section: PC-9801-86 compatible (with YAMAHA YM288 installed), FM sound source = 6 sound stereo,
+           Rhythm sound source = 6 sound stereo, SSG sound source = 6 sound monaural
+Supported OS: MS-DOS ver. 5.0 or higher, Windows 3.1, Windows 95 (DirectSOUND compatible),
+         Windows 98
+

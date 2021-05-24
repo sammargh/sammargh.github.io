@@ -1,0 +1,61 @@
+
+IF-2560 (ICM)
+
+SCSI I / F for the SCSI dedicated slot of PC-9801FA / FS / FX and MATE-A. There are two types of new and old,
+The new version called MATE compatible version is written in gray on the bracket (bracket on the back of the board) as M compatible
+A round white paper sticker is attached.The boards are both REV. B, but the IC at U6 is
+The older version is AMI 9232 LAI 18CV 8 SC-25, while the MATE version is the AMD PALCE 16 V 8 H-15 SC / 4 234 KMLV
+Of the 761 (or 7 1) 2560V string is additionally printed on the package (or
+It has been changed to PALCE16V8H-15SC / 4 243MRMR with the addition of the character string of 2761 V).
+Furthermore, in the MATE compatible version, many jumpers are added on the substrate.ICM is this MATE compatible version
+The Windows 95 was officially supported.
+
+The upper limit of recognition capacity of this board using e10chk.exe which is free software created by Mr. Marimo Mr.
+As a result, we have obtained the result that there is a wall of 2015 MB for both MATE version and non-MATE version.
+
+There are two 8-deep dip switches and one 4-deep dip switch on the board.
+
+・ 8-station dip switch SW1: SCSI ID, interrupt level, DMA channel setting
+1-2-3: SCSI ID setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT 0 (factory setting)
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　ON-OFF-ON INT 5
+　OFF-ON-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF ■ Ch 0
+　ON-ON Ch 3 (default setting)
+　※ In FIFO mode, DMA is not used at the time of data transfer but commands such as status etc.
+    Use DMA at runtime.
+　※ When DMA channel is set to Ch0, system setup menu of main unit
+    You can assign Ch0 or Ch1 to the channel of this I / F.
+
+・ 8 stations dip switch SW2: Setting of main unit model, ROM valid / decoupled
+1-2-3-4-5-6-7: Setting of main unit model
+　Mate-A which is not equipped with OFF-ON-ON-xx-ON-ON PC-9801FA / FS / FX and high res board
+　OFF-ON-ON-OFF-ON-OFF-ON ■ mate-A equipped with high res board
+8: ROM enable / disable setting
+　ON Active (default setting)
+　OFF ■ Release
+
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　ON-ON CCxh (default setting)
+　OFF-ON CDxh
+　ON-OFF CExh
+　OFF-OFF CFxh
+3: Transfer mode setting
+　ON W-FIFO transfer (default setting)
+　OFF DMA transfer
+4: Not used (Factory setting: ON)
+

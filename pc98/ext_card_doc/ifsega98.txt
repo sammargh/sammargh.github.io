@@ -1,0 +1,156 @@
+
+IF-SEGA / 98 (I･Oデータ)
+
+Interface for SEGA SATURN peripheral equipment made by Sega Enterprises
+board.PnP compatible.Also supports DirextX5.
+
+Supported devices: PC-9821 Xa10, Xa12, Xa13, Xa16, Xa20, Xb10, Xc13, Xc16,
+Xc200, Xt13, Xt16, Xv13, Xv20, Cb10, Cx3, Cx13, V10, V12, V13, V16,
+V20, V166, V200, V233, Ra18, Ra20, RaII23, RaII26, St15, St20
+Supported OS: Japanese Windows 95
+Supported API: DirecxInput
+SEGA Saturn port number: 2 ports
+Supported SEGA Saturn Peripherals:
+○ Digital joystick
+　Sega Saturn Standard Control Pad, Virtual-Stick, Virtua
+Stick pro, twin stick, multi controller (digital
+Mode) etc
+○ Analog joystick
+　Mission stick, racing controller, multi controller
+(Digital mode) etc
+○ Mouse
+　We cope with mouse "shuttle mouse" for Sega Saturn (as software supports
+　Need to be)
+○ Multi terminal 6
+　Supports SEGA Saturn 6 Player Adapter "Multi Terminal 6".
+　I / O data driver connects multi terminal 6 to either 1P / 2P side
+　It works without any problem.However, when two multi terminals 6 are connected,
+　The stick number changes.Below, Multi-terminal 6 connection destination ■ 1P side
+　Joystick number ■ In order of 2P joystick number:
+1P side ■ 1, 2, 3, 4, 5, 6 7
+2P side ■ 1 ■ 2, 3, 4, 5, 6, 7
+1P, 2P both ■ 1, 2, 3, 4, 5, 6 ■ 7, 8, 9, 10, 11, 12
+※ The virtual gan and Saturn keyboard can not be connected to this I / F.
+
+Use I / O port = Use 16 consecutive bytes (xxx0h to xxxFh), I / O address
+Is automatically set by PnP function.
+Power supply voltage and current = +5 V, 40 mA (MAX: when two multi-controllers are connected)
+Temperature and humidity = temperature: 0 to 40 °, humidity: 20 to 80% (no condensation)
+
+・ Before installing board
+Device Manager-> Sound, Video and Game Controller
+Go to Game Port Joystick.
+(1) In the case of no mark Windows 95, OSR1 (equivalent)
+In "Use Device" of the game port joystick property screen
+Uncheck "Original Configuration (in use)".
+(2) In the case of OSR2
+In "Use Device" of the game port joystick property screen
+Check "Disable in this hardware environment".
+-----------
+"Game port joystick" on the system properties screen
+Make sure that the × mark is attached.
+Finally, turn off the power of the main unit and attach the board.
+
+・ Notes on driver installation
+(1) In the case of no mark Windows 95, OSR1 (equivalent)
+New hardware screen that appears after Windows 95 starts
+Select the driver provided by the manufacturer of the IF-SEGA / 98 support software FD
+Install the driver from.
+(2) In the case of OSR2
+If the "Version conflict" screen is displayed after copying the driver file,
+Click "Yes".
+
+・ Confirmation work after installation
+Device Manager "Sound, Video, and Game Controller"
+Double click and yellow at the top of IF-SEGA / 98!Not marked
+Make sure.Also, in the "resource" of the "IF-SEGA / 98 Properties" screen, the conflict
+Make sure there is no device to do.If there is a resource conflict, there is a conflict
+Change the resources of other devices, or select "System Properties"
+Click the "Resources" tab of IF-SEGA / 98 and check "Auto-configure"
+Remove the I / O port value on the IF-SEGA / 98 side in the "Edit I / O port address" screen.
+change.No need to reboot after change.
+After installation, undo any changes made in the pre-board installation process.
+
+・ Joystick registration / adjustment / test
+(1) When a joystick icon is added to the control panel
+Double-click the joystick icon in the [Register] control panel
+Then select "SEGA SATURN PAD" in the "Joystick Setting" item.
+When using multiple joysticks, register as many as you like.After registration
+Reboot.
+Double-click the IF-SEGA icon in the [Adjustment] control panel,
+Click the "Adjust" button in the "Controller Adjustment" item.It is just registered
+All joystick adjustment tasks are complete.
+Connect the [Test] control pad etc.
+I want to double-click the "Joystick" icon and check the operation
+Select the joystick and click the "Test" button.+ Mark upper left
+If the joystick is not properly adjusted, such as being biased
+Perform readjustment after rebooting.
+(2) When a game controller is added to the control panel (DirectX
+If a new joystick driver such as is installed)
+Double-click the game controller icon on the [Register] control panel
+Click and click the "Add" button to use as many
+Register the stick.In this case, the ID number is displayed on the "game controller"
+Although it is not done, it is noted that ID numbers are actually assigned sequentially from the bottom.
+Click the "Details" tab to display the assigned controller ID
+It is done.Restart after registration.
+Double-click the IF-SEGA icon in the [Adjustment] control panel,
+Click the "Adjust" button in the "Controller Adjustment" item.It is just registered
+All joystick adjustment tasks are complete.
+Connect the [Test] control pad etc.
+I want to double-click the "Joystick" icon and check the operation
+Select the joystick and click the "Test" button.+ Mark
+If the joystick is not properly adjusted, such as being biased to the upper left
+Make a readjustment after reboot.
+
+・ Board setting
+Double-click the IF-SEGA icon to set IF-SEGA / 98.
+(1) "Adjustment" tab
+The center axis of the cursor button is upper left, such as immediately after the joystick is registered
+When set to, press the "Adjust" button.Connect once you press
+All joysticks are adjusted.
+(2) "Button settings" tab
+Use the default setting when placing the button on the game side.Change
+If you want to set in order of the screen number.The following points to note:
+"2. "3 buttons (X, Y, Z)" of registered buttons
+X, Y, and Z are each easy to use with standard control pad etc.
+Assigned to A, B, C continuous fire button, only to button 4 of Windows 95 standard specification
+The START button is assigned to button 4 for unsupported software.
+"3. In addition to buttons, you can also select the X, Y, L, and R axes in the button
+Inverse function can be set for this.
+The "continuous fire function" uses asynchronous software continuous fire, so it has the highest speed
+Depending on the game, you may not get 32 fires even if you select 32 fires of,
+Even in that case, it is possible to realize the fastest fire in the game.
+In the "Reverse function", when combined with the continuous fire function, the button must be pressed
+The button will always fire continuously (when the button is pressed the fire stops).
+(3) "ID assignment" tab
+About "Twin Stick Mode":
+Two joysticks, such as SEGA's "VIRTUAL ON" "2JOYSTICKS mode"
+Connected to Windows 95 and made to work the same as a twin stick
+Select to play a game etc. with a real twin stick. One
+The twin stick works as two joysticks.
+In this case, "SEGA" or "game controller"
+It is necessary to register two "SATURN PAD".
+A game that supports twin stick connection to Sega interface
+Do not use this function as it may cause a malfunction.
+When the twin stick mode is specified, the button settings such as the continuous shooting function are automatic
+It becomes invalid.
+In games that do not support twin sticks, the controller button is
+Enable twin stick mode as it may not function properly
+Do not do.
+
+Joystick other than Sega ・ Enterprises company is a sound blaster
+If you install IF-SEGA / 98 in an environment connected to
+Sega Enterprises by using a standard joystick driver
+Other joysticks may not be recognized.In this case, the device
+Disable IF-SEGA / 98 in the manager (red x mark is displayed),
+Restart your DirectX 5 installation.Then it appeared anew on the control panel
+Double-click the "Game Controller" icon and
+Register and check the "Device use" item in IF-SEGA / 98,
+Add IF-SEGA / 98 to "Game Controller" in Control Panel (Already registered
+If it has been deleted then add it once).Perform operation check with the restart chairperson.
+If the controller does not work, you can set the input device in the game.
+Change to stick etc.
+Multi controller with no butterfly shift of racing controller
+All controllers in some games, such as LR not being an analog input
+Sometimes you can not use.
+

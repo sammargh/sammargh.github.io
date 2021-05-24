@@ -1,0 +1,4 @@
+CentreCOM RE2000，RE2000Plus　（CONTEC）
+
+10BASE-Tコネクタを持つCバスNIC（LANボード）．ボード上にスイッチの類はなく，
+割り込みレベルとI/OポートアドレスはDOS上でCFG2000.EXEを使用して設定．

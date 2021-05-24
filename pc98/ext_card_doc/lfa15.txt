@@ -1,0 +1,29 @@
+
+LFA-15 (Logitec)
+
+C bus interface board for external 2DD FDD.Connector is an phenol
+36-pin full pitch, requires dedicated cable (CB-98FD-001) to connect to FDD.
+When using the CPU of the PC body in V30 mode, the clock is 8 MHz or less (in PC-9800
+PC-98 XL ^ 2 / RL, PC-9801 RX / RS / RA / DA / DS / ES / T / NS, and PC-386 series
+Confirm that PC-386 / S / V / VR / M / LS are officially supported),
+Set the built-in FDD to 1MB fixed mode.Not available in high res mode.
+The following expansion slots can be installed:
+　PC-9801E ・ ・ ・ ・ ・ ・ ・ ・ ・ # 1 to 5
+　PC-9801UV / CV21 ... # 1
+　PC-9801 M / VM ..... # 1 to # 3
+　PC-98 XA ..... # 2
+There is one 8 series dip switch and one 3 jumper switch on the board.
+
+・ 8 stations dip switch
+　Use with ON-OFF-ON-OFF-OFF-OFF-OFF-OFF-ON.
+
+・ 3 jumper switch
+　PC-9801 / E / M and AB short (ROM operation on LFD-15 enabled)
+　Other models ■ Short between BC (ROM operation on LFD-15 is prohibited)
+When using the SASI HDD interface board,
+Short between BCs regardless.
+
+※ This setting information is in the LFA-15 Instruction Manual, LFD-391F / 392F User's Manual.
+　Although based on the description, it is different from the switch setting information described in 98 JUNK. DOC
+　Yes.
+

@@ -1,0 +1,20 @@
+
+PCM-98n (PCM Sound Pack 98n)(コンピュータテクニカ)
+
+PC-9801NS, NS / E, NS / T, NC, NA, NA / C, NS / R, NS / A, NX / C, PC-9821Ne, PC-486NOTE AS
+FM / PCM sound source BOX to be attached to the 110-pin extension bus of Built-in monaural speaker.
+Expansion bus through connector equipped.Compatible with MS-DOS and Windows 3.1.Power consumption 1.3 W.
+The input is microphone and line combined input (φ 3.5 mini jack) × 1.Output headphones with volume
+(Φ 3.5 mini jack) × 1 and stereo line output (RCA pin jack) × 1.
+The FM sound source section is monaural, and it is a six-fold chord of three FM sound sources and three SSG sound sources (PC-9801-26K compatible).However
+Not equipped with sound BIOS.
+PCM sound source section is stereo, sampling frequency is 11kHz, 22kHz, 44.1kHz, quantization bit is
+8-bit (linear, μ-Law, A-Law), 16-bit (linear).
+Temperature and humidity conditions are 10 to 35 ° C, 20 to 80% (with no condensation).
+
+The I / O address of the FM sound source unit is 0088 h, 018 Ah (fixed) and the interrupt is INT 5 (fixed).
+The I / O address of the PCM sound source unit is 3xD0h (x = 0 to 7) (fixed) and the interrupt is INT 0 or INT 1
+(Selected by software), DMA channel 0 or 3 (selected by software).
+Included software includes sound driver for Windows 3.1, mixer application for Windows 3.1,
+MS-DOS version PCM recording utility.
+

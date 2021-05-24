@@ -1,0 +1,26 @@
+
+SS-10, SS-10II (アルファデータ)
+
+PC-9801-26K compatible C bus FM sound source board equipped with YM2203.Product name Super sound.
+Sound connector (3 jumper switches) inside the main unit when this board is installed
+Models (PC-9801VF, VM, VX, VX21, VM21, RX, RA, VM11, PC-98XL ^ 2,
+Remove the jumper plug from the PC-286V) sound connector if it is stuck
+Connect with this board and cable.In this case, the volume of this board is reduced to the minimum (clockwise).
+3x2 jumper switches, 2x5 jumper switches on board,
+There is one 2x2 double jumper switch each.
+
+・ 3 × 2 jumper switch JP2: Interrupt level setting
+　Top 2-3 short, Bottom 2-3 short ■ INT 0
+　Upper 1-2 short, lower 2-3 short ■ INT 4
+　Top 1-2 short, Bottom 1-2 short ■ INT 5 (factory setting)
+　Top 2-3 short, Bottom 1-2 short ■ INT 6
+
+・ 2 × 5 jumper switch JP-2: ROM address setting
+　Short between 2 and 8 ■ For YM2203 control (CC000h to CFFFFh) (factory setting)
+　5-6 short ■ ROM separation
+
+・ 2 × 2 jumper switch JP3: I / O port address setting
+　2 side 2 shorts ■ 0188h, 018Ah (factory setting)
+　One side two short ■ 0088 h ~ 008 Ah (*)
+* Described in the manual as follows.
+

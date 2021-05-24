@@ -1,0 +1,45 @@
+WGN-DX2，WGN-DX4　（メルコ）
+
+S3社Trio64V2/DX（86C775）を搭載したCバスグラフィックアクセラレータ．WGN-DX2
+は画像メモリ2MB，WGN-DX4は画像メモリ4MB．
+
+使用環境：5〜40゜（無結露）
+対応OS：Windows3.1（エンハンスドモード），Windows95/98，WindowsNT3.51/4.0
+メモリアドレス：E0000h〜E7FFFhまたはF00000h〜F3FFFFh
+I/Oアドレス：5xE0h，5xE1h（x=0〜F占有）
+
+ノーマルディスプレイ対応．VESA提唱のDPMS方式（オン/オフ/サスペンドモード）に
+対応．Windows3.1ではDCI（Display Control Interface）をハードウェアでサポート．また
+Windows95ではDirect X（DirectDraw）に対応．MPEG再生ユーティリティー添付．
+本ボード使用時は，本体のGDCクロックを5MHzに設定のこと．
+Direct X対応のソフトウェア使用時には，そのソフトウェアに付属するDirect X
+ドライバをインストールしないこと（WGNが正常動作しなくなる）．
+
+Windows3.1で本製品添付のセットアップCDに収められているSETUP.EXEを使用せず
+にWindows3.1のWindowsセットアップでドライバのインストールを行う場合には，セット
+アップCD内のOEMSETUP.INFファイルを変更する必要がある．この場合，まずセット
+アップCD内の\WGN-DX\WIN31ディレクトリにあるXXXXXXXX.INFファイルをフロッピー
+ディスクにコピーする．ただしXXXXXXXXの部分は使用するWindowsによって異なる：
+・PC-9801FAまたはEPSON機で16MB以上メモリを搭載できる機種の場合は，
+　　NEC版（FD）= OEMNECE
+　　MICROSOFT版（FD）= OEMMSE
+　　EPSON版（FD）= OEMEPSE
+    CD-ROM版　= OEMCDE
+・その他の機種の場合は，
+　　NEC版（FD）= OEMNEC
+　　MICROSOFT版（FD）= OEMMS
+　　EPSON版（FD）= OEMEPS
+    CD-ROM版　= OEMCD
+次にフロッピードライブ1（例：Bドライブ）にドライバ
+ディスクのバックアップディスクをセットし，
+A:\>B:
+B:\>COPY XXXXXXXX.INF OEMSETUP.INF
+と入力し，OEMSETUP.INFファイルの修正を行う．
+
+Windows3.1にドライバをインストールする場合，PC-9801FAでCPUアクセラレータの
+HFAシリーズまたはEUFシリーズを装着している場合／PC-9801ESを使用する場合には，
+Q:\WGN-DX\WIN31\SETUP.EXE /E
+と入力してインストーラを起動する．
+
+Windows95ではドライバのインストール時，PC-9801FAまたはEPSON機の場合は，
+[E-Bankを使用する]を選択のこと．

@@ -1,0 +1,46 @@
+
+SC-NBD, SC-NBDA (I･Oデータ)
+
+Bus master PCI SCSI I / F. Compatible with Windows 95/98/98 SE / NT 3.51 / NT 4.0 / 2000.
+ULTRA SCSI compatible.SCSI ID = 7 fixed.Power consumption +5 V, 300 mA (external term
+Does not include power).D-sub half 50-pin connector externally on the board
+Equipped with a 50-pin flat cable connector.With a SCSI BIOS
+Because it is not, system startup from the SCSI device connected to this I / F is impossible.
+Monitors the connection status of SCSI devices and automatically controls terminators on I / F.
+Maximum synchronous transfer rate and disconnect permission can be set for each SCSI device.
+The HDD that can be used with PC-9821 series is up to 8.4GB. Data transfer mode and
+I / F settings such as transfer speed, disconnect, etc. are attached setting utility
+Using the software (start up the PC with support software FD).
+There is one triple jumper switch on the board.
+
+· Triple jumper switch JP2: Control of built-in terminator
+　1-2 short ■ Automatic control of terminator (factory setting)
+　2-3 short ■ Forced OFF
+
+Standby not compatible with Windows 98/98 SE / 2000 ACPI standard
+Function not available.I · O data made removable hard disk "RM-SQ270"
+Usage prohibited.
+DISKINIT, FDISK, FORMAT command can not be used.HDD is under Windows 95/98
+In the attached ASPIFORM (right-click on My Computer or Explorer
+In some cases, formatting can not be performed properly), MO, PD,
+In ZIP, format with the formatter attached to these.MO, PD,
+Use ASPIFORM only if the formatter is not included with ZIP.
+HDD formatted in another environment or HDD formatted by ASPIFORM again
+When formatting, be sure to format again with ASPIFORM.
+When formatting HDD with ASPIFORM, always one or more partitions
+Create (up to 5 partitions can be created).
+In the PC-9821 series, HDD formatted with ASPIFORM is used from MS-DOS
+Can not.Also, when using with PC-9821 series Windows NT 4.0,
+Do not create multiple partitions.Split into multiple partitions
+Doesn't work properly when using Disk Administrator for failed HDD
+There is a case.If you want to divide into multiple partitions,
+1) Perform “Initialize Disc” on ASPIFORM to leave it unformatted.
+   Then format with Disk Administrator.
+2) Format as one drive in ASPIFORM.However, this method
+   Only 2047 MB can be secured.If it will be more than 1)
+   format.
+FAT98 partition created by ASPIFORM for Windows 98 FAT32 Converter
+Do not change to FAT32 with FAT16-> FAT32 conversion tool such as.
+If you want to change to FAT32, use ASPIFORM to partition
+Delete and re-create partition with FAT32.
+

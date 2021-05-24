@@ -1,0 +1,58 @@
+
+IF-2766 (ICM)
+
+Multi-vendor non-compliant C bus bus master SCSI I / F. Windows 95 compatible.
+Two 8-deep dip switches and one 4-deep dip switch on the board
+There is one jumper switch.
+
+· 8 stations dip switch SW1: SCSI-ID, interrupt level, DMA channel
+　settings of
+1-2-3: SCSI-ID setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT0 (default setting)
+　ON-OFF-OFF ■ INT 1　
+　OFF-ON-OFF ■ INT 2　
+　ON-ON-OFF ■ INT3　
+　OFF-OFF-ON INT5　
+　ON-OFF-ON INT 6　
+7-8: DMA channel setting
+　OFF-OFF CH0
+　OFF-ON CH2
+　ON-ON CH3 (factory setting)
+
+・ 8 stations dip switch SW2: Setting of main unit model
+1-2-3-4-5-6-7: Setting of main unit (x can be ON or OFF)
+Below, 1-2-3-4-5-6-7 ■ Main body model ■ SCSI-ROM address in order
+　xxx-OFF-ON-OFF-OFF PC-98XA 0EC 000 h to 0 ECFFF h
+　OFF-ON-ON-OFF-ON-OFF-ON
+                         ■ In normal mode: 0DC000h to 0DCFFFh
+                         / In high resolution mode: 0EC000h to 0ECFFFh
+　OFF-ON-ON-xx-ON-ON ■ Model only in normal mode
+                     ■ 0DC000h to 0DCFFFFh (factory setting)
+※ 1-2-3-4-5 is the setting of the local memory address, 6-7 is the reason depending on the main unit.
+8: Always ON (off seems to be off SCSI-ROM)
+
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　ON-ON 0 CCxh (factory setting)
+　OFF-ON 0CDxh
+　ON-OFF 0 C Exh
+　OFF-OFF 0CFxh
+3-4: Transfer mode setting
+　OFF-ON ■ Synchronous bus master transfer
+　ON-ON asynchronous bus master transfer
+　ON-OFF FIFO transfer
+　OFF-OFF DMA transfer
+* Jumper switch JP2 is shorted during synchronous bus master transfer.
+※ Details of the factory setting of transfer mode are unknown.Bus master and FIFO
+　It seems that there was a case.
+
+We received supplemental information from Ultra Given.

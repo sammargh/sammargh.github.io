@@ -1,0 +1,69 @@
+
+IF-2761 (ICM)
+
+A multi-vendor non-compliant C bus SCSI I / F. Windows 95 compatible.SCSI connector
+Is an phenol half pin.
+There are two 8-deep dip switches and one 4-deep dip switch on the board.
+
+· 8 stations dip switch SW1: SCSI ID number of this board, interrupt level,
+　DMA channel setting
+1-2-3: SCSI ID number setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT 0 (factory setting)
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF # 0
+　ON-OFF ■ Setting prohibited
+　OFF-ON # 2
+　ON-ON # 3 (default setting)
+※ In FIFO mode, DMA is not used at data transfer but status
+　Use DMA when executing commands such as.
+
+・ 8 stations dip switch SW2: local memory address (1-2-3-4-5),
+　Main unit model setting (6-7)
+(8 is always ON. Default setting: OFF-ON-ON-OFF-ON-ON-OFF-ON)
+The following shows the main unit model ■ DIP switch settings ■ Memory address order:
+　8086 mounting machine ■ OFF-ON-OFF-xx-ON-OFF-ON ■ D4000h ~ D4FFFh
+　V30 machine ■ OFF-ON-ON-xx-ON-OFF-ON ■ DC000h ~ DCFFFh
+　PC-98 XA xxx-OFF-ON-OFF-OFF-ON ■ \ EC 000 h ~ \ ECFFF h
+　Normal / Hi-Res dual-purpose machine ■ OFF-ON-ON-OFF-ON-OFF-OFF-ON-ON
+　　　■ Normal mode \ DC 000 h ~ \ DCF FF h
+　　　/ During high res mode \ EC 000 h ~ \ ECFFF h
+　Other than the above ■ OFF-ON-ON-xx-ON-ON-ON ■ \ DC 000 h ~ \ DC F FF h
+　※ x can be ON or OFF.Also, \ is 0h or Fh.
+　※ When used in combination with B4670II (PC-9864L), regardless of the main unit model, 4-5 of SW2
+　　Make it ON-ON.In this case the local memory address is
+　　It is set to \ EE000h ~ \ EEFFFh.
+　※ In PC-9801U2 and V30 loading machine, switch pin on the side of card edge back and forth
+　　Reverse direction.
+
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　ON-ON CCxh (default setting)
+　OFF-ON CDxh
+　ON-OFF CExh
+　OFF-OFF CFxh
+　* X represents 0, 2, 4 in DMA mode and 0, 2, 4, 6 in FIFO mode.
+　※ Access from DISK BIOS is not available if it is set other than factory setting
+　　become unable.Use special hardware such as PC-98B55
+　　If only change it.
+3: Transfer mode setting
+　ON FIFO transfer (default setting)
+　OFF DMA transfer
+　※ FIFO transfer is not possible on machines with the 8086.
+4: Not used (always on)
+
+ICM does not guarantee the use of HDD via I / O expansion unit.
+

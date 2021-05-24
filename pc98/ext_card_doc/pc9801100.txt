@@ -1,0 +1,30 @@
+
+PC-9801-100 (NEC)
+
+PnP compatible C bus SCSI-2 I / F. The connector is D sub half 50 pin.Windows 2000 compatible.
+High res mode not supported.PnP setting and interrupt level setting in non-PnP mode
+Use the attached SCSI configuration utility.
+Free software created by Mr. Marimo for this board of BIOS ROM A3EE / F412
+The upper limit of the recognition capacity was examined by e10chk.exe
+It was obtained.Setting by 5 series dip switches on the board is valid only in non-PnP mode.
+
+・ 5 series dip switches: Set SCSI BIOS address and I / O port address
+1-2-3-4: SCSI BIOS address setting
+　OFF-OFF-OFF-OFF ■ DC 000 h to D FFFF h (factory setting)
+　ON-OFF-OFF-OFF ■ D 8000 h ~ DBFFF h
+　OFF-ON-OFF-OFF ■ D4000h to D7FFFh
+　ON-ON-OFF-OFF ■ D0000h to D3FFFh
+　ON-ON-ON-OFF ■ BIOS separation
+5: I / O port address setting
+　ON ■ 3840h ~ 387Eh (even), 386 Dh
+　OFF 1840 h to 187 E h (even), 186 D h (factory setting)
+
+When mounting two boards, use the SCSI setting utility as follows:
+Configuration:
+(a) Board to which boot drive is connected
+　Memory address: enabled (non-BIOS disabled)
+　I / O port address: 18xx (SW5 is OFF)
+(b) Board to which boot drive is not connected
+　Memory address: invalid (BIOS invalid)
+　I / O port address: 38xx (SW5 ON)
+

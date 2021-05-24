@@ -1,0 +1,57 @@
+
+AD-ET2-2 (ICM)
+
+The second bus of ICM C bus SCSI I / F, IF-2766, IF-2771, C ♭ ET series
+LAN board attached to the connector.The LAN connector is BNC connector (10BASE-2).
+Transfer is 16-bit bus master.Base I / O address, interrupt level,
+Cable type is set by the attached SETUP.EXE (Factory setting: Base I / O
+Address = 56D0h, INT = 1 (IRQ = 5), Connector Type = BNC
+
+・ Setting of I / O port address
+Below, in order of setting value ■ I / O port address
+　4 to 46D0h to 47DFh
+　5 ■ 56D0h to 57DFh (factory setting)
+　6 ■ 66D0h to 67DFh
+　7 to 76D0h to 77DFh
+　8 ■ 86D0h to 87DFh
+　9 ■ 96 D 0 h to 97 DF h
+　A ■ A 6 D 0 h ~ A 7 DF h
+　B B 6 D 0 h to B 7 DF h
+
+・ About contention of I / O port with other I / F
+(1) Canopus Power Window 801G / 928G / 928II (factory setting: x6D0h to x6DFh
+　/ Settable range: xyD0h to xyDFh, where x = 0 to all, y = 1, 2, 3, 4, 5, 
+　One of 6, 7)
+A conflict occurs at the factory settings, but how to change the board's I / O address
+Even in the case of Power Window 801G / 928G / 928II, there is a conflict with the factory settings.
+Therefore, the Power Window 801G / 928G / 928 II I / O port address has an initial value of x = 6.
+We need to change from x = 1 to 5.
+(2) IMAGEPAQ-98 manufactured by Canopus (Factory setting: 18D0h to 18DFh / Settable range:
+　xxD0h to xxDFh, where x is optional)
+There is no conflict with the factory settings, but xx = 46, 47, 56, 57, 66, 67, 77, 86, 87, 
+Note that in the case of 96, 97, A6, A7, B6 and B7, conflicts will occur.
+(3) Melco WSP-L (Factory setting: 40E0h / settable range: 4xE0h, however
+　x = 0 to F)
+There is no conflict in the factory settings, but in the case of x = 6.
+(4) Melco WSR-E (factory setting: 4xE0H, 4xE1H, 5xE0H, 5xE1H, 46E8h
+　/ Setting range: 4xE0h, 4xE1h, 5xE0h, 5xE1H, 46E8h 4xE2h, 4xE3h,
+　5xE2h, 5xE3H, 46E8h 4xE4h, 4xE5h, 5xE4h, 5xE5H, 46E8h 4xE6h,
+　4xE7h, 5xE6h, 5xE7H, 46E8h 4xEAh, 4xEBh, 5xEAh, 5xEBH (note), 46E8h
+　■ 4xECh, 4xEDh, 5xECh, 5xEDH, 46E8h 4xEEh, 4xEFh, 5xEEh, 5xEFH,
+　46E8h, where x = 0 to F)
+There is a conflict in the factory settings, and no matter how you change the I / O address of WSR-E, it will be shipped.
+There is a conflict in the setting.So start the board's I / O base address
+Needs to be set to 66D0h or later.
+Note: Although the AD-ET 2-2 user's manual says 5xE3, it may be a typographical error.
+
+I / O data made GA-1024 / GA-1280, NEC made PC-9801-73, Creative media
+There is no conflict of I / O port address with Sound Blaster 16 made in Japan.However
+Sound Blaster 16 (INT factory setting: 1 / setting range: 0, 1, 4, 5)
+The factory setting conflicts with the LAN unit, so the Sound Blaster 16 INT 4 or
+You need to set it to 5 or set the INT of this board to 2 or 5.Also of EPSON
+Factory setting of PCPHDPA (INT factory setting: 1 / configurable range: 0, 1, 3)
+However, since it conflicts with the LAN part, set INT of PCPHDPA to 3 or INT of this board
+Needs to be 2 or 5.
+
+This document is based on the description in the User's Manual published on November 1, 1994.
+

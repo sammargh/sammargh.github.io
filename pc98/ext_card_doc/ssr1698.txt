@@ -1,0 +1,52 @@
+
+SSR-16 (98) (CONTEC)
+
+Solid-state relay 16-point parallel output module.On board
+There is one 8-deep dip switch.
+
+Output points 16 points (4 contacts 1 common x 4 group)
+Number of occupied I / O ports 8-bit 2-port or 16-bit 1-port
+Consumption current 5V DC, 550mA (Max)
+Operating conditions 0 to 50 ° C, 20 to 90% (without condensation)
+
+Output type SSR 1 make contact
+Use SSR SR-S1A2002PC (made by Nippon Switchgear)
+Rated load voltage AC100 / 200V rms
+Rated load current AC1A rms
+Peak repeat off voltage 600V
+Operating load voltage range 24 to 250 V rms
+Open circuit leakage current 3mA rms (Max)
+Contact voltage drop 1.5V rms (Max)
+Response speed 1/2 cycle + 1 ms
+
+・ 8-station dip switches SW1 and SW2: I / O port address setting
+See PIO-48W (98).
+
+Relationship between port address and output data
+The following is the order of setting port address: D7 D6 D5 D4 D3 D2 D1 D0
++ 0 • O07 O06 O05 O04 O03 O02 O01 O00
++1 O15 O14 O13 O12 O11 O10 O09 O08
+
+Connector pin assignment
+Connector used: PCB side KEL 7011-020-161R, terminal side KEL 7011-020-160
+Top row from the right B10, B9, B8 ..... B3, B2, B1 and bottom row from the right
+A10, A9, when viewed with the A8 ····· A3, A2, A1, pin assignment is as below.
+The following is the order of the terminal number, signal name, and explanation:
+
+A1 O00 + 0 port output (lower) B1 O 08 +1 port output (lower) 
+A2 O01 + 0 port output (lower) B2 O09 +1 port output (lower) 
+A3 O02 + 0 port output (lower) B3 O 10 +1 port output (lower) 
+A4 O03 + 0 port output (lower) B4 O 11 +1 port output (lower) 
+A5 COM1 + 0 port lower common B5 COM 3 +1 port lower common 
+A6 O04 + 0 port output (upper) B6 O12 +1 port output (upper) 
+A7 O05 +0 port output (upper) B7 O13 +1 port output (upper) 
+A8 O06 + 0 port output (upper) B8 O 14 +1 port output (upper) 
+A9 O07 +0 port output (upper) B9 O15 +1 port output (upper) 
+A10 COM2 +0 port upper common B10 COM4 +1 port upper common
+The commons (COM 1 to 4) on the board are independent of each other in the board.
+
+About the LED on the board
+Below, SSR contacts ■ LED status ■ Internal signal logic order:
+Make contact ■ lighting ■ 1
+Break contact ■ Off ■ 0
+

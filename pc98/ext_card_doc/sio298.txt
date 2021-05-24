@@ -1,0 +1,124 @@
+
+SIO-2 (98) (CONTEC)
+
+Serial I / O (RS-232C) module.The transfer rate is 75 to 9600 baud.
+Input / output port 2 channels (the second channel is TTL level and current loop
+(Option: SIO-2C (98), possible to 2400 baud: TXD, RXD only)
+It can be selected by jumper).8251 datasheet to use this board
+Or materials equivalent to that are essential.
+
+Two 8-deep dip switches and two 4-deep dip switches on the board,
+One 2x4 jumper switch, 2x8 series jumper switch 2x, 3x4 series
+1 jumper switch, 3 x 6 series dip switches 1x, 3 jumpers
+There is one switch.
+
+Transfer method: asynchronous serial transfer, half duplex, full duplex
+Number of equipped channels: 2 channels
+Transfer rate: 75-9600 baud
+Input / output specification: CH1 RS232C
+　　　　　　CH2 RS232C, TTL or current loop (TXD, RXD only)
+Occupied port: 8 bits 8 ports
+Connector: EIA standard connector (cable should be used within 15m)
+LSI used: 8251 equivalent
+Power consumption: DC + 5 V, 600 mA
+Operating environment: 0 to 50 °, humidity 20 to 90% (without condensation)
+
+・ 8-station dip switches SW1 and SW2: I / O port address setting
+　Same as other CONTEC control and measurement boards (PIO-48W (98) etc .: SW2
+  6-7-8 is invalid.ON, OFF may be either)
+　Example) F0D0h
+　　　SW1 = ON-ON-ON-ON-OFF-OFF-OFF-OFF
+　　　SW2 = ON-ON-OFF-ON-OFF-OFF-OFF-OFF
+
+Port address and I / O map
+■ Input side
+　Set port address + RX data of CH1
+　　　　　　　　　　　　+1 ■ unused
+　　　　　　　　　　　　Status data of +2 CH1
+　　　　　　　　　　　　+ 3 ■ unused
+　　　　　　　　　　　　RX data of +4 CH2
+　　　　　　　　　　　　+ 5 ■ unused
+　　　　　　　　　　　　Status data of +6 CH2
+　　　　　　　　　　　　+7 ■ unused
+■ Output side
+　Set port address + TX data of CH1
+　　　　　　　　　　　　+1 ■ unused
+　　　　　　　　　　　　+2 CH1 mode / command
+　　　　　　　　　　　　+ 3 • bit 7 = CH1 reset
+　　　　　　　　　　　　TX data of +4 CH2
+　　　　　　　　　　　　+ 5 ■ unused
+　　　　　　　　　　　　+6 ■ CH2 mode / command
+　　　　　　　　　　　　+7 bit 7 = CH2 reset
+
+・ 2 x 8 jumper switches: Transfer rate setting.JP4 is CH1 and JP5 is CH2
+　Each corresponds.
+　Baud rate that can be set with silk print numbers at the bottom of JP4.In this case baud
+　The rate reference clock is limited to 16 times.At the time of mode set
+  Attention.
+
+・ 2x4 jumper switch JP1, 3x6 jumper switch JP3,
+　Quadruple dip switch SW4: CH2 RS232C / TTL level / current loop switching
+(1) RS232C
+   JP1: All open
+   JP3: All AC short circuit
+   SW4: OFF-OFF-ON-OFF
+(2) TTL level
+   JP1: All open
+   JP3: All short between BC
+   SW4: All off
+(3) Current loop (option, external power supply is also required)
+   JP1: All short
+   JP3: 1, 4 open, 2, 3, 5, 6 short between BC
+　   Check the values of internal resistances RA and RB of the TXD and RXD terminals on the other side, and
+     Make the current to be 20mA:
+     　(External power supply voltage) / (R1 (620 Ω) + RA) = 20 mA
+　     (External power supply voltage) / (R6 (620 Ω) + RB) = 20 mA
+   SW4: With current (20 mA) and without current (0 mA) on the externally connected loop
+        Setting of internal logic of.
+　　 Below, Current 1 SW4 1 (RXD) OFF 1 SW 2 4 (TXD) OFF 4 Same ON order.
+     Both 3 and 4 are OFF.
+     No current ■ L ■ H ■ H ■ L
+     Current 20 mA H L L H
+
+・ 3x4 jumper switch JP2, 2 dip switch SW3: Interrupt setting
+　When using the interrupt signal generated from 8251, set the interrupt level in JP2
+　Select and use SW3 to select which interrupt RXRDY or TXRDY to use.C of JP2
+　Connected to the interrupt signal line: C1 = INT 0, C2 = INT4, C3 = INT5
+　C4 = INT 6.
+　JP2's A is CH1, B is CH2.
+　1 of SW3 is CH2 TXRDY, CH2 RXRDY, CH1 TXRDY, CH1 RXRDY.
+　Factory setting: SW3: All on; JP2: 1, 2 = open, 3 = AC short,
+　4 = short between BC.In this case, RXRDY and TXRDY of CH1 and RXRDY of INT5 and CH2 are
+　TXRDY is input to INT 6.
+　If you do not use interrupts, make all JP2 open.
+
+・ Three jumper switch JP6: BASIC / Assembler program
+Short between 1-2.
+
+Connector pin assignment
+When viewed from the back of the board, the pins in the upper row of the connector,
+From the left 13-12-11 ..... 3-2-1, the lower row of pins 25-24-23 ..... 16-15-14
+If you see,
+CH1
+　 1 ■ FG ■ frame ground
+　 2 TXD RS 232 C
+　 3 ■ RXD ■ RS232C
+　 4 ■ RTS ■ RS232C
+　 5 CTS RS232C
+　 6 DSR RS 232 C
+　 7 ■ SG ■ signal common
+  20 ■ DTR ■ RS232C
+CH2
+　 1 ■ FG ■ frame ground
+　 2 TXD RS 232 C, TTL
+　 3 ■ RXD ■ RS232C, TTL
+　 4 RTS RS232C, TTL
+　 5 CTS RS232C, TTL
+　 6 DSR RS 232 C, TTL
+　 7 ■ SG ■ signal common
+　17 ■ TXD-■ Current loop (-)
+　18 ■ TXD + ■ current loop (+)
+　20 DTR RS232C, TTL
+　24 ■ RXD-■ Current loop (-)
+　25 ■ RXD + ■ current loop (+)
+

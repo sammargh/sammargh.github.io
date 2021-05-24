@@ -1,0 +1,22 @@
+AHA-1030P (ReadySCSI 98)　（Adaptec）
+
+PnP対応のCバスSCSI-2 I/F．マルチベンダ非対応．コネクタはDサブハーフ
+50ピン．Windows95対応．
+PnPの設定，非PnPモードでの割り込みレベル，ホストアダプタSCSI ID番号，
+SCSIパリティチェックの設定は付属のFD (SCSISelect98ユーティリティ) を
+用いて行う．
+筆者がBIOS ROM A1F2／F20Eの本ボードに対してまりも氏作成のフリーソフト
+であるe10chk.exeで認識容量の上限を調べたところ，8GB対応という結果が
+得られた．
+ボード上の5連ディップスイッチによる設定は非PnPモード時のみ有効．
+
+・5連ディップスイッチ：SCSI BIOSアドレスとI/Oポートアドレスの設定
+1-2-3-4：SCSI BIOSアドレスの設定
+　OFF-OFF-OFF-OFF■DC000h〜DFFFFh　（出荷時設定）
+　ON-OFF-OFF-OFF■D8000h〜DBFFFh
+　OFF-ON-OFF-OFF■D4000h〜D7FFFh
+　ON-ON-OFF-OFF■D0000h〜D3FFFh
+　ON-ON-ON-OFF■BIOS切り離し
+5：I/Oポートアドレスの設定
+　ON■3840h〜387Eh
+　OFF■1840h〜187Eh　（出荷時設定）

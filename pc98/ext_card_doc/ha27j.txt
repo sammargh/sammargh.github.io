@@ -1,0 +1,28 @@
+HA-27　（ウィンテク）
+
+CバスSASI I/F．98JUNK.DOCでは，"EZPCASH27-1SC" とも表記
+されている．ボード上に8連ディップスイッチ2個と2本×4連
+ジャンパスイッチ1個あり．
+
+・8連ディップスイッチSW1：1台目と2台目のHDDの容量の指定
+1-2-3-4-5：1台目のHDDの容量の指定
+　ON-ON-ON-ON-ON■5MB　（出荷時設定）
+　ON-ON-ON-ON-OFF■10MB
+　ON-ON-OFF-ON-ON■20MB
+　ON-ON-OFF-OFF-ON■40MB
+6-7-8：2台目のHDDの容量の指定
+　OFF-OFF-OFF■2台目無接続　（出荷時設定）
+　ON-ON-ON■5MB
+　ON-ON-OFF■10MB
+　OFF-ON-ON■20MB
+　OFF-OFF-ON■40MB
+
+・8連ディップスイッチSW2：BIOS ROMアドレスの設定・固定
+　　　　　　（出荷時設定：OFF-OFF-OFF-ON-OFF-ON-OFF-OFF）
+
+・2本×4連ジャンパスイッチSW3：本体機種の設定（BIOS ROM
+　　　　　　　　　　　　　　　 アドレスの設定）
+　1-8，3-6間ショート，2-7，4-5間オープン■PC-9801M2
+　1-8，4-5間ショート，2-7，3-6間オープン■PC-9801E/F/F2/U2/VF/VM/VX
+　2-7，4-5間ショート，1-8，3-6間オープン■PC-9801，PC-98XA
+※PC-98XAでは拡張スロット#4を使用のこと．

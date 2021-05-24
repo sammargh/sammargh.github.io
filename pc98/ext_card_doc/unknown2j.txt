@@ -1,0 +1,19 @@
+名称不明　（ウィンテク）
+
+ウィンテク製40MB SASI HDD，"WD40"付属のI/F．名称は不明だが，
+98JUNK.DOC掲載の "REFERENCE" とディップスイッチの構成が一致
+するので同一物かもしれない．WD40の取説の記載には誤りが多く，
+スイッチ設定情報などを訂正した紙が取説に添付されていた．
+ボード上に8連ディップスイッチ2個と4連ディップスイッチ1個あり．
+
+・8連ディップスイッチSW1：2台目増設用HDDの有無の設定
+　ON-ON-OFF-OFF-ON-OFF-OFF-OFF■40MB 1台（出荷時設定）
+　ON-ON-OFF-OFF-ON-OFF-OFF-ON■40MB＋40MB（2台目増設）
+
+・8連ディップスイッチSW2：固定
+ （出荷時設定：OFF-OFF-OFF-ON-OFF-ON-OFF-OFF）
+
+・4連ディップスイッチSW3：本体機種の設定
+　ON-OFF-OFF-ON■PC-9801F/F2/U2/VF/VM/VX/RX/RA（出荷時設定）
+　OFF-ON-OFF-ON■PC-9801M2
+　ON-OFF-ON-OFF■PC-9801，PC-98XA

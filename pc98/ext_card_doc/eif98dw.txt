@@ -1,0 +1,91 @@
+
+EIF-98DW, EIF-98DW2 (ELECOM)
+
+C bus super FIFO transfer SCSI-2 board.There are three 8-deep dip switches on the board.
+
++ --------------------------------------------------------- ------------------------------
+| In ELECOM's fax service, the explanation of 4-5-6-7-8 for SW2 and 1-2-3-4 for SW3 are missing.About SW2 |
+There is a description that 4-5 is the setting of ROM address in high resolution mode, and the factory setting of |
+| Since the sequence of dip switches is the same as EIF-98SW, also for 6-7-8 EIF- |
+| It is assumed that it will be the same as 98SW.With regard to SW3, either of 1-2-3-4 |
+It seems that I / O page address setting is done, and it is also taken when scanning the manual |
+As long as you look at the back reflection of the corresponding page of the embedded manual, it is also the same as EIF-98SW.
+It seems to be |                                                     |
++ --------------------------------------------------------- ------------------------------
+
+Although the final ROM seems to be 2.30, it does not correspond to HDD of 1GB or more as it is, but with EIF-98DW
+It is possible to correspond by the version upgrade of ROM.In the old web page of ELECOM
+Because expression is vague, it is not clear whether EIF-98DW2 supports HDD of 1GB or more
+(For other boards, the correspondence table indicates whether or not the ROM version can be upgraded.
+"None" is written in the remarks section of, but this means that it corresponds as it is
+I wonder).
+In addition, ELECOM makes EIF-98DW non-compliant with Windows 95, while EIF-98DW2 makes DMA transfer only.
+It is supported (it works with 55 drivers) but it is compatible with Windows 95.
+
+・ 8-station dip switch SW1: SCSI-ID of board, interrupt level, setting of DMA channel
+1-2-3: Board SCSI-ID setting
+  OFF-OFF-OFF: ID = 0
+  ON-OFF-OFF: ID = 1
+  OFF-ON-OFF: ID = 2
+  ON-ON-OFF: ID = 3
+  OFF-OFF-ON: ID = 4
+  ON-OFF-ON: ID = 5
+  OFF-ON-ON: ID = 6
+  ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+  OFF-OFF-OFF: INT 0 (factory setting)
+  ON-OFF-OFF: INT 1
+  OFF-ON-OFF: INT 2
+  ON-ON-OFF: INT 3
+  OFF-OFF-ON: INT 5
+  ON-OFF-ON: INT 6
+7-8: DMA channel
+  OFF-OFF: DMA 0
+  OFF-ON: DMA 2 (available only for PC-9801E / F / U / UF / XA)
+  ON-ON: DMA 3 (factory setting)
+
+・ 8 stations dip switch SW2: ROM address (, body model, SCSI BIOS enabled / disabled?)settings of
+1-2-3: Normal mode ROM address setting
+  OFF-OFF-OFF: D0000h to D0FFFh
+  ON-OFF-OFF: D2000h to D2FFFh
+  OFF-ON-OFF: D4000h to D4FFFh
+  ON-ON-OFF: D6000h to D6FFFh
+  OFF-OFF-ON: D 8000 h to D 8 FFF h
+  ON-OFF-ON: DA000h to DAFFFh
+  OFF-ON-ON: DC000h to DCFFFh (factory setting)
+  ON-ON-ON: DE000 to DEFFFh
+  ※ Due to the ROM address, simultaneous use of this board, EMS and sound functions is not possible.
+  　Also, when using with PC-9801 E / F / M, set D4000h to D4FFFh.
+■■■■■■■ For the following 4-5-6-7-8, it is a guess from the setting of EIF-98SW ■■■■■
+4-5: Setting ROM address in high resolution mode
+  OFF-OFF: XE8000h to XE8FFFh
+  ON-OFF: XEA000h to XEAFFFh
+  OFF-ON: XEC000h to XECFFFh (factory setting)
+  ON-ON: XEE000h to XEEFFFh
+  ※ "X" represents "0H" or "FH"
+6-7: Setting of main unit model [Estimate from setting of EIF-98SW]
+  ON-OFF: CPU is the model of 8086 or V30
+  ON-ON: Model with only 286 CPUs in normal mode only (default setting)
+  OFF-OFF: PC-98XA (high res dedicated model)
+  OFF-ON: Model with both normal mode and high resolution mode, high resolution board
+          Installed model
+8: Enable / Disable of SCSI_BIOS [inferred from setting of EIF-98SW]
+  ON: SCSI_BIOS enabled (factory setting)
+  OFF: SCSI_BIOS disabled
+
+・ 8-station dip switch SW3: I / O page address, transfer mode setting
+■■■■■■■ The following 1-2-3-4 is the guess from the setting of EIF-98SW.
+1-2: I / O page address setting
+  OFF-OFF: CC0H
+  ON-OFF: CD0H
+  OFF-ON: CE0H
+  ON-ON: CF0H (factory setting)
+3-4: ON-ON-ON (System reservation, change prohibited)
+-----------------------------------------------------
+5: Transfer mode setting
+  ON: Automatically switch DMA / Super FIFO transfer depending on CPU type (factory setting)
+  OFF: Forced DMA transfer
+    ※ It is used in advanced mode with Epson PC (when used in normal mode
+    DMA transfer).When using OS / 2, super FIFO mode is released automatically.
+6-7-8: OFF-ON-ON (undefined, change prohibited)
+

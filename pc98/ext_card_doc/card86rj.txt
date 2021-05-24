@@ -1,0 +1,23 @@
+Card86-R　（キュービジョン）
+
+PCM・FM音源PCカード．PCM音源・FM音源ともにPC-9801-86互換．QV-PC86R，
+Card98リターンズとの表記もあり．W.M.Card（WaveMasterCard）は本カードに
+SCSI I/Fの機能がプラスされたもの．付属のI/Fボックスを接続して使用．
+カード上のPCM音源と98ノートの内蔵PCM音源の同時使用（全二重サウンド）が
+可能．ただしPCM/FM音源を搭載した98ノートでは，内蔵FM音源と本カードの
+FM音源のリソースがバッティングするため，全二重サウンドは不可．
+本カードを利用する際には必ず外付けスピーカーを使用のこと．
+
+対応機種： PC-9821Nr166, Nr150, Nr15, Nr13, Nr12, Na15, Na13, Na12, Na9,
+Na7, Nb10, Nb7, Nx, Ne3, Nd2, Ne2, Nd, Nm, Nf, Np, Ns, Ls150, Ls12, La10,
+La7, Lt2, Ld, PC-9801NL/A
+全二重サウンド可能な機種： PC-9821Nr13, Nr12, Nb10, Nb7, Ls150, Ls12, La10,
+La7（内蔵音源としてPCM音源のみを搭載している機種）
+
+I/Oポート： 0188hまたは0288h
+割り込みチャネル： IRQ12（INT5）またはIRQ13（INT6）
+PCM音源部： PC-9801-86互換，16ビット録音・再生，Max44，1kHzサンプリング
+FM音源部： PC-9801-86互換（YAMAHA YM288搭載），FM音源 = 6音ステレオ，
+           リズム音源 = 6音ステレオ，SSG音源 = 6音モノラル
+対応OS： MS-DOS ver.5.0以上，Windows3.1，Windows95（DirectSOUNDに対応），
+         Windows98

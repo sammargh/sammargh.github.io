@@ -1,0 +1,81 @@
+LHA-201，LHA-20B　（Logitec）
+
+マルチベンダ非対応のCバスバスマスタSCSI-2ボード．メモリが16MB以上の本体でも
+バスマスタ転送が可能．筆者がまりも氏作成のフリーソフトであるe10chk.exeを用いて
+I・OデータIDE-SCSI変換基板HDX-SC-3 IOD1A067（40GBの外付けHDDに内蔵されていた
+もの）＋ Seagate ST3642A（6.4GB，FAT32で分割なし）に接続されたBIOS ROM 1.33の
+LHA-20Bの認識容量の上限について調べたところ，BIOSセクタ数63・ヘッド数15・シリンダ
+数13329・セクタ長512バイトと解析され，シリンダ数×ヘッド数の積の壁なしいう結果
+が得られた．
+ボード上に8連ディップスイッチ4個と3本ジャンパスイッチ2個あり（ジャンパスイッチ
+の一方は未使用）．
+
+・8連ジャンパスイッチSW1：SCSI_ID，割り込みレベル，DMAチャネルの設定
+1-2-3：SCSI_IDの設定
+　OFF-OFF-OFF：ID=0
+　ON-OFF-OFF：ID=1
+　OFF-ON-OFF：ID=2
+　ON-ON-OFF：ID=3
+　OFF-OFF-ON：ID=4
+　ON-OFF-ON：ID=5
+　OFF-ON-ON：ID=6
+　ON-ON-ON：ID=7　（出荷時設定）
+4-5-6：割り込みチャネルの設定
+　OFF-OFF-OFF：INT0　（出荷時設定）
+　ON-OFF-OFF：INT1
+　OFF-ON-OFF：INT2
+　ON-ON-OFF：INT3
+　OFF-OFF-ON：INT5
+　ON-OFF-ON：INT6
+7-8：DMAチャネルの設定
+　OFF-OFF：DMA0
+　ON-ON：DMA3　（出荷時設定）
+
+・8連ディップスイッチSW2：ローカルメモリアドレス，本体機種の設定，SCSI_BIOSアクセスの有無
+1-2-3：ノーマルモードでのローカルメモリアドレスの設定
+　OFF-OFF-OFF：xD0000-xD0FFFh
+　ON-OFF-OFF：xD2000-xD2FFFh
+　OFF-ON-OFF：xD4000-xD4FFFh
+　ON-ON-OFF：xD6000-xD6FFFh
+　OFF-OFF-ON：xD8000-xD8FFFh
+　ON-OFF-ON：xDA000-xDAFFFh
+　OFF-ON-ON：xDC000-xDCFFFh　（出荷時設定：変更禁止）
+　ON-ON-ON：xDE000-xDEFFFh
+　※"x"は"なし"，"0h"，"0Fh"
+4-5：ハイレゾモードでのローカルメモリアドレスの設定
+　OFF-OFF：xE8000-E8FFFh
+　ON-OFF：xEA000-EAFFFh
+　OFF-ON：xEC000-ECFFFh　（出荷時設定：変更禁止）
+　ON-ON：xEE000-EEFFFh
+　※"x"は"なし"，"0h"，"0Fh"
+6-7：本体機種の設定
+　ON-ON：CPUがV30の機種
+　OFF-ON：ハイレゾモード対応機種（ハイレゾボードを実装したものを含む）
+　ON-ON：ノーマルモードのみの機種
+8：SCSI_BIOSへのアクセス
+　ON：アクセス可能　（出荷時設定）
+　OFF：アクセス不可（BIOS切り離し）
+
+・8連ディップスイッチSW3：I/Oベースアドレス，転送モードの設定
+1-2：I/Oベースアドレスの設定
+　ON-ON：00C0　（出荷時設定：変更禁止）
+　OFF-ON：0CD0h
+　ON-OFF：0CE0h
+　OFF-OFF：0CF0h
+3：転送モードの設定
+　ON：モード自動選択（バスマスタ転送）　（出荷時設定）
+　OFF：I/O転送固定
+　※PC-9821An，PC-9801RX，PC-H98シリーズ，PC-H98S，PC-286 model0での使用時
+　　のみOFFに設定のこと．
+4-5-6-7-8：システム使用（変更禁止．出荷時設定：ON-ON-OFF-ON-OFF）
+
+・3本ジャンパスイッチSW5：転送モードの設定
+　1-2ショート：DMA転送固定
+　2-3ショート：モード自動選択（バスマスタ転送）　（出荷時設定：変更禁止）
+
+・8連ディップスイッチSW6：本体機種の設定
+　ON-OFF-OFF-OFF-ON-OFF-ON-OFF：PC-9821Ae
+　ON-OFF-ON-OFF-OFF-OFF-ON-OFF：PC-9821Bf，PC-9821Xa/Xn
+　ON-OFF-OFF-ON-OFF-OFF-ON-OFF：PC-9801BX2，PC-9821Ce2
+　ON-OFF-OFF-OFF-OFF-OFF-ON-OFF：上記以外の機種　（出荷時設定）
+※このスイッチは筆者所有のLHA-20Bではパターンのみ．

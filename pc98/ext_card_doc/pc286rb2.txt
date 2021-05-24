@@ -1,0 +1,30 @@
+
+PC-286RB2 (EPSON)
+
+Internal expansion RAM board for Epson desktop machine, PC-286 model 0 / X / V / VE / VF / VS.
+It can not be added additionally by SIMM with a capacity of 2 MB.There is one 8-station dip switch on the board.
+
+・ 8 stations dip switch SW1: Use / nonuse of memory on RAM board, address space
+　settings of
+1-2-3-4: Setting the address space used by the board
+　ON-ON-ON-ON: Setting prohibited
+　OFF-ON-ON-ON: 100000H to 2FFFFFH (factory setting)
+　ON-OFF-ON-ON: 200000H to 3FFFFFH
+　OFF-OFF-ON-ON: 300000H to 4FFFFFH
+　ON-ON-OFF-ON: 400000H to 5FFFFFH
+　OFF-ON-OFF-ON: 500000H to 6FFFFFH
+　ON-OFF-OFF-ON: 600000H to 7FFFFFH
+　OFF-OFF-OFF-ON: 700000H-8FFFFF
+　ON-ON-ON-OFF: 800000H to 9FFFFFH
+　OFF-ON-ON-OFF: 900000H to AFFFFFH
+　ON-OFF-ON-OFF: A00000H to BFFFFFH
+　OFF-OFF-ON-OFF: B 00000 H to CF FFFF H
+　ON-ON-OFF-OFF: C00000H to DFFFFFH
+　OFF-ON-OFF-OFF: D00000H to EFFFFFH
+※ Set in order from the lower address.Also, when mounting multiple RAM boards,
+　Set the address space used by each RAM board to be continuous.
+5: Setting of use / nonuse of memory on RAM board
+　ON: Use (factory setting)
+　OFF: Not used
+6-7-8: Do not change (Factory setting: OFF-OFF-ON)
+

@@ -1,0 +1,55 @@
+
+IFC-NN, IFN-NS (メルコ)
+
+Plug and play, multi-vendor compatible C bus SMIT transfer SCSI-2 board.
+
+Win95 compatible.There is one quadruple dip switch on the board.IFC-NN is
+8.4GB or more (up to 32GB) with ROM_BIOS revision 1.10 or later
+HDD is available.It is actually free software created by Mr. Marimo
+The upper limit of the recognition capacity of this board of BIOS ROM 1.10 using e10chk.exe
+As a result of examining about it, the result of 8GB correspondence was obtained.
+
+Although BIOS rewrite software can be downloaded from the Melco site,
+There are lots that can not be rewritten.
+
+For the transfer method, interrupt level, DMA channel, etc., select [CTRL] + [GRAPH] + [S].
+Is displayed when the PC is started while pressing the "board switch setting
+Set in menu
+(On an EPSON machine, hold down [CTRL] + [GRAPH]
+When launched, the configuration menu of the PC itself is launched, [CTRL] + [GRAPH] + [S]
+"Board switch setting menu" may not be displayed even if you press
+In that case, press and release [CTRL] + [GRAPH] + [S] in small steps.
+).
+
+Normal / high res combined use machine (in the case of Mate-A equipped with high res board
+In the same way, after removing the high res board and mounting this board, the normal
+Start in "Mode" and select "Host Type" in "Board Switch Setting Menu".
+Set to "Hi-Res".Turn off the main unit after the menu is finished
+Wearing a high res board.
+
+By pressing [CTRL] + [GRAPH] + [P] while displaying the SCSI-ID search screen immediately after the main unit starts
+"HD parameter automatic analysis program" is launched.
+Manually analyze HDDs that could not be analyzed using "HDPARA.EXE".
+　
+・ The following models have limitations on installable slots:
+  PC-9801VX0 / VX2 / VX4 ...... # 2, # 3, # 4
+  PC-9801UF / CV ...... # 2
+  PC-286LS (T) ... # 2 (left side seen from the back)
+  PC-386LS (C / X) ... # 2 (left side seen from the back)
+　
+・ 4 stations dip switch
+SW1: Plug & play / non plug & play selection
+     ON = non-PnP
+     OFF = PnP
+     Even if the PC itself supports PnP, other boards not supporting PnP
+     Set to ON to use with.However, even boards that do not support PnP
+     PnP compatible if configured with configuration utility
+     Equivalent to board.
+
+SW2: BIOS_ROM enable / disable
+     ON = BIOS disabled (disconnected)
+     OFF = BIOS enabled
+
+SW3: Not used
+SW4: Not used
+

@@ -1,0 +1,34 @@
+IF-2660　（ICM）
+
+98NOTE／EPSON NOTEの110ピン拡張バスコネクタに装着するW-FIFO転送
+SCSI H/A．Windows95では110ピン拡張バスコネクタに装着するタイプの
+H/Aでは最速とされる．SCSIチップはAM33C93A-20JC．8連ディップ
+スイッチ（SW1）1個あり．
+※内部（SW1の右）に8連ディップスイッチが2個（SW2，SW3）あるが，
+　機能は不明．手元のIF-2660での設定は以下の通り：
+　　SW2=ON-ON-ON-ON-OFF-OFF-OFF-OFF
+　　SW3=OFF-ON-ON-OFF-ON-ON-ON-ON
+
+・8連ディップスイッチSW1：ターミネータパワー，本体機種，割り込みレベル，
+　SCSI-ID，転送モードの設定
+1-2：ターミネータパワーの供給の設定
+　ON-ON■内部＋外部
+　ON-OFF■内部
+　OFF-ON■外部　（出荷時設定） 
+　OFF-OFF■供給しない 
+3：本体機種の設定
+　ON■PC-9801N，NV
+　OFF■386以上の機種　（出荷時設定）
+4-5：割り込みレベルの設定 
+　ON-ON■INT 3
+　ON-OFF■INT 1
+　OFF-ON■INT 2
+　OFF-OFF■INT O　（出荷時設定） 
+6-7：IF-2660のSCSI-IDの設定
+　ON-ON■7　（出荷時設定） 
+　ON-OFF■5
+　OFF-ON■6
+　OFF-OFF■4
+8：転送モードの設定
+　ON■W-FIFO転送　（出荷時設定）
+　OFF■DMA転送

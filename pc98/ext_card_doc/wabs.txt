@@ -1,0 +1,30 @@
+
+WAB-S (メルコ)
+
+Graphic accelerator board for C bus.Graphic chip
+Cirrus Logic CL-GD5426 (VRAM 1 MB).PC system when using
+Set "16 MB system space" to "Use" in the setup menu
+About.There is one rotary switch on the board.
+
+・ Rotary switch SW1: I / O port address setting
+　0 = 4xE0H, 4xE1H, 5xE0H, 5xE1H, 46E8H (factory setting)
+　1 = 4xE2H, 4xE3H, 5xE2H, 5xE3H, 46E8H
+　2 = 4xE4H, 4xE5H, 5xE4H, 5xE5H, 46E8H
+　3 = 4xE6H, 4xE7H, 5xE6H, 5xE7H, 46E8H
+　4 = not settable
+　5 = 4xEAH, 4xEBH, 5xEAH, 5xEBH, 46E8H
+　6 = 4xECH, 4xEDH, 5xECH, 5xEDH, 46E8H
+　7 = 4xEEH, 4xEFH, 5xEEH, 5xEFH, 46E8H
+　8 = not settable
+　9 = not settable
+　A = Not settable
+　B = not settable
+　C = not settable
+　D = not settable
+　E = not settable
+　F = not settable
+
+　* X means the use of all 0 / F I / O ports.
+
+This document was given by Mr. Ultra Given.
+

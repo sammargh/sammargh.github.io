@@ -1,0 +1,49 @@
+
+PC-9801FA-02 (NEC)
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot
+SCSI connector is Amphenol half 50 pin.
+When connecting an HDD for NEC check of ROM, the first vendor name
+If the three letters do not begin with NEC (NEC, NECTSU, NECTOR, etc.),
+Beeps continuously and does not start the body by entering an infinite loop.
+There are 2 8 dip switches and 2 3 jumper switches on the board.
+
+· 8 stations dip switch SW1: SCSI ID number of the board, interrupt level,
+　DMA channel setting
+1-2-3: Set board SCSI ID number
+　ON-ON-ON ID 7 (Factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF ■ INT 0
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3 (default setting)
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF DMA # 0 (factory setting)
+　ON-OFF ■ Setting prohibited
+　OFF-ON DMA # 2
+　ON-ON DMA # 3
+
+・ 8 stations dip switch SW2: ROM memory address, body model, Power on
+　ROM accessibility setting at the time of
+1-2-3-4-5-6-7: Setting ROM memory address + main unit model
+(1) mate-A not equipped with PC-9801FA / FS / FX and high res board
+　OFF-ON-ON-OFF-ON-ON-ON ■ Memory address \ DC 000 h ~ \ DDFFF h
+(2) mate-A equipped with high res board
+　OFF-ON-ON-OFF-ON-OFF-ON Memory Address:
+　　　　　　　　　　　　　 Normal mode \ DC 000 h ~ \ DDFFF h
+　　　　　　　　　　　　　 In high resolution mode \ EC 000 h ~ \ EDF FF h
+　※ \ means 0h or Fh.
+8: Setting of ROM accessibility at Pow on
+　ON ■ ROM accessible (factory setting)
+　OFF ■ ROM can not be accessed
+
+・ Three jumper switches SW3 and SW4: I / O port address setting
+Below, short pin at SW3 ■ Short pin at SW4 ■ I / O port address
+Order of:
+　01-02 ■ 01 02 ■ CC0h, CC2h, CC4h (factory setting)
+　02-03 ■ 01 02 ■ CD0h, CD2h, CD4h
+　01-02 ■ 02 03 ■ CE0h, CE2h, CE4h
+　02-03 ■ 02 03 ■ CF 0 h, CF 2 h, CF 4 h
+

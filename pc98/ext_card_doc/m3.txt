@@ -1,0 +1,80 @@
+
+M3 (エム・エス・アイ)
+
+C bus board type CPU accelerator equipped with V33A-16 MHz (μPD70136AL-16)
+("High-speed CPU board").V30 machine (PC-98VM2, VM21, CV, UV)
+The operating speed is equivalent to 80286-12 MHz. Equipped with 512KB cache RAM.
+It does not work on 80286/80386 machines.Be sure to install this board in the first expansion slot
+About. A board with a motor or relay attached to slot 2 or
+If a high voltage switching board is installed, remove the board
+To do.Use in C bus expansion BOX is not possible.
+
+Clock: Supplied from PC (8/10 MHz)
+Writing: Switch switching at 8086 / V30 bus timing 0 to 3 weights
+                                                 (4 to 7 clocks)
+Reading: RAM area from 00000h to 7FFFFh
+　　　　　V33A bus timing 0 wait (2 clocks)
+　　　　　RAM area from 80000h to FFFFFh
+　　　　　Switch switching at 8086 / V30 bus timing 1 to 3 weights
+                                                 (5 to 7 clocks)
+Power consumption: 500mA (MAX), 50mA (TYP)
+Operating temperature: 10 to 35 ° C
+
+V33A Features:
+1) There is no 8080 emulation mode.
+2) When an undefined instruction is executed, an INT6 interrupt is generated.
+3) When a coprocessor instruction is executed without connecting a coprocessor, an INT7 interrupt is generated.
+   Occurrence.
+4) V30 starts the POP cycle seven times by POP R instruction, while V33 A performs POP cycle
+   Start eight times.
+
+Two 8x dip switches (SW2, SW3), (2x8) + (2x6) jumpers on the surface of the board
+Switch (2 switches are juxtaposed, but considered as continuous, 2 x 14 series
+Notated as a dip switch: DIC-1), 1 x 2 x 2 series jumper switch (DIC-2)
+Yes.Also, on the back of the board, for switching the CPU (V30) of the main unit and the CPU (V33A) on this board
+There is one slide switch (SW1).
+
+All compatible models:
+・ SW2 ■ ON-OFF-ON-ON-OFF-ON-ON-ON
+・ SW3 ■ ON-ON-OFF-ON-OFF-OFF-OFF-OFF-ON
+
+Model dependent:
+(1) PC-9801VM2, PC-9801UV2, PC-9801UV21
+・ DIC-1 ■ 3, 7, 8, 12 short circuit
+・ DIC-2 ■ 1 short
+
+(2) PC-9801VM21
+・ DIC-1 ■ 3, 7, 8, 12 short circuit
+· DIC-2 · 0 short
+※ Set the dip switch 3-6 on the main unit to ON.
+
+(3) PC-9801VM11, PC-9801UV11
+・ DIC-1 ■ 2, 6, 7, 14 short
+・ DIC-2 ■ 1 short
+
+(4) PC-9801UV2
+・ DIC-1 ■ 3, 7, 8, 12 short circuit
+・ DIC-2 ■ 1 short
+
+(4) PC-9801CV21
+・ DIC-1 ■ 1, 6, 7, 14 short
+・ DIC-2 ■ 1 short
+
+If it is possible to execute DISKCOPY normally after installation, it is considered that this board is operating normally.
+good.
+MS-DOS does not start up correctly, key input can not be done correctly, in the middle of DISK COPY
+If a failure such as an error occurs, adjust DIC-1 according to the following procedure:
+(1) Replace the jumper plug that shorts any of jumpers 10 to 14 with 13.
+    Next, the jumper plug that shorts any of 1 to 5 while 13 is fixed
+    Move in order from 1 to 5
+    Jumper shorting 13 if it does not operate even if it makes one turn to 1 to 5
+    Change the plug to 14, 10, 11, 12 and move the jumper plug from 1 to 5 in order.
+(2) If still not working, return the position of 1 to 5 jumper plug to the factory setting,
+     Try changing the jumpers that short in order between 10 and 14 in order.
+※ Jumpers 6, 7, 8 and 9 are settings in the extreme case, so do not change from the factory settings.
+※ The factory setting of DIC-1 is 3, 7, 8 and 12 short and other pins seem to be open.
+
+This board can be used together with a coprocessor because V33A and 8087 can not be connected by hardware.
+Not possible (coprocessor not set).
+Also, operation at 5MHz clock is not possible. Use at 8 MHz.
+

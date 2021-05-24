@@ -1,0 +1,45 @@
+
+ADF-1MT (アルファデータ)
+
+1 MB for C bus FDD I / F.
+Supported devices are PC-9801BA, BX, BA2, BS2, BX2, PC-9821Ap2, As2, Be, Bf, Bp, Bs, Ce2, Cs2
+(Available also for PC-9821Xs, Xp, etc.), but with optional cable ADF-1MT-04
+PC-9801BX4, PC-9821 Xa7 to Xa10 (Xa10 / C12 also need extension cable ADF-1MT-03) by combined use
+Also supports.
+
+The attached cables are as follows:
+26-pin signal cable at both ends and middle (for FELLOW / MATE-A / MATE-B 3.5 inch FDD model)
+34-pin signal cable for both ends (for MULTi)
+8-12 pin additional signal cable (for FELLOW / MATE-B)
+12-pin additional signal cable on both ends (for MATE-A, long)
+12-pin additional signal cable on both ends (for MULTi · short)
+* An optional cable is required for the FELLOW / MATE-A / MATE-B 5-inch FDD model,
+　The model number is not described in the manual.
+8-pin mini connector for 8-pin additional signal cable is not mounted (pattern exists,
+A signal is also coming.Therefore, it can be used by installing a mini connector here).Additional signal on the main unit side
+For models with 8-pin pins, use the attached 8- 12-pin additional signal cable (Note).
+There are 3 × 5 jumpers on the board.
+
+・ 3 x 5 series jumpers: Designation of main unit model
+　In the direction in which the characters on the board are erected (card edge is left, external FDD connector is right),
+　The order of 5-4-3-2-1.On the right side of the jumper switch, the text of AP COM BX is aligned vertically
+　has been written.
+　FELLOW, MATE-B, the first two MATE-X in the bottom of all jumper switches (COM and BX)
+　Short (default).
+　In MATE-A, short the two top pins (COM and AP) of all jumper switches.
+※ When using the optional cable ADF-1MT-04, set the jumper switch 1-2-3-4 to BX side
+　Short, 5 open the jumper plug removed.
+
+note. The wiring of the 8-12 pin additional signal cable is as follows:
+8 pin side 12 pin side
+　1 ------------- 1 1
+　twenty two
+　3 ------------- 3
+　4 ---------------- 6
+　5 ---------------- 12
+　6 ---------------- 11
+　7 ---------------- 7
+　8 ---------------- 8
+
+This document was given by Nr166er.
+

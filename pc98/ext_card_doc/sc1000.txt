@@ -1,0 +1,81 @@
+
+SC-1000 (EPSON)
+
+C bus SCSI I / F. Average power consumption + 5 V, 350 mA. Ambient temperature 10-35 °,
+Humidity 20-80% (thing without dew condensation).
+Supported devices: PC-9801VM / UV / CV / VX / UX / EX / ES / RX / RA / RS, PC-98XA / XL / XL ^ 2 / RL,
+PC-286 / X / V / VE / VF / VS / VX / U / US / UX, PC-386 / V / M, PC-286L / LE / LF
+I / O expansion unit (PC286LIOU) required for 3 models), PC-386L
+2 8 dip switches and 1 4 dip switch on the board,
+There are two 3 jumper switches.
+
+· 8 stations dip switch SW1: SCSI ID, interrupt level, DMA channel
+　settings of
+1-2-3: SCSI ID setting
+　ON-ON-ON ID = 0
+　OFF-ON-ON ID = 1
+　ON-OFF-N ■ ID = 2
+　OFF-OFF-ON ID = 3
+　ON-ON-OFF ID = 4
+　OFF-ON-OFF ID 5
+　ON-OFF-OFF ■ ID = 6
+　OFF-OFF-OFF ■ ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+　ON-ON-ON INT 0
+　OFF-ON-ON INT 1
+　ON-OFF-ON INT 2
+　OFF-OFF-ON INT 3 (default setting)
+　ON-ON-OFF INT 5
+　OFF-ON-OFF INT 6
+　ON-OFF-OFF ■ Undefined
+　OFF-OFF-OFF ■ Undefined
+7-8: DMA channel setting
+　ON-ON DMA # 0 (factory setting)
+　OFF-ON ■ Setting prohibited
+　ON-OFF DMA # 2
+　OFF-OFF DMA # 3
+※ # 2 is PC-9801VM / UV2 / UV11 (Note 1), PC-286U (Note 1), PC-286L / LE / LF
+　Used only with the I / O expansion unit (PC 286 LIOU) attached (Note 2)
+　Possible.However, with dip switches on the PC and I / O expansion unit,
+　Fix the built-in FDD or connection FDD to 2DD.
+Note 1: When using # 0 / # 2, use expansion slot 2 or # 0 / # 3
+　If this is the case, attach this I / F to expansion slot 1.
+Note 2: When using the PC 286 LIOU, set the ROM address of this I / F to D4000h to D4FFFh
+　About.
+
+・ 8 stations dip switch SW2: SCSI BIOS ROM address, body model,
+　Setting SCSI BIOS ROM Use / Disuse
+1-2-3: ROM address setting in normal mode
+　ON-ON-ON ■ Setting prohibited
+　OFF-ON-ON DC000h to DCFFFh (factory setting)
+　ON-OFF-ON ■ Setting prohibited
+　OFF-OFF-ON ■ Setting prohibited
+　ON-ON-OFF ■ Setting prohibited
+　OFF-ON-OFFD D4000h to D4FFFh
+　ON-OFF-OFF ■ Setting prohibited
+　OFF-OFF-OFF ■ Setting prohibited
+4-5: ROM address setting in high resolution mode
+　ON-ON ■ Setting prohibited
+　OFF-ON EC000h to ECFFFh (factory setting)
+　ON-OFF ■ Setting prohibited
+　OFF-OFF ■ Setting prohibited
+6-7: Setting of machine model
+　ON-ON ■ 286 or more models for normal mode only (default setting)
+　OFF-ON Normal / High-res Double-mode compatible models
+　ON-OFF V30 equipped model
+　OFF-OFF ■ model only for high res (PC-98XA)
+8: Setting SCSI BIOS ROM usage
+　ON ■ Use SCSI BIOS ROM (default setting)
+　OFF ■ Setting prohibited
+
+・ 4 stations dip switch SW3: Change prohibited (Factory setting: OFF-OFF-OFF-ON)
+
+・ Three jumper switch JP1: Do not change (Factory setting: 1-2 shorts)
+
+・ Three jumper switch JP2: Do not change (Factory setting: 1-2 shorts)
+
+・ Switch lever beside C bus connector: Setting of main unit model
+　Kill: 2866 or more models (when operating this I / F in protected mode)
+　　　　　　　　　　　　　　　　　　　　　　　　　　(Factory setting)
+　Cause: PC-9801U2 / UV2 / UV21 / UV11 / CV11, PC-286U
+

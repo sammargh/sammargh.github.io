@@ -1,0 +1,50 @@
+
+IFC-USP-M (メルコ)
+
+SDAT bus master transfer Ultra SCSI PCI I / F. PC-98, PC / AT
+Compatible machine compatible.Not compatible with multi-vendor and connected to this I / F
+HDD needs to be reformatted.
+40-pin flat cable connector for internal connection, 50-pin flat
+Cable connector, D sub-half 50-pin connector for external connection
+Equipped with these three connectors can be used simultaneously.Internal 40 pins
+Only one E-IDE HDD with 528 MB or more in flat cable connector
+Connectable (CD-ROM and MO drive can not be connected).PC / AT compatible machine
+E-IDE HDD when using E-IDE HDD connected to this I / F as a boot
+Set the SCSI-ID to 0.
+The various settings of the board are displayed on the screen after turning on the power of the main unit.
+The message "HIT <CTRL> + <A> to run SCSI Setup Menu"
+Is displayed by pressing the [CTRL] key and [A] key simultaneously while is displayed
+Do it on the setup screen.
+Windows 95 formatter with Merco MOS series MO drive
+If you are installing
+"Do you want to restart Windows?"In response to the message of "No (N)
+And then start-> Exit Windows (U)->
+It is necessary to restart the computer by the operation of Restarting (R).
+In addition, this I / F corresponds to SCSI ro MO formatter for Windows NT 3.51 / 4.0
+Not doing.
+There are 5 2 jumper switches on the board.
+
+・ 2 jumper switch JP1: Setting the number of connected SCSI devices
+　When E-IDE HDD is connected to this I / F, it is connected to this I / F.
+　According to the number of SCSI devices (E-IDE HDD counts as one)
+　It is necessary to change the setting.
+　Short 4 or more (default setting)
+　Open 3 or less
+
+・ 2 jumper switches JP2, JP3: SCSI-ID setting of E-IDE HDD
+　The following is the order of JP2 JP3 SCSI-ID.
+　Open Open 0 (default setting)
+　Short ■ Open 2
+　Open ■ Short ■ 4
+　Short ■ Short ■ 6
+
+・ 2 jumper switch JP4: transfer mode setting
+　Short Normal transfer (bus master) (factory setting)
+　Open PIO transfer
+※ If the E-IDE HDD connected to this I / F can not be used or its operation is stable
+　Set to PIO transfer if not.
+
+・ 2 jumper switch JP5: enable / disable setting of SCSI BIOS
+　Short ■ Enabled (factory setting)
+　Open ■ Invalid
+

@@ -1,0 +1,75 @@
+
+EIF-98BW (ELECOM)
+
+C bus bus master SCSI-2 board.Two 8-deep dip switches and 4-djunct jumpers
+There is one switch and three jumper switches each.
+
+The old web page of ELECOM does not have the information of whether it corresponds to HDD more than 1GB.
+It is not compatible with Windows 95.
+
+・ 8-station dip switch SW1: SCSI-ID of board, interrupt level, setting of DMA channel
+1-2-3: Board SCSI-ID setting
+  OFF-OFF-OFF: ID = 0
+  ON-OFF-OFF: ID = 1
+  OFF-ON-OFF: ID = 2
+  ON-ON-OFF: ID = 3
+  OFF-OFF-ON: ID = 4
+  ON-OFF-ON: ID = 5
+  OFF-ON-ON: ID = 6
+  ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Setting interrupt level
+  OFF-OFF-OFF: INT 0 (factory setting)
+  ON-OFF-OFF: INT 1
+  OFF-ON-OFF: INT 2
+  ON-ON-OFF: INT 3
+  OFF-OFF-ON: INT 5
+  ON-OFF-ON: INT 6
+7-8: DMA channel
+  OFF-OFF: DMA 0
+  OFF-ON: DMA 2 (available only for PC-9801E / F / U / UF / XA)
+  ON-ON: DMA 3 (factory setting)
+
+・ 8 stations dip switch SW2: ROM address, main unit model, setting of valid / invalid of SCSI_BIOS
+1-2-3: Normal mode ROM address setting
+  OFF-OFF-OFF: D0000h to D0FFFh
+  ON-OFF-OFF: D2000h to D2FFFh
+  OFF-ON-OFF: D4000h to D4FFFh
+  ON-ON-OFF: D6000h to D6FFFh
+  OFF-OFF-ON: D 8000 h to D 8 FFF h
+  ON-OFF-ON: DA000h to DAFFFh
+  OFF-ON-ON: DC000h to DCFFFh (factory setting)
+  ON-ON-ON: DE000 to DEFFFh
+  ※ Due to the ROM address, simultaneous use of this board, EMS and sound functions is not possible.
+  　Also, when using with PC-9801 E / F / M, set D4000h to D4FFFh.
+4-5: Setting ROM address in high resolution mode
+  OFF-OFF: XE8000h to XE8FFFh
+  ON-OFF: XEA000h to XEAFFFh
+  OFF-ON: XEC000h to XECFFFh (factory setting)
+  ON-ON: XEE000h to XEEFFFh
+  * "X" stands for "0H" or "FH".
+6-7: Setting of machine model
+  ON-OFF: CPU is the model of 8086 or V30
+  ON-ON: Model with only 286 CPUs in normal mode only (default setting)
+  OFF-OFF: PC-98XA (high res dedicated model)
+  OFF-ON: Model with both normal mode and high resolution mode, high resolution board
+          Installed model
+8: Enable / Disable of SCSI_BIOS
+  ON: SCSI_BIOS enabled (factory setting)
+  OFF: SCSI_BIOS disabled
+
+・ 4 series jumper switch JB1: Setting of hold request channel
+  HRQ1, HLA1 = short, HRQ2, HLA2 = open: HRQ / HLA channel 1
+  HRQ1, HLA1 = open, HRQ2, HLA2 = short: HRQ / HLA channel 2 (factory setting)
+
+· Triple jumper switch JB3: Transfer method, I / O page address setting
+TM0D: Transfer method setting
+  Open: Automatically switch DMA / bus master transfer depending on CPU type (factory setting)
+  Short: Forced DMA transfer
+　　※ It is used in advanced mode with Epson PC (when used in normal mode
+　　　DMA transfer).When using OS / 2, bus master mode is canceled automatically.
+IOA0-IOA1: I / O page address setting
+  Short-short: CC0H
+  Open-Short: CD0H
+  Short-open: CE0H
+  Open-Open: CF0H
+

@@ -1,0 +1,74 @@
+EIF-98SW　（ELECOM）
+
+CバスバスマスタSCSI-2ボード．ボード上に8連ディップスイッチ3つと3本ジャンパ
+スイッチ3つあり．マニュアルにはいくつか誤記あり注意．
+最終ROMは1.24らしく，そのままでは1GB以上のHDDに対応していないが，ROMの有償
+バージョンアップで対応させることが可能．Windows95にはROMバージョン1.24のボード
+のみ対応．それより古いROMバージョンのボードはアップグレードが必要．
+
+・8連ディップスイッチSW1：ボードのSCSI-ID，割り込みレベル，DMAチャネルの設定
+1-2-3：ボードのSCSI-IDの設定
+  OFF-OFF-OFF：ID=0
+  ON-OFF-OFF：ID=1
+  OFF-ON-OFF：ID=2
+  ON-ON-OFF：ID=3
+  OFF-OFF-ON：ID=4
+  ON-OFF-ON：ID=5
+  OFF-ON-ON：ID=6
+  ON-ON-ON：ID=7  (出荷時設定)
+4-5-6：割り込みレベルの設定
+  OFF-OFF-OFF：INT 0  (出荷時設定)
+  ON-OFF-OFF：INT 1
+  OFF-ON-OFF：INT 2
+  ON-ON-OFF：INT 3
+  OFF-OFF-ON：INT 5
+  ON-OFF-ON：INT 6
+7-8：DMAチャネル
+  OFF-OFF：DMA 0
+  OFF-ON：DMA 2 (PC-9801E/F/U/UF/XAのみ使用可能)
+  ON-ON：DMA 3  (出荷時設定)
+
+・8連ディップスイッチSW2：ROMアドレス，本体機種，SCSI_BIOSの有効・無効の設定
+1-2-3：ノーマルモードのROMアドレスの設定
+  OFF-OFF-OFF：D0000h〜D0FFFh
+  ON-OFF-OFF：D2000h〜D2FFFh
+  OFF-ON-OFF：D4000h〜D4FFFh
+  ON-ON-OFF：D6000h〜D6FFFh
+  OFF-OFF-ON：D8000h〜D8FFFh
+  ON-OFF-ON：DA000h〜DAFFFh
+  OFF-ON-ON：DC000h〜DCFFFh  (出荷時設定)
+  ON-ON-ON：DE000〜DEFFFh
+  ※ROMアドレスの関係上，本ボード・EMS・サウンド機能の3つの同時使用は不可．
+  　また，PC-9801E/F/Mで使用する場合はD4000h〜D4FFFhに設定のこと．
+4-5：ハイレゾモードのROMアドレスの設定
+  OFF-OFF：XE8000h〜XE8FFFh
+  ON-OFF：XEA000h〜XEAFFFh
+  OFF-ON：XEC000h〜XECFFFh  (出荷時設定)
+  ON-ON：XEE000h〜XEEFFFh
+  ※"X"は"0H"または"FH"を表す
+6-7：本体機種の設定
+  ON-OFF：CPUが8086またはV30の機種
+  ON-ON：CPUが286以上のノーマルモードのみの機種  (出荷時設定)
+  OFF-OFF：PC-98XA(ハイレゾ専用機種)
+  OFF-ON：ノーマルモード，ハイレゾモードの両方を持つ機種，ハイレゾボードを
+          装着した機種
+8：SCSI_BIOSの有効・無効
+  ON：SCSI_BIOS有効  (出荷時設定)
+  OFF：SCSI_BIOS無効
+
+・8連ディップスイッチSW3：I/Oページアドレス，転送モードの設定
+1-2：I/Oページアドレスの設定
+  OFF-OFF：CC0H
+  ON-OFF：CD0H
+  OFF-ON：CE0H
+  ON-ON：CF0H  (出荷時設定)
+3-4：ON-ON-ON(システム予約，変更禁止)
+5：転送モードの設定
+  ON：CPUの種類によってDMA／バスマスタ転送を自動的に切り替える  (出荷時設定)
+  OFF：強制DMA転送
+6-7-8：OFF-ON-ON(システム予約，変更禁止)
+※エプソン製PCではアドバンスモードで使用のこと(ノーマルモードで使用するとDMA
+　転送になる)．またOS/2使用時は自動的にバスマスタモードは解除される．
+
+・ジャンパスイッチSW4，SW5，SW6：いずれも2側のピンと中央のピンをショート
+　　　　　　　　　　　　　　　　 (システム固定，変更禁止)

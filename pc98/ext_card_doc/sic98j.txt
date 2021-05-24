@@ -1,0 +1,34 @@
+SIC-98，SIU-98　（Allied Telesis）
+
+CバスNIC（LANボード）．Windows95非対応．ボード上に4連ディップスイッチ1個，
+3本ジャンパスイッチ2個，2本x5連ジャンパスイッチ1個あり．
+
+・4連ディップスイッチS1：メモリアドレスの設定
+ON-ON-ON-ON■080000h〜087FFFh
+OFF-ON-ON-ON■088000h〜08FFFFh
+ON-OFF-ON-ON■090000h〜097FFFh
+OFF-OFF-ON-ON■098000h〜09FFFFh
+ON-ON-OFF-ON■0A0000h〜0A7FFFh
+OFF-ON-OFF-ON■0A8000h〜0AFFFFh
+ON-OFF-OFF-ON■0B0000h〜0B7FFFh
+OFF-OFF-OFF-ON■0B8000h〜0BFFFFh
+ON-ON-ON-OFF■0C0000h〜0C7FFFh
+OFF-ON-ON-OFF■0C8000h〜0CFFFFh
+ON-OFF-ON-OFF■0D0000h〜0D7FFFh
+OFF-OFF-ON-OFF■0D8000h〜0DFFFFh
+ON-ON-OFF-OFF■0E0000h〜0E7FFFh
+OFF-ON-OFF-OFF■0E8000h〜0EFFFFh
+ON-OFF-OFF-OFF■0F0000h〜0F7FFFh
+OFF-OFF-OFF-OFF■0F8000h〜0FFFFFh
+
+・3本ジャンパスイッチJ1：I/Oポートアドレスの設定
+1-2間ショート■00D0h〜20D0h　（出荷時設定）
+2-3間ショート■01D0h〜21D0h
+
+・3本ジャンパスイッチJP2，JP3：ノーマルモード／ハイレゾモード切替
+J2，J3とも1-2間ショート■ノーマルモード
+J2，J3とも2-3間ショート■ハイレゾモード
+
+・2本x5連ジャンパスイッチJP4：割り込みレベルの設定
+
+ジャンパ脇の数字がINT．例えば0と書かれたジャンパをショートするとINT 0．

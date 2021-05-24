@@ -1,0 +1,20 @@
+
+ESL-4000 (ESL Series) (メルコ)
+
+L-slot RAM board for PC-286L / LE / LF / LP and PC-386BOOK L / LX / LC.On board
+There is one rotary switch and two jumper switches.It is stuck on the board
+Black plastic plate described SW1 + JP1: BOARD NO / FUNCTION SEL, JP2: SA19.
+
+・ Rotary switch SW1 and jumper switch JP1: Board number setting and memory
+　Selection of type
+　The switch settings of the board matched to the PC main unit displayed on the menu screen of MELWARE
+　Set referring to the item.
+
+・ Jumper switch JP2: Setting of main unit model
+　PC-286LP, PC-386BOOK L / LX / LC on the opposite side of the card edge, also PC-286L / LE / LF
+　In the card edge side set.
+　※ For the "SA19", see the article on this web page, "L slot signal".
+
+When using the PC-286LF as a protect memory, when installing it in the upper stage of the L slot
+Set dip switch SW4-8 of the main unit to ON, and set SW4-7 to ON when mounting on the lower stage.
+

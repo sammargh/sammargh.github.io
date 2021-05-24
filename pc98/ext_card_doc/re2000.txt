@@ -1,0 +1,6 @@
+
+CentreCOM RE2000, RE2000Plus (CONTEC)
+
+C bus NIC (LAN board) with 10BASE-T connector.There is no switch on the board,
+The interrupt level and I / O port address are CFG2000.Set using EXE.
+

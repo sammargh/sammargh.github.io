@@ -1,0 +1,17 @@
+
+GA-DRV 2/98, GA-DRV 4/98 (I・Oデータ) 
+
+C bus graphic accelerator board with Trident TGUI 9680.GA-DRV 2/98 
+Image memory 2 MB, GA-DRV 4/98 is image memory 4 MB. Three jumper switch JP3 on the board 
+Yes. 
+1-2 short = When using via a notebook expansion box with a note machine 
+2-3 short = When used on a desktop machine 
+
+I / O port fixed: 52E8, 52E9, 56E8, 56E9, 5AE8,, 5AE9, 5EE8, 5EE9 
+Memory address fixed 
+　When using Windows, JW2: F00000H to 384KB 
+　When using Lotus 1-2-3: E0000H to 32KB 
+
+Graphics driver set for use with Windows 3.1 with PC-9801ES, FA, NA 
+Start up the program "GASETUP.EXE" with the "/ F" option switch. 
+

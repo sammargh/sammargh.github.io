@@ -1,0 +1,58 @@
+
+HA-FA 02 (Japan TEXA)
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot
+Although not compatible with Windows 95, set the transfer mode to DMA transfer,
+It can be used with Windows 95 if it is recognized by the driver for 55 boards.
+Silk printing on a substrate is EZPHA-FA02-1.
+By using e10chk.exe which is a free software created by Mr. Marimo
+The upper limit of the recognition capacity of this board examined was 2015 MB.
+1 board with 5 dip switches on board, 8 dip switches
+There are 2 and 3 jumper switches and 4 each.
+
+・ 5 stations dip switch SW1: Interrupt level, DMA channel setting
+1-2-3: Interrupt level setting
+　OFF-OFF-OFF INT0 (IRQ3)
+　ON-OFF-OFF INT1 (IRQ5) (Factory setting)
+　OFF-ON-OFF INT2 (IRQ6)
+　ON-ON-OFF INT3 (IRQ9)
+　OFF-OFF-ON INT5 (IRQ12)
+　ON-OFF-ON INT 6 (IRQ 13)
+4-5: DMA channel setting
+　OFF-OFF CH0
+　ON-OFF ■ Setting prohibited
+　OFF-ON CH2
+　ON-ON CH3 (factory setting)
+
+・ 8 stations dip switch SW2: Use with factory setting
+(Factory setting: OFF-ON-ON-OFF-ON-ON-ON-ON)
+
+・ 8-station dip switch SW5: Data transfer mode, SCSI-ID setting of this I / F
+1-2-3-4: Not used (Factory setting: OFF-OFF-OFF-OFF)
+5: Transfer mode setting
+　ON GT mode (factory setting)
+　OFF DMA mode
+6-7-8: Setting of SCSI-ID of this I / F
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+　※ In BIOS ver.1.50 or later, the IDs of connected SCSI devices are ordered from 0
+　　Assign, set the ID of this I / F to the value obtained by adding 1 to the last ID of the SCSI device
+　　If you do, the ID search at startup is up to the ID of the previous value of the ID of this I / F.
+　　Startup time can be shortened because the
+
+・ Three jumper switches SW3 and SW4: I / O port address setting
+The following is the order of SW3 SW4 I / O port address:
+　OFF OFF 0CC 0h, 0CC 2h, 0CC 4h (factory setting)
+　ON ■ OFF ■ 0CD0h, 0CD2h, 0CD4h
+　OFF ON 0CE 0 h, 0 CE 2 h, 0 CE 4 h
+　ON ON 0CF 0h, 0CF 2h, 0CF 4h
+
+・ Three jumper switches SW6 and SW7: Use with factory settings
+(Factory setting: SW6 = OFF, SW7 = OFF)
+

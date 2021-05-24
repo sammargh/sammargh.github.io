@@ -1,0 +1,57 @@
+
+Power Vision (Canopus)
+
+Composite C bus board with video capture and PCM sound.8 stations dip switch on the board
+There are two, four jumper switches and one variable resistor.
+
+【Video input section】
+Input signal: NTSC composite signal, S (Y / C separation) signal
+Number of bits per pixel: RGB 5: 5: 5
+I / O port address: xxD0h (default can be changed by 28D0h to 28DFh, DS3)
+Interrupt level: INT2 (can be changed by driver software)
+Capture size: 80x60, 160x120, 320x240, 640x480 (according to the manual issued in September 1993)
+[Voice output unit]
+Input / output signals: input MIC-IN, LINE-IN / output LINE-OUT
+Sampling frequency: 44.1, 22.05, 11.025 kHz
+I / O port address: xx 18 h (Default can be changed by 4718 h to 471 Fh, DS4)
+Interrupt level: INT1 (can be changed by driver software)
+【Operating environment】
+Maximum current consumption: +5 V = 300 mA, +12 V = 250 mA, -12 V = 10 mA
+Operating temperature: 10 to 35 ° C
+Operating humidity: 20 to 80% (without condensation)
+
+・ 8-station dip switch SW3: I / O port setting for video input
+Specify the upper 2 digits of the video input I / O port (the lower 2 digits are fixed to D0).For each dip
+In contrast, 8-7-6-5-4-3-2-1 is the upper two digits of the I / O port address when ON = 0 and OFF = 1.
+Supports binary number display.
+Example: ON-ON-OFF-ON-OFF-ON-ON-ON = 00101000 (binary) = 28 (hexadecimal)-> 28D0h (hexadecimal)
+
+・ 8 stations dip switch SW4: I / O port setting for voice input / output
+Specify the upper two digits of the voice input / output I / O port (the lower two digits are fixed at 18).Also, the lower two of the upper two digits
+Since the 3 bits are fixed to 1 (when using the audio output function), the base address is x718h or xF18h
+Configurable.Dip switch 1 is used to set the use / disengagement of the audio output function, and used with ON,
+Disconnect with OFF.
+When the voice output function is used, it is assumed that ON = 0 and OFF = 1 for each dip.
+8-7-6-5-4-3-2-1 supports I / O port address upper 2 digits binary number display.
+Example: ON-OFF-ON-ON-ON-OFF-OFF-ON = 01010010 (binary) = 47 (hexadecimal)-> 4718h (advanced)
+
+Jumper switch SW1: NTSC signal switching
+Normally ON side short.NES, still camera, video deck pause signal
+Etc. are not formal NTSC signals, and they must be ON-side shorted when capturing them
+Normal import impossible.It is a formal NTSC signal, and the vertical and horizontal dimensions of the captured image are severely shaken.
+OFF side short circuit only.
+
+・ Jumper switch JP2, JP3: Output attenuation
+The factory settings are both open.The sound is loud when connecting stereo headphones to the OUT terminal
+If it is too short, both will be short.
+
+Jumper switch 4: Jumper for capacitor microphone
+The factory setting is open.Bias voltage when connecting a condenser microphone to the MIC-IN terminal
+Short if necessary.
+
+Volume VR2: for adjusting color subcarrier frequency.Never touch it.
+
+・ Volume MIC-VR (on the panel of the board): Microphone level adjustment
+Microphone sound level adjustment.Turning it clockwise makes the sound louder, turning it counterclockwise makes it smaller.
+Use when the adjustment of the volume can not be completed with the supplied software.
+

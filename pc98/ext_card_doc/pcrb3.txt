@@ -1,0 +1,53 @@
+
+PCRB3 (EPSON)
+
+Internal expansion RAM board for Epson desktop machine, PC-286 model 0 / X / V / VE / VF / VS.
+PCZRM (1MB capacity) can be added to 4 SIMM slots on the board with a capacity of 2MB.
+One 8-dip dip switch, one 4-dip dip switch, and 1 slide switch on the board
+Yes.
+
+・ 8 stations dip switch SW1: Use / nonuse of memory on RAM board, address space
+　settings of
+1-2-3: RAM board memory size setting
+　ON-ON-ON: 0MB (RAM board memory not used)
+　OFF-ON-ON: 1 MB (use only 1 MB of memory of PCRB3)
+　ON-OFF-ON: 2 MB (when only PCRB3 is installed)
+　OFF-OFF-ON: 3MB (PCRB3 + 1 PCZRM) (Factory setting)
+　ON-ON-OFF: 4 MB (two PCRB3 + PCZRM)
+　OFF-ON-OFF: 5 MB (3 PCRB3 + PCZRM)
+　ON-OFF-OFF: 6 MB (4 PCRB3 + PCZRM)
+　OFF-OFF-OFF: Not settable
+4-5-6: Setting of main unit model
+　OFF-ON-OFF: PC-286 VF
+※ Since this table is based on the description of the manual of PC-286 VF, when using with other models
+　The setting of is unknown so far.
+7: Setting of presence / absence of parity check
+　ON: Does not check parity
+　OFF: Perform parity check (factory setting)
+8: No change (always OFF)
+
+· 4 stations dip switch SW2: setting the start address of the address space
+1-2-3-4: Setting the address space used by the board
+　ON-ON-ON-ON: Setting prohibited
+　OFF-ON-ON-ON: 100000H (factory setting)
+　ON-OFF-ON-ON: 200000H
+　OFF-OFF-ON-ON: 300000H
+　ON-ON-OFF-ON: 400000H
+　OFF-ON-OFF-ON: 500000H
+　ON-OFF-OFF-ON: 600000H
+　OFF-OFF-OFF-ON: 700000H
+　ON-ON-ON-OFF: 800000H
+　OFF-ON-ON-OFF: 900000H
+　ON-OFF-ON-OFF: A00000H
+　OFF-OFF-ON-OFF: B00000H
+　ON-ON-OFF-OFF: C 00000 H
+　OFF-ON-OFF-OFF: D00000H
+　ON-OFF-OFF-OFF: E00000H
+　OFF-OFF-OFF-OFF: Setting prohibited
+※ Set in order from the lower address.Also, when mounting multiple RAM boards,
+　Set the address space used by each RAM board to be continuous.
+
+・ Slide switch SW3: Setting of main unit model? (PC-286VF manual features
+　No description about
+　When using with PC-286 VF, set it on the opposite side of the 4-station dip switch SW2.
+

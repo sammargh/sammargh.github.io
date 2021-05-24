@@ -1,0 +1,21 @@
+ by User's Guide issued in the age of Windows 3.1
+Power Window 805i (Canopus) 
+
+C bus graphic accelerator board with S3 86C805i.4 stations on the board 
+1 dip switch. 
+
+Standard I / O port address: 
+06D0-06DF, 16D0-16DF, 26D-26DF, 36D0-36DF 
+46D0-46DF, 56D0-56DF, 66D-66DF, 76D0-76DF 
+86D0-86DF, 96D0-96DF, A6D-A6DF, B6D0-B6DF 
+C6D0-C6DF, D6D0-D6DF, E6D-E6DF, F6D0-F6DF 
+
+The second digit from the left of this I / O port address, "6" is a quadruple dip switch 
+It is possible to change between 1-7 by setting. 
+Standard setting of 4 stations dip switch is ON-OFF-OFF-ON 
+The dip switch supports binary numbers with ON = 0 and OFF = 1.For example, 
+ON-OFF-OFF-ON is "0110", which is "6" in hexadecimal. 
+
+Software called "PWIO.EXE" to check how to set the dip switch 
+To come.This is done before setting the board to the PC. 
+

@@ -1,0 +1,9 @@
+PCLSV，PCLSV2　（EPSON）
+
+Western Digital社製WD90C24A2（VRAM 1MB）を搭載したグラフィックアクセラレータと
+PCM音源のLスロット複合ボード．PC-48NAS／NAU／NAV対応だが，PC-48NASではPCLSVの
+PCM音源部は使用不可．PCLSV2はNAVX1JX／Y1JW／D1JWでは標準装備．Windowsで使用する
+場合には本体の16MBシステム空間を「使用する」に設定．
+
+PC-48NASと，NAU／NAVではジャンパ設定が異なる（出荷時設定はNAU／NAV用）．NASでは
+3本ジャンパスイッチJ1とJ3をともに1-3間ショート（ジャンパプラグは1 3 2の順）．

@@ -1,0 +1,196 @@
+
+HA55BS3 (Nippon Teksa)
+
+Non multi-vendor C bus bus master SCSI board.
+Although not compatible with Win95 (Nippon Texa has withdrawn from the PC-98 peripheral market before Win95 release),
+When using it, set the transfer mode to DMA transfer and let the 55 board driver recognize it.
+Reference http://web.archive.org/web/20010430164823/http://www.texa.co.jp:80/TEXA/
+　　　oshiete / answer / Windows.html
+※ In TEXA, bus master transfer is expressed as synchronous transfer (synchronous mode),
+I / O transfer (CPU transfer, PIO transfer) may be described as GT mode.
+The transfer method is automatically selected by CPU and HDD discrimination.
+Synchronous mode is not available on V30 machines and PC-H98 series (it automatically becomes GT mode).
+In addition, synchronous mode is not possible even when the memory of 16 MB or more is installed in the PC body
+(Use in GT mode or DMA mode).
+Please use the following expansion slots for the following models:
+PC-9801VX0, 2, 4 ...... # 2, # 3, # 4
+PC-98 XA ...... # 3, # 5
+PC-286 V ...... # 2, # 3, # 4
+PC-286LS (T), PC-386LS (C / X) / LSR ...... # 2 (left side seen from the back)
+Also, for the following models, when using the following expansion slots, set the DMA channel to 0 or 1
+To be sure:
+PC-9801E ...... # 6
+PC-9801F1, 2 / VF / VM0. 2, 4 ...... # 4
+PC-9801F3 / U / UV / CV ...... # 2
+PC-286U ...... # 2
+Also, on the following models, attach the switch pin beside the card edge connector in reverse:
+PC-9801U / UV / CV / UR / UF
+* There is a case that the PC-9801UV2 does not operate due to the signal disturbance of the expansion slot.
+Also, in PC-9801DS, it may not operate normally, such as initialization can not be performed in synchronous mode.
+
+Switch settings
+Factory setting
+JP1: 3-6, 4-5 short, 1-8, 2-7 open
+JP3: 1-8, 2-7 short, 3-6, 4-5 open
+SW1: ON-OFF-OFF-ON-ON
+SW2: OFF-ON-ON-OFF-ON-ON-ON-ON
+SW3: OF side short
+SW4: OFF side short
+SW5: OFF-OFF-OFF-ON-ON-ON-ON-ON
+
+Standard setting
+It is divided into eight types according to the model of the PC body.Below, other DMA channels, interrupt levels,
+About this board's settings when it is not used with a board that uses memory addresses:
+Type classification ■ SW1 ■ SW2 SW3, 4 both OFF side short circuit
+Type 1 ■ PC-980 1 / E / F / M ■ ON-OFF-OFF-OFF-OFF-OFF-ON-OFF-OFF-OFF-ON-ON-OFF-ON
+Type 2 PC-9801 VF ON-OFF-OFF-ON-ON OFF-ON-ON-OFF-ON-ON-ON-OFF-ON
+Type 3 PC-9801VM / U / UV / CV / UF / UR, PC-286U ON-OFF-OFF-ON-ON
+        ■ OFF-ON-ON-OFF-ON-ON-OFF-ON
+Type 4 ■ PC-9801UX / VX / RX / RA / EX / ES / RS / DX / DS / DA / CS / US / FS / FX / FA, PC-H98S model 8
+        ■ ON-OFF-OFF-ON-ON-OFF-ON-ON-OFF-ON-ON-ON-ON
+Type 5 ■ PC-98XA ■ ON-OFF-OFF-ON-ON-OFF-ON-ON-OFF-ON-OFF-ON-OFF-OFF-ON
+Type 6 ■ PC-98 XL / XL ^ 2 / RL, PC-H 98 model 60/70/80/90/100 ■ ON-OFF-OFF-ON-ON
+        ■ OFF-ON-ON-OFF-ON-OFF-ON-ON
+Type 7 PC-286 / 386 series (except L / LF / LE / U) ON-ON-OFF-ON-ON
+        ■ OFF-ON-ON-OFF-ON-ON-ON-ON
+Type 8 PC-386G / GS / GE 486GF / GR ON-ON-OFF-ON-ON OFF-ON-ON-OFF-ON-OFF-ON-ON
+
+Settings other than standard settings
+・ SW1: Interrupt level and DMA channel
+1-2-3 ... Interruption level
+OFF-OFF-OFF ...... INT0 (IRQ3)
+ON-OFF-OFF ...... INT1 (IRQ5) (factory setting)
+OF-ON-OFF ...... INT2 (IRQ6)
+ON-ON-OFF ...... INT3 (IRQ9)
+OFF-OFF-ON ...... INT5 (IRQ12)
+ON-OFF-ON ...... INT 6 (IRQ 13)
+4-5: DMA channel
+OFF-OFF ...... DMA0
+ON-OFF ... Setting prohibited
+OFF-ON ...... DMA2
+ON-ON ...... DMA3 (factory setting)
+・ SW2: Memory address, body model, ROM access
+8 ...... ROM access (Access enabled when ON, disabled when OFF)
+In the following, x is either ON or OFF.Also, "\" is the upper 4 bits of the address bus (AB231-AB201)
+Indicates the value of and is "0" or "F".If you use this board with other boards, you
+Make sure that the dresses do not overlap.
+● When the main unit is Type 2, 2 or 3
+OFF-OFF-OFF-xx-ON-OFF-ON ...... D0000-D0FFF
+ON-OFF-OFF-xx-ON-OFF-ON ...... D2000-D2FFF
+OFF-ON-OFF-xx-ON-OFF-ON ...... D4000-D4FFF (Standard setting of Type 1)
+ON-ON-OFF-xx-ON-OFF-ON ...... D6000-D6FFF
+OFF-OFF-ON-xx-ON-OFF-ON ...... D8000-D8FFF
+ON-OFF-ON-xx-ON-OFF-ON ...... DA000-DAFFF
+OFF-ON-ON-xx-ON-OFF-ON ...... DC000-DCFFF (Type 2, 3 standard setting)
+ON-ON-ON-xx-ON-OFF-ON ...... DE000-DEFFF
+In PC-9801 / E / F / M, it can not be used together with GP-IB board (memory allocation is conflict)
+● When the main unit is Type 4 or 7
+OFF-OFF-OFF-xx-ON-ON-ON ...... D0000-D0FFF
+ON-OFF-OFF-xx-ON-ON-ON ...... D2000-D2FFF
+OFF-ON-OFF-xx-ON-ON-ON ...... D4000-D4FFF
+ON-ON-OFF-xx-ON-ON-ON ...... D6000-D6FFF
+OFF-OFF-ON-xx-ON-ON-ON ...... D8000-D8FFF
+ON-OFF-ON-xx-ON-ON-ON ...... DA000-DAFFF
+OFF-ON-ON-xx-ON-ON-ON ...... DC000-DCFFF (factory setting)
+ON-ON-ON-xx-ON-ON-ON ...... DE000-DEFFF
+● When the main unit is Type 5
+xxx-OFF-OFF-OFF-OFF-ON ...... \ E8000- \ E8FFF
+xxx-ON-OFF-OFF-OFF-ON ...... \ EA000- \ EAFFF
+xxx-OFF-ON-OFF-OFF-ON ...... \ EC000- \ ECFFF (standard setting)
+xxx-ON-ON-OFF-OFF-ON ...... \ EE000- \ EEFFF
+● When the main unit is Type 6, 8
+Determine the normal / high resolution mode when the power of the main unit is turned on,
+Memory address is switched automatically
+○ In normal mode
+OFF-OFF-OFF-xx-OFF-ON-ON ... \ D0000-D0FFF
+ON-OFF-OFF-xx-OFF-ON-ON ... \ D2000-D2FFF
+OFF-ON-OFF-xx-OFF-ON-ON ...... \ D4000-D4FFF
+ON-ON-OFF-xx-OFF-ON-ON ... \ D6000-D6FFF
+OFF-OFF-ON-xx-OFF-ON-ON ...... \ D8000-D8FFF
+ON-OFF-ON-xx-OFF-ON-ON ...... \ DA000-DAFFF
+OFF-ON-ON-xx-OFF-ON-ON ... \ DC000-DCFFF (standard setting)
+ON-ON-ON-xx-OFF-ON-ON ...... \ DE000-DEFFF
+○ In high resolution mode
+xxx-OFF-OFF-OFF-ON-ON ...... \ E8000- \ E8FFF
+xxx-ON-OFF-OFF-ON-ON ...... \ EA000- \ EAFFF
+xxx-OFF-ON-OFF-ON-ON ...... \ EC000- \ ECFFF (standard setting)
+xxx-ON-ON-OFF-ON-ON ...... \ EE000- \ EEFFF
+・ SW3, 4: I / O port address setting
+ON-OFF ... 0CC0, 0CC2, 0CC4 (factory setting)
+ON-OFF ... 0CD0, 0CD2, 0CD4
+OFF-ON ... 0CE0, 0CE2, 0CE4
+ON-ON ... 0CF0, 0CF2, 0CF4
+When PC-98B55 (cassette magnetic tape unit) is connected, set SW3 and SW4 to settings other than the factory default settings
+Need to change and turn off SW2 8
+・ SW5: MO type setting, MO operation image switching, forced DMA mode setting, board ID number setting
+1 ...... Not used
+2 ... Switch 3 images with the CLUSTER series (3.5A MO drive made by TEXA) with OFF
+Is possible (NE image fixed in other MO drives),
+It is possible to switch 3 images other than CLUSTER series with ON.
+(Switching of 3 images is set by 3-4 combinations of SW5)
+3-4 ...... MO operation image switching
+ON-OFF ...... NEC image (made with NEC of PC-OD301 compatibility mode, recognized as 3.5 inches MO)
+OFF-OFF ... TEXA image
+OFF-ON ... HD (Large) image (3.5-inch MO is recognized as about 127 MB HDD)
+ON-ON ... HD (Small) image (3.5-inch MO is recognized as about 121 MB HDD)
+5 ...... Forced DMA mode setting: DMA transfer mode when OFF, transfer mode automatic switching when ON
+6-7-8 ...... Setting the ID number of this board
+OFF-OFF-OFF ... Setting prohibited (ID 0)
+ON-OFF-OFF ...... ID1
+OFF-ON-OFF ...... ID2
+ON-ON-OFF ...... ID3
+OFF-OFF-ON ...... ID 4
+ON-OFF-ON ...... ID5
+OFF-ON-ON ...... ID 6
+ON-ON-ON ...... ID 7 (factory setting)
+・ SW6 ...... Used with factory settings (1-4 all OFF)
+・ JP1, 3 ...... Use with factory settings
+(JP1: 3-6, 4-5 short, 1-8, 2-7 open / JP 3: 1-8, 2-7 short, 3-6, 4-5 open)
+
+・ About optional function "B-Quick" (Fast restart)
+By storing SCSI devices at startup, high-speed restart after reset is possible.
+This function is standard and can not be canceled
+・ About "PL-Quick" (high-speed format)
+This mode simplifies HDD initialization and area allocation on MS-DOS.
+When formatting is done in this mode, initialization takes about 5 seconds and area reservation takes about 10 seconds.
+(※ As with the HA-55BS4, the “P-Quick function” is to simplify initialization.
+It seems to be "L-Quick function" to simplify area reservation)
+P-Quick enabled with kana key OFF and disabled with ON before launching format.exe.
+L-Quick enabled with CAPS key OFF, disabled with ON.When changing the sector length,
+When re-initializing an HDD that has been reset / power off while initializing / reserving an area, use PL-Quick.
+Cancel and initialize.
+
+About the startup screen:
+ID search screen is not displayed if Kana key is turned on at system startup
+(Because ID search itself is performed, system startup regardless of whether the search screen is displayed or not displayed
+Time does not change)
+
+-"Device =": Type of recognized SCSI device
+[Upper line]
+HD5: HDD with a sector length of 512 bytes / sector
+HD2: HDD with a sector length of 256 bytes / sector
+HD ...... HDD with unknown sector length
+MO3: NEC PC-OD 301 compatible mode for 3.5 inch MO disk
+MO5 ...... NEC PC-OD101
+mhd ...... Hard disk image mode of removable device
+CD ...... CD-ROM drive
+STR ...... SCSI devices (tape streamer etc.) recognized other than above
+un ...... A SCSI device that has been recognized but disconnected because it can not operate
+(Eg if media is not inserted within mhd wait time)
+Blank ... No response from the specified ID number (not connected)
+Recognition confirmation message
+?...... Checking recognition
+[Lower line]
+Syn ...... Device operating in synchronous mode
+Media ...... Media is not inserted in CLUSTER
+Wait ... Waiting because the SCSI device is in "busy" status
+Non Device ...... No response from the device with any ID
+Error SW1 (45) ... A prohibited DMA channel is set
+Error SW1 (123) ...... The prohibited INT level is set
+
+"DMA / INT =": DMA channel / interrupt (INT) level
+"Loc =": ROM address location
+"Port =": I / O port address
+"Transfer =": data transfer method
+"Luster =": Operation image of LUSTER (NEC mode, TEXA mode, HDD Large mode, HDD Small mode)
+

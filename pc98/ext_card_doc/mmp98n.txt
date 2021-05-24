@@ -1,0 +1,47 @@
+
+MMP-98N, MMP-98N2 (Multimedia pack 98n) (コンピュータテクニカ)
+
+PC-9801NS, NS / E, NS / T, NC, NA, NA / C, NS / R, NS / A, NX / C, PC-386NOTE AR, AE,
+Composite interface BOX mounted on 110-pin expansion bus of PC-486NOTE AS. graphic
+Equipped with accelerator, PCM sound source and CD-ROM interface.PC expansion bus
+Remove the cover and attach it.
+Power consumption 1.75 W. Because the power consumption at the expansion connector will exceed the allowable power consumption of the main unit,
+Adapter to connect MMP-98N to other expansion connectors (with through output of expansion connector
+SCSI_I / F etc.) Do not connect at the same time.
+The CPU mode of the main unit should be "HIGH".Also, EMS page with standard 256 color display function
+The EMS function is not used because the memory address of the frame (C000H segment) is used.
+Choose.When installing the display driver, the installer
+When EMM386.exe is found, its option switch is automatically rewritten, EMS page
+The frame address is shifted or set to not use EMS.Resume
+Function not supported.
+For models with built-in sound function such as PC-486NOTE AS, the sound of the main unit
+Set BIOS to "do not use".
+
+The compatible OS is Windows 3.1.We are using Microsoft version Windows 3.1 in the body made by Epson
+If the included “Sound Driver for W3.1 & DOS Utility”
+One FD in combination with "Display Driver for Windows 3.1 & CD-ROM Utility"
+Can not be used withIn this case, from Computer Technica (Device Sales Division)
+A compatible disc is available free of charge.
+
+● Graphic accelerator
+CRT output: 640 × 400 dots or 800 × 600 dots, 256 colors (non-interlaced).
+　It does not support the normal display (horizontal frequency 24 kHz) of PC-9801.Supports 31 kHz horizontal frequency
+　Use of CRT.
+Simple TV output (video output): 640 × 400 dots, 256 colors (interlaced)
+・ I / O address: 40xxH to 5FxxH (xx = D0 to EE, except E8), 46E8H
+・ No consumption of interrupt level and DMA channel.
+● PCM sound source
+・ Stereo, sampling frequency 1, 22, 44.1 kHz, quantization bit number 16 bits (linear)
+　Or 8 bits (linear, μ-Law, A-Law)
+I / O address: ASIC port = CC0H (not changeable), AD1848 port = 30D0H (to 33D0H) (not changeable)
+Interrupt level: INT 0 (can be changed to INT 1)
+DMA channel: CH 0 (can be changed to CH 3)
+※ Interrupt level, DMA channel are settings displayed at the time of sound driver installation
+　Set in the window.
+※ PCM sound source driver for DOS is attached "sound driver for W3.1 & DOS utility
+　In the \ DOS directory inPCM recording and playback programs can not be operated on FD.
+● CD-ROM interface
+・ MKE bus.Compatible with Matsushita Hisashi Electronics LK-RC562 NM.
+・ I / O address: 30DxH to 34DxH (x = 2, 4, 6, 8, A, C, E)
+・ No consumption of interrupt level and DMA channel.
+

@@ -1,0 +1,16 @@
+
+EML-4000 (EML series) (メルコ)
+
+PC-9801LS / LX / VL21 dedicated built-in RAM board.In PC-9801LS / LX to install
+NEC expansion adapter PC-9801LS-07, or PC-9801VL21 or PC-9801LS-07 or
+Requires PC-9801VL-07 respectively.MELWARE is attached.
+There are 2 rotary switches and 3 jumper switches on the board. 2 roundabouts
+Look at the switch on the left side of the board, rotary switch, rotary switch, jumper
+Switch, jumper switch (top), jumper switch (bottom) A, B, C, D, E
+If you
+PC body ■ Operation mode ■ A ■ B ■ C ■ D ■ E,
+　PC-9801LS ■ Protect + EMS ■ 2 ■ 0 ■ N ■ S ■ S
+　PC-9801LX ■ Protect + EMS ■ 1 ■ 0 ■ N ■ S ■ S
+　PC-9801LX ■ Hardware (Note) + EMS ■ 1 ■ 4 ■ N ■ S ■ S
+Note: Hardware EMS?
+

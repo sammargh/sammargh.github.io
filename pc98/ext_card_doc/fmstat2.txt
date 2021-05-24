@@ -1,0 +1,16 @@
+
+FM Station II (FM2-N) (八戸ファームウェアシステム)
+
+FM sound source unit attached to 110-pin extension bus connector of 98NOTE / EPSON NOTE.
+With joystick terminal.Not compatible with Windows 95.The sound source chip is YAMAHA YM2203C.
+If you attach the attached whip antenna, you can
+FM waves can be received by a radio cassette player etc.
+It seems that FM2-L was provided for EPSON NOTE with an 80-pin expansion bus.
+There is a jumper switch on the bottom for interrupt level and BIOS ROM enable / disable setting.
+
+3 x 3 jumper switches: interrupt level and BIOS ROM enable / disable setting
+　Insert both jumper plugs on INT0 side and INT0 and INT5 side to insert INT5.
+　Insert a jumper plug on the BIOS ROM ON side to enable SOUND BIOS ROM (use),
+　　When inserted to the OFF side, the SOUND BIOS ROM is invalid (detached).
+The factory setting is unknown.At the author's hand, the setting is INT5 / BIOS ROM OFF.
+

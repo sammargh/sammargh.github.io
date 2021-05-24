@@ -1,0 +1,34 @@
+
+LHA-N151 (Logitec)
+
+Multi-Vendor non-compliant old 98 note 110-pin expansion bus SCSI I / F.
+SCSI-2 compliant but not Windows 95 compliant (55 boards in DMA transfer mode
+Driver for LHA-20B in super I / O transfer mode
+And usage of drivers for 55 boards).Transfer speed at DOS is the same
+Among the types of SCSI I / F, along with ICM's IF-2660
+It is said.Other 110-pin bus through output connector
+Because it is equipped, the size is large.Consumption current is terminator power
+When supplying 260 mA, when not supplying 140 mA.
+There is one 8-deep dip switch.
+
+・ 8 stations dip switch SW1: terminator power, DMA channel,
+　Memory address, interrupt level, transfer mode setting
+1: Setting of terminator power
+　Supply ON terminator power (factory setting)
+　OFF ■ Do not supply terminator power
+2: DMA channel setting
+　ON CH 3 (factory setting)
+　OFF CH 0
+3-4: Memory address setting
+　ON-ON x DE 000 h to x DEF FF
+　ON-OFF xDC000h to xDCFFFh (factory setting)
+　OFF-ON xD6000h to xD6FFFh
+　OFF-OFF ■ ■ xD4000h ~ xD4FFFh　 
+5: Interrupt level setting
+　ON ■ INT 3
+　OFF INT 0 (factory setting)
+6: Transfer mode setting
+　ON DMA transfer
+　OFF Super I / O transfer (default setting)
+7-8: Always ON-ON (system use)
+

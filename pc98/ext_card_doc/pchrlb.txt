@@ -1,0 +1,37 @@
+
+PCHRLB, PCHRLB2 (EPSON)
+
+A high resolution board that plugs into a dedicated slot of an Epson desktop machine.
+PCHRLB (1502HV BOARD) is for PC-386GS / GE, and PCHRLB2 (1505HV BOARD)
+Is for PC-486 GF / GR / GR + / GR Super.High resolution display VRAM is on PCHRLB
+However, PCHRLB2 is not available (VRAM for high resolution display is built in the body).
+High res screen is PC-98RL / XL ^ 2 compatible 1,120x750 dot screen .16 colors .24 dots
+It will be displayed in the morning font.PCHRLB is an interlaced display, PCHRLB2 + PC-486GF / GR
+In interlace display, but in non-interlace display in GR + / GR Super (in GF / GR
+Non-interlaced display is possible by remodeling the main body).
+Select high resolution with the high resolution / normal switch on the main unit before use
+About.If this remains normal, high resolution even if this board is attached
+It will not be in mode.
+The back of the board has the same D-sub 36-pin female printer connector as PC-98RL etc.
+When this board is attached, the printer output is this connector even in the normal mode
+It is done from.
+The board is only about 2/3 the length of a normal C bus board (card edge
+To the base 10.5 cm).
+
+In high resolution mode, it is necessary to specify a boot drive.The specification of boot drive is
+You can do this by pressing a specific key at startup or reset.Specified once
+The boot drive that has been set does not change until the boot drive is changed.
+[CTRL] + power on / reset ■ FDD
+[ESC] + power on / reset ■ Fixed disk boot menu program starts
+[f 1] + power on / reset ■ HDD first partition
+[f · 2] + power ON / reset ■ the second partition of the HDD
+............
+............
+[vf · 4] + power ON / reset ■ the 14th partition of the HDD
+[vf · 5] + power ON / reset ■ the 15th partition of the HDD
+
+※ CPU speed (L disappears), software dip switch in high resolution mode
+　/ Setting by system setup menu, interrupt level, DMA channel,
+　ROM address space and memory change automatically (value different from that in normal mode
+　It may take a while) so be careful.
+

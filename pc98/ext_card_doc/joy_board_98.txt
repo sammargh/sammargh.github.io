@@ -1,0 +1,20 @@
+
+JOY BOARD-98 (SNE)
+
+Atari specification C bus joystick I / F. Not compatible with Windows 95.On board
+There are 3 jumper switches.
+
+・ JP1: I / O port address setting
+　1 Short ■ 0188h to 018Ah (factory setting)
+　2 short ■ 0288h ~ 028Ah
+
+・ JP2: I / O port address setting
+　1 short ■ E7E0h to E7E7h (factory setting)
+　2 shorts ■ E5E0h to E5E7h
+　3 short ■ E3E0h ~ E3E7h
+
+・ JP3: Setting of machine model
+　1 short ■ model with built-in FM sound source
+　2 short ■ model without built-in FM sound source
+
+

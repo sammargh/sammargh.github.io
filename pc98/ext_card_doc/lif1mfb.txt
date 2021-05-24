@@ -1,0 +1,17 @@
+
+LIF-1 MFFB (ランドコンピュータ)
+
+1 MB for C bus FDD I / F.
+Supported models are PC-9801BX4, PC-9821Xe10 / S15, Xa7 / C44 / C8, Xa9 / C4 ・ / C8, Xa10 / C4 ・ C12.
+
+34-pin flat cable and 12-pin-8-pin additional signal cable are included.The additional signal cable is
+Connect 12-pin connector to I / F, 8-pin connector to motherboard.
+
+There are 4 series dip switches and 3x6 series jumper switches on the board.
+
+・ 4 stations dip switch: Function unknown (no change required)
+　OFF-OFF-OFF-OFF (Factory setting)
+・ 2 × 4 jumpers (JP1-JP6): Designation of the main unit (no change required)
+　All 2-C short (factory setting)
+　※ C is the center pin
+

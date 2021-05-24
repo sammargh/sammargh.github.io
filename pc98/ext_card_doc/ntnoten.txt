@@ -1,0 +1,29 @@
+
+NTNOTEn (ニューテック)
+
+110-pin extension bus of old 98 notes (PC-9801N, NV, NS, NS / E, NC, NS / T, NS / L)
+SCSI interface / FDD interface complex BOX. SCSI connector
+Only HDD can be connected to.
+MS-DOS ver.3.3B or later, MS-Windows (think from the release date of this unit
+I think) corresponding.
+When starting up the system from an external device connected to this unit, use a laptop PC
+On the main unit side, specify "Standard" for the system startup device.
+Resume function not supported.
+
+basic specifications
+　BIOS-ROM: D6000h-F7FFFh
+　DISK I / O: 80h, 82h
+　DMA channel: Fixed to CH 0
+　Interrupt level: Fixed to INT 2 (IRQ 6)
+　SCSI ID: 7 fixed
+　Current consumption: 200mA (MAX)
+　Operating temperature: 10 to 35 ° C
+　Humidity: 20 to 80%
+
+There is a main CPU selection switch (V30 / 386) beside the SCSI connector.Also on the back mode
+There is a switch for setting.
+Mode setting switch: EMM 386.Specification of type of SYS
+　F mode ■ NEC version MS-DOS ver.3.3 C / D MSS 386.When using SYS
+　C mode ■ NEC version MS-DOS ver. 5.0 / MS-Windows MSS 386.When using SYS
+※ There is no mode setting switch in the old lot.
+

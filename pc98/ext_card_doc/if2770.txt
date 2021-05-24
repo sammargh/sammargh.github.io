@@ -1,0 +1,97 @@
+
+IF-2770 (ICM)
+
+Non-multi-vendor compatible C bus with connector for add-on board connection
+Bus master SCSI I / F. 55 boards upward compatible.Bus master in Windows 95
+FIFO transfer is faster than transfer. Supports models with 286 or more CPUs
+(Not available in V30 mode).DMA used by this board in PC-98XA
+Use in the slot where channel is available (channel 0: slot
+1, 2, 3, 5 / channel 2: slot 2 / channel 3: slot 3, 4, 5).
+Power consumption is 260mA (Typical) at no access, 390mA (MAX) at access.
+Two 8-deep dip switches and one 4-deep dip switch on the board,
+There are 2 2 jumper switches and 4 3 jumper switches.
+Silk printing of jumper switches on the board is misleading,
+The position of the jumper switch, when looking at the card edge to the right,
+     JP3 JP5
+     JP4 JP6
+Is correct.
+
+· 8 stations dip switch SW1: SCSI ID number of this board, interrupt level,
+　DMA channel setting
+1-2-3: SCSI ID number setting
+　OFF-OFF-OFF 0
+　ON-OFF-OFF 1
+　OFF-ON-OFF 2
+　ON-ON-OFF 3
+　OFF-OFF-ON 4
+　ON-OFF-ON 5
+　OFF-ON-ON 6
+　ON-ON-ON 7 (default setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF INT 0 (factory setting)
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF # 0 (default setting)
+　ON-OFF ■ Setting prohibited
+　OFF-ON # 2
+　ON-ON # 3
+
+・ 8 stations dip switch SW2: ROM local memory address
+(1-2-3-4-5), Setting of main unit model (6-7)
+(8 is always ON. Default setting: OFF-ON-ON-OFF-ON-ON-ON-ON)
+The following shows the main unit model ■ DIP switch setting ■ ROM local
+In order of memory address:
+　PC-98 XA xxx-OFF-ON-OFF-OFF-ON ■ \ EC 000 h ~ \ ECFFF h
+　Normal / Hi-Res dual-purpose machine ■ OFF-ON-ON-OFF-ON-OFF-OFF-ON-ON
+　　　■ Normal mode \ DC 000 h ~ \ DCF FF h
+　　　/ During high res mode \ EC 000 h ~ \ ECFFF h
+　Other than the above ■ OFF-ON-ON-xx-ON-ON-ON ■ \ DC 000 h ~ \ DC F FF h
+　※ x can be ON or OFF.Also, \ is 0h or Fh.
+　※ We have high res mode when using with B4670II (PC-9864L)
+　　Be sure to turn on SW2 4-5 on the main unit.In this case local
+　　The memory address is set to \ EE000h to \ EEFFFh.
+
+・ 4 stations dip switch SW3: I / O port address, transfer mode setting
+1-2: I / O port address setting
+　ON-ON CCxh (default setting)
+　OFF-ON CDxh
+　ON-OFF CExh
+　OFF-OFF CFxh
+　※ x is 0, 2, 4 in DMA / bus master mode, and in FIFO mode
+　　Represents 0, 2, 4, 6
+　※ Access from DISK BIOS is not available if it is set other than factory setting
+　　become unable.Use special hardware such as PC-98B55
+　　If only change it.
+3-4: Transfer mode setting
+　OFF-ON Synchronous bus master transfer (factory setting)
+　ON-OFF W-FIFO transfer
+　OFF-OFF DMA transfer
+　※ A SCSI device supporting synchronous transfer and a device with asynchronous transfer are mixed
+　If you want to use a transfer method for each device automatically
+　Switch.
+
+・ Three jumper switch JP1: Prohibition of change (Factory setting: 2-3 short circuit)
+
+・ Three jumper switch JP2: Prohibition of change (Factory setting: Short between 1 and 2)
+
+・ 2 jumper switch JP3: Do not change (default setting: open)
+
+・ 2 jumper switch JP4: Setting the maximum speed of synchronous bus master transfer
+　Open up to 10MB / s (default setting)
+　Short ■ Maximum 5MB / s
+　* There is no need to change settings if all SCSI devices are asynchronously transferred.
+
+・ Three jumper switch JP5: Prohibition of change (Factory setting: 2-3 short circuit)
+
+・ 3 jumper switch JP6: Change prohibited (Factory setting: 2-3 short circuit)
+
+When using the EMS driver, the EMS page frame is
+Be careful not to overlap local memory addresses.Also used with GP-IP board
+Can not be used in FIFO mode (because some I / O port addresses overlap).
+
+ICM does not guarantee the use of HDD via I / O expansion unit.
+

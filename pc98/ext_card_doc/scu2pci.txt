@@ -1,0 +1,22 @@
+
+SC-U2PCI (I･Oデータ)
+
+PCI SCSI I / F.
+
+JP (1): No change, always short
+
+JP (2): Built-in terminator setting
+　　 　Following, ●: short ○: open
+(Setting 1) Built-in terminator automatic (software) control (factory setting)
+1 ●　
+2 ●
+3 ○
+4 ○
+
+(Setting 2) Forced disconnection of built-in terminator
+1 ○
+2 ○
+3 ●
+4 ● 
+
+This setting table was posted by n.

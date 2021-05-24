@@ -1,0 +1,25 @@
+PK98-MISTRESS9　（玄人志向）
+
+CバスBIOSボード．4.3GB超のHDDを使用可能にする．USBコネクタ
+付きであるが，正式なドライバは提供されていない（powerX氏の手に
+なるUSBマウスドライバが存在）．
+対応機種は，PC-9821Xa7/7e/9/10/12/13/16/20/200，Xb10，
+Xc13/16/200，Xv13/20，Ra18/20，RaII23，Ra266/300/333/40/43，
+V7/10/12/13/16/20/166/200/233 ．また対応OSは， MS-DOS6.2，
+Windows95（2047MB（1ドライブあたり）x16ドライブまで使用可能（同時
+アクティブは4ドライブ））/95OSR2/98/98SE/NT4.0/2000．ノーマル
+モードのみ対応．  
+
+SW1にて8通りの設定が可能：
+ON-ON-ON：D0000h-D1FFFh 8Kbytes （出荷時設定）
+OFF-ON-ON：D2000h-D3FFFh 8Kbytes
+ON-OFF-ON：D4000h-D5FFFh 8Kbytes
+OFF-OFF-ON：D6000h-D7FFFh 8Kbytes
+OFF-ON-OFF：DA000h-DBFFFh 8Kbytes
+ON-OFF-OFF：DC000h-DDFFFh 8Kbytes
+OFF-OFF-OFF：DE000h-FFFFFh 8Kbytes
+
+INT設定用ジャンパは無効． 
+
+本設定表はpowerXさんのWeb Page，"98Systems" の掲示板のAMATRACEさんの
+投稿内容をpowerXさんの許諾のもと再構成したものです．

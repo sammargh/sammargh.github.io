@@ -1,0 +1,13 @@
+
+Power Window T64EL (Canopus)
+
+Epson desktop machine with dedicated expansion video board slot under C bus slot
+Local bus graphic accelerator for.Graphic chip is image with S3 company Trio 64
+The memory is 2 MB. The maximum current consumption is + 5V, 1.2A.
+Since the connector is only at one end of the board, the attached spacer is required for installation.
+
+In order to use 16 MB worth of memory from 02000000h to 02FFFFFFh or 82000000h to 82FFFFFFh,
+In the PC-486 series, the memory mounted on the main unit is limited to 31.6 MB or less.PC-586 series
+There is no limit on memory capacity in.
+※ 82000000h to 82FFFFFFh can be set only with PC-586 series.The setting is done on the PC side.
+

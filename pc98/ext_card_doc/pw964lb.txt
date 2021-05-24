@@ -1,0 +1,26 @@
+
+Power Window 964LB (Canopus)
+
+For mate A with S3 company 86C964 (Vision 964) on the graphics chip
+Local bus GA. VRAM capacity is 2MB and 4MB.VRAM is
+The 2MB version is a 2MB VRAM expansion sub board 962-2M (model number 9642M, on the surface
+4MB can be realized by Power Window VRAM (with 4MB characters),
+It is said that single acquisition of this sub-board is nearly impossible.
+Maximum power consumption: + 5V, 2.0A (at VRAM 2MB) / + 5V, 2.9A (at VRAM 4MB)
+　　　　　　　Do not use other local bus boards together with VRAM 4MB.
+Operating environment: Temperature 10-35 ° C / humidity 20-80% (thing without dew condensation)
+Memory space: Use 16MB of xx000000h to xxFFFFFFh. xx is a dip switch
+　　　　　　Can be specified from 00h to FFh.
+There is one 8-station dip switch on the board.
+
+・ 8 stations dip switch S2: Memory space specification
+If you look at the board to the right with the local bus connector, S2 is inverted and the dip is
+The sequence of bits is 8-7-6-5-4-3-2-1, but the sequence of bits viewed as OFF = 1 and ON = 0 is memory.
+It corresponds to the binary notation of xx in the space xx000000h to xxFFFFFFh.For example, factory setting
+8-7-6-5-4-3-2-1 is OFF-OFF-OFF-OFF-ON-ON-ON-ON.
+This is 1-1-1-1-0-0-0-0 in binary and F0h in hexadecimal (so
+The factory setting of the memory space is F0000000h to F0FFFFFFh).
+
+When using with other local bus boards, use the software called PW10 for memory
+You can check for space overlap.
+

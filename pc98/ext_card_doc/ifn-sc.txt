@@ -1,0 +1,82 @@
+
+IFN-SC, IFN-SCY (メルコ)
+
+Multi-vendor compatible C bus bus master SCSI I / F. The shape of the SCSI connector is
+Amphenol half 50 pin.
+
+The revision of BIOS ROM is 2.13 or later and compatible with Windows 95.Revision of BIOS ROM
+IFN update program (for PC-98) even on boards before 2.12 (for Windows 95)
+It is possible to make BIOS ROM compatible with Windows 95 by (ifnpc95.exe).Windows 95
+So use the driver for PC-9801-55 (Melco officially specified).
+Bus master transfer can be used with the main unit equipped with 16 MB or more of protected memory.
+
+I have created a BIOS ROM 2.13 using e10chk.exe, a free software created by Mr. Marimo
+I checked about the upper limit of recognition capacity of this board, but it is not 8GB correspondence (1GB has a wall?)
+The result was obtained.HDD parameter automatic analysis program v. 1.03 is also I / O data
+IDE-to-SCSI conversion board HDX-SC-3 IOD1A067 (built in 40GB external HDD) +
+The Seagate ST3642A (6.4GB, without division with FAT32) was misrecognized as having a capacity of 2014 MB.
+
+For interrupt level, DMA channel, transfer method, etc., select [CTRL] + [GRAPH] + [S].
+SCSI board activated by power ON or reset switch ON while holding down
+Set by the setting utility.
+
+Transfer method is using PC-9801T and CPU accelerator + internal expansion memory together
+Select I / O transfer mode for PC-9801 RX.
+The HDD parameter automatic analysis program displays the screen after turning on or resetting the main unit power.
+In the upper left
+MELCO SCSI SYSTEM Ver.X.xx XX / XX / XX
+Connect ID = 0 1 2 ...
+When the character string is displayed, press [CTRL] + [GRAPH] + [P] to start.This is an analysis
+Use the supplied HDPARA.EXE for parameter analysis of hard disk drives.
+
+8 series dip switches, 2x4 series jumper switches, 2x2 series jumpers on the board
+There are 1 switch each and 2 jumper switches.
+Below, in order of the PC main body ■ slot that can be installed:
+　PC-9801VX0 / VX2 / VX4 # 2, # 3, # 4
+　PC-98 XA # 3 and # 5
+　PC-9801UF / CV # 2
+　PC-286LS (T) / 386LS (C / X) # 2 (left side seen from the back)
+　Other than above ■ Any slot can be installed
+　※ Not compatible with PC-98DO / DO + and PC-386LSR.
+
+・ 8 stations dip switch SW1: BIOS valid / invalid, main unit model, BIOS address setting
+1: SCSI ROM BIOS enable / disable setting
+　ON BIOS enabled (factory setting)
+　OFF ■ BIOS disabled
+　When using with BIOS enabled, use the I / O port address with the factory settings.
+2-3: Setting of machine type
+　ON-ON 80286/386/486 / Pentium based machine (VX or later) (factory setting)
+　ON-OFF ■ normal · high res combined use machine
+　OFF-ON ■ 8086 / V30 loading machine
+　OFF-OFF PC-98XA
+4-5: BIOS address setting in high resolution mode
+　ON-ON 0EE000h to 0EEFFFh
+　ON-OFF 0EC 000h to 0ECFFFh (factory setting)
+　OFF-ON 0EA 000h to 0EAFFFh
+　OFF-OFF 0E8000h to 0E8FFFh    
+6-7-8: BIOS address setting in normal mode
+　ON-ON-ON 0DE 000h to 0DEFFFh   
+　ON-ON-OFF 0DC 000h to 0DCFFFh (factory setting)
+　ON-OFF-ON ■ 0DA 000 h to 0 DAFFF h
+　ON-OFF-OFF 0D 8000 h to 0 D 8 F FF h
+　OFF-ON-ON 0D6000h to 0D6FFFh
+　OFF-ON-OFF 0D4000h to 0D4FFFh
+　OFF-OFF-ON 0D 2000h to 0D2FFFh
+　OFF-OFF-OFF 0D0000h to 0D0FFFh
+
+・ 2x4 jumper switch JP1: Selection of bus request channel
+　1-8, 2-7 short / 3-6, 4-5 open Hold request channel 1
+　1-8, 2-7 open / 3-6, 4-5 short ■ Hold request channel 2
+　　　　　　　　　　　　　　　　　　                (Factory setting)
+・ 2x2 jumper switch JP2: I / O port address setting
+
+　1-4, 2-3 open ■ 0 CF 0 h, 0 CF 2 h, 0 CF 4 h, 0 CF 6 h
+　1-4 short, 2-3 open ■ 0CE0h, 0CE 2h, 0CE 4h, 0CE 6h
+　1-4 open, 2-3 short ■ 0 CD 0 h, 0 CD 2 h, 0 CD 4 h, 0 CD 6 h
+　1-4, 2-3 short ■ 0 CC 0 h, 0 CC 2 h, 0 CC 4 h, 0 CC 6 h (factory setting)
+
+・ 2 jumper switch JP4: SCSI bus signal "TERMPWR", normally open
+Used in (factory setting) (power supply to active terminator on board
+  Would be a setting jumper)
+※ Normally, use the same jumper settings for each jumper switch.
+

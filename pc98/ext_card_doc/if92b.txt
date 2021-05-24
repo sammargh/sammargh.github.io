@@ -1,0 +1,113 @@
+
+IF-92B (TEAC)
+
+Multi-vendor non-compliant C bus bus master SCSI board.
+
+In the following main unit, I / O strings mode (CPU transfer is automatically done by setting the bus master mode)
+Switch to mode, PIO transfer mode):
+　PC-9801VM / UV / CV / UF / UR, PC-H98 all models, PC-H98S all models, PC-286U
+In addition, although the forced DMA mode is for a machine equipped with the 8086, the TEAC PC system is in use
+Please contact support center (support has already ended).
+Also, IF-92B can not be used in the following main body:
+　PC-98DO / DO + / GS, PC-286C
+In PC-9801VM / CV / UV, there are models with different usage of DMA channel,
+Such lots may not work properly with the manual settings.
+I examined the BIOS ROM 1.20 which was examined using e10chk.exe which is free software written by Mr. Marimo.
+The upper limit of the recognition capacity of this board was 2015 MB.
+
+・ 8-station dip switch SW1: SCSI_ID of board, interrupt level, DMA channel setting
+1-2-3: SCSI_ID
+　ON-ON-ON: ID = 7
+4-5-6: Interrupt level
+　OFF-OFF-OFF: INT0
+　ON-OFF-OFF: INT1
+　OFF-ON-OFF: INT2
+　ON-ON-OFF: INT3
+　OFF-OFF-ON: INT5
+　ON-OFF-ON: INT6
+7-8: DMA channel
+　OFF-OFF: DMA0
+　OFF-ON: DMA2
+　ON-ON: DMA3
+
+・ 8 stations dip switch SW2: BIOS_ROM setting
+286/386/486 equipped normal mode machine
+　OFF-ON-ON-OFF-ON-ON-ON-ON (DC000H to DCFFFH)
+V30 equipped normal mode machine
+　OFF-ON-ON-OFF-ON-ON-OFF-ON (DC000H to DCFFFH)
+Normal mode / High res mode dual machine
+(Including high resolution board loading machine)
+　OFF-ON-ON-OFF-ON-OFF-ON-ON (in normal mode: DC000H to DCFFFH)
+　　　　　　　　　　　　　 　(In high resolution mode: EC000H to ECFFFH)
+High res mode dedicated machine (PC-98XA)
+　OFF-ON-ON-OFF-ON-OFF-OFF-ON (EC000H to ECFFFH)
+
+When simultaneously implementing the BRANCH 4670 II interface (PC-9864L),
+Turn on 4, 5 regardless of the main unit model.
+In addition, it is not possible to use with the GP-IB board because the ROM addresses conflict.
+
+----------------------------------------------------
+ASCII book section, PC-98 series peripheral equipment super tune-up (1994 issue)
+According to, the meaning of SW2 seems to be:
+
+・ 8 stations dip switch SW2: Local memory address, setting of main unit model
+1-2-3: Local memory address (normal) setting
+　OFF-OFF-OFF: D0000h to D0FFFh
+　ON-OFF-OFF: D2000h to D2FFFh
+　OFF-ON-OFF: D4000h to D4FFFh
+　ON-ON-OFF: D6000h to D6FFFh
+　OFF-OFF-ON: D 8000 h to D 8 FFF h
+　ON-OFF-ON: DA000h to DAFFFh
+　OFF-ON-ON: DC000h to DCFFFh (factory setting)
+　ON-ON-ON: DE 000 h to DEFFF h
+4-5: Setting of local memory address (high res)
+　OFF-OFF: E8000h to E8FFFh
+　ON-OFF: EA000h to EAFFFh
+　OFF-ON: EC000h to ECFFFh (factory setting)
+　ON-ON: EE000h to EEFFFh
+6-7: Setting of machine model
+　OFF-OFF: PC-98XA
+  ON-OFF: CPU is the model of 8086 / V30
+　OFF-ON: Normal / High res combined machine
+　ON-ON: CPU model 286/386/486 (default setting)
+8: Do not change (factory setting ON)
+----------------------------------------------------
+
+・ 8-station dip switch SW3: I / O port address, data transfer method, ID search
+Show / Hide, boot mode settings
+1-2: I / O port address
+　OFF-OFF: CCXH (X = 0, 2, 4)
+　ON-OFF: CDXH
+　OFF-ON: CEXH
+　ON-ON: CFXH
+3: Transfer mode
+　ON: Bus master mode
+　OFF: Forced DMA mode
+　In the main body equipped with 16 MB or more of memory, the setting of forced DMA mode.
+4: Presence or absence of ID display at boot
+　ON: ID display
+　OFF: ID hidden
+5: Boot mode
+　ON: High-speed boot mode (shortens the time required for system startup from HDD)
+　OFF: Standard boot mode
+　If the HDD can not be recognized in the fast boot mode, set it to the standard boot mode.
+　When restarting the system by pressing the reset switch on the main unit, either high speed or standard
+　Even in the mode, you can boot faster by holding down the [GRAPH] key while checking the memory.
+　However, the power of the HDD should be turned on at least 20 seconds before the reset.
+6-7-8: No change
+
+・ 4 series jumper switch JB1: DMA control signal priority setting (no change)
+Always 3-6, 4-5 short, 1-8, 2-7 open
+
+・ SW pin: Switch pin on the side of the card edge.Specification of body model
+In PC-9801U2 / UV2 / UV21 / UV11 / CV21 / UR / UF, the SW pin is reversed (the protrusion is facing the back of the board)
+Change to).For other models, make sure that the pin faces the C bus connector.
+
+
+About the fast format mode:
+MS-DOS FORMAT command with both the [CAPS] and [Kana] keys on the keyboard turned on
+The time required for processing can be shortened by initializing the HDD or securing the area using.
+In high-speed format mode, inspection at initialization and area allocation is skipped.Therefore
+The high-speed format mode is used when initializing and securing the area as recovery means of HDD
+Can not.
+

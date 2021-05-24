@@ -1,0 +1,39 @@
+
+C-NET (98) P2-T, C-NET (98) P2-5T, C-NET (98) P2-52T (CONTEC)
+
+PnP compatible C bus NIC (LAN board).C-NET (98) P2-T has 10BASE-T connector,
+C-NET (98) P2-5T is 10BASE-5 / T connector, C-NET (98) P2-52T is 10BASE-T / 5/2
+Each connector is equipped.It is not compatible with Windows 95 compatible with EPSON.
+In C-NET (98) P2-52T, there is one 3 jumper switch on the board.
+
+・ Three jumper switches (C-NET (98) P2-52T only): 10BASE-5 / 2 switching
+(Auto / Fixed) setting
+　Two shorts on AUI side ■ MAU and external transceiver connected to 10BASE-5 12V
+　　　　　　　　　　10BASE-5 / 2 switching circuit operates normally when not consuming
+　　　　　　　　　　do not do.Set in this case.
+　2 shorts on AUTO side ■ Default setting.Usually, use as it is.
+This jumper switch is used because 10BASE-T connection is prioritized when 10BASE-T is used
+The setting in is invalid.
+
+I / O port address: n3D0h to n3DFh (n = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9
+　　　　　　　　　　　　　　　　 A, B, C, D, factory setting: n = 0)
+　　　　　　　　　 16 bytes occupied (automatically or by software)
+Interrupt level: Use one of INT 0, 1, 2, 3, 4, 5, 6 (automatic or
+Set by software, factory setting: INT 0)
+
+power consumption
+　10BASE-5: +5 V = 70 mA, +12 V = 500 mA
+　10BASE-2: +5 V = 350 mA
+　10BASE-T: +5 V = 80 mA
+Operating temperature range: 0 to 50 °, operating humidity range: 20 to 80% (no condensation)
+LED indicator (LED operation is valid only when using 10BASE-T)
+　DUP / COL: On ■ Whether the duplex mode setting is full duplex,
+　　　　　　　　 Half-duplex configuration causes collisions
+　　　　　　　　 Indicates that it is occurring.
+　RX: On ■ Indicates that data is being received.
+　TX: ON: Indicates that data is being transmitted.
+　LINK: On ■ Data link is good and a twisted pair cable is connected
+              To indicate that
+　　　　Unlit ■ Connection failure of twisted pair cable or using 10BASE-5 / 2
+              To indicate that
+

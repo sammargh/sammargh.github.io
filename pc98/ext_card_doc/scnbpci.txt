@@ -1,0 +1,18 @@
+
+SC-NBPCI (I･Oデータ)
+
+PC-98NX, PC / AT compatible, PC-9821 compatible PCI bus master SCSI-2 I / F. Silk on board
+Printing is SC-PCIL-1.Operating temperature range 5 to 40 °.SCSI ID = 0-7.Maximum power consumption + 5 V, 600 mA
+(Does not include term power to the outside).D sub half 50-pin connector on the board
+Equipped with a 50-pin flat cable connector.Because no SCSI BIOS is installed,
+System startup from a SCSI device connected to this I / F is not possible.D sub half 50 pin male
+Attached SCSI cable with connector and anphenol full 50 pin male connector at both ends
+It is said that it is suitable for scanner connection.
+There are 2 jumper switches and 3 jumper switches on the board.
+
+・ 2 jumper switch JP1: not described in manual (factory setting = short)
+
+・ 3 jumper switch JP2: Control of built-in terminator
+　1-2 short ■ Automatic control of terminator (factory setting)
+　2-3 short ■ Forced OFF
+

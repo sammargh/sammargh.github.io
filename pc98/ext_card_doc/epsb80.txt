@@ -1,0 +1,27 @@
+
+EPS-B80 (緑電子)
+
+80MB SASI HDD, C bus I / F included with "Little E80"
+
+There is a pattern corresponding to pins 6-7 and 5-8 on the board in the 4-run jumper switch SP2.
+
+・ 8-station dip switch SW1: Designation of the type of HDD to be connected
+　3 stations jumper switch JP: operation mode setting
+In the case of divided use to 40MB + 40MB
+SW1: ON-ON-OFF-OFF-ON-OFF-OFF-ON
+JP: All open
+In case of 80MB batch use
+SW1: ON-ON-ON-OFF-OFF-OFF-OFF-OFF
+JP: 8 shorts, others open
+
+・ 8 stations dip switch SW2: BIOS ROM address setting (change prohibited)
+Always OFF-OFF-OFF-ON-OFF-ON-OFF-OFF
+
+・ 4 series jumper switch SP1: Designation of body model
+PC-9801M: 1-8 shorts, 2-7, 4-5 open
+PC-9801, PC-98XA: 2-7, 4-5 shorts, 1-8, 3-6 open
+Other models: 1-8, 4-5 shorts, 2-7, 3-6 open
+
+・ 4 series jumper switch SP2: Window margin adjustment (change prohibited)
+Always 1-12, 3-10, 4-9 short, 2-11 open
+

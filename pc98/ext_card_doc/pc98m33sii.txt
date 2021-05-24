@@ -1,0 +1,67 @@
+
+PC98M33SII (Caravelle)
+
+Multi-vendor non-compliant C bus bus master SCSI-2 board.Not compatible with Win95.
+Three 8 dip switches on the board, 4 jumper switches, 2 runs
+There is one paswitches each.
+
+・ 8-station dip switch SW1: SCSI_ID, interrupt level, DMA channel setting
+1-2-3: SCSI_ID
+　ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Interrupt level
+　OFF-OFF-OFF: INT0 (IRQ3)
+　ON-OFF-OFF: INT1 (IRQ5)
+　OFF-ON-OFF: INT2 (IRQ6)
+　ON-ON-OFF: INT3 (IRQ9)
+　OFF-OFF-ON: INT5 (IRQ12)
+　ON-OFF-ON: INT6 (IRQ13)
+7-8: DMA channel
+　OFF-OFF: DMA0
+　ON-ON: DMA3
+
+・ 8-station dip switch SW2: Local memory address, specification of main unit model
+1-2-3: Local memory address in normal mode
+　OFF-ON-ON: \ DC000- \ DCFFF
+4-5: Local memory address in high resolution mode
+　OFF-ON: \ EC000- \ ECFFF
+※ In model supporting both normal mode, high res mode
+　1-2-3-4-5 All settings.
+※ OFF-ON-OFF-OFF-ON for PC-286L, LE, LF (use of extended I / O box), LP
+　Set to.
+6-7: Main unit model
+　ON-ON: Model in normal mode that supports protected mode
+　ON-OFF: PC-9801VF, VM, UF, UR, UV, CV, N, NV (N, NV are expanded I / O boxes
+　　　　　, PC-286U (does not support protected mode)
+　　　　　Model)
+　OFF-ON: PC-98XL, XL ^ 2, RL, PC-H98 (Normal mode and high res
+　　　　　Models that support both modes)
+　OFF-OFF: PC-98XA (model only in high res mode)　
+8: Always on
+
+・ 8-station dip switch SW3: I / O address, setting of forced DMA mode
+1-2: I / O address
+　ON-ON: CC0, CC2, CC4
+　OFF-ON: CD0, CD2, CD4
+　ON-OFF: CE0, CE2, CE4
+　OFF-OFF: CF0, CF2, CF4
+3-4: Always on
+5: Forced DMA mode
+　ON: Bus master transfer mode (factory setting, usually do not change)
+　OFF: Forced DMA mode
+※ We set bus master transfer mode in model equipped with CPU before 80286
+　Even if you do, it will be DMA transfer.
+6-7-8: Always OFF-ON-OFF
+
+・ 4 series jumper switch JP1: Setting of hold request channel
+　1-8, 3-6 short, 2-7, 4-5 open: hold request
+　　　　　　　　　　　　　　　　　　　Channel 1 (factory setting)
+　1-8, 3-6 open, 2-7, 4-5 short: hold request
+　　　　　　　　　　　　　　　　　　　Channel 2
+
+・ Double jumper switch JP2: Do not change
+　1-4 short, 2-3 open
+
+※ This board and EMS additional RAM board, FM sound board
+　Simultaneous use is not possible.In addition, the start address of the expanded RAM board EMS
+　Is set to \ C0000.
+

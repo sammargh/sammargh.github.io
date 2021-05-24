@@ -1,0 +1,87 @@
+
+PIO-16 / 16 (98) H (CONTEC)
+
+Isolated parallel input / output module.Two 8x dip switches on the board, 2x 8x jumpers
+There is one switch.
+
+Input type Current drive input by photocoupler isolation
+Input resistance 3 kΩ (8 mA / point at 24 VDC)
+Number of input points 16 points (4 points can be used for interrupt, common 1 point common in 8 points)
+Input display LED lights on the load side (ON)
+Response time within 1 ms
+Output type Open collector output by photocoupler isolation
+Output rating Maximum DC 35 V, 200 mA
+Number of output points: 16 points (8 points per common)
+Output indicator LED Lit when the output signal is ON
+Response time within 1 ms
+Power consumption DC5V, 200mA (Max)
+Operating conditions 0 to 50 ° C, 20 to 90% (without condensation)
+
+・ 8-station dip switches SW1 and SW2: I / O port address setting
+See PIO-48W (98).
+
+・ 2 x 8 jumper switch JP1: Interrupt level setting
+　A = B07
+　B = B08
+　C = B09
+　D = B10
+　0 = INT 0
+　1 = INT 1
+　2 = INT 2
+　3 = INT 3
+　4 = INT 4
+　5 = INT 5
+　6 = INT 6
+
+Correspondence between port address and input / output data
+　The following is the order of setting port address: D7 D6 D5 D4 D3 D2 D1 D0
+[Input port]
+　+0 I07 I06 I05 I04 I03 I02 I01 I00
+　+1 I17 I16 I15 I14 I13 I12 I11 I10
+[Output port]
+　+ 0 • O07 O06 O05 O04 O03 O02 O01 O00
+　+1. O17 O16 O15 O14 O13 O12 O11 O10
+
+Connector pin assignment
+If you look at the cut of the connector frame from the back side of the board upwards, the line above is from the right
+A01, A02, A03 ······················································ A01, A02, A03 ··· A23, A24, A25, from the right also B01, B02, B03 ··· B23, B24, B25.
+The following is the order of the terminal number, signal name, and explanation:
+
+A01 P1 Input + 1 port plus common B01 P 0 Input + 0 port positive common
+A02 P1 Input + 1 port plus common B02 P 0 Input + 0 port positive common
+A03 I17 +1 port (input) B03 I07 +0 port (input) A / B / C / D interrupt
+A04 I16 +1 port (input) B04 I06 +0 port (input) A / B / C / D interrupt
+A05 I15 +1 port (input) B05 I05 +0 port (input) A / B / C / D interrupt
+A06 I14 +1 port (input) B06 I04 +0 port (input) A / B / C / D interrupt
+A07 I13 +1 port (input) B07 I03 +0 port (input) A / B / C / D interrupt
+A08 I12 +1 port (input) B08 I02 +0 port (input) A / B / C / D interrupt
+A09 I11 +1 port (input) B09 I01 +0 port (input) A / B / C / D interrupt
+A10 I10 +1 port (input) B10 I00 +0 port (input) A / B / C / D interrupt
+A11 ■ NC ■ Not connected B11 ■ NC ■ Not connected
+A12 ■ NC ■ Not connected B12 ■ NC ■ Not connected
+A13 ■ NC ■ Not connected B13 ■ NC ■ Not connected
+A14 P3 Output + 1 port plus common B14 P2 Output + 0 port positive common
+A15 P3 Output + 1 port plus common B15 P 2 Output + 0 port positive common
+A16 O17 +1 port (output) B16 O07 +0 port (output)
+A17 O16 +1 port (output) B17 O06 +0 port (output)
+A18 O15 +1 port (output) B18 O05 +0 port (output)
+A19 O14 +1 port (output) B19 O04 +0 port (output)
+A20 O13 +1 port (output) B20 O03 +0 port (output)
+A21 O12 + 1 port (output) B21 O02 + 0 port (output)
+A22 O11 +1 port (output) B22 O01 +0 port (output)
+A23 O10 +1 port (output) B23 O00 +0 port (output)
+A24 N3 Output + 1 port negative common B24 N 2 Output + 0 port negative common
+A25 N3 Output + 1 port negative common B25 N 2 Output + 0 port negative common
+
+LED monitor lamp
+　LO00, LO01 ... LO06, LO07 (more than + 0 output port) from the top, when the board is viewed from the top of the card edge
+LO10, LO11 ... LO16, LO17 (more than +1 output port), LI00, LI01 ... LI06, LI07 (more than +0 input port),
+LI10, LI11 ... LI16, LI17 (more than +1 input port) in this order.
+　The following shows the setting port addresses in order of D7 D6 D5 D4 D3 D2 D1 D0
+[Input port]
+　+0 ■ LI07 LI06 LI05 LI04 LI03 LI02 LI01 LI00
+　+1 ■ LI 17 LI 16 LI 15 LI 14 LI 13 LI 12 LI 11 LI 10
+[Output port]
+　+0 ■ LO07 LO06 LO05 LO04 LO03 LO03 LO02 LO01 LO00
+　+1 LO17 LO16 LO15 LO14 LO13 LO12 LO11 LO10
+

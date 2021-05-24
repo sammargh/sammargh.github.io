@@ -1,0 +1,86 @@
+
+DA 12-4 (98), DA 12-2 (98) (CONTEC)
+
+12-bit D / A conversion board for C bus.DA12-4 (98) has 4 channels, DA12-2 (98) has 2 channels.
+
+Output: -10 to +10 V, Max 3 mA (bipolar only)
+Error: + -1LSB (ambient temperature 25 degrees), 0.1% error at ambient temperature 0, 50 degrees
+Element used: AD7545 equivalent
+Conversion time: 600 ns after instruction execution
+Number of occupied ports: 8 bits 2 ports
+Power supply: DC + 5 V, Max 550 mA
+Operating conditions: 0 to 50 degrees, 20 to 90% (without condensation)
+
+Right side of the board when the card edge connector is on the right side and the card plastic is on the left side
+The upper corner jumper always shorts the top two.
+Port address setting by 8 series dip switches (SW1, SW2)
+・ In the case of BASIC program
+All eight SW1s are set to OFF (00), set the port address (00 to FF) by SW2: Port you want to set
+Turn on the bit switch corresponding to the address.The 0th bit is invalid (it can be either ON or OFF).
+・ In case of machine language program
+Turn on the bit switch corresponding to the port address you want to set for both SW1 and SW2.0th bit
+Is invalid (ON or OFF is acceptable).
+(Example) F0D0H
+SW1: ON-ON-ON-ON-OFF-OFF-OFF-OFF-OFF
+SW2: ON-ON-OFF-ON-OFF-OFF-OFF-OFF-OFF
+As a general rule, use lower-order two-digit port numbers D0 to DF.
+Input / output in machine language program is limited to register indirect input / output instruction by DX register.
+
+・ Port and data output format
+Output to the D / A converter is performed through the 2-byte output port.Port address and data
+The correspondence with each bit is as follows:
+
+                          D7 D6 D5 D4 D3 D2 D1 D0
+            　              　　Output data Output channel
+Set port address + 0: 2 ^ 3 2 ^ 2 2 ^ 1 2 ^ 0 ※ ※ 2 ^ 1 2 ^ 0
+Set port address +1: 2 ^ 11 2 ^ 10 2 ^ 9 2 ^ 8 2 ^ 7 2 ^ 6 2 ^ 5 2 ^ 4
+
+"Set port address + 0"-> "Set port" when performing OUT instruction in byte unit
+Execute in the order of "address + 1".
+
+・ Relationship between output data and output voltage
+
+  Output data Output voltage
+2 ^ 11 --------2 ^ 0
+0111 1111 1111 10V * 2047/2048 = + 9.99521V
+0000 0000 0001 10 V * 1/2048 = + 4.88 mV
+0000 0000 0000 0V
+1111 1111 1111 -10 V * 1/2048 = -4.88 mV
+1000 0000 0000 -10V * 2048/2048 = -10V
+
+・ Output channel selection
+The choice of output channel is determined by the data given to the D1 and D0 bits of the configured port address:
+
+   D1 D0
+   0 0 --------- CH0
+   0 1 --------- CH1
+   1 0 --------- CH2
+   1 1 --------- CH3
+
+・ 36-pin interface connector
+The pin numbers are 1 for the upper right corner when viewed from the back of the board 1, 2 for the left, 18 for the upper left corner, 17 for the right, lower right corner
+Is 19, its left 20, its lower left corner 36, its right 35.
+
+Pin 11: OUT3 (CH3)
+Pin 13: OUT2 (CH2)
+Pin 15: OUT1 (CH1)
+Pin 17: OUT0 (CH0)
+Pin 29: Output signal common (analog ground)
+Pin 31: Output signal common (analog ground)
+Pin 33: Output signal common (analog ground)
+Pin 35: Output signal common (analog ground)
+
+・ Function of potentiometer on board
+The rightmost potentiometer is VR1 when viewed from the back of the board, and the numbers increase as it goes to the left, and the leftmost is VR8.
+
+VR1: CH3 offset adjustment
+VR2: CH3 gain adjustment
+VR3: CH2 offset adjustment
+VR4: CH2 gain adjustment
+VR5: CH1 offset adjustment
+VR6: CH1 gain adjustment
+VR7: CH0 offset adjustment
+VR8: CH0 gain adjustment
+
+Offset adjustment is adjustment of -10.000V, gain adjustment is adjustment of + 9.995V.
+

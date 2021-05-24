@@ -1,0 +1,52 @@
+
+NE2098E, NE2098T, NE2098TP (Japan Macnics (now Macnica))
+
+C bus LAN board.Standard driver for OS on Windows 98, Windows NT 3.51 / 4.0
+It is included.
+Please note that there are many errors in the manual attached to the board.The following description is NE2098E / T
+Installation Guide (August 10, 1990, first edition) and Macnica
+Based on the description of the site's PDF file.
+
+■ All models / common to all revisions
+・ 4 stations dip switch SW3: I / O port address setting
+　OFF-OFF-OFF-OFF OFF-ON-OFF-OFF         
+  　       00D0h to 00DFh 40D0h to 40DFh  
+    　     01D0h to 01DFh 41D0h to 41DFh  
+      　   02D0h to 02DFh 42D0h to 42DFh  
+        　 03D0h to 03DFh 43D0h to 43DFh  
+　OFF-OFF-OFF-ON OFF-ON-OFF-ON          
+  　       10D0h to 10DFh 50D0h to 50DFh  
+    　     11D0h to 11DFh 51D0h to 51DFh  
+      　   12D0h to 12DFh 52D0h to 52DFh  
+        　 13D0h to 13DFh 53D0h to 53DFh  
+　OFF-OFF-ON-OFF OFF-ON-ON-OFF          
+  　　     20D0h to 20DFh 60D0h to 60DFh  
+      　   21D0h to 21DFh 61D0h to 61DFh  
+        　 22D0h to 22DFh 62D0h to 62DFh  
+         　23D0h to 23DFh 63D0h to 63DFh  
+　OFF-OFF-ON-ON OFF-ON-ON-ON          
+    　     30D0h to 30DFh 70D0h to 70DFh  
+  　       31D0h to 31DFh 71D0h to 71DFh  
+      　   32D0h to 32DFh 72D0h to 72DFh  
+        　 33D0h to 33DFh 73D0h to 73DFh  
+・ 3 x 7 series jumper switch (W1, 2, 3, 4, 5, 6, 8): Selection of connector type
+　All 1-2 shorts: 10BASE-5 (AUI), 10BASE-T (RJ-45) ※
+　All 2-3 shorts: 10BASE-2 (BNC)
+　※ NE2098E, NE2098T (Rev.A) No 10BASE-T connector.
+・ 2 x 4 jumper switches (W9, 10, 11, 12): Interrupt level setting
+　W9: INT 5 (IRQ 12)
+　W10: INT 2 (IRQ 6)
+  W11: INT 1 (IRQ 5)
+  W12: INT 0 (IRQ 3)
+・ 3 jumper switch W13: CPU selection
+　Short between 1 and 2: 8086, V30 (70116)
+　Short between 2-3: after 80286
+
+■ NE 2098 T, TP (Rev.C, D, F)
+・ 3 x 3 jumper switches (W19, 20, 21): Selection of AUI power supply
+　All 1-2 shorts: external power supply
+　All 2-3 shorts: Supplied from PC
+
+■ Common to all revisions of NE2098TP
+　SW4 all off (content: Reversed)
+

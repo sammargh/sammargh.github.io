@@ -1,0 +1,71 @@
+IF-2760　（ICM）
+
+マルチベンダ非対応のCバスSCSI I/F．Windows95対応．SCSIコネクタ
+はICM独自仕様のDサブ37ピン．ICM製のDサブ37ピンオス−アンフェノール
+ハーフオスのSCSIケーブル，"HD-4020-03"を使用すれば，本I/Fで
+アンフェノールハーフ50ピンのSCSI機器を使用できる（筆者は他に
+Dサブ37ピンオス−アンフェノールフルピッチ50ピンオス，Dサブ
+37ピンオス−Dサブ25ピンオスのSCSIケーブルの存在を確認している）．
+ボード上に8連ディップスイッチ2個と4連ディップスイッチ1個あり．
+
+・8連ディップスイッチSW1：本ボードのSCSI ID番号，割り込みレベル，
+　DMAチャネルの設定
+1-2-3：SCSI ID番号の設定
+　OFF-OFF-OFF■0
+　ON-OFF-OFF■1
+　OFF-ON-OFF■2
+　ON-ON-OFF■3
+　OFF-OFF-ON■4
+　ON-OFF-ON■5
+　OFF-ON-ON■6
+　ON-ON-ON■7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　OFF-OFF-OFF■INT 0
+　ON-OFF-OFF■INT 1
+　OFF-ON-OFF■INT 2
+　ON-ON-OFF■INT 3　（出荷時設定）
+　OFF-OFF-ON■INT 5
+　ON-OFF-ON■INT 6
+7-8：DMAチャネルの設定
+　OFF-OFF■#0
+　ON-OFF■設定禁止
+　OFF-ON■#2
+　ON-ON■#3　（出荷時設定）
+※FIFOモードではデータ転送時にはDMAを使用しないがステータス
+　等のコマンド実行時にはDMAを使用する．
+
+・8連ディップスイッチSW2：ローカルメモリアドレス（1-2-3-4-5），
+　本体機種の設定（6-7）
+（8はつねにON．出荷時設定：OFF-ON-ON-OFF-ON-ON-OFF-ON）
+以下，本体機種■ディップスイッチの設定■メモリアドレス　の順：
+　8086搭載機■OFF-ON-OFF-x-x-ON-OFF-ON■D4000h〜D4FFFh
+　V30搭載機■OFF-ON-ON-x-x-ON-OFF-ON■DC000h〜DCFFFh
+　PC-98XA■x-x-x-OFF-ON-OFF-OFF-ON■\EC000h〜\ECFFFh
+　ノーマル／ハイレゾ両用機■OFF-ON-ON-OFF-ON-OFF-ON-ON
+　　　■ノーマルモード時\DC000h〜\DCFFFh
+　　　／ハイレゾモード時\EC000h〜\ECFFFh
+　上記以外■OFF-ON-ON-x-x-ON-ON-ON■\DC000h〜\DCFFFh
+　※xはON，OFFいずれでも可．また\は0hまたはFh．
+　※B4670II (PC-9864L) との併用時には本体機種によらずSW2の4-5を
+　　ON-ONにすること．この場合ローカルメモリアドレスは
+　　\EE000h〜\EEFFFhにセットされる．
+　※PC-9801U2およびV30搭載機ではカードエッジ脇のスイッチピンを前後
+　　逆向きにする．
+
+・4連ディップスイッチSW3：I/Oポートアドレス，転送モードの設定
+1-2：I/Oポートアドレスの設定
+　ON-ON■CCxh　（出荷時設定）
+　OFF-ON■CDxh
+　ON-OFF■CExh
+　OFF-OFF■CFxh
+　※xはDMAモード時は0，2，4を，FIFOモード時は0，2，4，6を表す．
+　※出荷時設定以外の設定にするとDISK BIOSからのアクセスが
+　　できなくなる．PC-98B55などの特殊なハードウェアを使用する
+　　場合にのみ変更のこと．
+3：転送モードの設定
+　ON■FIFO転送　（出荷時設定）
+　OFF■DMA転送
+　※8086搭載機ではFIFO転送は不可．
+4：未使用（つねにON）
+
+ICMはI/O拡張ユニットを経由してのHDDの使用は動作保証していない．

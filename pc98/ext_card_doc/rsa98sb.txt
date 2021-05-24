@@ -1,0 +1,89 @@
+
+RSA-98SB (I･Oデータ)
+
+Second bus high-speed RS-232C expansion board (start-stop synchronization).Equipped with 1 serial port.For send / receive
+Equipped with 2048 Byte FIFO (total 8 KB).There are two 8-deep dip switches on the board.
+The TL16C550C manufactured by TEXAS INSTRUMENTS is used as the serial control LSI, with a transfer speed of up to 230.4 Kbps
+Communication is possible (master clock 14.7456 MHz).The data bus is DB0-7.Maximum power consumption + 5V, 500mA / + 12V,
+20 mA / -12 V, 2 w 0 mA. Operating environment: temperature 0-40 ° C / humidity 20-80% (no condensation).In the expansion I / O unit
+Use is also possible.
+Additional RS-232C port can be added by using multiple RSA-98, RSA-98SB and RSA-98II / S.In attached BIOS
+Up to 32 RS-232C ports can be controlled with up to 32 lines, or with COM driver for Windows 3.1 up to 7 lines (Windows NT
+COM driver for 3.5x and Windows 95 supports only one RSA-98 series: Windows NT 3.5x and
+Multiple use of RSA-98, RSA-98SB and RSA-98II / S is not possible on Windows 95).
+Set up and use flow control to prevent data loss.Enable hard flow control
+In order to do this, always use a cable with RTS / CTS and DTR / DSR signal lines connected.
+
+・ 8 stations dip switch SW1: interrupt level setting (factory setting: INT 0)
+INT 0 1 8 INT 1 INT 2 INT 3
+　　　■ □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+      □ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+
+INT 41 INT 5 INT 6 interrupt not used
+　　　□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+      ■ ■ ■ ■ ■ □ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+
+・ 8-station dip switch SW2: Setting of upper 8 bits of I / O port address
+The dip corresponds to the binary bit pattern.
+When 8 dips are divided into 4 pieces, hexadecimal numbers will be used in both 4-3-2-1 in the first half and 8-7-6-5 in the second half.
+The correspondence between the and dip patterns is as follows:
+0 ■ OFF-OFF-OFF-OFF
+1 ■ OFF-OFF-OFF-ON
+2 ■ OFF-OFF-ON-OFF
+3 ■ OFF-OFF-ON-ON
+4 ■ OFF-ON-OFF-OFF
+5 ■ OFF-ON-OFF-ON
+6 ■ OFF-ON-ON-OFF
+7 ■ OFF-ON-ON-ON
+8 ■ ON-OFF-OFF-OFF
+9 ■ ON-OFF-OFF-ON
+A ON-OFF-ON-OFF
+B ON-OFF-ON-ON
+C ON-ON-OFF-OFF
+D ON-ON-OFF-ON
+E ■ ON-ON-ON-OFF
+F ON-ON-ON-ON
+Example) When setting to 50h, set 5-6-7-8 to OFF-ON-OFF-ON, and set 1-2-3-4 to OFF-OFF-OFF-OFF.
+Set.The factory setting is 50h.
+Note 1: In the PC-9821 series, since the upper 8 bits x8h to xFh of the I / O port address are reserved,
+　　 Set in the range of x0h to x7h.
+Note 2: This description is in accordance with the RSA-98 Series Instruction Manual (issued on March 4, 1996).
+     In the SW1 diagram on the page, to set "OFF", the dip switch should be shifted to the "ON" side.
+     (In the manual of RAS-98, it is not written which black and white rectangle represents dip switch
+　　 However, judging from the description of the other board's manual of I · O data, the black rectangle in this board dips
+     It seems to indicate the switch).
+Example) Figure in the manual when setting to 6
+　　　8765
+　　　4321
+　　　□ ■ ■ □
+　　　■ □□ ■
+　　　　　　ON
+The lower 8 bits of the I / O port address are fixed by hardware as follows.
+(1) TL16C550C control port
+   xxE0h, xxE2h, xxE4h, xxE6h, xxE8h, xxEAh, xxECh, xxEEh
+   xxE1h, xxE3h, xxE5h, xxE7h, xxE9h, xxEBh, xxEDh, xxEFh
+(2) Port address for transmission / reception FIFO
+   xxD0h, xxD2h, xxD4h, xxD6h
+   xxD1h, xxD3h, xxD5h, xxD7h
+(In short, the lower 8 bits are fixed at D0h to D7h and E0h to EFh)
+※ When used with GA-98NB series, the I / O port address will be duplicated if it is the factory setting (50h) and normal
+　Do not work.In this case, the upper 8 bits of the base I / O port address of RSA-98 other than 40h to 5Fh (GA-98 NBI / C
+　When using in combination with this, please set it so as not to overlap with other boards.
+
+About COM driver
+(1) COM driver for Windows 95
+-The base I / O port address of RSA-98 is fixed at 50h at the factory setting.
+-"Multifunction Adapter" and "Extended Serial Board (RSA-98)" in Device Manager
+　Click in the order of.Then set both ports to the same IRQ in "Properties".
+・ After setup, "Extended serial board" (RSA-98) (COM 2) and "Extended serial board"
+　(RSA-98) (COM3) is registered and it is COM3!There is a mark, but there is no problem in operation.
+(2) COM driver for Windows NT3.x
+・ The base I / O port address of RSA-98 is fixed to factory default 50h, and the interrupt level is fixed to INT 0.
+　It is done.
+・ When copying of driver files is completed, in [Mouse:] of [Windows NT setup]
+　[I-O-DATA high-speed serial board RSA-98 series] is displayed, but it ends as it is.
+　After rebooting, change [Mouse:] to [Use PC-9800 mouse].
+When using these drivers, use the RSA-98 series BIOS or RSA-98 series serial driver.
+Do not incorporate.
+※ It is abbreviation about BIOS / driver for MS-DOS, Windows 3.1.
+

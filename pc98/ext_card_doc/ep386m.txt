@@ -1,0 +1,40 @@
+
+EP-386M-2 (I・Oデータ)
+
+Epson desktop machine, PC-386M dedicated built-in RAM base board.It is 0MB.
+There are 2 SIMM sockets and 1 10 dip switch on the board.For SIMM sockets
+61 compatible SIMM can be added (Because neither SIMM of Epson specification nor SIMM of JEDEC specification
+Note).
+
+・ 8-station dip switch SW1: Start address, RAM board memory size setting
+1-2-3-4: Start address setting
+　ON-ON-ON-ON: Setting prohibited
+　OFF-ON-ON-ON: 100000 h
+　ON-OFF-ON-ON: 200000 h
+　OFF-OFF-ON-ON: 300000 h
+　ON-ON-OFF-ON: 400000h
+　OFF-ON-OFF-ON: 500000 h
+　ON-OFF-OFF-ON: 600000 h
+　OFF-OFF-OFF-ON: 700000 h
+　ON-ON-ON-OFF: 800000 h
+　OFF-ON-ON-OFF: 900000 h
+　ON-OFF-ON-OFF: A00000h
+　OFF-OFF-ON-OFF: B00000h
+　ON-ON-OFF-OFF: C 00000 h
+　OFF-ON-OFF-OFF: Setting prohibited
+　ON-OFF-OFF-OFF: Setting prohibited
+　OFF-OFF-OFF-OFF: Setting prohibited
+5-6: RAM board memory size
+　ON-ON: 0MB
+　OFF-ON: 2 MB (when adding one SIMM)
+　ON-OFF: 4 MB (when adding 2 SIMM cards)
+　OFF-OFF: Setting prohibited
+7: Always off
+8: Always on
+9: Setting of presence / absence of parity check
+　ON: Does not check parity
+　OFF: Perform parity check
+10: Always OFF
+
+Oh! EPSON PC 2000 12/30, Reproduction permission for "EPSON PC and Memory" author
+Thank you.

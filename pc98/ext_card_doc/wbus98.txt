@@ -1,0 +1,141 @@
+
+W-BUS (98) (Contec)
+
+Non-isolated parallel I / O board for C bus. Equipped with two i8255A equivalent products.48 points in total
+The signal can be set for input and output in units of 8 points.The connector for external connection is a 60-pin flat male.
+Three 8x dip switches and 2x4x4 jumper switches on board, 3x4x
+There is one jumper switch each.
+
+(1) Input section
+　Input format TTL level
+　Input resistance 10 kΩ (1 LS-TTL load)
+　4 points out of 48 available
+(2) Output unit
+　Output type TTL level (Cable length should be within 2 m)
+　Output rating DC 5 V, 1 mA (2 LS-TTL load)
+(3) Number of input / output points 48 points (all input / output points are common GND. Positive logic for both input and output)
+(4) Number of occupied ports 8 bits 8 ports
+(5) Power supply capacity 5 VDC, 500 mA (MAX: when ROM is mounted.300mA when ROM is not mounted)
+(6) Operating conditions 0 to 50 °, 20 to 90% (without condensation)
+
+・ 8-station dip switches SW1 and SW2: I / O port address setting
+Set the start address of the port group used by the board with SW1 and SW2.Let's set
+Set the corresponding bit switch to ON according to the port address to be set.
+Since 8 pairs of ports are occupied in this I / F, the start port address is a multiple of 8
+Setting.
+Example: 01D0h
+　SW1: OFF-OFF-OFF-OFF-OFF-OFF-OFF-OFF-ON
+　SW2: ON-ON-OFF-ON-OFF-OFF-OFF-OFF
+CONTEC recommends the range of ** D0H to ** DFH (* is any value from 0 to F).
+Input / output in assembler program is to register indirect input instruction by DX register
+Limited.
+
+・ 8-station dip switch SW3: Memory address setting for ROM writer function
+For operating the ROM writer function by connecting to Contec EP-ROM writer "PRW-98"
+Memory (ROM: PRW (98) H, PRW (98) L) mounted in the two sockets in the center of this I / F
+In the case of 1 to 6, set the memory address. When 7 is ON, the memory is not selected.ROM
+If you do not use the writer function, 1-2-3-4-5-6-7-8,
+Set to ON-ON-OFF-OFF-OFF-ON-ON-OFF.
+
+・ 2 x 4 jumper switch JP1: Interrupt setting (factory setting)
+Pin number (signal name) JP1 pin interrupt
+　　　49 (L-PC0) 1 INT0
+　　　46 (L-PC3) 2 INT4
+      24 (H-PC0) 3 INT5
+      21 (H-PC3) 4 INT6
+An interrupt occurs at the rise of the input signal from OFF to ON.In addition, interrupt
+When used, other I / F interrupts must not be used at the same level
+(Wired or not available).Jumper when not using interrupt
+To remove.
+
+・ 3x4 jumper switch JP2: Not described in the manual
+　Factory setting: All open
+
+■ Connector pin assignment: The following, in the order of terminal number Signal name Description:
+A 1 + 5V B 1 + 5V
+A 2 H-PA7 ┐ B 2 L-PA 7 ┐
+A 3 H-PA6 | B 3 L-PA 6 |
+A 4 H-PA5 | B 4 L-PA5 |
+A 5 H-PA 4 | Upper A Port B 5 L-PA 4 | Lower A Port
+A 6 H-PA 3 | B 6 L-PA 3 |
+A 7 H-PA 2 | B 7 L-PA 2 |
+A 8 H-PA1 | B 8 L-PA 1 |
+A 9 H-PA 0 ┘ B 9 L-PA 0 ┘
+A10 GND B10 GND
+A11 + 5V B11 + 5V
+A12 H-PB7 ┐ B12 L-PB7 ┐
+A13 H-PB6 | B13 L-PB6 |
+A14 H-PB5 | B14 L-PB5 | 
+A15 H-PB4 | Upper B port B15 L-PB4 | Lower B port
+A16 H-PB3 | B16 L-PB3 |
+A17 H-PB2 | B17 L-PB2 |
+A18 H-PB1 | B18 L-PB1 |
+A19 H-PB0 ┘ B19 L-PB0 A
+A20 GND B20 GND
+A21 + 5V B21 + 5V
+A22 H-PC7 ┐ B22 L-PC7 ┐
+A23 H-PC6 | B23 L-PC6 |
+A24 H-PC5 | B24 L-PC5 |
+A25 H-PC4 | Upper C Port B25 L-PC4 | Lower C Port
+A26 H-PC3 | B26 L-PC3 |
+A27 H-PC2 | B27 L-PC2 |
+A28 H-PC1 | B28 L-PC1 |
+A29 H-PC0 ┘ B29 L-PCD ┘
+A30 GND B30 GND
+When viewing the board from the back, the upper right corner is A1, the left is A2, the upper left corner is A30, and the right is A29,
+The lower right corner is B1, the left is B2, the lower left corner is B30, and the right is B29.
+
+■ Correspondence of port address and signal terminal
+Set port address D7 D6 D5 D4 D3 D2 D1 D0
+　　　　　+0 Lower A port
+　　　　　+1 upper A port
+　　　　　+2 Lower B port
+　　　　　+ 3 upper B port
+　　　　　+4 lower C port
+　　　　　+5 upper C port
+　　　　　+6 Lower 8255A Control
+　　　　　+7 Top 8255A Control
+
+■ About hardware interrupt
+(1) In the PC-9801 series, two interrupt controllers μPD8259 are cascade-connected
+　 doing.To use an interrupt, mask reset the μPD8259 and
+   The table address must be registered.
+a) Correspondence between interrupt levels and mask bits in the μPD8259:
+　INT 0: Master 8259 (02h port) D3 bit
+　INT 5: slave 8259 (0 Ah port) D4 bit
+　INT 6: slave 8259 (0 Ah port) D5 bit
+　By resetting the port bit shown above, interrupts are enabled,
+　Interrupts are disabled by setting a bit.
+　Example) Allow INT 0, INT 5
+　　IN AL, 02h; Acquisition of current mask state
+　　AND AL, 0F7h; Clear bit corresponding to INT 0
+    OUT 02h, AL; set a new mask state
+　　IN AL, 0Ah; Acquisition of current mask state
+　　AND AL, 0EFh; Clear bit corresponding to INT 5
+    OUT 0Ah, AL; Set a new mask state
+b) Interrupt level and interrupt processing destination registration address
+　INT 0: From segment 0h / offset 2Ch
+　INT 5: From segment 0h / offset 50h
+　INT 6: From segment 0h / offset 54h
+　Start address of interrupt processing program from the address shown above
+　Register in order of offset and segment.
+　Example: The interrupt processing destination address of INT 0 is segment 1E00h, offset 100h,
+　　　Also, the interrupt processing destination address of INT 5 is segment 1E00h, offset 200h
+　　　in the case of
+　　MOV AX, 0; Segment 0 set
+    MOV DS, AX; INT 0
+    MOV WORD PTR [2Ch], 100h; Offset registration
+    MOV WORD PTR [2Eh], 1E00h; Segment registration
+                              ; INT 5
+    MOV WORD PTR [50h], 200h; Offset registration
+    MOV WORD PTR [52h], 1E00h; Segment registration
+(2) Interrupt processing program
+a) Saving of registers used for interrupt processing
+b) Interrupt processing
+c) Reset of interrupt controller μPD8259
+　　MOV AL, 20h; EOI command set
+  　OUT 0, AL: Reset of master μPD 8259
+  　OUT 8, AL; reset of slave μPD 8259
+　However, in the case of INT 0, it is not necessary to reset the slave μPD8259.
+d) Register return + IRET
+

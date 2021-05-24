@@ -1,0 +1,40 @@
+
+C-NET (98) -01, C-NET (98) -02, C-NET (98) -11, C-NET (98) -12 (CONTEC)
+
+C bus NIC (LAN board.C-NET (98) -01 is a 10BASE-2 / 5 connector, C-NET (98) -02
+Is 10BASE-5 connector.C-NET (98) -11 is a 10BASE-2 / 5 / T connector, C-NET (98) -12
+Equipped with 10BASE-5 / T connector.
+In the C-NET (98) -01 and C-NET (98) -12 other than one 2 jumper switch on the board
+There is one 8-deep dip switch, and there are two 8-deep dip switches for C-NET (98) -11.
+There is no dip switch in C-NET (98) -02.
+
+power consumption
+　10BASE-5: +5 V = 250 mA
+　10BASE-2: +5 V = 450 mA
+　10BASE-T: +5 V = 300 mA
+Operating temperature range: 0 to 50 °, operating humidity range: 20 to 80% (no condensation)
+
+・ 2 jumper switches: I / O port address setting
+　Short ■ 0AAEDh, 0AAEFh (factory setting)
+　Open ■ 55EDh, 55EFh
+
+・ 8 stations dip switch: Selection of LAN connector to use
+(1) SW-2 (C-NET (98) -01, C-NET (98) -12)
+　All ON 10BASE-5
+　All OFF 10BASE-2 (default setting)
+(2) SW-2, SW-T (C-NET (98) -11)
+　Below, the order of SW-2 SW-T LAN connector
+　All OFF ■ All OFF ■ 10-BASE-5
+　All ON ■ All OFF 10-BASE-2 (Factory setting)
+　All OFF ■ All ON ■ 10-BASE-T
+(3) SW-T (C-NET (98) -12)
+　All OFF 10BASE-5
+　All ON 10BASE-T (default setting) 
+
+I / O port address
+　Software setting: n3D0h to n3DFh, n7D0h to n7DFh 32 bytes occupied (n = A to F)
+　Set by jumper switch: 0AAEDh, 0AAEFh or 55EDh, 55EFh
+
+Interrupt level
+　Select one from INT 0, 1, 2, 3, 4, 5, 6 (set by software)
+

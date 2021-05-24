@@ -1,0 +1,36 @@
+
+IF-2660 (ICM)
+
+W-FIFO transfer attached to 110-pin expansion bus connector of 98NOTE / EPSON NOTE
+SCSI H / A. In Windows 95 type attached to 110 pin expansion bus connector
+H / A is the fastest.The SCSI chip is AM33C93A-20JC. 8 stations dip
+There is one switch (SW1).
+※ There are two 8-deep dip switches (SW2, SW3) inside (right of SW1),
+　Function unknown.The settings on your IF-2660 are as follows:
+　　SW2 = ON-ON-ON-ON-OFF-OFF-OFF-OFF
+　　SW3 = OFF-ON-ON-OFF-ON-ON-ON-ON
+
+· 8 stations dip switch SW1: terminator power, body model, interrupt level,
+　SCSI-ID, transfer mode setting
+1-2: Setting of terminator power supply
+　ON-ON ■ internal + external
+　ON-OFF ■ inside
+　OFF-ON External (default setting) 
+　OFF-OFF ■ Do not supply 
+3: Setting of machine model
+　ON ■ PC-9801N, NV
+　OFF ■ 386 or more models (default setting)
+4-5: Interrupt level setting 
+　ON-ON INT 3
+　ON-OFF INT 1
+　OFF-ON INT 2
+　OFF-OFF INT O (default setting) 
+6-7: Setting the SCSI-ID of IF-2660
+　ON-ON 7 (default setting) 
+　ON-OFF 5
+　OFF-ON 6
+　OFF-OFF 4
+8: Transfer mode setting
+　ON W-FIFO transfer (default setting)
+　OFF DMA transfer
+

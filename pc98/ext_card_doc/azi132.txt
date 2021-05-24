@@ -1,0 +1,143 @@
+
+AZI-132 (98 DIO (32/32)) (Interface)
+
+32-point isolated parallel I / O board.External connector shape is 50 pins
+Flat x 2.Two 8 series dip switches and 2 × 7 series jumpers on the board
+There is one switch.
+
+　Number of input points: 32 points (8 points × 4 ports)
+　Number of occupied ports: 16 bits × 2 ports or 8 bits × 4 ports
+　Input type: Photocoupler insulation, input resistance 2.2 KΩ or more.
+　Input part: Buffer 74LS240, photocoupler TLP620-4
+　Signal voltage: DC12 to 24V
+　Input logic: Internal logic "1" at input "ON" (short between input terminal and "-COM")
+　Interrupt: 4 points, 7 types of interrupts
+　Number of output points: 32 points (8 points × 4 ports)
+　Output type: Photocoupler insulation (open collector)
+　Output unit: Buffer 74LS240, latch 74LS273, photocoupler PS2401-4,
+　       Transistor array TD62084AP
+　Output applied voltage: 50V (MAX)
+　Output drive current: 400mA (MAX)
+　Operating conditions: 0 to 50 °, 20 to 90% (without condensation)
+　Power supply: DC + 5 V
+　Current consumption: 650mA
+
+・ 8-station dip switches DSW1, 2: I / O port address settings (when DSW 1 is shipped)
+  Setting: OFF-OFF-ON-OFF-ON-OFF-ON-ON / DSW2 Default setting: All OFF)
+When looking at the switch in the reverse direction, 8-7-6-5-4-3-2-1 of DSW 2 is the upper 8 bits,
+8-7-6-5-4-3 of DSW1 correspond to lower 8 bits (2-1 of DSW1 is invalid, ie setting
+Always functions as OFF-OFF regardless of involvement).
+Therefore [Dip switch upside-down] is the factory setting
+　DSW2 = OFF-OFF-OFF-OFF-OFF-OFF-OFF-OFF-OFF,
+　DSW1 = ON-ON-OFF-ON-OFF-ON (-OFF-OFF)
+And the I / O port address in this case is 00D4h.
+
+・ 2 × 7 jumper switch JP1
+Factory setting: All open
+　1 vertical 2 shorts ■ INT 0
+　2 vertical 2 shorts ■ INT 1
+　3 vertical 2 shorts ■ INT 2
+　4 vertical 2 shorts ■ INT 3
+　5 vertical 2 shorts ■ INT 4
+　6 vertical 2 shorts ■ INT 5
+　7 vertical 2 shorts ■ INT 6
+                            _________
+                            | |
+Bus terminal B24 INT 0 --------------------------Signal name IN 1
+        B25 INT 1 ---------------+----------------IN 2 2
+        B26 ■ INT 2 ---------- 3- ・ ・ ------ +-|-| --- IN 3 3
+        B27 ■ INT 3 ----------4 · · · --- |-|-| --- IN 4 ■ 4
+        B28 ■ INT 4 ---------- 5- · · --- |-|-+
+        B29 INT 5 ------------------ 
+        B30 ■ INT 6 ---------- 7------
+　　　　　　                | |
+　　　　                    ~~~~~~~~
+
+(1) Input method
+Input connector (CN1) + COM 0 (IN) (pin number 1, 2) and + COM 1 (IN) (pin number
+13, 14) + COM 2 (IN) (pins 25 and 26) + COM 3 (IN) (pins 37 and 38)
+Connect to an external power supply DC + 12 V to 24 V.
+The relationship between common terminals and signal lines is as follows:
+　1. IN1 to IN8 (pin numbers 3 to 10) [port 0 input] to the + COM 0 (IN) terminal
+　2. IN9 to IN16 (pin numbers 15 to 22) [port 1 input] for the + COM 1 (IN) terminal
+　3. IN17 to IN24 (pin numbers 27 to 34) [port 2 input] for the + COM 2 (IN) terminal
+　Four. IN25 to IN32 (pin numbers 39 to 46) [port 3 input] to the + COM 3 (IN) terminal
+
+(2) Output method
+Output connector (CN2) + COM 0 (OUT) (pin numbers 1 and 2) and + COM 1 (OUT) (pin numbers
+13, 14) + COM 2 (OUT) (pins 25 and 26) + COM 3 (OUT) (pins 37 and 38)
+Connect to an external power supply DC + 12 V to 24 V.Furthermore, -COM 0 (OUT) of the output connector (CN2)
+(Pin Nos. 11 and 12) and -COM 1 (OUT) (Pin Nos. 23 and 24) and -COM 2 (OUT) (Pin No.
+Connect 35, 36) and -COM 3 (OUT) (pins 47, 48) to the negative terminal of the external power supply.
+The relationship between common terminals and signal lines is as follows:
+　1.OUT1 to OUT8 (pin numbers 3 to 10) [port 0 output] for the terminals of + COM 0 and -COM 0
+　2.OUT9 to OUT16 (pin numbers 15 to 22) [port 1 output] for the + COM 1 and -COM 1 terminals
+　3.OUT17 to OUT24 (pin numbers 27 to 34) for the + COM 2 and -COM 2 terminals [port 2 output]
+　Four.OUT25 to OUT32 (pins 39 to 46) [port 3 output] to the + COM 3 and -COM 3 terminals
+※ Since the maximum common current of each port is 2A, the OUT terminal of each port
+Use the total of the current value of (8 terminals) at 2A or less.Also for each OUT terminal
+  A drive current of up to 400 mA can be output, but 1 output if outputting to all 8 terminals
+  Use at less than 250mA per.
+
+Connector pin assignment
+Pin number:
+    ___________________________
+　　| 49 47 45 ........... 5 3 1 |
+　　| 50 48 46 ........... 6 4 2 |
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+・ CN1
+  Pin Data Signal Name I / O Port | Pin Data Signal Name I / O Port
+    1 ---- + COM 0 (IN) port 0 | 2 ---- + COM 0 (IN) port 0
+    3 D0 IN 1 port 0 | 4 D1 IN 2 port 0
+    5 D2 IN 3 port 0 | 6 D3 IN 4 port 0
+    7 D4 IN 5 port 0 | 8 D5 IN 6 port 0
+    9 D6 IN 7 port 0 | 10 D7 IN 8 port 0
+   11 ---- NC port 0 | 12 ---- NC port 0
+   13 ---- + COM 1 (IN) port 1 | 14 ---- + COM 1 (IN) port 1
+   15 D8 IN 9 port 1 | 16 D9 IN 10 port 1
+   17 D10 IN 11 port 1 | 18 D11 IN 12 port 1
+   19 D12 IN 13 port 1 | 20 D13 IN 14 port 1
+   21 D14 IN 15 port 1 | 22 D15 IN 16 port 1
+   23 ---- NC port 1 | 24 ---- NC port 1
+   25 ---- + COM 2 (IN) port 2 | 26 ---- + COM 2 (IN) port 2
+   27 D0 IN 17 port 2 | 28 D1 IN 18 port 2
+   29 D2 IN 19 port 2 | 30 D3 IN 20 port 2
+   31 D4 IN 21 port 2 | 32 D5 IN 22 port 2
+   33 D6 IN 23 port 2 | 34 D7 IN 24 port 2
+   35 ---- NC port 2 | 36 ---- NC port 2
+   37 ---- + COM 3 (IN) port 3 | 38 ---- + COM 3 (IN) port 3
+   39 D8 IN 25 port 3 | 40 D9 IN 26 port 3
+   41 D10 IN 27 port 3 | 42 D11 IN 28 port 3
+   43 D12 IN 29 port 3 | 44 D13 IN 30 port 3
+   45 D14 IN 31 port 3 | 46 D15 IN 32 port 3
+   47 ---- NC port 3 | 48 ---- NC port 3
+   49 ---- NC port 3 | 50 ---- NC port 3
+
+・ CN2
+Pin Data Signal Name I / O Port | Pin Data Signal Name I / O Port
+    1 ---- + COM 0 (OUT) port 0 | 2 ---- + COM 0 (OUT) port 0
+    3 D0 OUT 1 Port 0 | 4 D1 OUT 2 Port 0
+    5 D2 OUT 3 port 0 | 6 D3 OUT 4 port 0
+    7 D4 OUT 5 Port 0 | 8 D5 OUT 6 Port 0
+    9 D6 OUT 7 Port 0 | 10 D7 OUT 8 Port 0
+   11 ---- -COM 0 (OUT) port 0 | 12 ---- -COM 0 (OUT) port 0
+   13 ---- + COM 1 (OUT) port 1 | 14 ---- + COM 1 (OUT) port 1
+   15 D8 OUT 9 port 1 | 16 D9 OUT 10 port 1
+   17 D10 OUT 11 port 1 | 18 D11 OUT 12 port 1
+   19 D12 OUT 13 port 1 | 20 D13 OUT 14 port 1
+   21 D14 OUT 15 port 1 | 22 D15 OUT 16 port 1
+   23 ---- -COM 1 (OUT) port 1 | 24 ---- -COM 1 (OUT) port 1
+   25 ---- + COM 2 (OUT) port 2 | 26 ---- + COM 2 (OUT) port 2
+   27 D0 OUT 17 Port 2 | 28 D1 OUT 18 Port 2
+   29 D2 OUT 19 port 2 | 30 D3 OUT 20 port 2
+   31 D4 OUT 21 port 2 | 32 D5 OUT 22 port 2
+   33 D6 OUT 23 Port 2 | 34 D7 OUT 24 Port 2
+   35 ---- -COM 2 (OUT) port 2 | 36 ---- -COM 2 (OUT) port 2
+   37 ---- + COM 3 (OUT) port 3 | 38 ---- + COM 3 (OUT) port 3
+   39 D8 OUT 25 port 3 | 40 D9 OUT 26 port 3
+   41 D10 OUT 27 port 3 | 42 D11 OUT 28 port 3
+   43 D12 OUT 29 port 3 | 44 D13 OUT 30 port 3
+   45 D14 OUT 31 port 3 | 46 D15 OUT 32 port 3
+   47 ---- -COM 3 (OUT) port 3 | 48 ---- -COM 3 (OUT) port 3
+   49 ---- NC port 3 | 50 ---- NC port 3
+

@@ -1,0 +1,9 @@
+
+IF-55Tn (TEAC)
+
+SCSI interface for multi vendor non-compliant old 98 note 110 pin expansion bus.
+With 1MB FDD connector.There is a switch for main unit selection written N / NS on the back.
+The SCSI unit is fixed at ID = 7, the resource is fixed at INT = 0 (IRQ = 3), and DMA = 3.
+ROM address space = DC000H to DCFFFH
+I / O port address = CC0H, CC2H, CC4H
+Terminator power is supplied from HDD.

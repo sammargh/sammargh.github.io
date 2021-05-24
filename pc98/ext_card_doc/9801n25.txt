@@ -1,0 +1,24 @@
+
+PC-9801N-25 (NEC)
+
+10BASE-T for 98 notebook / Epson notebook PC equipped with 110 pin expansion bus
+LAN unit (B4680 interface pack T).Six consecutive dips inside
+There is one switch and an empty 44-pin PLCC socket.
+The dip switch settings are in the driver disk manual at hand.
+(Common with PC-9801-83 / 84, not described in the user's manual)
+There is not.PC-9801-83 / 84 with 8 series dip switch SW1 1-2-3-4-5-5
+It seems that it may be common (某 a large amount of what appeared in the used PC shop
+As a result of investigation of several dozens, all dip switch settings are ON.
+And it is assumed that this is the factory setting).
+Also, although it is a PLCC socket, if you look at the manual of PC-9801-83, PC-9801
+It is said that there is a similar empty socket in -83, but it is
+It is a socket to be used when
+
+Windows 95/98 standard LAN driver, C bus LAN board PC-9801-83,
+Common to PC-9801-84.
+
+The I / O address is fixed at 088xh (x = 8, 9, B, C, D).The interrupt level is
+Set any one of INT 0, 1, 4 and 5 on software (prescribed value INT 1).
+The window addresses are 0D2000h to 0D3FFFh, 0D4000h to 0D5FFFh,
+Set any of 0D6000h to 0D7FFFh on software.
+

@@ -1,0 +1,43 @@
+
+SIC-98NOTE-T (Allied Telesis)
+
+LAN adapter attached to 110-pin expansion bus connector of 98 notes.
+Not compatible with Windows 95. There are two 4 series dip switches.
+
+・ 4 stations dip switch SW1: Memory address setting
+(1) Memory address at 32KB bank (x can be either ON or OFF)
+　ON-ON-x-ON 0C0000h to 0C7FFFh
+　ON-OFF-x-ON 0C8000h to 0CFFFFh
+　OFF-ON-x-ON 0D0000h to 0D7FFFh (factory setting)
+　OFF-OFF-x-ON 0D 8000 h to 0 D FFFF h
+(2) Memory address at 16 KB bank
+　ON-ON-ON-ON 0C0000h to 0C3FFFh
+　ON-ON-OFF-OFF 0C4000h to 0C7FFFh
+　ON-OFF-ON-OFF ■ 0C8000h ~ 0CBFFFh
+　ON-OFF-OFF-OFF 0 CC 000 h to 0 C FFFF h
+　OFF-ON-ON-OFF 0D0000h to 0D3FFFh
+　OFF-ON-OFF-OFF 0D4000h to 0D7FFFh
+　OFF-OFF-ON-OFF 0D 8000 h to 0 DB F FF h
+　OFF-OFF-OFF-OFF ■ 0 DC 000 h to 0 D FFFF h
+
+・ 4 series jumper switch SW2: interrupt level, CPU type, I / O port
+　Address setting
+(1) Rev. In the case of A and AB
+1-2-3: Interrupt level setting
+　ON-OFF-OFF INT 0
+　ON-ON-OFF INT 1
+　OFF-OFF-ON INT 5 (default setting)
+4: I / O port address setting
+　ON 00D0h to 20D0h (factory setting)
+　OFF ■ 01 D 0 h to 21 D 0 h
+(2) Rev. B or later
+1-2: interrupt level setting
+　ON-OFF INT 0
+　OFF-ON INT 5 (default setting)
+3: Set CPU type
+　ON 80386 (SX) (default setting)
+　OFF V30
+4: I / O port address setting
+　ON 00D0h to 20D0h (factory setting)
+　OFF ■ 01 D 0 h to 21 D 0 h
+

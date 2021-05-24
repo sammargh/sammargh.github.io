@@ -1,0 +1,26 @@
+
+GV-98X (I･Oデータ)
+
+C bus video capture board.One rotary switch on board, 2 x 5 series
+There is 1 jumper switch and 2 3 jumper switches. The three jumper switch is
+The card edge side is for image position adjustment, and the opposite side is for RGB input adjustment.
+
+・ Rotary switch: I / O port address setting
+　The port address at shipment is 2 bytes from 3AD6h, but the upper 4 bits are between 0 and F.
+　It is possible to change with.The number indicated by the rotary switch is the upper 4 bits.Also
+　Lower 4 bits can be changed by GV-98 setup.
+
+・ 2 x 5 series jumper switch: setting of interrupt level
+　If you look at the board with the card edge on the right,
+　Top short: INT 0
+　Second short: INT 1
+　Third short: INT 2
+  4th short: INT 41 (factory setting)
+
+・ Vertical line 3 jumper switch (card edge side): Adjust video image position
+　Factory setting: center-bottom short
+　Change when the position of the video image is shifted.
+
+・ 3 side by side jumper switches: adjustment of RGB input
+　Factory setting: left-center short
+

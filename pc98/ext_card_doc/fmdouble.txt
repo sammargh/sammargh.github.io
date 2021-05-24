@@ -1,0 +1,18 @@
+
+FMDOUBLE (キュービジョン)
+
+C bus sound board equipped with FM sound source (26k compatible) and MIDI sound source (OPL-3).The driver is
+It is for Windows 3.1 only, not for Windows 95.Three jumpers on the board
+There is one switch.
+
+・ Jumper switch: FM sound source function enable / disable setting
+  1-2 short: FM sound source function enabled
+  2-3 short: FM sound source function disabled
+
+The interrupt level is INT5 (IRQ12).The I / O address is 188h, 18Ah, 85Exh, 87Exh,
+A8Exh, A9Exh, AAExh, ABExh (where x = 0, 2, 4, 6, A, C, E)
+Check and assign automatically.
+
+This data comes from Mr. SiO2.
+
+

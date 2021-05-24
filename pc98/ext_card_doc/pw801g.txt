@@ -1,0 +1,60 @@
+
+Power Window 801G, 928G, 928II (Canopus)
+
+C bus graphic accelerator board.Graphics chip is Power Window 801G
+The S3 company 86C801 is installed, and the Power Window 928G and 928II are equipped with the S3 company 86C928.
+There is one quadruple dip switch and one jumper switch on the board (in Power Window 801G
+Is no jumper switch).In addition, memory capacity jumper switch in Power Window 928G
+There is also.VRAM is 1 MB for Power Window 801G and 928G, and 2 MB for 928 II. Power Window 928G
+The VRAM can be expanded to 2 MB with the VRAM expansion kit 928G-1M (model number HIM-1161-01).
+If you look at the board with the card edge connector side on the left side of the board,
+The damper is near the right corner of the board, and the memory capacity jumper is at the center of the board at the upper left.
+The maximum current consumption is +5 V, 840 mA / + 12 V, 40 mA, 928 G in Power Window 801 G.
++5 V, 970 mA / + 12 V, 40 mA, +5 V, 940 mA / + 12 V, 40 mA for 928 II.
+
+Operation is not guaranteed on machines with CPU accelerator (Operation of machines with ODP is guaranteed).
+
+The main unit's GCD clock should be used at 5 MHz.14.6 MB or more of memory is installed in PC-98 series
+If it is, set 16MB system space to "Use".It is equipped with PC-H98 series
+If the mounted memory is 14.8 MB or more, the display of 16.77 million colors is not possible when using Power Window 801G.Also
+In PC-9801FA, the number of expansions of 61 compatible SIMMs on the internal expansion RAM board is 5 or less (mounted memory 13.6 MB
+Use in the following).
+
+Standard I / O port address:
+06D0-06DF, 16D0-16DF, 26D-26DF, 36D0-36DF
+46D0-46DF, 56D0-56DF, 66D-66DF, 76D0-76DF
+86D0-86DF, 96D0-96DF, A6D-A6DF, B6D0-B6DF
+C6D0-C6DF, D6D0-D6DF, E6D-E6DF, F6D0-F6DF
+
+The second digit from the left of each I / O port address "6"
+, And can be changed between 1-7. 
+The standard setting for the 4-station dip switch is ON-OFF-OFF-ON.
+The dip switch supports binary numbers with ON = 0 and OFF = 1.For example,
+ON-OFF-OFF-ON is "0110", which is "6" in hexadecimal. 
+Software called "PWIO.EXE" to find out how to set the dip switch
+Included.This is done before setting the board to the PC.
+On LAN boards where the I / O port address to be used overlaps with Power Window, execute PWIO.EXE.
+There is a possibility that the line will cause a malfunction.In this case, with the LAN cable disconnected
+Run PWIO.EXE. 
+
+The memory space uses 128KB from F00000H by default (within the system reserved area).
+However, when using Power Window via I / O expansion unit, PC-H98 series
+This memory space is used when the PC-486 series is equipped with a memory of 14.6 MB or more.
+Unavailable.In this case, use Auto Setup to check the memory space and use it.
+If it is, do the setting.When using manual setup, use I / O expansion unit
+If you can not use the memory space such as time, select "Use extension unit"
+about.However, the display of 16.77 million colors is not possible, and the drawing speed is slightly reduced. 
+(In addition to the setting to use 128KB from F00000H for the manual, 128KB from E00000H
+It is also possible to set to use or not to use
+
+Jumper switch: The display is brighter than when the Power Window is not used
+If it feels too much, remove the jumper plug (short plug).
+
+Memory capacity jumper switch: Open when expansion VRAM is not expanded, when expansion
+Is short. 
+After VRAM expansion, check the expanded VRAM by PWMEM.EXE.In addition, after expansion
+Setup the board (return to the original resolution of PWSET.EXE before
+Do)). 
+
+※ The above description is based on the User's Guide issued in the age of Windows 3.1.
+

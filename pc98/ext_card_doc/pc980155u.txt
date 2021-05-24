@@ -1,0 +1,64 @@
+
+PC-9801-55U (NEC)
+
+C bus SCSI I / F. SCSI connector is Amphenol half 50 pin.
+When connecting an HDD for NEC check of ROM, the first vendor name
+If the three letters do not begin with NEC (NEC, NECTSU, NECTOR, etc.),
+Beeps continuously and does not start the body by entering an infinite loop.
+When connecting a cassette magnetic tape unit, I / O with other SCSI devices
+To separate F (two boards required).
+There are 2 8 dip switches and 2 3 jumper switches on the board.
+
+· 8 stations dip switch SW1: SCSI ID number of the board, interrupt level,
+　DMA channel setting
+1-2-3: Set board SCSI ID number
+　ON-ON-ON ID 7 (Factory setting)
+4-5-6: Setting interrupt level
+　OFF-OFF-OFF ■ INT 0
+　ON-OFF-OFF INT 1
+　OFF-ON-OFF INT 2
+　ON-ON-OFF INT 3 (default setting)
+　OFF-OFF-ON INT 5
+　ON-OFF-ON INT 6
+7-8: DMA channel setting
+　OFF-OFF DMA # 0 (factory setting)
+　ON-OFF ■ Setting prohibited
+　OFF-ON DMA # 2
+　ON-ON DMA # 3
+
+・ 8 stations dip switch SW2: ROM memory address, body model, Power on
+　ROM accessibility setting at the time of
+1-2-3-4-5-6-7: Setting ROM memory address + main unit model
+　　　　　　　　　　　　(Factory setting: OFF-ON-ON-OFF-ON-ON-OFF)
+(1) PC-98XA (high res dedicated machine)
+　xxx-OFF-ON-OFF-OFF ■ Memory address \ EC 000 h ~ \ EDFFF h
+(2) 8086 loading machine
+　OFF-ON-OFF-xx-ON-OFF ■ Memory address D4000h to D5FFFh
+(3) V30 loading machine
+　OFF-ON-ON-xx-ON-OFF ■ Memory address DC000h to DDFFFh
+(4) Normal / high res combined use machine
+　OFF-ON-ON-OFF-ON-OFF-ON
+(5) The machine with an 80286/386/486 (only for normal mode)
+　OFF-ON-ON-xx-ON-ON ■ Memory address \ DC 000 h ~ \ DDFFF h
+※ x can be set to ON or OFF, and \ means 0h or Fh.
+※ When used with B4670 II (PC-9864L / PC-9864U) in high resolution mode,
+　OFF-ON-ON-ON-ON-OFF-OFF (PC-98XA) or OFF-ON-ON-ON-ON-ON-OFF-ON
+(Normal / high res combined use machine)
+※ The combination with GP-IB interface board is not possible with the 8086 installed machine.
+8: Setting of ROM accessibility at Pow on
+　ON ■ ROM accessible (factory setting)
+　OFF ■ ROM can not be accessed
+
+・ Three jumper switches SW3 and SW4: I / O port address setting
+Below, short pin at SW3 ■ Short pin at SW4 ■ I / O port address
+Order of:
+　01-02 ■ 01 02 ■ CC0h, CC2h, CC4h (factory setting)
+　02-03 ■ 01 02 ■ CD0h, CD2h, CD4h
+　01-02 ■ 02 03 ■ CE0h, CE2h, CE4h
+　02-03 ■ 02 03 ■ CF 0 h, CF 2 h, CF 4 h
+※ Except when the cassette magnetic tape unit is connected, use with the factory setting.
+　Also, when changing to settings other than the factory settings, turn off SW2-8.
+
+When used on an 8086 / V30 machine, the switch beside the card edge connector
+Make the pin lever point up.
+

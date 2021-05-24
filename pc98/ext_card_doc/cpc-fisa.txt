@@ -1,0 +1,13 @@
+
+CPC-FISA (Computer Research)
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot
+There are two 8-dip dip switches and one 3-dip dip switch on the board.
+
+There is no manual, so the setting contents of each switch are unknown.Of the ones at hand
+The status of each switch is as follows.
+
+・ 8 stations dip switch DSW1 = ON-ON-ON-OFF-OFF-OFF-OFF-ON-ON
+・ 8 stations dip switch DSW2 = OFF-ON-ON-OFF-ON-ON-ON-ON
+· Triple dip switch DSW3 = ON-ON-OFF
+

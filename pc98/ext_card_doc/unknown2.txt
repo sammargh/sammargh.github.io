@@ -1,0 +1,21 @@
+
+Name unknown (ウィンテク)
+
+I / F with Wintech 40MB SASI HDD, "WD40" Although the name is unknown,
+"REFERENCE" on 98 JUNK. DOC matches the dip switch configuration
+Because it does, it may be the same thing.There are many mistakes in the description of the WD40 manual,
+A paper with corrected switch setting information was attached to the manual.
+There are two 8-deep dip switches and one 4-deep dip switch on the board.
+
+・ 8-station dip switch SW 1: Setting of the presence or absence of the HDD for the first expansion
+　ON-ON-OFF-OFF-ON-OFF-OFF-OFF ■ 40MB 1 unit (default setting)
+　ON-ON-OFF-OFF-ON-OFF-OFF-OFF ■ 40MB + 40MB (2nd expansion)
+
+・ 8 stations dip switch SW2: Fixed
+(Factory setting: OFF-OFF-OFF-ON-OFF-ON-OFF-OFF)
+
+・ 4 stations dip switch SW3: Setting of main unit model
+　ON-OFF-OFF-ON PC-9801F / F2 / U2 / VF / VM / VX / RX / RA (factory setting)
+　OFF-ON-OFF-ON ■ PC-9801M2
+　ON-OFF-ON-OFF ■ PC-9801, PC-98XA
+

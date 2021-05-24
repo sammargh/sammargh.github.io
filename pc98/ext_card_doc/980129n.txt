@@ -1,0 +1,66 @@
+
+PC-9801-29N (NEC)
+
+GP-IB (HP-IB, IEEE-488) board to be inserted into C bus.Maximum power consumption 800 mA. GP-IB controller
+Is the μPD7210C equivalent product.This is SH1, AH1, T5 / TE5, L3 / LE3, which are defined in IEEE Std. 
+It has all the functions of SR1, RL1, PP1 / PP2, DC1, DT1, C1, C2, C3, C4 and C5, but this board
+The following subsets are available.The following is the order of functions, subsets, and functions:
+SH SH1 SH all functions
+AH ■ AH 1 ■ AH all functions
+T ■ T 6 ■ basic talker, serial pole, talker cancellation by MLA
+TE ■ TE 0 ■ TE without function
+L ■ L 4 ■ Basic listener, listener cancellation by MTA
+LE ■ LE 0 ■ LE without function
+SR ■ SR 1 ■ All functions
+RL ■ RL 1 ■ All functions of RL
+PP ■ PP 1 ■ PP function by remote, message
+DC DC 1 DC All Functions
+DT · DT1 · DT all functions
+C1 C1, C2, C3, C4, C26 System controller, IFC transmission, REN transmission, SRQ
+　 Response, controller in charge, interface message transmission, parallel
+   Pole
+It has two modes, master mode and slave mode.In the former, PC-98 is always a system
+It is a controller and in the controller in charge state, and the latter is PC-98
+It can not be a controller.These modes depend on the status of SW1-5 at system startup.
+It is decided.To change the mode, re-initialize after changing SW1-5.
+
+The I / O port addresses used by the board are: 1000001 to 11001111, 10010011, 10011011.
+Memory addresses are D4000h to D5FFFh. 8kB mounted with EPROM (High res of PC-98XA, PC-98XL
+Not used in mode).
+
+There are 1x10 dip switches and 3 3 jumper switches on the board.
+
+・ 10 stations dip switch SW1: DMA channel, interrupt level, operation mode, my address
+　settings of
+1-2: DMA channel setting
+　ON-ON = DMA 0
+  ON-OFF = Setting prohibited
+  OFF-ON = Setting prohibited
+  OFF-OFF = DMA 3
+  Note: The BIOS ROM on this board does not provide software support for the DMA function.
+3-4: Interrupt level setting
+　ON-ON = INT 0
+  ON-OFF = INT 4
+  OFF-ON = INT 5 (factory setting)
+  OFF-OFF = INT 6
+5: Mode setting
+　ON = slave
+　OFF = master
+6-7-8-9-10: Setting my address (talker address / listener address of the main unit)
+　Set ON as MSB, 10 as LSB with ON = 1, OFF = 0.However, my address is 31 (decimal: 6-7-8-9
+　-10 All OFF) can not be set.
+
+· Triple jumper switch SW2: Whether the ROM on the board is disconnected
+　AB short = ROM valid
+　Short between BC = ROM invalid
+
+· Triple jumper switches SW3 and SW4: Both should be used in the state of short between AB.
+
+When using this board, it is necessary to turn on the memory switch SW4-5 of the main unit.In this case,
+Turn on dip switch SW52-5.However, PC-98XA, PC-98XL (high res mode)
+In case of using it, it is necessary to change the setting of memory switch because ROM on the board is not used
+None (according to the manual issued in 1987).
+The setting of this memory switch is to be referred to by N88-Japanese BASIC (86).
+When using Japanese BASIC (86) (MS-DOS version), N88-Japanese BASIC (86) compiler
+No need to set memory switch.
+

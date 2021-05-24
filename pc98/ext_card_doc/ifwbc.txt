@@ -1,0 +1,29 @@
+
+Product name: IF-WBC (made by Teac) 
+
+Function: SMIT SCSI-2 (Amphenol half pitch 50 pin connector) 
+
+BIOS: non-FLASH type ROM loading, Ver. 1.07 (MMX-P compatible, probably final Ver) 
+
+Driver available: Hard (only difference for NT40 on WEB) 
+
+Features: It is a so-called general PnP SMIT SCSI. 
+　　　In addition, Ultra Given's 2001/10/17 (Wed) 23: 43 "16MB over SCSI board" 
+　　　According to Les "IF-WBC (SMIT) is better than SC-98III (latest BIOS · latest driver) 
+　　　The speed is about 200 to 300 KB / s. "That's right (I'm unconfirmed). 
+
+Dip SW setting: exactly the same as Melco IFC-NN (2 stations Dip type) 
+
+Degree of recommendation: It may not be good without driver FD and the latest BIOS. 
+　　　　　Support OS is DOS / Win3.1 / 95/98 / NT 3.51 / NT 4.0 (patch above) 
+　　　　 
+Mystery information: ROM Ver 1.07 accidentally matches the latest ROM Ver of LHA-301 (Mystery 
+　　　　The manufacturer of the Win95 driver is "WBC", and the product name and illumination 
+　　　　? ?Corporation's reference board and reference driver 
+　　　　I feel like a set. (Another mystery 
+　　　　SC55BX6 (following self-indulgence) 
+
+This setting table was posted by Wildcat.The author also created Mr. Marimo
+Maximum recognition capacity of this board for BIOS ROM 1.02 using free software e10chk.exe
+When I checked about, I got the result of 8GB correspondence.
+

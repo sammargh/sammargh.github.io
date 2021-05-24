@@ -1,0 +1,26 @@
+
+PK98-MISTLESS 9 (玄人志向)
+
+C bus BIOS board. Enable HDD over 4.3GB.USB connector
+But no formal driver is provided (in the hands of powerX
+USB mouse driver to be
+Supported devices are PC-9821 Xa 7/7 e / 9/10/12/13/16/20/200, Xb10,
+Xc13 / 16/200, Xv13 / 20, Ra18 / 20, RaII23, Ra266 / 300/333/40/43,
+V7 / 10/12/13/16/20/166/200/233.Also, compatible OS is MS-DOS 6.2,
+Windows 95 (2047 MB (per drive) x 16 drives available) (simultaneous
+Active is 4 drives)) / 95 OSR 2/98/98 SE / NT 4.0 / 2000.normal
+Only mode is supported.  
+
+8 possible settings with SW1:
+ON-ON-ON: D0000h-D1FFFh 8 Kbytes (factory setting)
+OFF-ON-ON: D2000h-D3FFFh 8Kbytes
+ON-OFF-ON: D4000h-D5FFFh 8 Kbytes
+OFF-OFF-ON: D6000h-D7FFFh 8Kbytes
+OFF-ON-OFF: DA000h-DBFFFh 8 Kbytes
+ON-OFF-OFF: DC000h-DDFFFh 8 Kbytes
+OFF-OFF-OFF: DE000h-FFFFFh 8 Kbytes
+
+Jumper for INT setting is invalid. 
+
+This setting table is powerX's Web Page, "98Systems" bulletin board AMATRACE's
+The contents of the post are restructured with permission of powerX.

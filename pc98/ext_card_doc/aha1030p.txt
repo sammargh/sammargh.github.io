@@ -1,0 +1,24 @@
+
+AHA-1030P (Ready SCSI 98) (Adaptec)
+
+PnP compatible C bus SCSI-2 I / F. Non-multi-vendor compatible.Connector is D sub half
+50 pins.Windows 95 compatible.
+PnP configuration, interrupt level in non-PnP mode, host adapter SCSI ID number,
+The setting of SCSI parity check uses the attached FD (SCSISelect 98 utility)
+Use it.
+Freeware created by Mr. Marimo for this board of BIOS ROM A1F2 / F20E
+The upper limit of the recognition capacity was examined by e10chk.exe
+It was obtained.
+Setting by 5 series dip switches on the board is valid only in non-PnP mode.
+
+・ 5 series dip switches: Set SCSI BIOS address and I / O port address
+1-2-3-4: SCSI BIOS address setting
+　OFF-OFF-OFF-OFF ■ DC 000 h to D FFFF h (factory setting)
+　ON-OFF-OFF-OFF ■ D 8000 h ~ DBFFF h
+　OFF-ON-OFF-OFF ■ D4000h to D7FFFh
+　ON-ON-OFF-OFF ■ D0000h to D3FFFh
+　ON-ON-ON-OFF ■ BIOS separation
+5: I / O port address setting
+　ON ■ 3840h ~ 387Eh
+　OFF ■ 1840h ~ 187Eh (factory setting)
+

@@ -1,0 +1,57 @@
+IF-2766　（ICM）
+
+マルチベンダ非対応のCバスバスマスタSCSI I/F．Windows95対応．
+ボード上に8連ディップスイッチ2個と4連ディップスイッチ1個，2連
+ジャンパスイッチ1個あり．
+
+・8連ディップスイッチSW1：SCSI-ID，割り込みレベル，DMAチャネル
+　の設定
+1-2-3：SCSI-IDの設定
+　OFF-OFF-OFF■0
+　ON-OFF-OFF■1
+　OFF-ON-OFF■2
+　ON-ON-OFF■3
+　OFF-OFF-ON■4
+　ON-OFF-ON■5
+　OFF-ON-ON■6
+　ON-ON-ON■7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　OFF-OFF-OFF■INT0　（出荷時設定）
+　ON-OFF-OFF■INT1　
+　OFF-ON-OFF■INT2　
+　ON-ON-OFF■INT3　
+　OFF-OFF-ON■INT5　
+　ON-OFF-ON■INT6　
+7-8:DMAチャネルの設定
+　OFF-OFF■CH0
+　OFF-ON■CH2
+　ON-ON■CH3　（出荷時設定）
+
+・8連ディップスイッチSW2：本体機種の設定
+1-2-3-4-5-6-7：本体機種の設定（xはON，OFFいずれでも可）
+以下，1-2-3-4-5-6-7■本体機種■SCSI-ROMアドレス　の順
+　x-x-x-OFF-ON-OFF-OFF■PC-98XA■0EC000h〜0ECFFFh
+　OFF-ON-ON-OFF-ON-OFF-ON■ノーマル／ハイレゾ兼用機
+                         ■ノーマルモード時：0DC000h〜0DCFFFh
+                         ／ハイレゾモード時：0EC000h〜0ECFFFh
+　OFF-ON-ON-x-x-ON-ON■ノーマルモードのみの機種
+                     ■0DC000h〜0DCFFFh　（出荷時設定）
+※1-2-3-4-5はローカルメモリアドレスの設定で，6-7は本体依存の由．
+8：つねにON（OFFでSCSI-ROM切り離しとなるらしい）
+
+・4連ディップスイッチSW3：I/Oポートアドレス，転送モードの設定
+1-2：I/Oポートアドレスの設定
+　ON-ON■0CCxh　（出荷時設定）
+　OFF-ON■0CDxh
+　ON-OFF■0CExh
+　OFF-OFF■0CFxh
+3-4：転送モードの設定
+　OFF-ON■同期バスマスタ転送
+　ON-ON■非同期バスマスタ転送
+　ON-OFF■FIFO転送
+　OFF-OFF■DMA転送
+※同期バスマスタ転送時にはジャンパスイッチJP2をショート．
+※転送モードの出荷時設定の詳細は不明．バスマスタの場合とFIFOの
+　場合があったらしい．
+
+ウルトラギブンさんより補足情報をいただきました．

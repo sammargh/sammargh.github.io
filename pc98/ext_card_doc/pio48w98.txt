@@ -1,0 +1,158 @@
+
+PIO-48W (98) (CONTEC)
+
+A 48-point bi-directional input / output board (TTL level) equipped with two 8255A equivalents. In units of 8 points
+I / O settings can be made.Also, 4 out of 48 points can be used as interrupt signals.
+
+·specification
+Input / output type: TTL level, positive logic
+Input resistance: 10 KΩ (1 LS-TTL load)
+Output rating: +5 V, 1 mA (2 LS-TTL load)
+Number of input / output points: 48 (common to GND)
+Number of occupied ports: 8 bits 8 ports
+Power supply capacity: +5 V, 370 mA
+Operating conditions: 0 to 50 degrees, 20 to 90% (without condensation)
+
+・ Setting of I / O port address
+Set the start address of the port group used by the board with SW1 and SW2.Let's set
+Set the corresponding bit switch to ON according to the port address to be set.
+However, always turn off 6, 2 and 3 of SW2.
+CONTEC recommends the range of ** D0H to ** DFH (* is any value from 0 to F).
+Input / output in assembler program is limited to register indirect input instruction by DX register.
+
+・ Setting of interrupt
+Set the interrupt signal input in JP1.Jumper when not using interrupt
+To remove:
+
+Pin number (signal name) JP1 pin interrupt
+　　　49 (L-PC0) 1 INT0
+　　　46 (L-PC3) 2 INT4
+      24 (H-PC0) 3 INT5
+      21 (H-PC3) 4 INT6
+
+An interrupt occurs at the rise of the input signal from OFF to ON.
+However, an interrupt occurs at the falling edge of board No.9246.
+
+・ Terminal connector terminal number and signal name
+
+　　Terminal number Signal name Description
+   　　1 H-PA7 ┐
+   　　2 H-PA6 |
+   　　3 H-PA5 |
+   　　4 H-PA4 | Upper A port
+   　　5 H-PA3 |
+   　　6 H-PA2 |
+   　　7 H-PA1 |
+   　　8 H-PA0 ┘
+   　  9 H-PB7 ┐
+   　 10 H-PA6 |
+   　 11 H-PB5 |
+   　 12 H-PB 4 | Upper B port
+    　13 H-PB3 |
+   　 14 H-PB2 |
+   　 15 H-PB1 |
+   　 16 H-PB0 ┘
+   　 17 H-PC7 ┐
+   　 18 H-PC6 |
+   　 19 H-PC5 |
+   　 20 H-PC4 | Upper C port
+    　21 H-PC3 |
+   　 22 H-PC2 |
+   　 23 H-PC1 |
+   　 24 H-PC0 ┘
+　　　25 GND　　　
+　　　26 L-PA7 ┐
+   　 27 L-PA6 |
+   　 28 L-PA5 |
+   　 29 L-PA 4 | Lower A port
+    　30 L-PA3 |
+   　 31 L-PA2 |
+   　 32 L-PA1 |
+   　 33 L-PA0 ┘
+   　 34 L-PB7 ┐
+   　 35 L-PA6 |
+   　 36 L-PB5 |
+   　 37 L-PB4 | Lower B port
+    　38 L-PB3 |
+   　 39 L-PB2 |
+   　 40 L-PB1 |
+   　 41 L-PB0 ┘
+   　 42 L-PC7 ┐
+   　 43 L-PC 6 |
+   　 44 L-PC5 |
+   　 45 L-PC 4 | Lower C port
+    　46 L-PC3 |
+   　 47 L-PC2 |
+   　 48 L-PC1 |
+   　 49 L-PC0 ┘
+      50 GND
+
+When looking at the board from the back,
+Upper right corner 1, its left 2, upper left corner 24, its right 23, lower right corner 26, its left 27,
+50 in the lower left corner and 49 in the right.
+
+・ Correspondence between port address and signal terminal
+
+Set port address D7 D6 D5 D4 D3 D2 D1 D0
+　　　　　+0 Lower A port
+　　　　　+1 upper A port
+　　　　　+2 Lower B port
+　　　　　+ 3 upper B port
+　　　　　+4 lower C port
+　　　　　+5 upper C port
+　　　　　+6 Lower 8255A Control
+　　　　　+7 Top 8255A Control
+
+
+・ About hardware interrupt
+
+(1) In the PC-9801 series, two interrupt controllers μPD8259 are cascade-connected
+　 doing.To use an interrupt, mask reset the μPD8259 and
+   The table address must be registered.
+
+a) Correspondence between interrupt levels and mask bits in the μPD8259:
+　INT 0: Master 8259 (02H port) D3 bit
+　INT 5: slave 8259 (0AH port) D4 bit
+　INT 6: slave 8259 (0AH port) D5 bit
+　By resetting the port bit shown above, interrupts are enabled,
+　Interrupts are disabled by setting a bit.
+
+　Example) Allow INT 0, INT 5
+　　IN AL, 02 H; Acquisition of current mask state
+　　AND AL, 0F7H; Clear bit corresponding to INT 0
+    OUT 02H, AL; set new mask state
+
+　　IN AL, 0AH; Acquisition of current mask state
+　　AND AL, 0EFH; Clear the bit corresponding to INT 5
+    OUT 0AH, AL; Set a new mask state
+
+b) Interrupt level and interrupt processing destination registration address
+　INT 0: From segment 0H / offset 2CH
+　INT 5: From segment 0H / offset 50H
+　INT 6: From segment 0H / offset 54H
+　Offset the start address of the interrupt processing program from the address shown above,
+　Register in the order of segments.
+
+　Example: The interrupt processing destination address of INT 0 is segment 1E00H, offset 100H,
+　　　Also, the interrupt processing destination address of INT 5 is segment 1E00H, offset
+　　　In the case of 200H
+
+　　　MOV AX, 0; Segment 0 set
+      MOV DS, AX; INT 0
+      MOV WORD PTR [2CH], 100H; Offset registration
+      MOV WORD PTR [2EH], 1E00H; Segment registration
+                                ; INT 5
+      MOV WORD PTR [50H], 200H; Offset registration
+      MOV WORD PTR [52H], 1E00H; Segment registration
+
+(2) Interrupt processing program
+　
+a) Saving of registers used for interrupt processing
+b) Interrupt processing
+c) Reset of interrupt controller μPD8259
+　MOV AL, 20H; EOI command set
+  OUT 0, AL: Reset of master μPD 8259
+  OUT 8, AL; reset of slave μPD 8259
+　However, in the case of INT 0, it is not necessary to reset the slave μPD8259.
+d) Register return + IRET
+

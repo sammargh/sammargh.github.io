@@ -1,0 +1,35 @@
+
+NOTE-PAC (98) H-2A, NOTE-PAC (98) H-4A,
+NOTE-PAC (98) H-2B, NOTE-PAC (98) H-4B (Contec)
+
+C bus expansion BOX connected to 110 pin expansion bus connector of old 98 note.
+Two C bus slots are for NOTE-PAC (98) H-2A / 2B, NOTE-PAC (98) H-4A / 4B
+Here are four.Externally attached FDD connector (amphenol full pitch 50 pin)
+It has one.
+-2A / -4A 10-in DIP switch beside the external FDD connector inside the side
+For 1 piece or -2B / -4B, 8 dips on the side of the external FDD connector inside the side
+There is one switch.
+
+・ 10 stations / 8 stations dip switch: The state of the switch lever of the expansion board
+　Specification, specification of body model, specification of memory address
+1-2-3-4: Specification of switch lever status of expansion board
+　The dips 1, 2, 3, 4 correspond to the C bus slots 1, 3, 2, 4 respectively.
+　It corresponds to the slot where the board which uses the switch lever is installed
+　Board is installed that does not use the switch lever, with dip turned on
+　Set the dip corresponding to the slot to OFF. -2A and -2B for dips
+　It seems that 2 and 4 are set to 1 and 3 and the opposite state respectively.
+5: Designation of body model
+　ON ■ 386/486 equipped model
+　OFF ■ V30 equipped model
+6-7: Memory address specification
+　ON-ON ■ Setting prohibited
+　ON-OFF C0000h to DFFFFh
+　OFF-ON 80000h to 9FFFFh
+　OFF-OFF ■ Do not allow access to memory addresses
+8: Always on
+
+Since this setting table is based on the description of the NOTE-PAC (98) H-2B / 4B manual,
+The settings for dips 9 and 10 of -2A and -4A are unknown.I have seen so far
+Both of the two -2A were off-off.
+
+Takaya-san gave us information.

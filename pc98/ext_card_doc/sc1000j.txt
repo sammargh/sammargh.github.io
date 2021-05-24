@@ -1,0 +1,79 @@
+SC-1000　（EPSON）
+
+CバスSCSI I/F．平均消費電力+5V，350mA．周囲温度10〜35°，
+湿度20〜80%（結露なきこと）．
+対応機種：PC-9801VM/UV/CV/VX/UX/EX/ES/RX/RA/RS, PC-98XA/XL/XL^2/RL，
+PC-286/X/V/VE/VF/VS/VX/U/US/UX, PC-386/V/M, PC-286L/LE/LF（これら
+3機種ではI/O拡張ユニット（PC286LIOU）が必要）, PC-386L
+ボード上に8連ディップスイッチ2個と4連ディップスイッチ1個，
+3本ジャンパスイッチ2個あり．
+
+・8連ディップスイッチSW1：SCSI ID，割り込みレベル，DMAチャネル
+　の設定
+1-2-3：SCSI IDの設定
+　ON-ON-ON■ID=0
+　OFF-ON-ON■ID=1
+　ON-OFF-N■ID=2
+　OFF-OFF-ON■ID=3
+　ON-ON-OFF■ID=4
+　OFF-ON-OFF■ID=5
+　ON-OFF-OFF■ID=6
+　OFF-OFF-OFF■ID=7　（出荷時設定）
+4-5-6：割り込みレベルの設定
+　ON-ON-ON■INT 0
+　OFF-ON-ON■INT 1
+　ON-OFF-ON■INT 2
+　OFF-OFF-ON■INT 3　（出荷時設定）
+　ON-ON-OFF■INT 5
+　OFF-ON-OFF■INT 6
+　ON-OFF-OFF■未定義
+　OFF-OFF-OFF■未定義
+7-8：DMAチャネルの設定
+　ON-ON■DMA #0　（出荷時設定）
+　OFF-ON■設定禁止
+　ON-OFF■DMA #2
+　OFF-OFF■DMA #3
+※#2はPC-9801VM/UV2/UV11（注1），PC-286U（注1），PC-286L/LE/LF
+　にI/O拡張ユニット（PC286LIOU）を装着したもの（注2）のみで使用
+　可能．ただしPC本体およびI/O拡張ユニットのディップスイッチにより，
+　内蔵FDDまたは接続FDDを2DD固定にすること．
+注1：#0／#2を使用する場合には，拡張スロット2へ，また#0／#3を使用
+　する場合には拡張スロット1へ本I/Fを装着のこと．
+注2：PC286LIOU使用時には本I/FのROMアドレスをD4000h〜D4FFFhに設定
+　のこと．
+
+・8連ディップスイッチSW2：SCSI BIOS ROMアドレス，本体機種，
+　SCSI BIOS ROMの使用／不使用の設定
+1-2-3：ノーマルモード時のROMアドレスの設定
+　ON-ON-ON■設定禁止
+　OFF-ON-ON■DC000h〜DCFFFh　（出荷時設定）
+　ON-OFF-ON■設定禁止
+　OFF-OFF-ON■設定禁止
+　ON-ON-OFF■設定禁止
+　OFF-ON-OFFD■D4000h〜D4FFFh
+　ON-OFF-OFF■設定禁止
+　OFF-OFF-OFF■設定禁止
+4-5：ハイレゾモード時のROMアドレスの設定
+　ON-ON■設定禁止
+　OFF-ON■EC000h〜ECFFFh　（出荷時設定）
+　ON-OFF■設定禁止
+　OFF-OFF■設定禁止
+6-7：本体機種の設定
+　ON-ON■286以上のノーマルモード専用機種　（出荷時設定）
+　OFF-ON■ノーマル／ハイレゾ両モード対応機種
+　ON-OFF■V30搭載機種
+　OFF-OFF■ハイレゾ専用機種（PC-98XA）
+8：SCSI BIOS ROMの使用の設定
+　ON■SCSI BIOS ROM使用　（出荷時設定）
+　OFF■設定禁止
+
+・4連ディップスイッチSW3：変更禁止（出荷時設定：OFF-OFF-OFF-ON）
+
+・3本ジャンパスイッチJP1：変更禁止（出荷時設定：1-2ショート）
+
+・3本ジャンパスイッチJP2：変更禁止（出荷時設定：1-2ショート）
+
+・Cバスコネクタ脇のスイッチレバー：本体機種の設定
+　倒す：2866以上の機種（本I/Fをプロテクトモードで動作させる場合）
+　　　　　　　　　　　　　　　　　　　　　　　　　　（出荷時設定）
+　起こす：PC-9801U2/UV2/UV21/UV11/CV11，PC-286U

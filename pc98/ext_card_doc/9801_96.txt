@@ -1,0 +1,22 @@
+
+Window accelerator board B3
+　　　　　　　　　　(PC-9801-96, PC-9801B3-E02) (NEC)
+
+Graphic accelerator board for C bus.Graphic chip
+Cirrus Logic CL-GD5428 (VRAM 1 MB)."PC-9801B3-E02" on the substrate
+There is a blue sticker on the screen that says "PC-9801B3-E02".
+PC-9801BA3 / U2 and PC-9801BX3 called "Microsoft Windows Kit"
+All-in-one kit for using Windows 3.1, ie
+GA + HDD + Memory + Mouse + Pre-installed MS-DOS 6.2 +
+It is the name of a set product of Windows 3.1, and does not refer to GA alone.
+There is one 8-station dip switch on the board.
+
+1-2: I / O port address setting
+　ON-ON: F00000h to F0FFFFh (factory setting)
+　OFF-ON: F20000h to F2FFFFh
+　ON-OFF: F40000h to F4FFFFh
+　OFF-OFF: F60000h to F6FFFFh
+3-4-5-6-7-8: Meaningless (Factory setting: ON-ON-ON-ON-OFF-ON)
+
+This data comes from HAMLIN.
+

@@ -1,0 +1,48 @@
+
+Video pack 98n (analog RGB scan converter SCN-4-98N)
+　　　　　　　　　　　　　　　　　　　　　　　　　(Computer Technica)
+
+With PC-9801 NS / E, NC, NS / T, NA, NA / C, NS / R, fast battery (PC-9801N-11)
+Exclusive use scan converter.Output the screen of the above model to a TV, or
+Make it possible to record toPC-9801NC, NA, NA / C with AC adapter included
+In addition, PC-9801N-12 or PC-9801N-12L is required.When the PC is powered on
+When the AC adapter is connected to this unit, the power of the PC is automatically turned off. In this case, this unit
+After unplugging the AC adapter from and reinserting it, turn on the power of the main unit.
+Power consumption is DC14V, 300mA. Be sure to connect the AC adapter when using this machine.Battery powered
+Is not possible.In addition, the current that can be supplied from the PC's 110-pin extension bus for use with this unit is 200 mA. Note
+After using this machine, unplug the AC adapter.
+The screen may not be stable for about 30 seconds after the power is turned on.Also before turning on the power of the PC
+When displaying the output from this unit on a TV screen, a screen with meaninglessness is displayed, but this is
+This is because the unit has not received an image signal from the PC, and if the power of the PC is turned on
+A normal screen is displayed.
+Temperature and humidity conditions are 10 to 35 ° C, 20 to 80% (without condensation), and if the ambient temperature is too high
+The screen may not be output.
+If synchronization can not be achieved, adjust the TV sync adjustment knob.
+
+Seeing from the back, from the left: AD ADJ., DOT PHASE, S-OUT, C-OUT, DC-IN.
+
+・ AD ADJ .: AD adjustment volume
+　For adjusting the input level of video signal from PC.Turn clockwise to brighten the screen,
+　The screen gets darker when turned counterclockwise.Also when there is noise or flicker on the screen
+　(It is effective in the case of intermediate color display), when it is reduced by adjusting this volume
+　(With raster interpolation function).
+・ DOT PHASE: Dot phase adjustment switch
+　For adjusting the phase of the video signal from the PC.Dot deviation on the screen due to individual differences of the PC body
+　If this happens, adjusting this switch will alleviate it.In addition, the temperature inside the machine rises
+　Adjust this switch even if the display screen is shifted diagonally.
+・ S-OUT: Y / C separate video output
+　Connected to Y / C separated video input (S terminal) such as video monitor and video deck.
+・ C-OUT: Composite video output
+　Connected to composite video input (C terminal) such as video monitor and video deck.
+※ It is recommended to use Y / C separate video output from the point of image quality.
+・ DC-IN: AC adapter connection terminal
+　Connect the AC adapter supplied with the PC.However, for PC-9801NC, NA, NA / C, AC supplied with the main unit
+　It is necessary to connect an adapter and connect separately PC-9801N-12 or PC-9801N-12L to this unit.
+
+CHARGE LED display when this unit is connected, 1st battery display on the 98NOTE menu screen, 2nd battery
+Charging is as follows:
+NS / E, NS / T, NS / R ■ ■ ■ not fully charged ■ not charged
+NC ■ OFF or orange ■ Fully charged ■ Charged
+NC, NA / C ■ Flashing red ■ Abnormality (meaning that 1st battery is not connected properly) ■ Not charged
+※ Charging is not performed when using this unit.
+

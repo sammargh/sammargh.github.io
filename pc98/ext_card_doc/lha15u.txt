@@ -1,0 +1,66 @@
+
+LHA-15U (Logitec)
+
+Multi-vendor non-compliant C bus bus master SCSI-1 board.Of my hand (SHD-S100J bundled item)
+Now there is LHA-15H4 silk printing on the substrate.
+There are 2 8 dip switches and 3 3 jumper switches on the board.
+
+・ 8 series jumper switch SW1: SCSI_ID, interrupt level, DMA channel setting
+1-2-3: SCSI_ID setting
+　OFF-OFF-OFF: ID = 0
+　ON-OFF-OFF: ID = 1
+　OFF-ON-OFF: ID = 2
+　ON-ON-OFF: ID = 3
+　OFF-OFF-ON: ID = 4
+　ON-OFF-ON: ID = 5
+　OFF-ON-ON: ID = 6
+　ON-ON-ON: ID = 7 (factory setting)
+4-5-6: Interrupt channel setting
+　OFF-OFF-OFF: INT0 (factory setting)
+　ON-OFF-OFF: INT1
+　OFF-ON-OFF: INT2
+　ON-ON-OFF: INT3
+　OFF-OFF-ON: INT5
+　ON-OFF-ON: INT6
+7-8: DMA channel setting
+　OFF-OFF: DMA0
+　ON-ON: DMA3 (factory setting)
+
+・ 8-station dip switch SW2: Local memory address, setting of main unit model, presence of SCSI_BIOS access
+1-2-3: Setting of local memory address in normal mode
+　OFF-OFF-OFF: xD0000-xD0FFFh
+　ON-OFF-OFF: xD2000-xD2FFFh
+　OFF-ON-OFF: xD4000-xD4FFFh
+　ON-ON-OFF: xD6000-xD6FFFh
+　OFF-OFF-ON: xD8000-xD8FFFh
+　ON-OFF-ON: xDA000-xDAFFFh
+　OFF-ON-ON: xDC000-xDCFFFh (factory setting)
+　ON-ON-ON: xDE000-xDEFFFh
+　※ "x" is "none", "0h", "0Fh"
+　※※ Set to OFF-ON-OFF for PC-9801E / F / M.In this case, the memory address is duplicated
+　　　Do not use in combination with the GP-ID board.
+4-5: Local memory address setting in high resolution mode
+　OFF-OFF: xE8000-E8FFFh
+　ON-OFF: xEA000-EAFFFh
+　OFF-ON: xEC000-ECFFFh (factory setting)
+　ON-ON: xEE000-EEFFFh
+　※ "x" is "none", "0h", "0Fh"
+6-7: Setting of machine model
+　ON-ON: CPU is the model of 8086 or V30
+　OFF-ON: High res mode of high res mode compatible models (including those equipped with high res board)
+　ON-ON: Model in normal mode only
+8: Access to SCSI_BIOS
+　ON: accessible (factory setting)
+　OFF: Not accessible (BIOS disconnected)
+
+・ Three jumper switches SW3 and SW4: I / O base address setting
+　SW3 SW4
+　1-2 ■ 1-2: 0 CC 0 h (factory setting)
+　2-3 ■ 1-2: 0CD0h
+　1-2 ■ 2-3: 0CE0h
+　2-3 ■ 2-3: 0CF0h
+
+・ Three jumper switch SW5: Transfer mode setting
+　1-2 short: DMA transfer fixed
+　2-3 short: DMA / buffer mode automatic switching (factory setting)
+

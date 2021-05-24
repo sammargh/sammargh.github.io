@@ -1,0 +1,54 @@
+PC-9821N-U04，PC-9821N-U05　（NEC）
+
+PC-9821ノートの198ピン拡張バスに接続するドッキングステーション
+（PC-982N-U05は「ドッキングステーションCD」）．8連ディップ
+スイッチ2個と4連ディップスイッチ1個あり．拡張スロットx1，内蔵
+スピーカx2を装備し，PC-9821N-U04はファイルスロットを，また
+PC-9821N-U05はCD-ROMドライブ（SCSI接続）をも装備．背面には外部
+ディスプレイコネクタ（D-sub15ピン），SCSIコネクタ（アンフェノール
+ハーフピッチ50ピン），増設1MB_FDDコネクタあり．
+
+・8連ディップスイッチSW1：SCSI_ID，割り込みレベル，DMAチャネル
+　の設定
+1-2-3：SCSI_ID
+　ON-ON-ON：ID=7（出荷時設定）
+　　　　　　　　 出荷時設定のまま使用のこと：PC-9821N-U05では
+　　　　　　　　 CD-ROMドライブはID=6固定
+4-5-6：割り込みレベル
+  OFF-OFF-OFF：INT0(IRQ3：出荷時設定)
+  ON-OFF-OFF：INT1(IRQ5)
+  OFF-ON-OFF：INT2(IRQ6)
+  ON-ON-OFF：INT3(IRQ9)
+  ON-OFF-ON：INT5(IRQ12)
+  OFF-ON-ON：INT6(IRQ13)
+7-8:DMAチャネル設定
+  OFF-OFF：DMA0
+  ON-OFF：設定禁止
+  OFF-ON：DMA2
+  ON-ON：DMA3（出荷時設定）
+
+・8連ディップスイッチSW2：メモリアドレス，Pow ON時のROMアク
+　セス可否の設定
+1-2-3-4-5-6-7：メモリアドレス
+  OFF-ON-ON-OFF-ON-ON-ON：メモリアドレス\DC000-\DCFFF（出荷時設定）
+　　　　　　　　　　　　　出荷時設定のまま使用のこと
+8：Pow ON時のROMアクセス可否 (出荷時設定 8=ON)
+  ON：Pow ON時にROMをアクセスする
+  OFF：Pow ON時にROMをアクセスしない
+
+・4連ディップスイッチSW3：I/Oポートアドレス，データ転送モード，
+　メモリサイズの設定
+1-2：I/Oポートアドレス
+　ON-ON：CCX（出荷時設定）　"X"は0，2，4を表す．
+  OFF-ON：CDX
+  ON-OFF：CEX
+  OFF-OFF：CFX
+3：データ転送モード
+  ON：DMA転送
+  OFF：CPU転送（出荷時設定）
+　　　　　　　　PC-98B55，PC-MT600B接続時以外は出荷時設定の
+　　　　　　　　まま使用のこと．出荷時設定以外で使用する場合
+　　　　　　　　には必ずSW2の8をOFFにすること．
+4：メモリサイズ
+  ON：98NOTE内蔵RAMを512KBに設定した場合 
+  OFF：98NOTE内蔵RAMを640KBに設定した場合（出荷時設定）

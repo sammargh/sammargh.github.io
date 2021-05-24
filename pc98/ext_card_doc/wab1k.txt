@@ -1,0 +1,46 @@
+
+WAB-1000, WAB-2000, WAP-2000, WAP-4000, WSR-G, WSR-E (メルコ)
+
+Graphic accelerator board for C bus.Graphic chip
+For WAB-1000, WAB-2000, WSR-G, and WSR-E, Cirrus Logic CL-GD5428,
+In addition, WAP-2000 and WAP-4000 are equipped with the company's CL-GD5434.Image memory
+1 MB for WAB-1000, WSR-G, WSR-E, 2 MB for WAB-2000 and WAP-2000,
+WAP-4000 is 4 MB. These boards are from the Melco CD-ROM drive,
+"CDO-EY" can be connected (connected to the interface board supplied with the CDO-EY)
+Cable required: but this CD-ROM drive is 32-bit for Windows 95
+There is no driver, and on Windows 95, the driver for DOS is embedded
+I have to use it in MS-DOS compatible mode).WSR-G is another FM sound source
+(26K compatible) and PCM sound source, WSR-E is also equipped with PCM sound source.
+There is one rotary switch on the board.
+
+・ Rotary switch SW1: I / O port address setting
+　0 = 4xE0H, 4xE1H, 5xE0H, 5xE1H, 46E8H (factory setting)
+　1 = 4xE2H, 4xE3H, 5xE2H, 5xE3H, 46E8H
+　2 = 4xE4H, 4xE5H, 5xE4H, 5xE5H, 46E8H
+　3 = 4xE6H, 4xE7H, 5xE6H, 5xE7H, 46E8H
+　4 = not settable
+　5 = 4xEAH, 4xEBH, 5xEAH, 5xEBH, 46E8H
+　6 = 4xECH, 4xEDH, 5xECH, 5xEDH, 46E8H
+　7 = 4xEEH, 4xEFH, 5xEEH, 5xEFH, 46E8H
+　* X means the use of all 0 / F I / O ports.
+
+In WSR-G, there are 3 other 3 jumper switches on the board.The characters on the board are
+When looking at the board in the upright orientation, · Jumper switch JP12: FM sound source use / nonuse setting
+Left-center short = FM sound source use / not use
+Right-center short = FM source not used
+・ Jumper switch JP13: Interrupt setting
+Left-center short = INT 5
+Right-center short = INT 6
+・ Jumper switch JP22: Not described in the manual.
+
+I received the following information from Mr. Matsubayashi.
+-------------------------------------------------------- ----------------
+There are three other 3 pin jumpers on WSR-G, and I changed it.
+I did not know if it had changed.
+I thought I would change the resources used on DOS, but yes
+It does not seem to be.
+In addition, Windows 95 driver of this board does not use INT 5
+It has become.
+I do not know if the FM sound source unit is separated in hardware. 
+-------------------------------------------------------- ----------------
+

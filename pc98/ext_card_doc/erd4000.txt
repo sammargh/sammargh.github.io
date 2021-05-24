@@ -1,0 +1,22 @@
+
+ERD-4000 (メルコ)
+
+Epson-made desktop machine, additional RAM for PC-486SE / SR / FE / FR / FS / MR / MS / MU
+Base board (4 MB).There are 4 double jumper switches on the board. There are two
+Only SIMMs of Epson specification can be added to the SIMM slot. (2MB, 4MB, 8MB
+SIMM is available).
+Memory count at the time of main unit start is 640 + 1024KB (200000h) and 640 + 3072KB (400000h)
+Only available in case of.
+
+・ When using with PC-486SE / SR:
+　J1, J2, J3 = Open
+　J4 = Short: When used with PC-486SE
+　J4 = Open: When used with PC-486SR
+・ When using with PC-486 FE / FR / FS / MR / MS / MU
+　JP1, JP2, J3 = Open
+　J4 = Short: Start address 200000h
+　J4 = open: start address 400000h
+※ Remove the 4MB SIMM mounted on the main unit (can be installed on ERD).
+※ J3 is open when adding only 2MB / 4MB SIMMs, and 8M SIMMs are added
+　If it is short.
+

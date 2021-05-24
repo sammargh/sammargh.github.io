@@ -1,0 +1,41 @@
+
+C-NET (98) S-11, C-NET (98) S-12 (CONTEC)
+
+C bus bus master NIC (LAN board) equipped with 10BASE-2 / 5/10 connector.
+C-NET (98) S-12 with 3 jumper switches on the board,
+There are two in C-NET (98) S-11.
+power consumption
+　10BASE-5: +5 V = 320 mA, +12 V = 500 mA
+　10BASE-2: +5 V = 490 mA
+　10BASE-T: +5 V = 310 mA
+Operating temperature range: 0 to 50 °, operating humidity range: 20 to 80% (no condensation)
+
+・ Three jumper switch JP1: Use of interrupt and external bus master
+　/ Release settings
+　2 shorts on INIT side ■ Release interrupt and external bus master
+　NORMAL side 2 shorts ■ Use interrupt and external bus master
+　　　　　　　　　　 (Factory setting)
+Normally used with 2 shorts on NORMAL side.Because this board was attached
+If the system does not start up, short two INITs,
+Set values from [Board Settings] in the self-diagnosis program (DIAG)
+Change.After the change, be sure to reset the NORMAL side to 2 shorts.
+
+・ Setting of switching of 3 jumper switches JP2: 10BASE-2 / 5
+(Only present in C-NET (98) S-11)
+Set whether to use 10BASE-2 / 5 switching automatically or fixedly.
+When 10BASE-T is used, 10BASE-T takes precedence,
+The settings on this switch are invalid.
+　Automatic switching of 2 AUTO side short ■ 10BASE-2 / 5 (default setting)
+　Two AUI side short ■ Fixed 10BASE-5
+Normally, use with AUTO.
+
+※ I / O port address, interrupt level, external bus master is software
+　Set in the ware.
+I / O port address
+　n3D0h to n3DFh, n7D0h to n7DFh 32 bytes occupied (n = 0, 1, 2, 3, 4, 5, 6
+　　　　　　　　　　　　　　　　　　　　　/ Factory setting: n = 0)
+Interrupt level
+　Select one from INT 0, 1, 2, 3 (Factory setting: INT 1)
+External bus master
+　One of EXHRQ 1 and 2 (Factory setting: EXHRQ)
+

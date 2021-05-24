@@ -1,0 +1,28 @@
+
+WAP-2EP, WAP-4EP (メルコ)
+
+Local bus for Epson desktop machines with Cirrus Logic CL-GD 5434
+Graphic accelerator board.Three jumper switches on the board
+There are two.WAP-2EP is an image memory 2 MB, WAP-4 EP is an image memory 4 MB. Supported models are
+PC-486 MR / MS / MU / FE / FR / FS / SE / SR. The occupied memory area is 3.800000H to 3FFFFFFH
+(8 MB occupied).When using this board, the maximum memory capacity of the main unit is 55.6 MB or less
+And to.
+
+Below, when looking at the board in the direction in which the letters on the plastic plate are erected.
+
+Specification of body model:
+・ For PC-486MR / MS / MU, 2-3 of the jumper on the lower center of the board is slightly
+　Short (default setting).
+・ In the case of PC-486 FE / SE, 1-2 of the jumper on the lower center of the board is slightly
+　Shot.
+・ In the case of PC-486SR, the bottom 2-3 of the jumper on the lower center of the board is
+　(Default setting), and show J11 of the 3 jumper switch on the main unit on 1 side
+　G, J12 short on 2 side, J13 short on 2 side. 
+・ In the case of PC-486FR / FS, 2-3 of the jumper on the lower center of the board
+　Short circuit (default setting) and set the J10 of the 3-pin jumper switch on the main unit to
+　Short, J11 short on 2 side, J12 short on 2 side.
+
+The three jumper switches on the top right of the board are used to switch the display brightness:
+　1-2 short = dark (factory setting)
+　2-3 short = bright
+

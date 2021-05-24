@@ -1,0 +1,15 @@
+
+PCHRLB2 (EPSON)
+
+High resolution board for PC-486GF / GR.There is one double dip switch on the board.
+When the printer connected to the 36-pin printer connector can not print normally
+Change the setting of this switch.Below, in the order of 1-2:
+　ON-ON basic setting
+　When printing can not be performed normally with ON-OFF basic settings
+　OFF-ON ■ System reservation
+　OFF-OFF ■ System reservation
+
+The default is RL compatible interlaced display, but on the motherboard
+When J24 is shorted and hardware dip switch 3 is turned ON
+Interlaced display becomes possible.
+

@@ -1,0 +1,78 @@
+
+RSA-98 II / S (I･Oデータ)
+
+C bus high-speed RS-232C expansion board (start-stop synchronization).Equipped with 1 serial port.For sending / receiving
+A 2048Byte FIFO is mounted on the (total 8KB).Two rotary switches and 2x7 jumpers on the board
+There is one switch and one 6-line jumper switch.
+Adopting TL16C550C made by TEXAS INSTRUMENTS as serial control LSI, transfer of up to 230.4 Kbps
+Communication is possible at speed (master clock 14.7456 MHz).The data bus is DB0-7.Maximum power consumption + 5V, 370mA
+/ + 12V, 20mA / -12V, 20mA. Operating environment: temperature 0-40 ° C / humidity 20-80% (no condensation).Extended I / O
+Possible to use in unit.
+Additional RS-232C port can be added by using multiple RSA-98, RSA-98SB and RSA-98II / S.In attached BIOS
+Up to 32 RS-232C ports can be controlled with up to 32 lines, or with COM driver for Windows 3.1 up to 7 lines (Windows NT
+COM driver for 3.5x and Windows 95 supports only one RSA-98 series: Windows NT 3.5x and
+Multiple use of RSA-98, RSA-98SB and RSA-98II / S is not possible on Windows 95).
+Set up and use flow control to prevent data loss.Enable hard flow control
+In order to do this, always use a cable with RTS / CTS and DTR / DSR signal lines connected.
+
+・ Rotary switch RSW2, RSW1: Setting of upper 8 bits of I / O port address
+Set to 00h to FFh.The factory setting is 50h.In this case, set RSW2 to 5 and RSW1 to 0.
+Note 1: In the PC-9821 series, since the upper 8 bits x8h to xFh of the I / O port address are reserved,
+　　 Set in the range of x0h to x7h.
+Note 2: The lower 8 bits of I / O port address are fixed by hardware as follows.
+(1) TL16C550C control port
+   xxE0h, xxE2h, xxE4h, xxE6h, xxE8h, xxEAh, xxECh, xxEEh
+   xxE1h, xxE3h, xxE5h, xxE7h, xxE9h, xxEBh, xxEDh, xxEFh
+　 For 16550 mode, use 8 consecutive bytes from the base I / O address.For example, base I / O address
+　 In the case of xx38h, it is xx38h to xx3Fh.
+(2) Port address for transmission / reception FIFO (RSA-98 mode)
+   xxD0h, xxD2h, xxD4h, xxD6h
+   xxD1h, xxD3h, xxD5h, xxD7h
+(3) Mode setting port address
+   xx DAh)
+※ When used with GA-98NB series, the I / O port address will be duplicated if it is the factory setting (50h) and normal
+　Do not work.In this case, the upper 8 bits of the base I / O port address of RSA-98 other than 40h to 5Fh (GA-98 NBI / C
+　When using in combination with this, please set it so as not to overlap with other boards.
+
+・ 2 × 7 jumper switch JP1: Setting of interrupt level
+Below, the order of interrupt levels and pins to be shorted
+INT 0 ■ INT 0 2 vertical (default setting)
+INT 1 ■ INT 2 on the left next to INT 0
+INT 2 ■ INT 2 next to 2 0 2 vertically
+Three next to INT 3 ■ INT 0 2 vertically
+Next to the four INT 41 ■ INT 0 2 vertically
+One next to INT 5 ■ INT 6
+INT 6 ■ INT 6 2 vertical
+No interrupt ■ 1 top of INT 6 and 1 top right (with jumper plug facing sideways)
+
+・ 6 stations jumper switch SW1: mode setting
+1: 16550 compatible mode / switching of RSA-98 compatible mode
+　 16550 compatible mode ■ RSA-98 compatible mode □
+　　　　　　　　　　□ (Factory setting) ■
+2: Hardware flow enable / disable switching
+　 Hardware flow enable ■ Hardware flow disable □
+　 (Factory setting: usually not changed) □ ■
+3-4-5-6: Lower base I / O port address when using 16550 mode
+xx30 h 3 xx 38 h 4 xx E 0 h 5 xx E 8 h 6
+　　　　■ □□□ (At the time of shipment □□□□ □□□□□□□□ ■
+　　　　□ ■ ■ ■ Setting) ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+Note: xx is the same as the settings of RSW2 and RSW1 (factory setting 50h).
+
+
+About COM driver
+(1) COM driver for Windows 95
+-The base I / O port address of RSA-98 is fixed at 50h at the factory setting.
+-"Multifunction Adapter" and "Extended Serial Board (RSA-98)" in Device Manager
+　Click in the order of.Then set both ports to the same IRQ in "Properties".
+・ After setup, "Extended serial board" (RSA-98) (COM 2) and "Extended serial board"
+　(RSA-98) (COM3) is registered and it is COM3!There is a mark, but there is no problem in operation.
+(2) COM driver for Windows NT3.x
+・ The base I / O port address of RSA-98 is fixed to factory default 50h, and the interrupt level is fixed to INT 0.
+　It is done.
+・ When copying of driver files is completed, in [Mouse:] of [Windows NT setup]
+　[I-O-DATA high-speed serial board RSA-98 series] is displayed, but it ends as it is.
+　After rebooting, change [Mouse:] to [Use PC-9800 mouse].
+When using these drivers, use the RSA-98 series BIOS or RSA-98 series serial driver.
+Do not incorporate.
+※ It is abbreviation about BIOS / driver for MS-DOS, Windows 3.1.
+

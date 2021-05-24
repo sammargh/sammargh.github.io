@@ -1,0 +1,82 @@
+
+PC-9801-118 (NEC)
+
+1.Board expansion procedure (follow in the following order)
+　　(1) Board jumper settings
+　　(2) Setting of PC
+　　(3) Board installation
+　　(4) System disk installation
+
+2.Board jumper settings
+([1] indicates jumper 1 and [ON] indicates jumper ON position)
+　　The default is [4] ON only, all others OFF
+
+　　Meaning of jumper
+[1] PnP mode On / Off: [ON] = PnP mode [OFF] = non-PnP mode
+　　[2] [3] [11]: Selection of PC (see table)
+　　[4] Setting prohibited: [ON] only
+　　[5] [6] FM sound source IRQ (see table)
+　　[7] DMA channel: [ON] = Ch. 2 [OFF] = Ch. 1
+　　[8] [9]: PCM sound source IRQ (see table)
+　　[10]: IRQ for MIDI: [ON] = Use (automatically selected for PnP, INT 41 for non-PnP) [OFF] not used
+　　[12] Setting prohibited: [OFF] only
+
+　　Selection of PC
+　　(1) Group 1: 9821 Cb / Cx / Cf / Cb2 / Cx2 / Nx / Na7
+　　(2) Group 2: 9821 Ae / As / Ap / Af / An / As / As2 / Ap2 / As3 / Ap3 / Ce / Ce2 / Cs2
+　　(3) Group 3: other than 9801 BX4 and groups 1, 2, 4 and 5
+(4) Group 4: 9821 V 7 C 4 K / V 10 C 4 R / V 166 S 5 / V 166 S 7 / V 200 S 5 / V 200 S 7 / V 200 S Z / V 200 M 7 / V 200 M Z / V 233 M 7
+(5) Group 5: 9821 Be / Bs / Bf / Xe / Ts / Ne / Ns
+9801 BX / BA / BX2 / BS2 / BA2 / BX3 / BA3 / P / NA / NSA / NXC
+H98 model 190 / Model 100 / Model 105
+H98S model 8
+H98T
+
+　　[2] [3] [11]
+OFFOFF OFF: Groups 2 3 4 5 (Group 3 uses the PCM function of this board)
+　　ON OFF ON: Group 3 (uses the PCM function of the main unit)
+　　OFF ON OFF: Group 1
+　　Other than the above: Setting prohibited
+
+　　FM sound source IRQ
+　　[5] [6]
+OFF OFF: INT5 (IRQ12)
+OFF ON: INT41 (IRQ10)
+ON OFF: INT6 (IRQ13)
+ON ON: INT0 (IRQ3)
+
+PCM sound source IRQ
+　　[8] [9]
+OFF OFF: INT5 (IRQ12)
+OFF ON: INT1 (IRQ5)
+ON OFF: INT41 (IRQ10)
+ON ON: INT0 (IRQ3)
+
+3.PC settings
+　　The setting when using Win3.1 is abbreviated · described for Win95 
+　　(1) In the case of group 1 
+　　　　Confirm that "Sound" = "Use" in the system setup
+　　　　In "Hardware Wizard" after deleting "98CanBe Sound" in Device Manager on Windows
+　　　　Without automatic detection, install the driver "98CanBe Sound (without OPN)" from the driver supplied with the board.
+　　(2) In the case of group 2
+　　　　Delete "9801-86 or compatible" in Device Manager on Windows and quit Windows
+　　　　Confirm that "sound" = "do not use" in system setup
+　　　　Start Windows and check that it does not sound at startup
+　　(3) In the case of group 3 
+　　　　Confirm that "Sound" = "Use" in the system setup
+　　　　Depending on the jumper settings, set [Mate-X PCM] 's IRQ during debugging to something other than 12.
+　　　　　(Match the contents of the system setup
+　　(4) In the case of group 4
+　　　　Delete "Mate-X PCM" in Device Manager on Windows and quit Windows
+　　　　Confirm that "sound" = "do not use" in system setup
+　　(5) In the case of group 5
+　　　　Not applicable (In the case of H98 series, setting is required by ASP-Setting contents abbreviation)
+
+4.Board mounting
+　　PC9821-C3-B02 If you have a MIDI sound source sub board, attach it to the card and set [10] to OFF
+　　When used with the next board, an AC adapter (PC9801-73-AC: currently discontinued) may be required.
+　　9801-25 / 56 / 57L / 59/71/77/78/81/83/84/90/99/101/117
+9861K / 9863N / 9863L / 9864L-01 / 9865/9866 / 9866L / 9801A-B04 / 9801CB-B03
+
+Posted by Wildcat Farmer.
+

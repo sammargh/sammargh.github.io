@@ -1,0 +1,44 @@
+
+PCRB4 (EPSON)
+
+Epson desktop machine, PC-386 / V / G / GS / S, 486 GF / GR / GR + / GR Super
+Built-in RAM base board.It's own 2MB. 4 SIMM sockets on board, 8 dips
+There is one switch and one quadruple dip switch.SIMM socket for Epson specification
+1 MB SIMM can be expanded in pairs of the same capacity.
+
+・ 8-station dip switch SW1: Start address, RAM board memory size setting
+1-2-3-4: Start address setting
+　ON-ON-ON-ON: Setting prohibited
+　OFF-ON-ON-ON: 100000 h
+　ON-OFF-ON-ON: 200000h (default setting)
+　OFF-OFF-ON-ON: 300000 h
+　ON-ON-OFF-ON: 400000h
+　OFF-ON-OFF-ON: 500000 h
+　ON-OFF-OFF-ON: 600000 h
+　OFF-OFF-OFF-ON: 700000 h
+　ON-ON-ON-OFF: 800000 h
+　OFF-ON-ON-OFF: 900000 h
+　ON-OFF-ON-OFF: A00000h
+　OFF-OFF-ON-OFF: B00000h
+　ON-ON-OFF-OFF: C 00000 h
+　OFF-ON-OFF-OFF: D00000h
+　ON-OFF-OFF-OFF: E00000h
+　OFF-OFF-OFF-OFF: Setting prohibited
+5: Not used, always ON
+6-7: Memory size of RAM board
+　ON-ON: 0MB
+　OFF-ON: Onboard 2MB (factory setting)
+　ON-OFF: On board 2MB + SIMM 2
+　OFF-OFF: On board 2MB + SIMM 4
+8: Not used, always ON
+
+・ 4 stations dip switch SW2: Setting of main unit model, presence / absence of parity check
+1: Setting of machine model
+　ON: PC-386S, 486GR / GR + / GR Super
+　OFF: PC-386 / V / G / GS, 486 GF
+2: Not used, always OFF
+3: Setting of presence / absence of parity check
+　ON: Does not check parity
+　OFF: Perform parity check (factory setting)
+4: Not used, always OFF
+

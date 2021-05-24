@@ -1,0 +1,40 @@
+
+LHA-301, LHA-301A (Logitec)
+
+Multi-vendor compatible C bus SMIT transfer SCSI board.The shape of the SCSI connector is
+Amphenol half 50 pin for LHA-301, D sub 50 pin for LHA-301A.
+PnP compatible.High res mode not supported.SCSI BIOS ROM revision 1.07
+Up to 32GB HDD can be used later.In fact, I am free
+Recognized capacity of this board of BIOS ROM 1.07 using software e10chk.exe
+We examined the upper limit of the result, and the result of 8GB correspondence was obtained.
+Epson's MS-DOS / Windows 95 can not use 4GB or more HDDs.BIOS ROM
+Movement of the area is prohibited. CPUs (16-bit CPU) equipped with 80286 or earlier and PC-386
+Not available for initial types.More than BIOS ROM on board on MS-DOS
+Includes SCSI accelerator driver that enables high-speed data transfer
+(Be sure to include this on Windows 3.1).Three jumpers on the board
+There are 2 switches.
+
+In non-PnP environment, BIOS ROM address, interrupt level, DMA channel,
+The transfer method is displayed when pressing and holding the [CTRL] + [L] key when the main unit is started
+Set by setup menu.MO mode is valid only for MS-DOS.
+"Virtual ID" means the ID number of the SCSI device whose ID number can not be changed
+Function (the true ID number is in the Connect field of window 2)
+Virtual ID numbers are displayed in the ID column).Virtual ID Function
+Use is not recommended.
+
+The method of starting the automatic analysis utility is as follows:
+"Logitec LHA-301 SCSI BIOS Verx.xx Initializing ..." in the upper left of the screen
+When is displayed, press and hold the [CTRL] + [GRPH] + [L] keys.In the upper left of the screen
+A list of SCSI ID numbers and SCSI devices is displayed, and [analyze on] is displayed below it.
+Release the key when it is displayed.
+When starting up the automatic analysis utility and registering parameters,
+Another HDD is connected to the HDD whose parameter is registered to the registered ID number
+And the automatic analysis utility is started at system startup.
+
+・ Three jumper switch SW1: Always 2-3 short circuit
+
+・ 3 jumper switch SW2: switching between PnP mode and 55 compatible mode
+　1-2 short circuit 55 compatible mode
+　2-3 short circuit ■ PnP mode (when used with Windows 95/98 / NT)
+　Performance is the same in both modes.
+

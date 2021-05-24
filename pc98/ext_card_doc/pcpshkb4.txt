@@ -1,0 +1,28 @@
+
+PCPKB4 (expansion video board IV for PCI only), PCSKB4 (expansion video board IV for exclusive use),
+PCHKB4 (Extended Video Board IV) (EPSON)
+
+Graphics accelerator board for Epson machine equipped with S3 company 86C928.
+Proprietary specifications PCI (1.0) bus / local bus / C bus connection in order.High res mode
+incompatible.Epson version / Microsoft version Windows 3.1 / 95 (Note), just
+System-made Just Window Ver. 2 compatible.
+Note: Display driver for Windows 95 is a driver for Epson's web page
+　　Downloadable from download service.
+PCPKB4 is the expansion slot 3/4 of PC-98HX / HG, and PCSKB4 is PC-486GF / GR
+Installed in expansion slot 3 of / GR + / GR Super.PCHKB4 is C bus graphic
+It is an accelerator board and there is no restriction on the expansion slot to be installed.
+PCKBZM11 (VRAM 1MB) or PCKBZM31 (VRAM 3MB) can be added.
+There are two 3 jumper switches on the board.
+
+・ Three jumper switches J9, J10: The setting change at the time of PCKBZM11 / PCKBZM31 extension is necessary
+The factory settings are all 1 to 3 short.When PCKBZM11 / PCKBZM31 is added
+Changed to a short between 3 and 2 (the jumper post numbers are in the order of 132).
+
+Some graphics are displayed when running DOS application with DOS window in Windows 3.1
+If not displayed, change the display frame of the DOS window / Identify the DOS window once
+Restore and restore / change to full screen view and then restore,
+You may be able to work around this problem by doing one of the following operations.
+
+When using Microsoft version Windows 3.1, with [CTRL] + [GRPH] + [DEL]
+Soft reset does not work.You can also display windows of DOS application
+Does not execute.

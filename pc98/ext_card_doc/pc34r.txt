@@ -1,0 +1,79 @@
+
+PC34R-1M, PC34R-2M, PC34R-4M, PC34R-8M,
+PC34R-12M, PC34R-16M, PC34R-32M (I • O data)
+
+Bankram, hardware EMS, C bus RAM board compatible with protected memory.
+Make various settings with the software called MEMORY SERVER II (Note).
+
+Note: The description in this document refers to the operation of PC34R-4M bundled with MEMORY SERVER II.
+It is based.Setting of PC34R series can not be performed with MEMORY SERVER II
+Information [The choice of the board includes the PC34R series, but trying to set it
+Even if (without II) MEMORY SERVER or hardware setup
+The disc is thrown as needed.MEMORY SERVER II is included
+The thing also came with the PC34R setup disk
+Information: https://pc11.5ch.net/test/read.cgi/pc/1268027364/ 34/35/56
+There is a second post], but the actual item can not be confirmed because it is not already in my hands.
+
+Current consumption: 320mA (PC34R-1M, PC34R-2M), 330mA (PC34R-4M),
+　　　　　345mA (PC34R-8M), 360mA (PC34R-12M), 380mA (PC34R-16M),
+　　　　　410mA (PC34R-32M)
+Board setting I / O port: 04E0h to 04E3h (Used only when setting the board)
+(1) I · O bank memory mode
+　Maximum memory capacity: 32MB
+　Mapping address: 080000h to 09FFFFh
+　Number of windows: 1
+　Window size: 128KB
+　I / O port address: 00ECh
+(2) EMS expanded memory mode
+　Maximum memory capacity: 32MB
+　Mapping address: 00000h to FFFFFh
+　The number of windows: Up to 16
+　Window size: 16KB
+　I / O port address: 00E8h to 00EBh
+(3) Protect memory mode
+　Maximum memory capacity: 14MB
+　Address: 100000 h to EF FFFF h
+　Window address: 080000h to 09FFFFh, 0A0000h to 0BFFFFh
+　I / O port address: 0091h, 0093h
+(4) HiSUM (High-speed data check: when using IO bank memory)
+　Address: 080000h to 09FFFFh
+　Size: 128KB
+　I / O port address: 00E0h
+One rotary switch and one double dip switch on the board,
+Connector (Note 1) for external battery unit (BU-8), expansion option
+There is a connector (Note 2) for the board (RAM daughter board).
+Note 1: This board is in I / O bank memory mode and hardware expanded EMS
+　　External battery when used as a RAM disk in memory mode
+　　Device BU-8 can be used as a nonvolatile RAM disk (data
+　　Retention time: 1-9 days).RAM disk startup is not possible.
+Note 2: For boards other than PC34R-32M, EX34F-2M (2MB), EX34F-4M (4M),
+　　 Additional expansion is possible with EX34F-8M (8MB) and EX34R-16M (16MB).
+
+・ Rotary switch: Board number setting (factory setting = 0)
+　0 1st sheet 1 2nd sheet 2 3rd sheet 3 4th sheet
+　4th 5th 5th 6th 6th 7th 7th 8th
+　8th 9th 9th 10th A 11th B B 12th
+　C13 13th D 14th E 15th F 16th
+　When using multiple PC34Rs, be sure to set the first sheet to "0".
+
+-Dual dip switch (INIT switch): Normally used with OFF-OFF.
+　When adding additional option boards, add the option board
+　This board is added to the PC main body with the additional expansion added and the INIT switch set to ON-OFF.
+　Attach to and reset to OFF-OFF after power ON.Then MEMORY SERVER II
+　Make settings using the hardware setup disk.
+※ Function of each dip
+　1 (INV): Ignore the setting of PC34R and leave nothing set.
+　　　　　 Turn it on and reset it or turn it on again.
+　2 (RST): Used when an external battery device is connected.Normally turned off
+　　　　　 about.The main unit stopped working after a system runaway or a power failure
+　　　　　 In case of operation.Either the BU-8 is connected or the power of the unit is turned on.
+　　　　　 Turn it on in the off state and turn it back off again.
+
+HiSUM function of PC34R when used with SDB series silicon disks
+Turn off.
+Sound when used as hardware EMS or protected memory
+Need to disconnect BIOS ROM.
+When used in conjunction with the PIO-9034 / 9134 series, special ones tailored to the memory configuration
+Setting is required.Please contact I / O data support center before PC34R implementation.
+(Note: end of support)
+

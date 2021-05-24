@@ -1,0 +1,75 @@
+
+Power Window T64S (Canopus) 
+
+S3 Trio 64 for graphic chip, ESS 688 for PCM sound source (compatible with Sound Blaster Pro)
+Combined C bus board with graphic accelerator + sound source (Note) equipped with.Image memory
+2 MB. From the left, the 3.5φ mini jack on the back of the board has speaker / headphone connection
+Terminal, line input terminal 2, line input terminal 1, microphone input terminal.Power Window internal circuit
+If the speaker / headphone terminal has a monaural mini plug, the
+Never connect speakers or headphones (earphones).Consumption current is
++12 V = 65 mA, +5 V = 1.1 A.I. Two 4 dip switches and 4 double jumper switches on the board
+Yes.
+Note: The YAMAHA YMF-262-M, which is an FM sound generator chip, is also installed, but the details are unknown.
+
+If you look at the board with the card edge up, the dip switch on the upper left of the board is S1, upper right
+Dip switch is S2, its lower left (upper left of ESS 688) jumper switch is JP7,
+The jumper switch on the bottom right of the ESS688 is JP9, and the bottom right of the Trio 64 / bottom left of the ESS688 / line
+The two jumper switches on input terminal 1 are JP5 on the top and JP6 on the bottom.
+
+Jumper switch:
+・ JP5, JP6: Setting sound output level
+　　Short + short = sound output level high
+　　Open + open = sound output level low (when headphones etc. are used regularly,
+　　　　　　　　　　　　Set as required)
+・ JP7: Use / non-use of sound function
+　　Open = Use sound function
+　　Short = no sound function
+・ JP9: When connecting a condenser microphone that requires a bias voltage to the microphone input terminal
+　　short.
+
+DIP switch:
+・ S1 (VRAM side: Card edge side from S2): I / O port address setting
+Below, 1-2-3-4 ■ Address used by GA ■ Order of address used by sound
+ON-ON-ON-ON 00D0 to 00D7 4xD6 * All of x = 0 to F (same below)
+OFF-ON-ON-ON 01D0 to 01D7 4xD4
+ON-OFF-ON-ON 02D0-02D7 4x D2
+OFF-OFF-ON-ON ■ 03D0-03D7 ■ 4xD0
+ON-ON-OFF-ON ■ 04D0-04D7 ■ 2xD6
+OFF-ON-OFF-ON 05D0-05D7 2xD4
+ON-OFF-OFF-ON ■ 06D0-06D7 ■ 2xD2
+OFF-OFF-OFF-ON ■ 07D 0-07 D 7 ■ 2 x D 0
+ON-ON-ON-OFF ■ 00D8 ~ 00DF ■ 8xD6
+OFF-ON-ON-OFF 01D8 to 01DF 8xD4
+ON-OFF-ON-OFF 02D8-02DF 8xD2
+OFF-OFF-ON-OFF ■ 03D8-03DF ■ 8xD0
+ON-ON-OFF-OFF 04D8-04DF 6xD6
+OFF-ON-OFF-OFF 05D8-05DF 6xD4
+ON-OFF-OFF-OFF 6D8-06DF 6xD2 (default setting)
+OFF-OFF-OFF-OFF ■ 07D 8-07DF ■ 6x D 0
+
+
+Another board and I / O port address by PWIO.exe supplied before setting Power Window to PC
+Check to see if there is a overlap.The I / O address used by the Power Window sound function is also included.
+To check, start the PWIO.exe with the / s switch.
+Some LAN boards have an I / O port address that overlaps with the Power Window.like this
+In the case of a board, execution of PWIO.exe may cause the LAN board to malfunction, so LAN
+Run PWIO.exe after unplugging the cable from the board.Available settings after executing PWIO.exe
+When is displayed, you may reconnect the LAN cable.
+PWIO.exe is correct if there is a board or driver not activated at the time of check
+It is recommended to use it as a guide as it may not be recognized.
+
+・ S2 (A side of ESS688, JP7): Interrupt level / DMA channel setting
+1-2: Interrupt level
+  ON-ON: INT0
+  ON-OFF: INT1 (factory setting)
+  OFF-ON: INT2
+  OFF-OFF: INT5
+3-4: DMA channel ■ Interrupt use / not use
+　ON-ON: DMA not used ■ Interrupt not used
+　ON-OFF: Use of interrupt set in CH0 1-2
+　OFF-ON: Use interrupt set by CH3 1-2 (default setting)
+　OFF-OFF: DMA not used ■ Interrupt used set in 1-2
+
+This setting table is the instruction manual of Power Window T64S and the materials received from Hamam.
+It is based on.Corrected the description error pointed out by the outsider.
+

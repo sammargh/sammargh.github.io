@@ -1,0 +1,45 @@
+LHA-12V　（Logitec）
+
+外付け20MB／40MB SASI HDD，LHD-32V／LHA-34Vに付属のCバスSASI
+I/F．FIFOメモリ搭載．
+FDD I/F（LFA-14, PC-9801-15, LFA-15, PC-9801-09）と併用する
+場合，FDD I/F側のROMアクセスを禁止する（ジャンパスイッチをB-C間
+ショートに設定．ただしPC-9801EにLFA-15またはPC-9801-09が実装
+されている場合，ジャンパスイッチはA-B間ショート）．
+装着できる拡張スロットに制限のある機種あり：
+PC-9801E・・・#1〜#5
+PC-9801F・・・#1〜#3
+PC-9801U2・・・#1
+PC-9801VF2・・・#1〜#3
+PC-9801VM・・・#1〜#3
+PC-9801UV・・・#1
+PC-98XA・・・#4
+
+ボード上に8連ディップスイッチ2個と2本×4列ジャンパスイッチ1個あり．
+
+・8連ディップスイッチSW1：HDDの容量の設定
+1-2-3-4-5-6-7-8：HDDの容量の設定
+　ON-ON-OFF-ON-ON-OFF-OFF-OFF■20MB 1台
+　　　　　　　　　　　　　（LHA-32Vに付属の場合の出荷時設定）
+　ON-ON-OFF-OFF-ON-OFF-OFF-OFF■40MB 1台
+　　　　　　　　　　　　　（LHA-34Vに付属の場合の出荷時設定）
+　ON-ON-OFF-ON-ON-OFF-ON-ON■20MB＋20MB
+　ON-ON-OFF-ON-ON-OFF-OFF-ON■20MB＋40MB
+　ON-ON-OFF-OFF-ON-OFF-ON-ON■40MB＋20MB
+　ON-ON-OFF-OFF-ON-OFF-OFF-ON■40MB＋40MB
+
+・8連ディップスイッチ：本体CPUモード，BIOS ROMアドレスの設定
+1：本体CPUモードの設定
+　ON■PC-9801VX0/VX2・・・80286モード時
+      PC-9801VX01/VX21・・・80286・8MHz設定時
+      PC-98XL model1/2・・・ノーマルモード・80286・8MHz設定時
+　OFF■上記以外　（出荷時設定）
+2-3-4-5-6-7-8：BIOS ROMアドレスの設定（変更禁止，出荷時設定：
+　　　　　　　　　　　　　　　　　OFF-OFF-ON-OFF-ON-OFF-OFF）　
+
+・2本×4列ジャンパスイッチ：本体機種の設定
+　1-8／3-6ショート■PC-9801M2
+　1-8／4-5ショート■PC-9801E/F/U2/VF2/VM/UX/VX/UX/CV21/RA/RX，
+                    PC-98XL
+　2-7／4-5ショート■PC-9801，PC-98XA
+※PC-9801はHDDからの起動は不可．

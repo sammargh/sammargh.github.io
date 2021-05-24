@@ -1,0 +1,12 @@
+
+LHA-203 (Logitec)
+
+92 compatible C bus bus master SCSI-2 board for multi-vendor support.Win95 compatible.
+When starting up the unit, hold down [CTRL] + [L] and perform most of the settings in the setup menu displayed.
+For PC-9801BX2, BX3, PC-9821Ae, As3 and Ce2, "specific model setting" in "Extended setup" is required.
+For the PC-9801RX, PC-H98S, PC-H98 series, and PC-286 model 0,
+Select "I / O mode" in "Data transfer mode" in "Extended setup".
+If setup does not start with [CTRL] + [L], set the jumper of jumper switch SW2 to "2-3",
+Start while holding down [CTRL] + [L], and reset the settings in the setup menu to return to the factory settings.
+After this work, be sure to save the setup and return jumper switch SW2 to "1-2".
+

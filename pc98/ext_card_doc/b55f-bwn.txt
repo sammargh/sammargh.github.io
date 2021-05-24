@@ -1,0 +1,15 @@
+
+B55F-BWN (Tテクノジャパン（アルトス？）
+
+SCSI I / F in the PC-9801FA / FS / FX, MATE-A SCSI dedicated slot
+There are 2 8 dip switches and 3 3 jumper switches on the board.
+
+There is no manual, so the setting contents of each switch are unknown.Of the ones at hand
+The status of each switch is as follows.
+
+・ 8 stations dip switch SW1 = ON-ON-ON-ON-ON-OFF-OFF-OFF-OFF
+・ 8 stations dip switch SW2 = OFF-ON-ON-OFF-ON-ON-ON-ON
+・ Short between three jumper switches SW3 / SW4 / SW5 = 2-3
+
+Although the switch configuration is slightly different, B55 BMN (New Tech) published in 98 JUNK. DOC
+Is the setting content similar to?

@@ -1,0 +1,40 @@
+LISC-128A　（ランドコンピュータ）
+
+IDEインターフェース付きCバス内蔵型CFドライブ．容量128MB．
+対応機種は，PC-9801E, F, M, U, VF, VM, UV, VX, UX, LV, CV, RX, RS, RA, LS, ES,
+EX, LX, T, DX, DS, DA, UF, UR, US, FA, FS, FX, BA, BX, BA2, BS2, BX3, BA3, BX4,
+PC-9821Ap, As, Ae, Af, Ap2, As2, Ap3, As3, Bp, Bs, Be, Bf, Ts, Cx, Cs2, Ce2, Cf,
+ Xa7, Xa9, Xa10, Xa12, Xe10, Xt13, PC-98DO, DO+, XL, XL^2, RS, GS（NEC DOS3.3
+以上）, PC-H98全モデル（ハイレゾモード不可）, Cバススロットを備えたEPSON98互換機
+全機種．
+　※PC-9801RXではクロック数を10MHzにすること．
+　※※ハイレゾモードでは使用できない．取説で対応機種にPC-98XAが含まれているのは
+　　　誤記であろう．
+
+ボード上に8連ディップスイッチあり．
+
+1-2-3-4：割り込み番号の設定
+　ON-OFF-OFF-OFF■INT 0　ROMアドレスとI/Oベースアドレスの設定が②の場合
+　OFF-OFF-OFF-ON■INT 3　（出荷時設定）　ROMアドレスとI/Oベースアドレスの設定が
+　　　　　　　　　　　　　　　　　　　　 ①，③の場合
+　※SCSI I/Fとの併用時には割り込み番号をINT 3に設定し，SCSI I/Fの割り込み番号を
+　　INT 3以外に設定．
+5-6：ROMアドレスとI/Oベースアドレスの設定
+　①OFF-OFF■D0000h■0D0h
+　②ON-OFF■D0000h■840h
+　③ON-OFF■D8000h■640h　（出荷時設定）
+　　本体機種別の可能な設定は，
+　　　PC-9801E, F, M■①
+　　　PC-9801Cf, Cx, Cs2, Ce2■②
+　　　PC-9801UR, US, BA, BX, BA2, BS2, BX3, PC-9821Ap, As, Ae, Af, Ap2, As2,
+　　　　　　 Bp, Bs, Be, Bf, Ts■①（推奨設定），②
+　　　上記以外の機種■①，②，③（推奨設定）
+　　　※内蔵IDE BIOSと併用する場合には設定を②にすること．この場合SCSI HDDを
+　　　　エミュレートするため，SCSI I/Fとの併用は不可．
+7：未使用（出荷時設定：OFF）
+8：ROMの有効・無効の設定
+　OFF■ROM有効　（出荷時設定）
+　ON■設定不可（ONにすると本製品は動作しない）
+
+ボード上に40ピンオスコネクタがあり，これにスレーブ設定のIDE機器を接続することが
+できる．

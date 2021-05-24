@@ -1,0 +1,76 @@
+
+SIC-98NOTE-E, SIC-386NOTE-E (Allied Telesis)
+
+LAN adapter to attach to 110 pin expansion bus of old 98 notebook / Epson notebook.
+Not compatible with Windows 95. 3x7 2x Jumper Switch, 3x6x 6 Jumper Switch
+1 pc, 3x4 jumper switch 1x, 3 jumper switch 2x, 2x6 link
+There is one jumper switch.
+
+・ 3 x 6 jumper switch JP1: Memory address setting
+Two 16K-side shorts = 1, and two 32K-side shorts = 0.
+The following is the order of A18-A17-A16-A15-A14 I / O port address.With A19 jumper
+The 16K / 32K jumpers should always be set to one.
+　0-0-0-0-0 080000h to 083FFFh
+　0-0-0-0-1 ■ 084000h ~ 087FFFh
+　0-0-0-1-0 088000 h to 08 BFF FF h
+　0-0-0-1 ■ 08 C 000 h to 08 FFFF h
+　0-0-1-0-0 ■ 090000h to 093FFFh
+　0-0-1-0-1 ■ 094000h to 097FFFh
+　0-0-1-1-0 ■ 098000h to 09BFFFh
+　0-0-1-1-1 9 C 000 h to 09 FFFF h
+　0-1-0-0-0 0A0000h to 0A3FFFh
+　0-1-0-0-1 0A4000h to 0A7FFFh
+　0-1-0-1-0 0A 8000 h to 0 ABFFF h
+　0-1-0-1-1 0 AC 000 h to 0 A FFFF h
+　0-1-1-0-0 ■ 0B0000h to 0B3FFFh
+　0-1-1-0-1 ■ 0 B 4000 h to 0 B 7 FFF h
+　0-1-1-1-0 ■ 0 B 8000 h to 0 BBF FF h
+　0-1-1-1-1 0BC 000 h to 0 B FFFF h
+　1-0-0-0-0 0C0000h to 0C3FFFh
+　1-0-0-0-1 ■ 0C4000h to 0C7FFFh
+　1-0-0-0-1 0 C 8000 h to 0 CBF FF h
+　1-0-0-1-1 1 0 CC 000 h to 0 C FFFF h
+　1-0-1-0-0 0D0000h to 0D3FFFh
+　1-0-1-0-1 0D 4000h to 0D7FFFh
+　1-0-1-1-0 ■ 0D 8000 h ~ 0 DBFFF h
+　1-0-1-1-1 ■ 0 DC 000 h to 0 D FFFF h
+　1-1-0-0-00 0E0000h to 0E3FFFh
+　1-1-0-0-1 0E4000h to 0E7FFFh
+　1-1-0-1-0 0E8000h to 0EBFFFh
+　1-1-0-1-1 0EC 000 h to 0 EFFFF h
+　1-1-1-0-0 0F0000h to 0F3FFFh
+　1-1-1-0-1 0F4000h to 0F7FFFh
+　1-1-1-1-0 ■ 0F8000h to 0FBFFFh
+　1-1-1-1- 1 0FC 000 h to 0 F FFFF h
+
+・ 2 x 6 jumper switch JP2: Interrupt level setting
+See silk printing beside jumpers.
+
+・ 3x4 jumper switch JP3:
+Two shorts at A8 (A0?), A1, A2 and A3 = 1, two shorts at A5, A6, A7 and A8 = 0.
+Below, A3-A2-A1-A8 (A0?)■ The order of I / O port address:
+　0-0-0-0 ■ 00 D 0 h-20 D 0 h
+　0-0-0-1 ■ 01 D 0 h to 21 D 0 h
+　0-0-1-0 ■ 00D2h to 20D2h
+　0-0-1-1 ■ 01 D 2 h to 21 D 2 h
+　0-1-0-0 ■ 00 D 4 h to 20 D 4 h
+　0-1-0-1 ■ 01 D 4 h to 21 D 4 h
+　0-1-1-0 ■ 00D6h to 20D6h
+　0-1-1-1 ■ 01 D 6 h to 21 D 6 h
+　1-0-0-00 00D8h to 20D8h
+　1-0-0-1 ■ 01D8h to 21D8h
+　1-0-1-0 ■ 00 DAh-20 DAh
+　1-0-1-1 01 DAh to 21 DAh
+　1-1-0-0 ■ 00 DCh to 20 DCh
+　1-1-0-1 ■ 01 DCh to 21 DCh
+　1-1-1-0 ■ 00 DEh-20 DEh
+　1-1-1-1 ■ 01 DE h-21 DE h
+
+・ 3 jumper switch JP4: Always 2-3 short circuit
+
+・ 3x7 jumper switch JP5: always 3,6,9,12,15,18,21 two short circuit
+
+・ 3 x 7 series jumper switch JP6: always 3, 6, 9, 12, 15, 18 side two short circuit
+
+・ 3 jumper switch JP7: Always 2-3 short circuit
+

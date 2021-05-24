@@ -1,0 +1,38 @@
+
+Power Window 928GLB, 928IILB (Canopus)
+
+Local bus graphic accelerator board for mate-A equipped with S3 company 86C928.
+There is one 8-station dip switch and one jumper switch on the board.Power Window
+The 928GLB also has a memory capacity jumper switch.VRAM is 1MB in Power Window 928GLB
+2 MB for 928 II LB. In the former case, VRAM is extended by the VRAM expansion kit 928G-1M (model number HIM-1161-01).
+It can be expanded to 2 MB.
+If you look at the board with the card edge connector side on the left side of the board,
+The damper is near the right corner of the board, and the memory capacity jumper is at the center of the board at the upper left.
+The maximum current consumption is +5 V, 1.8 A. for Power Window 928 GLB and 928 II LB.
+
+Operation is not guaranteed on machines with CPU accelerator (Operation of machines with ODP is guaranteed).
+
+The main unit's GCD clock should be used at 5 MHz.
+
+The memory space uses 16MB of XX000000 to XXFFFFFF (by default, F000000 to 000000)
+Memory used when F0FFFFFF) has other local bus board used
+Set the above XX with an 8 series dip switch so that overlapping of space does not occur.This setting is
+Perform based on the execution result of attached PWIO.EXE.PWIO.EXE before setting board to PC
+Execution
+
+The dip switch supports binary numbers with ON = 0 and OFF = 1.For example,
+OFF-OFF-OFF-OFF-ON-ON-ON-ON is "11110000", which is "F0" in hexadecimal.
+
+Do not use I / O port.
+
+Brightness setting jumper switch: Display table compared to when not using Power Window
+If the display feels too bright, remove the jumper plug (short plug).
+
+Memory capacity jumper switch: Open when expansion VRAM is not expanded, when expansion
+Is short.
+After VRAM expansion, check the expanded VRAM by PWMEM.EXE.In addition, after expansion
+Setup the board (return to the original resolution of PWSET.EXE before
+Do)).
+
+※ The above description is based on the User's Guide issued in the age of Windows 3.1.
+

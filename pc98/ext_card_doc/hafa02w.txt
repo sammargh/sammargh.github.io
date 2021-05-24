@@ -1,0 +1,15 @@
+
+HA-FA02W (Nippon Teksa)
+
+SCSI board inserted in dedicated SCSI_I / F slot of PC-9801FA, FS, FX, mate-A series.
+Multi-vendor support by parameter setting but Win95 non-support (Japanese Texa released Win95
+Before withdrawal from the PC-98 peripherals market).When using Win95, transfer mode is DMA transfer
+Set it and let the 55 board driver recognize it.
+The transfer mode is DMA transfer and I / O transfer (W-GT mode) because it is for dedicated SCSI_I / F slot.
+Only, there is no bus master mode.
+Silk printing on a substrate is described in EZ P 0184 A.
+Recognition of this board that I examined using e10chk.exe which is free software created by Mr. Marimo
+The capacity limit was 2015 MB.
+The setting method is basically the same as HA-55BS4 except JP3.
+JP3 on the board should be shorted when enabling SCSI_ROM and open when disabled (disconnected).
+

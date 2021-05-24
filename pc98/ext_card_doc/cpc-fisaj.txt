@@ -1,0 +1,11 @@
+CPC-FISA　(Computer Research)
+
+PC-9801FA/FS/FX，MATE-AのSCSI専用スロットに挿すSCSI I/F．
+ボード上に8連ディップスイッチ2個と3連ディップスイッチ1個あり．
+
+取説がないので各スイッチの設定内容は不明．手元のものの
+各スイッチの状態は以下の通り．
+
+・8連ディップスイッチDSW1 = ON-ON-ON-OFF-OFF-OFF-ON-ON
+・8連ディップスイッチDSW2 = OFF-ON-ON-OFF-ON-ON-ON-ON
+・3連ディップスイッチDSW3 = ON-ON-OFF

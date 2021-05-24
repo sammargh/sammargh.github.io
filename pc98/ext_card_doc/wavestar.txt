@@ -1,0 +1,45 @@
+
+WaveStar (キュービジョン)
+
+Sound board with PCM sound source / 86 sound source compatible function equivalent to 118 boards.
+Win95 compatible.
+Supports Windows Sound System (WSS).
+Cue Vision GS compatible MIDI sound source sub board "MIDI Star" on board, Creative "WaveBlaster",
+Possible to add Yamaha "DS50XG".
+It can not be used together with the built-in sound, and the built-in speaker can not be used when using this board.
+Equipped with a C bus expansion slot and compatible with PC-98 with i486 or more CPU.
+Not available on EPSON PC-98 compatible machines.Supported OS is MS-DOS 6.2, Windows 3.1, Windows 95.
+
+8 stations dip switch
+SW1: Setting of PnP PC
+ON: PnP function enabled (In this case, SW2 and 3 must also be ON)
+OFF: PnP function disabled (in this case, SW4-8 is enabled)
+
+SW2: MIDI (MPU) settings
+ON: MPU function enabled
+OFF: MPU function disabled
+
+SW3: 86 compatible sound settings
+ON: 86 compatible sound function enabled
+OFF: 86 compatible sound function disabled
+
+SW4: DMA channel setting of PC in WSS mode
+ON: Ch3
+OFF: Ch0
+
+SW5: FM sound source I / O address setting
+ON: 0288
+OFF: 0188
+
+SW6: Setting the interrupt level (INT) of FM / PCM sound source
+ON: INT6 (IRQ13)
+OFF: INT5 (IRQ12)
+
+SW7: MIDI (MPU) I / O Address Setting
+ON: E4D0
+OFF: E0D0
+
+SW8: MIDI (MPU) interrupt level (INT) setting
+ON: INT4 (IRQ10)
+OFF: INT2 (IRQ6)
+

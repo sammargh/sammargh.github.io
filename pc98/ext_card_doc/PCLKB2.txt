@@ -1,0 +1,14 @@
+
+PCLKB2 (Extended Video Board II) (EPSON)
+
+L slot graphic equipped with WD90C24 (VRAM 1MB) manufactured by Western Digital
+Accelerator board.PC-48 NAS / NAU / NAV compatible.When using on Windows
+Set the 16 MB system space of the main unit to "Use".
+
+There are 4 pairs of 2 jumper switches on the board.When displaying on an external display
+Short J2 and J3.When displaying on PCLCDC21 (color liquid crystal of the main body), J2 and J4
+short.
+
+For the two switches near the connector (the default setting seems to be both OFF)
+not listed.
+
